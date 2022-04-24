@@ -1,2 +1,2 @@
 #  GoXlr Panel
-##Macos app for managing GoXlr.
+## Macos app for managing GoXlr.
