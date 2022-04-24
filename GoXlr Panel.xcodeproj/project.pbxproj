@@ -46,6 +46,7 @@
 		70A490B728159FA500BB2D4C /* GoXlr PanelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GoXlr PanelUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A490BB28159FA500BB2D4C /* GoXlr_PanelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelUITests.swift; sourceTree = "<group>"; };
 		70A490BD28159FA500BB2D4C /* GoXlr_PanelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		70D0127C2815EF1400DA0E1B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		70A4909328159FA300BB2D4C = {
 			isa = PBXGroup;
 			children = (
+				70D0127C2815EF1400DA0E1B /* README.md */,
 				70A4909E28159FA300BB2D4C /* GoXlr Panel */,
 				70A490B028159FA500BB2D4C /* GoXlr PanelTests */,
 				70A490BA28159FA500BB2D4C /* GoXlr PanelUITests */,
