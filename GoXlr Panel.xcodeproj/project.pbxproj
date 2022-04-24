@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70A490A028159FA300BB2D4C /* GoXlr_PanelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4909F28159FA300BB2D4C /* GoXlr_PanelApp.swift */; };
+		70A490A228159FA300BB2D4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A490A128159FA300BB2D4C /* ContentView.swift */; };
+		70A490A428159FA500BB2D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A490A328159FA500BB2D4C /* Assets.xcassets */; };
+		70A490A728159FA500BB2D4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A490A628159FA500BB2D4C /* Preview Assets.xcassets */; };
+		70A490B228159FA500BB2D4C /* GoXlr_PanelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A490B128159FA500BB2D4C /* GoXlr_PanelTests.swift */; };
+		70A490BC28159FA500BB2D4C /* GoXlr_PanelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A490BB28159FA500BB2D4C /* GoXlr_PanelUITests.swift */; };
+		70A490BE28159FA500BB2D4C /* GoXlr_PanelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A490BD28159FA500BB2D4C /* GoXlr_PanelUITestsLaunchTests.swift */; };
+		70A490CC2815A70200BB2D4C /* ShellOut in Frameworks */ = {isa = PBXBuildFile; productRef = 70A490CB2815A70200BB2D4C /* ShellOut */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70A490AE28159FA500BB2D4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A4909428159FA300BB2D4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70A4909B28159FA300BB2D4C;
+			remoteInfo = "GoXlr Panel";
+		};
+		70A490B828159FA500BB2D4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70A4909428159FA300BB2D4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70A4909B28159FA300BB2D4C;
+			remoteInfo = "GoXlr Panel";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		70A4909C28159FA300BB2D4C /* GoXlr Panel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr Panel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A4909F28159FA300BB2D4C /* GoXlr_PanelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelApp.swift; sourceTree = "<group>"; };
+		70A490A128159FA300BB2D4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		70A490A328159FA500BB2D4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70A490A628159FA500BB2D4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70A490A828159FA500BB2D4C /* GoXlr_Panel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoXlr_Panel.entitlements; sourceTree = "<group>"; };
+		70A490AD28159FA500BB2D4C /* GoXlr PanelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GoXlr PanelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A490B128159FA500BB2D4C /* GoXlr_PanelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelTests.swift; sourceTree = "<group>"; };
+		70A490B728159FA500BB2D4C /* GoXlr PanelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GoXlr PanelUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A490BB28159FA500BB2D4C /* GoXlr_PanelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelUITests.swift; sourceTree = "<group>"; };
+		70A490BD28159FA500BB2D4C /* GoXlr_PanelUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70A4909928159FA300BB2D4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A490CC2815A70200BB2D4C /* ShellOut in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A490AA28159FA500BB2D4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A490B428159FA500BB2D4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70A4909328159FA300BB2D4C = {
+			isa = PBXGroup;
+			children = (
+				70A4909E28159FA300BB2D4C /* GoXlr Panel */,
+				70A490B028159FA500BB2D4C /* GoXlr PanelTests */,
+				70A490BA28159FA500BB2D4C /* GoXlr PanelUITests */,
+				70A4909D28159FA300BB2D4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70A4909D28159FA300BB2D4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70A4909C28159FA300BB2D4C /* GoXlr Panel.app */,
+				70A490AD28159FA500BB2D4C /* GoXlr PanelTests.xctest */,
+				70A490B728159FA500BB2D4C /* GoXlr PanelUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70A4909E28159FA300BB2D4C /* GoXlr Panel */ = {
+			isa = PBXGroup;
+			children = (
+				70A4909F28159FA300BB2D4C /* GoXlr_PanelApp.swift */,
+				70A490A128159FA300BB2D4C /* ContentView.swift */,
+				70A490A328159FA500BB2D4C /* Assets.xcassets */,
+				70A490A828159FA500BB2D4C /* GoXlr_Panel.entitlements */,
+				70A490A528159FA500BB2D4C /* Preview Content */,
+			);
+			path = "GoXlr Panel";
+			sourceTree = "<group>";
+		};
+		70A490A528159FA500BB2D4C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				70A490A628159FA500BB2D4C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70A490B028159FA500BB2D4C /* GoXlr PanelTests */ = {
+			isa = PBXGroup;
+			children = (
+				70A490B128159FA500BB2D4C /* GoXlr_PanelTests.swift */,
+			);
+			path = "GoXlr PanelTests";
+			sourceTree = "<group>";
+		};
+		70A490BA28159FA500BB2D4C /* GoXlr PanelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70A490BB28159FA500BB2D4C /* GoXlr_PanelUITests.swift */,
+				70A490BD28159FA500BB2D4C /* GoXlr_PanelUITestsLaunchTests.swift */,
+			);
+			path = "GoXlr PanelUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70A4909B28159FA300BB2D4C /* GoXlr Panel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70A490C128159FA500BB2D4C /* Build configuration list for PBXNativeTarget "GoXlr Panel" */;
+			buildPhases = (
+				70A4909828159FA300BB2D4C /* Sources */,
+				70A4909928159FA300BB2D4C /* Frameworks */,
+				70A4909A28159FA300BB2D4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GoXlr Panel";
+			packageProductDependencies = (
+				70A490CB2815A70200BB2D4C /* ShellOut */,
+			);
+			productName = "GoXlr Panel";
+			productReference = 70A4909C28159FA300BB2D4C /* GoXlr Panel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70A490AC28159FA500BB2D4C /* GoXlr PanelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70A490C428159FA500BB2D4C /* Build configuration list for PBXNativeTarget "GoXlr PanelTests" */;
+			buildPhases = (
+				70A490A928159FA500BB2D4C /* Sources */,
+				70A490AA28159FA500BB2D4C /* Frameworks */,
+				70A490AB28159FA500BB2D4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70A490AF28159FA500BB2D4C /* PBXTargetDependency */,
+			);
+			name = "GoXlr PanelTests";
+			productName = "GoXlr PanelTests";
+			productReference = 70A490AD28159FA500BB2D4C /* GoXlr PanelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70A490B628159FA500BB2D4C /* GoXlr PanelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70A490C728159FA500BB2D4C /* Build configuration list for PBXNativeTarget "GoXlr PanelUITests" */;
+			buildPhases = (
+				70A490B328159FA500BB2D4C /* Sources */,
+				70A490B428159FA500BB2D4C /* Frameworks */,
+				70A490B528159FA500BB2D4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70A490B928159FA500BB2D4C /* PBXTargetDependency */,
+			);
+			name = "GoXlr PanelUITests";
+			productName = "GoXlr PanelUITests";
+			productReference = 70A490B728159FA500BB2D4C /* GoXlr PanelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70A4909428159FA300BB2D4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					70A4909B28159FA300BB2D4C = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					70A490AC28159FA500BB2D4C = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 70A4909B28159FA300BB2D4C;
+					};
+					70A490B628159FA500BB2D4C = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 70A4909B28159FA300BB2D4C;
+					};
+				};
+			};
+			buildConfigurationList = 70A4909728159FA300BB2D4C /* Build configuration list for PBXProject "GoXlr Panel" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70A4909328159FA300BB2D4C;
+			packageReferences = (
+				70A490CA2815A70200BB2D4C /* XCRemoteSwiftPackageReference "ShellOut" */,
+			);
+			productRefGroup = 70A4909D28159FA300BB2D4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70A4909B28159FA300BB2D4C /* GoXlr Panel */,
+				70A490AC28159FA500BB2D4C /* GoXlr PanelTests */,
+				70A490B628159FA500BB2D4C /* GoXlr PanelUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70A4909A28159FA300BB2D4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A490A728159FA500BB2D4C /* Preview Assets.xcassets in Resources */,
+				70A490A428159FA500BB2D4C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A490AB28159FA500BB2D4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A490B528159FA500BB2D4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70A4909828159FA300BB2D4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A490A228159FA300BB2D4C /* ContentView.swift in Sources */,
+				70A490A028159FA300BB2D4C /* GoXlr_PanelApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A490A928159FA500BB2D4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A490B228159FA500BB2D4C /* GoXlr_PanelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70A490B328159FA500BB2D4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A490BE28159FA500BB2D4C /* GoXlr_PanelUITestsLaunchTests.swift in Sources */,
+				70A490BC28159FA500BB2D4C /* GoXlr_PanelUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70A490AF28159FA500BB2D4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70A4909B28159FA300BB2D4C /* GoXlr Panel */;
+			targetProxy = 70A490AE28159FA500BB2D4C /* PBXContainerItemProxy */;
+		};
+		70A490B928159FA500BB2D4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70A4909B28159FA300BB2D4C /* GoXlr Panel */;
+			targetProxy = 70A490B828159FA500BB2D4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		70A490BF28159FA500BB2D4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70A490C028159FA500BB2D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		70A490C228159FA500BB2D4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GoXlr Panel/GoXlr_Panel.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoXlr Panel/Preview Content\"";
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adecorp.GoXlr-Panel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		70A490C328159FA500BB2D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GoXlr Panel/GoXlr_Panel.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoXlr Panel/Preview Content\"";
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adecorp.GoXlr-Panel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		70A490C528159FA500BB2D4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adecorp.GoXlr-PanelTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoXlr Panel.app/Contents/MacOS/GoXlr Panel";
+			};
+			name = Debug;
+		};
+		70A490C628159FA500BB2D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adecorp.GoXlr-PanelTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoXlr Panel.app/Contents/MacOS/GoXlr Panel";
+			};
+			name = Release;
+		};
+		70A490C828159FA500BB2D4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adecorp.GoXlr-PanelUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "GoXlr Panel";
+			};
+			name = Debug;
+		};
+		70A490C928159FA500BB2D4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adecorp.GoXlr-PanelUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "GoXlr Panel";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70A4909728159FA300BB2D4C /* Build configuration list for PBXProject "GoXlr Panel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A490BF28159FA500BB2D4C /* Debug */,
+				70A490C028159FA500BB2D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70A490C128159FA500BB2D4C /* Build configuration list for PBXNativeTarget "GoXlr Panel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A490C228159FA500BB2D4C /* Debug */,
+				70A490C328159FA500BB2D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70A490C428159FA500BB2D4C /* Build configuration list for PBXNativeTarget "GoXlr PanelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A490C528159FA500BB2D4C /* Debug */,
+				70A490C628159FA500BB2D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70A490C728159FA500BB2D4C /* Build configuration list for PBXNativeTarget "GoXlr PanelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A490C828159FA500BB2D4C /* Debug */,
+				70A490C928159FA500BB2D4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70A490CA2815A70200BB2D4C /* XCRemoteSwiftPackageReference "ShellOut" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/ShellOut.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70A490CB2815A70200BB2D4C /* ShellOut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70A490CA2815A70200BB2D4C /* XCRemoteSwiftPackageReference "ShellOut" */;
+			productName = ShellOut;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 70A4909428159FA300BB2D4C /* Project object */;
+}
