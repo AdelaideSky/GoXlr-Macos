@@ -23,10 +23,10 @@ This project is at an really early state, and is not really ready for use. I'm w
 #### Install the App:
 
 - Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases)
-
-#### And the most important...
-
-- Have a GoXlr (it helps)
+- Unzip, move the app where you want and open it
+- Go to the settings tab and click "Create audio outputs"
+- Verify that you selected your GoXlr as default audio output
+- Enjoy !
 
 ## Notes
 
