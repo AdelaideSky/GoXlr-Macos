@@ -103,78 +103,90 @@ struct ControlView: View {
         }
         .padding(120)
         HStack(alignment: .top, spacing: 10){
-            Picker("Channel A", selection: $selectedSliderA) {
-                Text("System").tag("system")
-                Text("Music").tag("music")
-                Text("Game").tag("game")
-                Text("Chat").tag("chat")
-                Text("Line-In").tag("line-in")
-            }.onChange(of: self.selectedSliderA, perform: { newValue in
-                do {
-                    let output = try shellOut(to: "\(usrPath.path)/.cargo/bin/goxlr-client", arguments: ["--fader-a \(self.selectedSliderA)"])
-                print(output)
-                } catch {
-                    let error = error as! ShellOutError
-                    print(error.message) // Prints STDERR
-                    print(error.output) // Prints STDOUT
-                    alertMessage = error.message
-                    showingAlert = true
-                }
-            })
-            Picker("Channel B", selection: $selectedSliderB) {
-                Text("System").tag("system")
-                Text("Music").tag("music")
-                Text("Game").tag("game")
-                Text("Chat").tag("chat")
-                Text("Line-In").tag("line-in")
-            }.onChange(of: self.selectedSliderB, perform: { newValue in
-                do {
-                    let output = try shellOut(to: "\(usrPath.path)/.cargo/bin/goxlr-client", arguments: ["--fader-b \(self.selectedSliderB)"])
-                print(output)
-                } catch {
-                    let error = error as! ShellOutError
-                    print(error.message) // Prints STDERR
-                    print(error.output) // Prints STDOUT
-                    alertMessage = error.message
-                    showingAlert = true
-                }
-            })
-            Picker("Channel C", selection: $selectedSliderC) {
-                Text("System").tag("system")
-                Text("Music").tag("music")
-                Text("Game").tag("game")
-                Text("Chat").tag("chat")
-                Text("Line-In").tag("line-in")
-            }.onChange(of: self.selectedSliderC, perform: { newValue in
-                do {
-                    let output = try shellOut(to: "\(usrPath.path)/.cargo/bin/goxlr-client", arguments: ["--fader-c \(self.selectedSliderC)"])
-                print(output)
-                } catch {
-                    let error = error as! ShellOutError
-                    print(error.message) // Prints STDERR
-                    print(error.output) // Prints STDOUT
-                    alertMessage = error.message
-                    showingAlert = true
-                }
-            })
-            Picker("Channel D", selection: $selectedSliderD) {
-                Text("System").tag("system")
-                Text("Music").tag("music")
-                Text("Game").tag("game")
-                Text("Chat").tag("chat")
-                Text("Line-In").tag("line-in")
-            }.onChange(of: self.selectedSliderD, perform: { newValue in
-                do {
-                    let output = try shellOut(to: "\(usrPath.path)/.cargo/bin/goxlr-client", arguments: ["--fader-d \(self.selectedSliderD)"])
-                print(output)
-                } catch {
-                    let error = error as! ShellOutError
-                    print(error.message) // Prints STDERR
-                    print(error.output) // Prints STDOUT
-                    alertMessage = error.message
-                    showingAlert = true
-                }
-            })
+            VStack(){
+                Picker("", selection: $selectedSliderA) {
+                    Text("System").tag("system")
+                    Text("Music").tag("music")
+                    Text("Game").tag("game")
+                    Text("Chat").tag("chat")
+                    Text("Line-In").tag("line-in")
+                }.onChange(of: self.selectedSliderA, perform: { newValue in
+                    do {
+                        let output = try shellOut(to: "\(usrPath.path)/.cargo/bin/goxlr-client", arguments: ["--fader-a \(self.selectedSliderA)"])
+                    print(output)
+                    } catch {
+                        let error = error as! ShellOutError
+                        print(error.message) // Prints STDERR
+                        print(error.output) // Prints STDOUT
+                        alertMessage = error.message
+                        showingAlert = true
+                    }
+                })
+            Text("Fader A")
+            }
+            VStack(){
+                Picker("", selection: $selectedSliderB) {
+                    Text("System").tag("system")
+                    Text("Music").tag("music")
+                    Text("Game").tag("game")
+                    Text("Chat").tag("chat")
+                    Text("Line-In").tag("line-in")
+                }.onChange(of: self.selectedSliderB, perform: { newValue in
+                    do {
+                        let output = try shellOut(to: "\(usrPath.path)/.cargo/bin/goxlr-client", arguments: ["--fader-b \(self.selectedSliderB)"])
+                    print(output)
+                    } catch {
+                        let error = error as! ShellOutError
+                        print(error.message) // Prints STDERR
+                        print(error.output) // Prints STDOUT
+                        alertMessage = error.message
+                        showingAlert = true
+                    }
+                })
+            Text("Fader B")
+            }
+            VStack(){
+                Picker("", selection: $selectedSliderC) {
+                    Text("System").tag("system")
+                    Text("Music").tag("music")
+                    Text("Game").tag("game")
+                    Text("Chat").tag("chat")
+                    Text("Line-In").tag("line-in")
+                }.onChange(of: self.selectedSliderC, perform: { newValue in
+                    do {
+                        let output = try shellOut(to: "\(usrPath.path)/.cargo/bin/goxlr-client", arguments: ["--fader-c \(self.selectedSliderC)"])
+                    print(output)
+                    } catch {
+                        let error = error as! ShellOutError
+                        print(error.message) // Prints STDERR
+                        print(error.output) // Prints STDOUT
+                        alertMessage = error.message
+                        showingAlert = true
+                    }
+                })
+            Text("Fader C")
+            }
+            VStack(){
+                Picker("", selection: $selectedSliderD) {
+                    Text("System").tag("system")
+                    Text("Music").tag("music")
+                    Text("Game").tag("game")
+                    Text("Chat").tag("chat")
+                    Text("Line-In").tag("line-in")
+                }.onChange(of: self.selectedSliderD, perform: { newValue in
+                    do {
+                        let output = try shellOut(to: "\(usrPath.path)/.cargo/bin/goxlr-client", arguments: ["--fader-d \(self.selectedSliderD)"])
+                    print(output)
+                    } catch {
+                        let error = error as! ShellOutError
+                        print(error.message) // Prints STDERR
+                        print(error.output) // Prints STDOUT
+                        alertMessage = error.message
+                        showingAlert = true
+                    }
+                })
+            Text("Fader D")
+            }
         }
         .alert("ERROR", isPresented: $showingAlert) {
                     Button("OK", role: .cancel) { }
