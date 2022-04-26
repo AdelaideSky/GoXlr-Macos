@@ -13,13 +13,13 @@ This project is at an really early state, and is not really ready for use. I'm w
 
 #### Install the dependices : 
 
-- Install (Rust)[https://rustup.rs/] : `curl https://sh.rustup.rs -sSf | sh`
+- Install [Rust](https://rustup.rs/) : `curl https://sh.rustup.rs -sSf | sh`
 - Install libusb : `brew install libusb`
-- Install (& build) (GoXlr-Utility)[https://github.com/GoXLR-on-Linux/GoXLR-Utility]
+- Install (& build) [GoXlr-Utility](https://github.com/GoXLR-on-Linux/GoXLR-Utility)
 
 #### Install the App:
 
-- Download the latest (release)[https://github.com/Adelenade/GoXlr-Macos/releases]
+- Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases)
 
 #### And the most important...
 
