@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7011E0A028184F5B00573593 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7011E09F28184F5B00573593 /* ControlView.swift */; };
+		7011E0A228184FAF00573593 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7011E0A128184FAF00573593 /* SettingsView.swift */; };
+		7011E0A4281855EB00573593 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7011E0A3281855EB00573593 /* MainMenu.xib */; };
 		70A490A028159FA300BB2D4C /* GoXlr_PanelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4909F28159FA300BB2D4C /* GoXlr_PanelApp.swift */; };
 		70A490A228159FA300BB2D4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A490A128159FA300BB2D4C /* ContentView.swift */; };
 		70A490A428159FA500BB2D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A490A328159FA500BB2D4C /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7011E09F28184F5B00573593 /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		7011E0A128184FAF00573593 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7011E0A3281855EB00573593 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		70A4909C28159FA300BB2D4C /* GoXlr Panel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr Panel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A4909F28159FA300BB2D4C /* GoXlr_PanelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelApp.swift; sourceTree = "<group>"; };
 		70A490A128159FA300BB2D4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,9 +107,12 @@
 			children = (
 				70A4909F28159FA300BB2D4C /* GoXlr_PanelApp.swift */,
 				70A490A128159FA300BB2D4C /* ContentView.swift */,
+				7011E09F28184F5B00573593 /* ControlView.swift */,
+				7011E0A128184FAF00573593 /* SettingsView.swift */,
 				70A490A328159FA500BB2D4C /* Assets.xcassets */,
 				70A490A828159FA500BB2D4C /* GoXlr_Panel.entitlements */,
 				70A490A528159FA500BB2D4C /* Preview Content */,
+				7011E0A3281855EB00573593 /* MainMenu.xib */,
 			);
 			path = "GoXlr Panel";
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				70D0127E2815F1B900DA0E1B /* PBXTargetDependency */,
 			);
 			name = "GoXlr Panel";
 			packageProductDependencies = (
@@ -245,6 +255,7 @@
 			files = (
 				70A490A728159FA500BB2D4C /* Preview Assets.xcassets in Resources */,
 				70A490A428159FA500BB2D4C /* Assets.xcassets in Resources */,
+				7011E0A4281855EB00573593 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +281,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				70A490A228159FA300BB2D4C /* ContentView.swift in Sources */,
+				7011E0A228184FAF00573593 /* SettingsView.swift in Sources */,
+				7011E0A028184F5B00573593 /* ControlView.swift in Sources */,
 				70A490A028159FA300BB2D4C /* GoXlr_PanelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +316,10 @@
 			isa = PBXTargetDependency;
 			target = 70A4909B28159FA300BB2D4C /* GoXlr Panel */;
 			targetProxy = 70A490B828159FA500BB2D4C /* PBXContainerItemProxy */;
+		};
+		70D0127E2815F1B900DA0E1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 70D0127D2815F1B900DA0E1B /* ShellOut */;
 		};
 /* End PBXTargetDependency section */
 
@@ -600,6 +617,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		70A490CB2815A70200BB2D4C /* ShellOut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70A490CA2815A70200BB2D4C /* XCRemoteSwiftPackageReference "ShellOut" */;
+			productName = ShellOut;
+		};
+		70D0127D2815F1B900DA0E1B /* ShellOut */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 70A490CA2815A70200BB2D4C /* XCRemoteSwiftPackageReference "ShellOut" */;
 			productName = ShellOut;
