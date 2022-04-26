@@ -15,7 +15,10 @@ This project is at an really early state, and is not really ready for use. I'm w
 
 - Install [Rust](https://rustup.rs/) : `curl https://sh.rustup.rs -sSf | sh`
 - Install libusb : `brew install libusb`
-- Install (& build) [GoXlr-Utility](https://github.com/GoXLR-on-Linux/GoXLR-Utility)
+- Install (& build) [GoXlr-Utility](https://github.com/GoXLR-on-Linux/GoXLR-Utility) so:
+    - Run in the folder of your choice: `git clone https://github.com/GoXLR-on-Linux/GoXLR-Utility.git`
+    - `cd GoXLR-Utility`
+    - `cargo build` (or `cargo install --path daemon` & `cargo install --path client`)
 
 #### Install the App:
 
@@ -24,3 +27,16 @@ This project is at an really early state, and is not really ready for use. I'm w
 #### And the most important...
 
 - Have a GoXlr (it helps)
+
+## Notes
+
+- The GoXlr can be initialized without restarting (no need to reboot each time your device loose power)
+- The app itselfs do no more than provide a graphic control of the GoXlr-Utility that you've installed below, and creating the sound outputs.
+
+## ToDo
+
+- Synchronize sliders and pickers with the actual physical configuration of the GoXlr
+- Add Chat mic / broadcast mix support (mic in general)
+- Add other features of the GoXlr (profiles, colors, micro etc)
+- Create custom plugin to communicate directly with the GoXlr without need to use another project
+- Many more.
