@@ -1,4 +1,4 @@
-#  <img src="https://media.discordapp.net/attachments/756659826045485088/968640294033686619/icon_128x128.png" width="50"> GoXlr for Mac
+#  <img src="https://media.discordapp.net/attachments/756659826045485088/968640294033686619/icon_128x128.png" width="30"> GoXlr for Mac
 ### Macos app for managing GoXlr without any VM
 
 For now, full control & compatibility is not possible on mac, you still need a windows vm if you want to update colors, mic & effects but - unlike what TC-helicon said, the device is perfectly compatible with Macos and this app shows it.
