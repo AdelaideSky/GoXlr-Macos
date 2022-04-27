@@ -3,7 +3,7 @@
 
 For now, full control & compatibility is not possible on mac, you still need a windows VM if you want to update colors, mic & effects but - unlike what TC-helicon said, the device is perfectly compatible with Macos and this app shows it.
 
-Oh also, I have absolutely no link with TC-Helicon, i'm not affiliated with them and this project also.. The official driver is on their website and it's not their responsability if there is any damage to your device (GoXlr/GoXlr mini). Use the software at your own risk ! (I never had problems but shht)
+Oh also, I have absolutely no link with TC-Helicon, i'm not affiliated with them and neither is this project. The official driver is on their website and it's not their responsibility if there is any damage to your device (GoXlr/GoXlr mini).
 
 ## Warning
 
