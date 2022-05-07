@@ -73,7 +73,7 @@ struct ControlView: View {
             if want == "systemvolume" {returnvalue = systemvolume}
             if want == "samplevolume" {returnvalue = samplevolume}
             if want == "headphonesvolume" {returnvalue = headphonesvolume}
-            if want == "micmonitiorvolume" {returnvalue = micmonitorvolume}
+            if want == "micmonitorvolume" {returnvalue = micmonitorvolume}
             
         } catch {
             let error = error as! ShellOutError
