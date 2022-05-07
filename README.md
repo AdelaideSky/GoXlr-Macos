@@ -39,4 +39,4 @@ This project is at a really early stage, and is not really ready for use. I'm wo
 - Add chat mic / broadcast mix support (all mic system in general)
 - Add other features of the GoXlr (profiles, colors, micro etc)
 - Create a custom plugin to communicate directly with the GoXlr without the need to use another project
-- Many more.
+- Many more...
