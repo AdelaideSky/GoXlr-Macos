@@ -5,8 +5,10 @@
 //  Created by Adélaïde Sky on 24/04/2022.
 //
 
+
 import SwiftUI
 struct ContentView: View {
+    
     
     private let tabs = ["Control", "Settings"]
     @State private var selectedTab = 0

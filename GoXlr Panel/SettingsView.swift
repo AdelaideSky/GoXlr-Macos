@@ -49,6 +49,8 @@ struct SettingsView: View {
                         chat?.setPreferredChannelsForStereo(channels: StereoPair(left: 5, right: 6), scope: Scope.output)
                         let music = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Music", uid: "music")
                         music?.setPreferredChannelsForStereo(channels: StereoPair(left: 7, right: 8), scope: Scope.output)
+                        let sample = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Sample", uid: "sample")
+                        sample?.setPreferredChannelsForStereo(channels: StereoPair(left: 9, right: 10), scope: Scope.output)
                         print("done")
                     }
         } message: {
