@@ -216,6 +216,30 @@ struct ControlView: View {
             selectedSliderB = String(state[4])
             selectedSliderC = String(state[5])
             selectedSliderD = String(state[6])
+            if state[3] == "linein" {
+                selectedSliderA = "line-in"
+            }
+            if state[4] == "linein" {
+                selectedSliderB = "line-in"
+            }
+            if state[5] == "linein" {
+                selectedSliderC = "line-in"
+            }
+            if state[6] == "linein" {
+                selectedSliderD = "line-in"
+            }
+            if state[3] == "lineout" {
+                selectedSliderA = "line-out"
+            }
+            if state[4] == "lineout" {
+                selectedSliderB = "line-out"
+            }
+            if state[5] == "lineout" {
+                selectedSliderC = "line-out"
+            }
+            if state[6] == "lineout" {
+                selectedSliderD = "line-out"
+            }
         }
     }
     func InitialUpdate() {

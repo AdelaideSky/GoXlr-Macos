@@ -54,6 +54,13 @@ struct AboutView: View {
                     .font(.system(size: 15))
                     .fontWeight(.light)
             }
+            Text("3rd party licenses")
+                .font(.system(size: 25))
+                .fontWeight(.light)
+                .underline()
+                .foregroundColor(.blue)
+                .onTapGesture {
+                    NSWorkspace.shared.open(NSURL(string: "https://github.com/GoXLR-on-Linux/GoXLR-Utility")! as URL)
             Text("©2022 Adélaïde Sky | MIT License")
                 .padding(.top, 150)
             

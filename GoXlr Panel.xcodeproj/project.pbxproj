@@ -32,16 +32,19 @@
 		70FCBB78282AEBE80028D9D4 /* Sliders in Frameworks */ = {isa = PBXBuildFile; productRef = 70FCBB77282AEBE80028D9D4 /* Sliders */; };
 		70FCBB7C282B0D2D0028D9D4 /* NotCreatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBB7B282B0D2D0028D9D4 /* NotCreatedView.swift */; };
 		70FCBB7E282B0F850028D9D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBB7D282B0F850028D9D4 /* HomeView.swift */; };
-		70FCBBB5282B18C30028D9D4 /* NotCreatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBA3282B18C30028D9D4 /* NotCreatedView.swift */; };
-		70FCBBB6282B18C30028D9D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBA4282B18C30028D9D4 /* SettingsView.swift */; };
-		70FCBBB7282B18C30028D9D4 /* GoXlr_PanelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBA5282B18C30028D9D4 /* GoXlr_PanelApp.swift */; };
-		70FCBBB9282B18C30028D9D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBA7282B18C30028D9D4 /* HomeView.swift */; };
-		70FCBBBD282B18C30028D9D4 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBBAF282B18C30028D9D4 /* goxlr-daemon */; };
-		70FCBBBE282B18C30028D9D4 /* goxlr-client in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBBB0282B18C30028D9D4 /* goxlr-client */; };
-		70FCBBBF282B18C30028D9D4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBBB1282B18C30028D9D4 /* MainMenu.xib */; };
-		70FCBBC0282B18C30028D9D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBB2282B18C30028D9D4 /* ContentView.swift */; };
-		70FCBBC1282B18C30028D9D4 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBB3282B18C30028D9D4 /* ControlView.swift */; };
 		70FCBBC3282BB5D90028D9D4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBC2282BB5D90028D9D4 /* AboutView.swift */; };
+		70FCBBFF282BCC620028D9D4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBEA282BCC620028D9D4 /* AboutView.swift */; };
+		70FCBC00282BCC620028D9D4 /* NotCreatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBEB282BCC620028D9D4 /* NotCreatedView.swift */; };
+		70FCBC01282BCC620028D9D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBEC282BCC620028D9D4 /* SettingsView.swift */; };
+		70FCBC02282BCC620028D9D4 /* GoXlr_PanelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBED282BCC620028D9D4 /* GoXlr_PanelApp.swift */; };
+		70FCBC03282BCC620028D9D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBBEE282BCC620028D9D4 /* Assets.xcassets */; };
+		70FCBC04282BCC620028D9D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBEF282BCC620028D9D4 /* HomeView.swift */; };
+		70FCBC06282BCC620028D9D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBBF3282BCC620028D9D4 /* Preview Assets.xcassets */; };
+		70FCBC0B282BCC620028D9D4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBBFB282BCC620028D9D4 /* MainMenu.xib */; };
+		70FCBC0C282BCC620028D9D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBFC282BCC620028D9D4 /* ContentView.swift */; };
+		70FCBC0D282BCC620028D9D4 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBFD282BCC620028D9D4 /* ControlView.swift */; };
+		70FCBC0F282BDD890028D9D4 /* LICENSE-3RD-PARTY in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBC0E282BDD880028D9D4 /* LICENSE-3RD-PARTY */; };
+		70FCBC10282BDD890028D9D4 /* LICENSE-3RD-PARTY in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBC0E282BDD880028D9D4 /* LICENSE-3RD-PARTY */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,21 +65,19 @@
 		70FCBB71282AA3660028D9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70FCBB7B282B0D2D0028D9D4 /* NotCreatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotCreatedView.swift; sourceTree = "<group>"; };
 		70FCBB7D282B0F850028D9D4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		70FCBBA3282B18C30028D9D4 /* NotCreatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotCreatedView.swift; sourceTree = "<group>"; };
-		70FCBBA4282B18C30028D9D4 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		70FCBBA5282B18C30028D9D4 /* GoXlr_PanelApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelApp.swift; sourceTree = "<group>"; };
-		70FCBBA6282B18C30028D9D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		70FCBBA7282B18C30028D9D4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		70FCBBA9282B18C30028D9D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		70FCBBAC282B18C30028D9D4 /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
-		70FCBBAD282B18C30028D9D4 /* goxlr-client */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-client"; sourceTree = "<group>"; };
-		70FCBBAF282B18C30028D9D4 /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
-		70FCBBB0282B18C30028D9D4 /* goxlr-client */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-client"; sourceTree = "<group>"; };
-		70FCBBB1282B18C30028D9D4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		70FCBBB2282B18C30028D9D4 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		70FCBBB3282B18C30028D9D4 /* ControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
-		70FCBBB4282B18C30028D9D4 /* GoXlr_Panel.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = GoXlr_Panel.entitlements; sourceTree = "<group>"; };
 		70FCBBC2282BB5D90028D9D4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		70FCBBEA282BCC620028D9D4 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		70FCBBEB282BCC620028D9D4 /* NotCreatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotCreatedView.swift; sourceTree = "<group>"; };
+		70FCBBEC282BCC620028D9D4 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		70FCBBED282BCC620028D9D4 /* GoXlr_PanelApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelApp.swift; sourceTree = "<group>"; };
+		70FCBBEE282BCC620028D9D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70FCBBEF282BCC620028D9D4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		70FCBBF3282BCC620028D9D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70FCBBFB282BCC620028D9D4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		70FCBBFC282BCC620028D9D4 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		70FCBBFD282BCC620028D9D4 /* ControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		70FCBBFE282BCC620028D9D4 /* GoXlr_Panel.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = GoXlr_Panel.entitlements; sourceTree = "<group>"; };
+		70FCBC0E282BDD880028D9D4 /* LICENSE-3RD-PARTY */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LICENSE-3RD-PARTY"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +125,10 @@
 		70A4909328159FA300BB2D4C = {
 			isa = PBXGroup;
 			children = (
-				70FCBBA2282B18C30028D9D4 /* GoXlr Panel */,
 				70FCBB71282AA3660028D9D4 /* Info.plist */,
 				70D0127C2815EF1400DA0E1B /* README.md */,
 				70A4909E28159FA300BB2D4C /* GoXlr Panel */,
+				70FCBBE9282BCC620028D9D4 /* GoXlr Panel */,
 				70A4909D28159FA300BB2D4C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,6 +157,7 @@
 				70FCBB7B282B0D2D0028D9D4 /* NotCreatedView.swift */,
 				70FCBB7D282B0F850028D9D4 /* HomeView.swift */,
 				70FCBBC2282BB5D90028D9D4 /* AboutView.swift */,
+				70FCBC0E282BDD880028D9D4 /* LICENSE-3RD-PARTY */,
 			);
 			path = "GoXlr Panel";
 			sourceTree = "<group>";
@@ -168,57 +170,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		70FCBBA2282B18C30028D9D4 /* GoXlr Panel */ = {
+		70FCBBE9282BCC620028D9D4 /* GoXlr Panel */ = {
 			isa = PBXGroup;
 			children = (
-				70FCBBA3282B18C30028D9D4 /* NotCreatedView.swift */,
-				70FCBBA4282B18C30028D9D4 /* SettingsView.swift */,
-				70FCBBA5282B18C30028D9D4 /* GoXlr_PanelApp.swift */,
-				70FCBBA6282B18C30028D9D4 /* Assets.xcassets */,
-				70FCBBA7282B18C30028D9D4 /* HomeView.swift */,
-				70FCBBA8282B18C30028D9D4 /* Preview Content */,
-				70FCBBAA282B18C30028D9D4 /* Binaries */,
-				70FCBBB1282B18C30028D9D4 /* MainMenu.xib */,
-				70FCBBB2282B18C30028D9D4 /* ContentView.swift */,
-				70FCBBB3282B18C30028D9D4 /* ControlView.swift */,
-				70FCBBB4282B18C30028D9D4 /* GoXlr_Panel.entitlements */,
+				70FCBBEA282BCC620028D9D4 /* AboutView.swift */,
+				70FCBBEB282BCC620028D9D4 /* NotCreatedView.swift */,
+				70FCBBEC282BCC620028D9D4 /* SettingsView.swift */,
+				70FCBBED282BCC620028D9D4 /* GoXlr_PanelApp.swift */,
+				70FCBBEE282BCC620028D9D4 /* Assets.xcassets */,
+				70FCBBEF282BCC620028D9D4 /* HomeView.swift */,
+				70FCBBF2282BCC620028D9D4 /* Preview Content */,
+				70FCBBFB282BCC620028D9D4 /* MainMenu.xib */,
+				70FCBBFC282BCC620028D9D4 /* ContentView.swift */,
+				70FCBBFD282BCC620028D9D4 /* ControlView.swift */,
+				70FCBBFE282BCC620028D9D4 /* GoXlr_Panel.entitlements */,
 			);
 			path = "GoXlr Panel";
 			sourceTree = "<group>";
 		};
-		70FCBBA8282B18C30028D9D4 /* Preview Content */ = {
+		70FCBBF2282BCC620028D9D4 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				70FCBBA9282B18C30028D9D4 /* Preview Assets.xcassets */,
+				70FCBBF3282BCC620028D9D4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		70FCBBAA282B18C30028D9D4 /* Binaries */ = {
-			isa = PBXGroup;
-			children = (
-				70FCBBAB282B18C30028D9D4 /* Intel */,
-				70FCBBAE282B18C30028D9D4 /* M1 */,
-			);
-			path = Binaries;
-			sourceTree = "<group>";
-		};
-		70FCBBAB282B18C30028D9D4 /* Intel */ = {
-			isa = PBXGroup;
-			children = (
-				70FCBBAC282B18C30028D9D4 /* goxlr-daemon */,
-				70FCBBAD282B18C30028D9D4 /* goxlr-client */,
-			);
-			path = Intel;
-			sourceTree = "<group>";
-		};
-		70FCBBAE282B18C30028D9D4 /* M1 */ = {
-			isa = PBXGroup;
-			children = (
-				70FCBBAF282B18C30028D9D4 /* goxlr-daemon */,
-				70FCBBB0282B18C30028D9D4 /* goxlr-client */,
-			);
-			path = M1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,10 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7069D859282A6221008356E1 /* Preview Assets.xcassets in Resources */,
-				70FCBBBF282B18C30028D9D4 /* MainMenu.xib in Resources */,
-				70FCBBBD282B18C30028D9D4 /* goxlr-daemon in Resources */,
+				70FCBC0B282BCC620028D9D4 /* MainMenu.xib in Resources */,
+				70FCBC03282BCC620028D9D4 /* Assets.xcassets in Resources */,
+				70FCBC06282BCC620028D9D4 /* Preview Assets.xcassets in Resources */,
 				7069D85B282A6221008356E1 /* Assets.xcassets in Resources */,
-				70FCBBBE282B18C30028D9D4 /* goxlr-client in Resources */,
+				70FCBC10282BDD890028D9D4 /* LICENSE-3RD-PARTY in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +310,7 @@
 				7011E0A4281855EB00573593 /* MainMenu.xib in Resources */,
 				7069D867282A62CD008356E1 /* goxlr-client in Resources */,
 				70FCBB72282AA3660028D9D4 /* Info.plist in Resources */,
+				70FCBC0F282BDD890028D9D4 /* LICENSE-3RD-PARTY in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,16 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FCBC04282BCC620028D9D4 /* HomeView.swift in Sources */,
+				70FCBC01282BCC620028D9D4 /* SettingsView.swift in Sources */,
+				70FCBC0D282BCC620028D9D4 /* ControlView.swift in Sources */,
 				7069D851282A6221008356E1 /* ContentView.swift in Sources */,
 				7069D852282A6221008356E1 /* SettingsView.swift in Sources */,
-				70FCBBB7282B18C30028D9D4 /* GoXlr_PanelApp.swift in Sources */,
+				70FCBC02282BCC620028D9D4 /* GoXlr_PanelApp.swift in Sources */,
 				7069D853282A6221008356E1 /* ControlView.swift in Sources */,
-				70FCBBC1282B18C30028D9D4 /* ControlView.swift in Sources */,
-				70FCBBB6282B18C30028D9D4 /* SettingsView.swift in Sources */,
-				70FCBBC0282B18C30028D9D4 /* ContentView.swift in Sources */,
-				70FCBBB9282B18C30028D9D4 /* HomeView.swift in Sources */,
-				70FCBBB5282B18C30028D9D4 /* NotCreatedView.swift in Sources */,
+				70FCBC0C282BCC620028D9D4 /* ContentView.swift in Sources */,
 				7069D854282A6221008356E1 /* GoXlr_PanelApp.swift in Sources */,
+				70FCBBFF282BCC620028D9D4 /* AboutView.swift in Sources */,
+				70FCBC00282BCC620028D9D4 /* NotCreatedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
