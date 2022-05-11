@@ -41,7 +41,7 @@ struct AboutView: View {
                     .font(.system(size: 20))
                     .fontWeight(.ultraLight)
                     .padding(.top, 1)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 2)
             }
             HStack {
                 Text("@FrostyCoolSlug (Craig McLure) |")
@@ -55,15 +55,19 @@ struct AboutView: View {
                     .fontWeight(.light)
             }
             Text("3rd party licenses")
-                .font(.system(size: 25))
+                .font(.system(size: 15))
                 .fontWeight(.light)
                 .underline()
                 .foregroundColor(.blue)
+                .padding(.top, 3)
                 .onTapGesture {
                     NSWorkspace.shared.open(NSURL(string: "https://github.com/Adelenade/GoXlr-Macos/blob/main/LICENSE-3RD-PARTY")! as URL)
                 }
             Text("©2022 Adélaïde Sky | MIT License")
-                .padding(.top, 150)
+                .padding(.top, 130)
+                .onTapGesture {
+                    NSWorkspace.shared.open(NSURL(string: "https://github.com/Adelenade/GoXlr-Macos/blob/main/LICENSE")! as URL)
+                }
             
         }.navigationTitle(tabname!)
                 
