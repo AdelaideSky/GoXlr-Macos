@@ -60,7 +60,8 @@ struct AboutView: View {
                 .underline()
                 .foregroundColor(.blue)
                 .onTapGesture {
-                    NSWorkspace.shared.open(NSURL(string: "https://github.com/GoXLR-on-Linux/GoXLR-Utility")! as URL)
+                    NSWorkspace.shared.open(NSURL(string: "https://github.com/Adelenade/GoXlr-Macos/blob/main/LICENSE-3RD-PARTY")! as URL)
+                }
             Text("©2022 Adélaïde Sky | MIT License")
                 .padding(.top, 150)
             
