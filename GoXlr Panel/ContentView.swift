@@ -1,39 +1,93 @@
-//
-//  ContentView.swift
-//  GoXlr Panel
-//
-//  Created by Adélaïde Sky on 24/04/2022.
-//
-
 
 import SwiftUI
+
 struct ContentView: View {
-    
-    
-    private let tabs = ["Control", "Settings"]
-    @State private var selectedTab = 0
-    
     var body: some View {
-        VStack {
-            if selectedTab == 0 {
-                ControlView()
-            }
-            if selectedTab == 1 {
-                SettingsView()
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .principal) {
+        NavigationView {
+            List {
+                NavigationLink(destination: HomeView()) {
+                    Label("Home", systemImage: "house")
+                }
                 
-                Picker("", selection: $selectedTab) {
-                    ForEach(tabs.indices) { i in
-                        Text(self.tabs[i]).tag(i)
+                Spacer()
+                
+                Text("AUDIO")
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+                Group{
+                    NavigationLink(destination: NotCreatedView()) {
+                        Label("Mic", systemImage: "mic")
+                    }
+                    NavigationLink(destination: ControlView()) {
+                        Label("Mixer", systemImage: "slider.vertical.3")
+                    }
+                    NavigationLink(destination: NotCreatedView()) {
+                        Label("Effects", systemImage: "fx")
+                    }
+                    NavigationLink(destination: NotCreatedView()) {
+                        Label("Sampler", systemImage: "waveform")
+                    }
+                    NavigationLink(destination: NotCreatedView()) {
+                        Label("Routing", systemImage: "app.connected.to.app.below.fill")
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding(.top, 8)
+                
+                Spacer()
+                
+                Text("LIGHTNING")
+                    .font(.system(size: 10))
+                    .fontWeight(.bold)
+                Group {
+                    NavigationLink(destination: NotCreatedView()) {
+                        Label("Global", systemImage: "sun.min")
+                    }
+                    NavigationLink(destination: NotCreatedView()) {
+                        Label("Mixer", systemImage: "slider.vertical.3")
+                    }
+                    NavigationLink(destination: NotCreatedView()) {
+                        Label("Effects", systemImage: "fx")
+                    }
+                    NavigationLink(destination: NotCreatedView()) {
+                        Label("Sampler", systemImage: "waveform")
+                    }
+                }
+                
+                Spacer()
+                
+                Divider()
+                Group {
+                    NavigationLink(destination: SettingsView()) {
+                        Label("Settings", systemImage: "gear")
+                    }
+                    NavigationLink(destination: AboutView()) {
+                        Label("About", systemImage: "info.circle")
+                    }
+                }
+                
             }
+            .listStyle(SidebarListStyle())
+            .navigationTitle("Explore")
+            .frame(minWidth: 150, idealWidth: 250, maxWidth: 300)
+            .toolbar {
+                ToolbarItem(placement: .navigation) {
+                    Button(action: toggleSidebar, label: {
+                        Image(systemName: "sidebar.left")
+                    })
+                }
+            }
+            
+            HomeView()
         }
-        .frame(minWidth: 800, minHeight: 400)
+    }
+}
+
+// Toggle Sidebar Function
+func toggleSidebar() {
+        NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
+}
+
+struct SidebarView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }

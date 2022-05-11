@@ -11,12 +11,15 @@ import SimplyCoreAudio
 let simplyCA = SimplyCoreAudio()
 
 struct SettingsView: View {
+    @State var tabname: String? = "Settings"
     @State private var showingAlert = false
     @State private var showingReminder = false
     @State private var alertMessage = "Unspecified error"
     let usrPath = FileManager.default.homeDirectoryForCurrentUser
+
     
     var body: some View {
+        
         Button("Launch Daemon") {
             do {
                 let output = try shellOut(to: "\(usrPath.path)/.cargo/bin/goxlr-daemon", arguments: [""])
@@ -64,6 +67,6 @@ struct SettingsView: View {
         Button("Install Daemon") {
             alertMessage = "Not yet implemented, you have to install it manually !"
             showingAlert=true
-        }
+        }.navigationTitle(tabname!)
     }
 }
