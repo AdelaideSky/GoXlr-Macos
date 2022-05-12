@@ -25,14 +25,6 @@
 		70D298E5282D410D0041E3A4 /* GoLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D298E3282D410D0041E3A4 /* GoLib.swift */; };
 		70D298E7282D437F0041E3A4 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D298E6282D437F0041E3A4 /* RoutingView.swift */; };
 		70D298E8282D437F0041E3A4 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D298E6282D437F0041E3A4 /* RoutingView.swift */; };
-		70D2992B282D7F060041E3A4 /* xpchandler in Resources */ = {isa = PBXBuildFile; fileRef = 70D29927282D7F060041E3A4 /* xpchandler */; };
-		70D2992C282D7F060041E3A4 /* xpchandler in Resources */ = {isa = PBXBuildFile; fileRef = 70D29927282D7F060041E3A4 /* xpchandler */; };
-		70D2992D282D7F060041E3A4 /* goxlr-initialiser in Resources */ = {isa = PBXBuildFile; fileRef = 70D29928282D7F060041E3A4 /* goxlr-initialiser */; };
-		70D2992E282D7F060041E3A4 /* goxlr-initialiser in Resources */ = {isa = PBXBuildFile; fileRef = 70D29928282D7F060041E3A4 /* goxlr-initialiser */; };
-		70D2992F282D7F060041E3A4 /* com.adesky.goxlr.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70D29929282D7F060041E3A4 /* com.adesky.goxlr.plist */; };
-		70D29930282D7F060041E3A4 /* com.adesky.goxlr.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70D29929282D7F060041E3A4 /* com.adesky.goxlr.plist */; };
-		70D29931282D7F060041E3A4 /* loadagent.sh in Resources */ = {isa = PBXBuildFile; fileRef = 70D2992A282D7F060041E3A4 /* loadagent.sh */; };
-		70D29932282D7F060041E3A4 /* loadagent.sh in Resources */ = {isa = PBXBuildFile; fileRef = 70D2992A282D7F060041E3A4 /* loadagent.sh */; };
 		70FCBB7C282B0D2D0028D9D4 /* NotCreatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBB7B282B0D2D0028D9D4 /* NotCreatedView.swift */; };
 		70FCBB7E282B0F850028D9D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBB7D282B0F850028D9D4 /* HomeView.swift */; };
 		70FCBBC3282BB5D90028D9D4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBC2282BB5D90028D9D4 /* AboutView.swift */; };
@@ -322,14 +314,10 @@
 			files = (
 				70FCBC14282BE16F0028D9D4 /* goxlr-daemon in Resources */,
 				70FCBC15282BE16F0028D9D4 /* goxlr-client in Resources */,
-				70D29930282D7F060041E3A4 /* com.adesky.goxlr.plist in Resources */,
 				7069D859282A6221008356E1 /* Preview Assets.xcassets in Resources */,
 				70FCBC0B282BCC620028D9D4 /* MainMenu.xib in Resources */,
-				70D2992C282D7F060041E3A4 /* xpchandler in Resources */,
 				70FCBC03282BCC620028D9D4 /* Assets.xcassets in Resources */,
 				70FCBC10282BDD890028D9D4 /* LICENSE-3RD-PARTY in Resources */,
-				70D29932282D7F060041E3A4 /* loadagent.sh in Resources */,
-				70D2992E282D7F060041E3A4 /* goxlr-initialiser in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,14 +327,10 @@
 			files = (
 				70A490A728159FA500BB2D4C /* Preview Assets.xcassets in Resources */,
 				7069D866282A62CD008356E1 /* goxlr-daemon in Resources */,
-				70D2992F282D7F060041E3A4 /* com.adesky.goxlr.plist in Resources */,
 				70A490A428159FA500BB2D4C /* Assets.xcassets in Resources */,
 				7011E0A4281855EB00573593 /* MainMenu.xib in Resources */,
-				70D2992B282D7F060041E3A4 /* xpchandler in Resources */,
 				7069D867282A62CD008356E1 /* goxlr-client in Resources */,
 				70FCBC0F282BDD890028D9D4 /* LICENSE-3RD-PARTY in Resources */,
-				70D29931282D7F060041E3A4 /* loadagent.sh in Resources */,
-				70D2992D282D7F060041E3A4 /* goxlr-initialiser in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
