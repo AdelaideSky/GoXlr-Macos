@@ -27,7 +27,7 @@ struct ContentView: View {
                     NavigationLink(destination: NotCreatedView()) {
                         Label("Sampler", systemImage: "waveform")
                     }
-                    NavigationLink(destination: NotCreatedView()) {
+                    NavigationLink(destination: RoutingView()) {
                         Label("Routing", systemImage: "app.connected.to.app.below.fill")
                     }
                 }
