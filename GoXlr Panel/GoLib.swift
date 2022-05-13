@@ -137,7 +137,7 @@ func Daemon(command: String) {
 func GetGoXlrRouting() -> Array<Bool> {
     var returnvalue: Array<Bool> = []
     do {
-        let output = ClientCommand(arg1: "", arg2: "")
+        let output = ClientCommand(arg1: "--status", arg2: "")
         print(output)
         let informations = output.components(separatedBy: "\n")
         if informations.count <= 2 {
@@ -271,7 +271,7 @@ func GetGoXlrRouting() -> Array<Bool> {
 func GetGoXlrState() -> Array<String> {
     var returnvalue = [""]
     do {
-        let output = ClientCommand(arg1: "", arg2: "")
+        let output = ClientCommand(arg1: "--status", arg2: "")
         print(output)
         let informations = output.components(separatedBy: "\n")
         if informations.count <= 2 {
@@ -281,6 +281,7 @@ func GetGoXlrState() -> Array<String> {
         returnvalue.append(type)
         let profile = String(informations[13])
         returnvalue.append(profile)
+        
         let fadera = String(informations[14]).components(separatedBy: " ")[3].dropLast(1).lowercased()
         returnvalue.append(fadera)
         let faderb = String(informations[15]).components(separatedBy: " ")[3].dropLast(1).lowercased()
@@ -289,6 +290,7 @@ func GetGoXlrState() -> Array<String> {
         returnvalue.append(faderc)
         let faderd = String(informations[17]).components(separatedBy: " ")[3].dropLast(1).lowercased()
         returnvalue.append(faderd)
+        
         let micvolume = String(String(informations[18]).components(separatedBy: " ")[2].dropLast(1))
         returnvalue.append(micvolume)
         let lineinvolume = String(String(informations[19]).components(separatedBy: " ")[2].dropLast(1))
@@ -311,6 +313,7 @@ func GetGoXlrState() -> Array<String> {
         returnvalue.append(micmonitorvolume)
         let lineoutvolume = String(String(informations[28]).components(separatedBy: " ")[2].dropLast(1))
         returnvalue.append(lineoutvolume)
+        
     }
     return(returnvalue)
 }
@@ -324,10 +327,10 @@ func SaveProfile() {
 
 
 func GoXlrConnected() -> String {
-    if ClientCommand(arg1: "", arg2: "").contains("Error: Could not connect to the GoXLR daemon process") {
+    if ClientCommand(arg1: "--status", arg2: "").contains("Error: Could not connect to the GoXLR daemon process") {
     return("no")
     }
-    else if ClientCommand(arg1: "", arg2: "").contains("Error: Multiple GoXLR devices are connected, please specify which one to control") {
+    else if ClientCommand(arg1: "--status", arg2: "").contains("Error: Multiple GoXLR devices are connected, please specify which one to control") {
         return("no")
     }
     else {
@@ -337,7 +340,9 @@ func GoXlrConnected() -> String {
 
 func LaunchDaemon() {
     Daemon(command:"start")
-    sleep(1)
+    if ClientCommand(arg1: "--status", arg2: "").contains("Error: Could not connect to the GoXLR daemon process") {
+        sleep(1)
+    }
 }
 func ToggleRouting(chanin: String, chanout: String, state: Bool) {
     var status = ""
@@ -359,47 +364,118 @@ func FirstGetRouting() -> Array<Bool> {
     return(GetGoXlrRouting())
 }
 
+
 func RoutingListSection() -> [ListSection] {
-    let data = FirstGetRouting()
-    var sections: [ListSection] = [
-        ListSection(label: "micstream", enabled: data[0]),
-        ListSection(label: "micchat", enabled: data[1]),
-        ListSection(label: "michead", enabled: data[2]),
-        ListSection(label: "micline", enabled: data[3]),
-        ListSection(label: "micsampl", enabled: data[4]),
-        ListSection(label: "chatstream", enabled: data[5]),
-        ListSection(label: "chathead", enabled: data[6]),
-        ListSection(label: "chatline", enabled: data[7]),
-        ListSection(label: "chatsampl", enabled: data[8]),
-        ListSection(label: "musicstream", enabled: data[9]),
-        ListSection(label: "musicchat", enabled: data[10]),
-        ListSection(label: "musichead", enabled: data[11]),
-        ListSection(label: "musicline", enabled: data[12]),
-        ListSection(label: "musicsampl", enabled: data[13]),
-        ListSection(label: "gamestream", enabled: data[14]),
-        ListSection(label: "gamechat", enabled: data[15]),
-        ListSection(label: "gamehead", enabled: data[16]),
-        ListSection(label: "gameline", enabled: data[17]),
-        ListSection(label: "gamesampl", enabled: data[18]),
-        ListSection(label: "consolestream", enabled: data[19]),
-        ListSection(label: "consolechat", enabled: data[20]),
-        ListSection(label: "consolehead", enabled: data[21]),
-        ListSection(label: "consoleline", enabled: data[22]),
-        ListSection(label: "consolesampl", enabled: data[23]),
-        ListSection(label: "lineinstream", enabled: data[24]),
-        ListSection(label: "lineinchat", enabled: data[25]),
-        ListSection(label: "lineinhead", enabled: data[26]),
-        ListSection(label: "lineinline", enabled: data[27]),
-        ListSection(label: "lineinsampl", enabled: data[28]),
-        ListSection(label: "systemstream", enabled: data[29]),
-        ListSection(label: "systemchat", enabled: data[30]),
-        ListSection(label: "systemhead", enabled: data[31]),
-        ListSection(label: "systemline", enabled: data[32]),
-        ListSection(label: "systemsampl", enabled: data[33]),
-        ListSection(label: "samplstream", enabled: data[34]),
-        ListSection(label: "samplchat", enabled: data[35]),
-        ListSection(label: "samplhead", enabled: data[36]),
-        ListSection(label: "samplline", enabled: data[37]),
-    ]
-    return(sections)
+    LaunchDaemon()
+    do {
+        let output = ClientCommand(arg1: "--status", arg2: "")
+        print(output)
+        let informations = output.components(separatedBy: "\n")
+        if informations.count <= 2 {
+        }
+        let sections: [ListSection] = [
+            ListSection(label: "micstream", enabled: {if String(informations[35])[19] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "micchat", enabled: {if String(informations[37])[19] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "michead", enabled: {if String(informations[34])[19] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "micline", enabled: {if String(informations[36])[19] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "micsampl", enabled: {if String(informations[38])[19] == "X" {return(true)} else {return(false)}}()),
+            
+            
+            ListSection(label: "chatstream", enabled: {if String(informations[35])[29] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "chathead", enabled: {if String(informations[34])[29] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "chatline", enabled: {if String(informations[36])[29] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "chatsampl", enabled: {if String(informations[38])[29] == "X" {return(true)} else {return(false)}}()),
+            
+            
+            ListSection(label: "musicstream", enabled: {if String(informations[35])[37] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "musicchat", enabled: {if String(informations[37])[37] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "musichead", enabled: {if String(informations[34])[37] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "musicline", enabled: {if String(informations[36])[37] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "musicsampl", enabled: {if String(informations[38])[37] == "X" {return(true)} else {return(false)}}()),
+            
+            
+            ListSection(label: "gamestream", enabled: {if String(informations[35])[44] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "gamechat", enabled: {if String(informations[37])[44] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "gamehead", enabled: {if String(informations[34])[44] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "gameline", enabled: {if String(informations[36])[44] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "gamesampl", enabled: {if String(informations[38])[44] == "X" {return(true)} else {return(false)}}()),
+            
+            
+            ListSection(label: "consolestream", enabled: {if String(informations[35])[53] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "consolechat", enabled: {if String(informations[37])[53] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "consolehead", enabled: {if String(informations[34])[53] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "consoleline", enabled: {if String(informations[36])[53] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "consolesampl", enabled: {if String(informations[38])[53] == "X" {return(true)} else {return(false)}}()),
+            
+            
+            ListSection(label: "lineinstream", enabled: {if String(informations[35])[62] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "lineinchat", enabled: {if String(informations[37])[62] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "lineinhead", enabled: {if String(informations[34])[62] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "lineinline", enabled: {if String(informations[36])[62] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "lineinsampl", enabled: {if String(informations[38])[62] == "X" {return(true)} else {return(false)}}()),
+            
+            
+            ListSection(label: "systemstream", enabled: {if String(informations[35])[71] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "systemchat", enabled: {if String(informations[37])[71] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "systemhead", enabled: {if String(informations[34])[71] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "systemline", enabled: {if String(informations[36])[71] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "systemsampl", enabled: {if String(informations[38])[71] == "X" {return(true)} else {return(false)}}()),
+            
+            
+            ListSection(label: "samplstream", enabled: {if String(informations[35])[81] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "samplchat", enabled: {if String(informations[37])[81] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "samplhead", enabled: {if String(informations[34])[81] == "X" {return(true)} else {return(false)}}()),
+            ListSection(label: "samplline", enabled: {if String(informations[36])[81] == "X" {return(true)} else {return(false)}}()),
+        ]
+        return(sections)
+
+        
+        
+    }
+}
+func GetFadersAssignement() -> Array<String> {
+    var returnvalue = [""]
+    do {
+        let output = ClientCommand(arg1: "--status", arg2: "")
+        print(output)
+        let informations = output.components(separatedBy: "\n")
+        if informations.count <= 2 {
+                return(["nil"])
+        }
+        let fadera = String(informations[14]).components(separatedBy: " ")[3].dropLast(1).lowercased()
+        returnvalue.append(fadera)
+        let faderb = String(informations[15]).components(separatedBy: " ")[3].dropLast(1).lowercased()
+        returnvalue.append(faderb)
+        let faderc = String(informations[16]).components(separatedBy: " ")[3].dropLast(1).lowercased()
+        returnvalue.append(faderc)
+        let faderd = String(informations[17]).components(separatedBy: " ")[3].dropLast(1).lowercased()
+        returnvalue.append(faderd)
+    }
+    return(returnvalue)
+}
+
+func GetMuteBehaviours() -> Array<String> {
+    var returnvalue = [""]
+    do {
+        let output = ClientCommand(arg1: "--status", arg2: "")
+        print(output)
+        let informations = output.components(separatedBy: "\n")
+        if informations.count <= 2 {
+                return(["nil"])
+        }
+        var mutefadera = String(informations[14]).components(separatedBy: " ")[6]
+        if mutefadera == "All" {mutefadera = "all"} else if mutefadera == "ToStream" {mutefadera = "to-stream"} else if mutefadera == "ToVoiceChat" {mutefadera = "to-voice-chat"} else if mutefadera == "ToPhones" {mutefadera = "to-phones"} else if mutefadera == "ToLineOut" {mutefadera = "to-line-out"}
+        returnvalue.append(mutefadera)
+        
+        var mutefaderb = String(informations[15]).components(separatedBy: " ")[6]
+        if mutefaderb == "All" {mutefaderb = "all"} else if mutefaderb == "ToStream" {mutefaderb = "to-stream"} else if mutefaderb == "ToVoiceChat" {mutefaderb = "to-voice-chat"} else if mutefaderb == "ToPhones" {mutefaderb = "to-phones"} else if mutefaderb == "ToLineOut" {mutefaderb = "to-line-out"}
+        returnvalue.append(mutefaderb)
+        var mutefaderc = String(informations[16]).components(separatedBy: " ")[6]
+        if mutefaderc == "All" {mutefaderc = "all"} else if mutefaderc == "ToStream" {mutefaderc = "to-stream"} else if mutefaderc == "ToVoiceChat" {mutefaderc = "to-voice-chat"} else if mutefaderc == "ToPhones" {mutefaderc = "to-phones"} else if mutefaderc == "ToLineOut" {mutefaderc = "to-line-out"}
+        returnvalue.append(mutefaderc)
+        var mutefaderd = String(informations[17]).components(separatedBy: " ")[6]
+        if mutefaderd == "All" {mutefaderd = "all"} else if mutefaderd == "ToStream" {mutefaderd = "to-stream"} else if mutefaderd == "ToVoiceChat" {mutefaderd = "to-voice-chat"} else if mutefaderd == "ToPhones" {mutefaderd = "to-phones"} else if mutefaderd == "ToLineOut" {mutefaderd = "to-line-out"}
+        returnvalue.append(mutefaderd)
+    }
+    return(returnvalue)
 }
