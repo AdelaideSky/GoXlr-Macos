@@ -41,7 +41,7 @@ struct ContentView: View {
                     NavigationLink(destination: NotCreatedView()) {
                         Label("Global", systemImage: "sun.min")
                     }
-                    NavigationLink(destination: NotCreatedView()) {
+                    NavigationLink(destination: LightMixerView()) {
                         Label("Mixer", systemImage: "slider.vertical.3")
                     }
                     NavigationLink(destination: NotCreatedView()) {

@@ -372,6 +372,12 @@ func RoutingListSection() -> [ListSection] {
         print(output)
         let informations = output.components(separatedBy: "\n")
         if informations.count <= 2 {
+            let nonez: [ListSection] = [
+                ListSection(label: "", enabled: false),
+                ListSection(label: "", enabled: false)
+            ]
+            
+            return(nonez)
         }
         let sections: [ListSection] = [
             ListSection(label: "micstream", enabled: {if String(informations[35])[19] == "X" {return(true)} else {return(false)}}()),
