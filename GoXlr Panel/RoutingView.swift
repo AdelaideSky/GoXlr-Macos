@@ -8,6 +8,13 @@
 import SwiftUI
 import ShellOut
 import UniformTypeIdentifiers
+
+extension Binding where Value == Bool {
+    func negate() -> Bool {
+        return !(self.wrappedValue)
+    }
+}
+
 struct CheckboxStyle: ToggleStyle {
  
     func makeBody(configuration: Self.Configuration) -> some View {
@@ -43,91 +50,13 @@ struct NotPossibleStyle: ToggleStyle {
 }
 struct RoutingView: View {
     @State var tabname: String? = "Routing"
-    @State var showFileChooser = false
     @State var toggle = false
-    
-    
-    @State var micstream = false
-    @State var micchat = false
-    @State var michead = false
-    @State var micline = false
-    @State var micsampl = false
-    @State var chatstream = false
-    @State var chathead = false
-    @State var chatline = false
-    @State var chatsampl = false
-    @State var musicstream = false
-    @State var musicchat = false
-    @State var musichead = false
-    @State var musicline = false
-    @State var musicsampl = false
-    @State var gamestream = false
-    @State var gamechat = false
-    @State var gamehead = false
-    @State var gameline = false
-    @State var gamesampl = false
-    @State var consolestream = false
-    @State var consolechat = false
-    @State var consolehead = false
-    @State var consoleline = false
-    @State var consolesampl = false
-    @State var lineinstream = false
-    @State var lineinchat = false
-    @State var lineinhead = false
-    @State var lineinline = false
-    @State var lineinsampl = false
-    @State var systemstream = false
-    @State var systemchat = false
-    @State var systemhead = false
-    @State var systemline = false
-    @State var systemsampl = false
-    @State var samplstream = false
-    @State var samplchat = false
-    @State var samplhead = false
-    @State var samplline = false
+    @State var showFileChooser = false
     let profiletype = UTType(filenameExtension: "goxlr")
+    
+    
+    @ObservedObject var model = ListModel()
 
-    func RoutingInit() {
-        let data = GetGoXlrState()
-        micstream = cBool(i: data[18])
-        micchat = cBool(i: data[19])
-        michead = cBool(i: data[20])
-        micline = cBool(i: data[21])
-        micsampl = cBool(i: data[22])
-        chatstream = cBool(i: data[23])
-        chathead = cBool(i: data[24])
-        chatline = cBool(i: data[25])
-        chatsampl = cBool(i: data[26])
-        musicstream = cBool(i: data[27])
-        musicchat = cBool(i: data[28])
-        musichead = cBool(i: data[29])
-        musicline = cBool(i: data[30])
-        musicsampl = cBool(i: data[31])
-        gamestream = cBool(i: data[32])
-        gamechat = cBool(i: data[33])
-        gamehead = cBool(i: data[34])
-        gameline = cBool(i: data[35])
-        gamesampl = cBool(i: data[36])
-        consolestream = cBool(i: data[37])
-        consolechat = cBool(i: data[38])
-        consolehead = cBool(i: data[39])
-        consoleline = cBool(i: data[40])
-        consolesampl = cBool(i: data[41])
-        lineinstream = cBool(i: data[42])
-        lineinchat = cBool(i: data[43])
-        lineinhead = cBool(i: data[44])
-        lineinline = cBool(i: data[45])
-        lineinsampl = cBool(i: data[46])
-        systemstream = cBool(i: data[47])
-        systemchat = cBool(i: data[48])
-        systemhead = cBool(i: data[49])
-        systemline = cBool(i: data[50])
-        systemsampl = cBool(i: data[51])
-        samplstream = cBool(i: data[52])
-        samplchat = cBool(i: data[53])
-        samplhead = cBool(i: data[54])
-        samplline = cBool(i: data[55])
-    }
     var body: some View {
         
         ScrollView(showsIndicators: false) {
@@ -161,287 +90,211 @@ struct RoutingView: View {
                             .font(.system(size: 15))
                             .fontWeight(.light)
                             .padding()
-                        Toggle("micstream", isOn: $micstream)
+                        Toggle("micstream", isOn: self.$model.sections[0].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: micstream) { value in
-                                        ToggleRouting(chanin: "microphone", chanout: "broadcast-mix", state: value)
-                                    }
-                        Toggle("micchat", isOn: $micchat)
+                        
+                        Toggle("micchat", isOn: self.$model.sections[1].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: micchat) { value in
-                                        ToggleRouting(chanin: "microphone", chanout: "chat-mic", state: value)
-                                    }
-                        Toggle("michead", isOn: $michead)
+                        
+                        Toggle("michead", isOn: self.$model.sections[2].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
                         .padding(.bottom, 30)
-                        .onChange(of: michead) { value in
-                                        ToggleRouting(chanin: "microphone", chanout: "headphones", state: value)
-                                    }
-                        Toggle("micline", isOn: $micline)
+                        
+                        Toggle("micline", isOn: self.$model.sections[3].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: micline) { value in
-                                        ToggleRouting(chanin: "microphone", chanout: "line-out", state: value)
-                                    }
-                        Toggle("micsampl", isOn: $micsampl)
+                        
+                        Toggle("micsampl", isOn: self.$model.sections[4].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: micsampl) { value in
-                                        ToggleRouting(chanin: "microphone", chanout: "sampler", state: value)
-                                    }
+                        
                     }
                     VStack(alignment: .center) {
                         Text("Chat")
                             .font(.system(size: 15))
                             .fontWeight(.light)
                             .padding()
-                        Toggle("chatstream", isOn: $chatstream)
+                        Toggle("chatstream", isOn: self.$model.sections[5].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: chatstream) { value in
-                                        ToggleRouting(chanin: "chat", chanout: "broadcast-mix", state: value)
-                                    }
+                        
                         Toggle("chatchat", isOn: $toggle)
                         .padding(15)
                         .toggleStyle(NotPossibleStyle())
-                        Toggle("chathead", isOn: $chathead)
+                        Toggle("chathead", isOn: self.$model.sections[6].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
                         .padding(.bottom, 30)
-                        .onChange(of: chathead) { value in
-                                        ToggleRouting(chanin: "chat", chanout: "headphones", state: value)
-                                    }
-                        Toggle("chatline", isOn: $chatline)
+                        
+                        Toggle("chatline", isOn: self.$model.sections[7].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: chatline) { value in
-                                        ToggleRouting(chanin: "chat", chanout: "line-out", state: value)
-                                    }
-                        Toggle("chatsampl", isOn: $chatsampl)
+                        
+                        Toggle("chatsampl", isOn: self.$model.sections[8].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: chatsampl) { value in
-                                        ToggleRouting(chanin: "chat", chanout: "sampler", state: value)
-                                    }
+                        
                     }
                     VStack(alignment: .center) {
                         Text("Music")
                             .font(.system(size: 15))
                             .fontWeight(.light)
                             .padding()
-                        Toggle("musicstream", isOn: $musicstream)
+                        Toggle("musicstream", isOn: self.$model.sections[9].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: musicstream) { value in
-                                        ToggleRouting(chanin: "music", chanout: "broadcast-mix", state: value)
-                                    }
-                        Toggle("musicchat", isOn: $musicchat)
+                        
+                        Toggle("musicchat", isOn: self.$model.sections[10].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: musicchat) { value in
-                                        ToggleRouting(chanin: "music", chanout: "chat-mic", state: value)
-                                    }
-                        Toggle("musichead", isOn: $musichead)
+                        
+                        Toggle("musichead", isOn: self.$model.sections[11].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
                         .padding(.bottom, 30)
-                        .onChange(of: musichead) { value in
-                                        ToggleRouting(chanin: "music", chanout: "headphones", state: value)
-                                    }
-                        Toggle("musicline", isOn: $musicline)
+                        
+                        Toggle("musicline", isOn: self.$model.sections[12].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: musicline) { value in
-                                        ToggleRouting(chanin: "music", chanout: "line-out", state: value)
-                                    }
-                        Toggle("musicsampl", isOn: $musicsampl)
+                        
+                        Toggle("musicsampl", isOn: self.$model.sections[13].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: musicsampl) { value in
-                                        ToggleRouting(chanin: "music", chanout: "sampler", state: value)
-                                    }
+                        
                     }
                     VStack(alignment: .center) {
                         Text("Game")
                             .font(.system(size: 15))
                             .fontWeight(.light)
                             .padding()
-                        Toggle("gamestream", isOn: $gamestream)
+                        Toggle("gamestream", isOn: self.$model.sections[14].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: gamestream) { value in
-                                        ToggleRouting(chanin: "game", chanout: "broadcast-mix", state: value)
-                                    }
-                        Toggle("gamechat", isOn: $gamechat)
+                        
+                        Toggle("gamechat", isOn: self.$model.sections[15].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: gamechat) { value in
-                                        ToggleRouting(chanin: "game", chanout: "chat-mic", state: value)
-                                    }
-                        Toggle("gamehead", isOn: $gamehead)
+                        
+                        Toggle("gamehead", isOn: self.$model.sections[16].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
                         .padding(.bottom, 30)
-                        .onChange(of: gamehead) { value in
-                                        ToggleRouting(chanin: "game", chanout: "headphones", state: value)
-                                    }
-                        Toggle("gameline", isOn: $gameline)
+                        
+                        Toggle("gameline", isOn: self.$model.sections[17].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: gameline) { value in
-                                        ToggleRouting(chanin: "game", chanout: "line-out", state: value)
-                                    }
-                        Toggle("gamesampl", isOn: $gamesampl)
+                        
+                        Toggle("gamesampl", isOn: self.$model.sections[18].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: gamesampl) { value in
-                                        ToggleRouting(chanin: "game", chanout: "sampler", state: value)
-                                    }
+                        
                     }
                     VStack(alignment: .center) {
                         Text("Console")
                             .font(.system(size: 15))
                             .fontWeight(.light)
                             .padding()
-                        Toggle("consolestream", isOn: $consolestream)
+                        Toggle("consolestream", isOn: self.$model.sections[19].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: consolestream) { value in
-                                        ToggleRouting(chanin: "console", chanout: "broadcast-mix", state: value)
-                                    }
-                        Toggle("consolechat", isOn: $consolechat)
+                        
+                        Toggle("consolechat", isOn: self.$model.sections[20].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: consolechat) { value in
-                                        ToggleRouting(chanin: "console", chanout: "chat-mic", state: value)
-                                    }
-                        Toggle("consolehead", isOn: $consolehead)
+                        
+                        Toggle("consolehead", isOn: self.$model.sections[21].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
                         .padding(.bottom, 30)
-                        .onChange(of: consolehead) { value in
-                                        ToggleRouting(chanin: "console", chanout: "headphones", state: value)
-                                    }
-                        Toggle("consoleline", isOn: $consoleline)
+                        
+                        Toggle("consoleline", isOn: self.$model.sections[22].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: consoleline) { value in
-                                        ToggleRouting(chanin: "console", chanout: "line-out", state: value)
-                                    }
-                        Toggle("consolesampl", isOn: $consolesampl)
+                        
+                        Toggle("consolesampl", isOn: self.$model.sections[23].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: consolesampl) { value in
-                                        ToggleRouting(chanin: "console", chanout: "sampler", state: value)
-                                    }
+                        
                     }
                     VStack(alignment: .center) {
                         Text("Line-In")
                             .font(.system(size: 15))
                             .fontWeight(.light)
                             .padding()
-                        Toggle("lineinstream", isOn: $lineinstream)
+                        Toggle("lineinstream", isOn: self.$model.sections[24].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: lineinstream) { value in
-                                        ToggleRouting(chanin: "line-in", chanout: "broadcast-mix", state: value)
-                                    }
-                        Toggle("lineinchat", isOn: $lineinchat)
+                        
+                        Toggle("lineinchat", isOn: self.$model.sections[25].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: lineinchat) { value in
-                                        ToggleRouting(chanin: "line-in", chanout: "chat-mic", state: value)
-                                    }
-                        Toggle("lineinhead", isOn: $lineinhead)
+                        
+                        Toggle("lineinhead", isOn: self.$model.sections[26].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
                         .padding(.bottom, 30)
-                        .onChange(of: lineinhead) { value in
-                                        ToggleRouting(chanin: "line-in", chanout: "headphones", state: value)
-                                    }
-                        Toggle("lineinline", isOn: $lineinline)
+                        
+                        Toggle("lineinline", isOn: self.$model.sections[27].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: lineinline) { value in
-                                        ToggleRouting(chanin: "line-in", chanout: "line-out", state: value)
-                                    }
-                        Toggle("lineinsampl", isOn: $lineinsampl)
+                        
+                        Toggle("lineinsampl", isOn: self.$model.sections[28].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: lineinsampl) { value in
-                                        ToggleRouting(chanin: "line-in", chanout: "sampler", state: value)
-                                    }
+                        
                     }
                     VStack(alignment: .center) {
                         Text("System")
                             .font(.system(size: 15))
                             .fontWeight(.light)
                             .padding()
-                        Toggle("systemstream", isOn: $systemstream)
+                        Toggle("systemstream", isOn: self.$model.sections[29].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: systemstream) { value in
-                                        ToggleRouting(chanin: "system", chanout: "broadcast-mix", state: value)
-                                    }
-                        Toggle("systemchat", isOn: $systemchat)
+                        
+                        Toggle("systemchat", isOn: self.$model.sections[30].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: systemchat) { value in
-                                        ToggleRouting(chanin: "system", chanout: "chat-mic", state: value)
-                                    }
-                        Toggle("systemhead", isOn: $systemhead)
+                        
+                        Toggle("systemhead", isOn: self.$model.sections[31].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
                         .padding(.bottom, 30)
-                        .onChange(of: systemhead) { value in
-                                        ToggleRouting(chanin: "system", chanout: "headphones", state: value)
-                                    }
-                        Toggle("systemline", isOn: $systemline)
+                        
+                        Toggle("systemline", isOn: self.$model.sections[32].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: systemline) { value in
-                                        ToggleRouting(chanin: "system", chanout: "line-out", state: value)
-                                    }
-                        Toggle("systemsampl", isOn: $systemsampl)
+                        
+                        Toggle("systemsampl", isOn: self.$model.sections[33].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: systemsampl) { value in
-                                        ToggleRouting(chanin: "system", chanout: "sampler", state: value)
-                                    }
+                        
                     }
                     VStack(alignment: .center) {
                         Text("Samples")
                             .font(.system(size: 15))
                             .fontWeight(.light)
                             .padding()
-                        Toggle("samplstream", isOn: $samplstream)
+                        Toggle("samplstream", isOn: self.$model.sections[34].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: samplstream) { value in
-                                        ToggleRouting(chanin: "samples", chanout: "broadcast-mix", state: value)
-                                    }
-                        Toggle("samplchat", isOn: $samplchat)
+                        
+                        Toggle("samplchat", isOn: self.$model.sections[35].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: samplchat) { value in
-                                        ToggleRouting(chanin: "samples", chanout: "chat-mic", state: value)
-                                    }
-                        Toggle("samplhead", isOn: $samplhead)
+                        
+                        Toggle("samplhead", isOn: self.$model.sections[36].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
                         .padding(.bottom, 30)
-                        .onChange(of: samplhead) { value in
-                                        ToggleRouting(chanin: "samples", chanout: "headphones", state: value)
-                                    }
-                        Toggle("samplline", isOn: $samplline)
+                        
+                        Toggle("samplline", isOn: self.$model.sections[37].enabled)
                         .padding(15)
                         .toggleStyle(CheckboxStyle())
-                        .onChange(of: samplline) { value in
-                                        ToggleRouting(chanin: "samples", chanout: "line-out", state: value)
-                                    }
+                        
                         Toggle("samplsampl", isOn: $toggle)
                         .padding(15)
                         .toggleStyle(NotPossibleStyle())
@@ -449,6 +302,20 @@ struct RoutingView: View {
                 }
             }
         }.navigationTitle(tabname!)
+            .fileImporter(isPresented: $showFileChooser, allowedContentTypes: [profiletype!], onCompletion: { result in
+                print("Picked: \(result)")
+                do{
+                    var fileUrl = try result.get()
+                    fileUrl = fileUrl.deletingPathExtension()
+                    let strfileUrl = fileUrl.path
+                    LoadProfile(url: strfileUrl)
+                    
+                } catch{
+                                
+                    print ("error reading")
+                    print (error.localizedDescription)
+                }
+            })
             .toolbar {
                 ToolbarItem(placement: .automatic) {
                     Button(action: {showFileChooser.toggle()}, label: {
@@ -461,6 +328,147 @@ struct RoutingView: View {
                     })
                 }
             }
-            .onAppear(perform: RoutingInit)
+    }
+}
+class ListModel: ObservableObject {
+    @Published var sections = RoutingListSection()
+}
+struct ListSection {
+    var label: String
+    var enabled: Bool {
+        didSet {
+            if label == "micstream" {
+                ToggleRouting(chanin: "microphone", chanout: "broadcast-mix", state: enabled)
+            }
+            if label == "micchat" {
+                ToggleRouting(chanin: "microphone", chanout: "chat-mic", state: enabled)
+            }
+            if label == "michead" {
+                ToggleRouting(chanin: "microphone", chanout: "headphones", state: enabled)
+            }
+            if label == "micline" {
+                ToggleRouting(chanin: "microphone", chanout: "line-out", state: enabled)
+            }
+            if label == "micsampl" {
+                ToggleRouting(chanin: "microphone", chanout: "sampler", state: enabled)
+            }
+            
+            
+            
+            if label == "chatstream" {
+                ToggleRouting(chanin: "chat", chanout: "stream-mix", state: enabled)
+            }
+            if label == "chathead" {
+                ToggleRouting(chanin: "chat", chanout: "headphones", state: enabled)
+            }
+            if label == "chatline" {
+                ToggleRouting(chanin: "chat", chanout: "line-out", state: enabled)
+            }
+            if label == "chatsampl" {
+                ToggleRouting(chanin: "chat", chanout: "sampler", state: enabled)
+            }
+            
+            
+            
+            if label == "musicstream" {
+                ToggleRouting(chanin: "music", chanout: "broadcast-mix", state: enabled)
+            }
+            if label == "musicchat" {
+                ToggleRouting(chanin: "music", chanout: "chat-mic", state: enabled)
+            }
+            if label == "musichead" {
+                ToggleRouting(chanin: "music", chanout: "headphones", state: enabled)
+            }
+            if label == "musicline" {
+                ToggleRouting(chanin: "music", chanout: "line-out", state: enabled)
+            }
+            if label == "musicsampl" {
+                ToggleRouting(chanin: "music", chanout: "sampler", state: enabled)
+            }
+            
+            
+            
+            if label == "gamestream" {
+                ToggleRouting(chanin: "game", chanout: "broadcast-mix", state: enabled)
+            }
+            if label == "gamechat" {
+                ToggleRouting(chanin: "game", chanout: "chat-mic", state: enabled)
+            }
+            if label == "gamehead" {
+                ToggleRouting(chanin: "game", chanout: "headphones", state: enabled)
+            }
+            if label == "gameline" {
+                ToggleRouting(chanin: "game", chanout: "line-out", state: enabled)
+            }
+            if label == "gamesampl" {
+                ToggleRouting(chanin: "game", chanout: "sampler", state: enabled)
+            }
+            
+            
+            
+            if label == "consolestream" {
+                ToggleRouting(chanin: "console", chanout: "broadcast-mix", state: enabled)
+            }
+            if label == "consolechat" {
+                ToggleRouting(chanin: "console", chanout: "chat-mic", state: enabled)
+            }
+            if label == "consolehead" {
+                ToggleRouting(chanin: "console", chanout: "headphones", state: enabled)
+            }
+            if label == "consoleline" {
+                ToggleRouting(chanin: "console", chanout: "line-out", state: enabled)
+            }
+            if label == "consolesampl" {
+                ToggleRouting(chanin: "console", chanout: "sampler", state: enabled)
+            }
+            
+            
+            
+            if label == "lineinstream" {
+                ToggleRouting(chanin: "line-in", chanout: "sampler", state: enabled)
+            }
+            if label == "lineinchat" {
+                ToggleRouting(chanin: "line-in", chanout: "sampler", state: enabled)
+            }
+            if label == "lineinhead" {
+                ToggleRouting(chanin: "line-in", chanout: "sampler", state: enabled)
+            }
+            if label == "lineinline" {
+                ToggleRouting(chanin: "line-in", chanout: "sampler", state: enabled)
+            }
+            if label == "lineinsampl" {
+                ToggleRouting(chanin: "line-in", chanout: "sampler", state: enabled)
+            }
+            
+            
+            if label == "systemstream" {
+                ToggleRouting(chanin: "system", chanout: "sampler", state: enabled)
+            }
+            if label == "systemchat" {
+                ToggleRouting(chanin: "system", chanout: "sampler", state: enabled)
+            }
+            if label == "systemhead" {
+                ToggleRouting(chanin: "system", chanout: "sampler", state: enabled)
+            }
+            if label == "systemline" {
+                ToggleRouting(chanin: "system", chanout: "sampler", state: enabled)
+            }
+            if label == "systemsampl" {
+                ToggleRouting(chanin: "system", chanout: "sampler", state: enabled)
+            }
+            
+            if label == "samplstream" {
+                ToggleRouting(chanin: "samples", chanout: "broadcast-mix", state: enabled)
+            }
+            if label == "samplchat" {
+                ToggleRouting(chanin: "samples", chanout: "chat-mic", state: enabled)
+            }
+            if label == "samplhead" {
+                ToggleRouting(chanin: "samples", chanout: "headphones", state: enabled)
+            }
+            if label == "samplline" {
+                ToggleRouting(chanin: "samples", chanout: "line-out", state: enabled)
+            }
+        }
     }
 }

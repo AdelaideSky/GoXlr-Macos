@@ -15,7 +15,7 @@ struct ContentView: View {
                     .font(.system(size: 10))
                     .fontWeight(.bold)
                 Group{
-                    NavigationLink(destination: NotCreatedView()) {
+                    NavigationLink(destination: MicView()) {
                         Label("Mic", systemImage: "mic")
                     }
                     NavigationLink(destination: ControlView()) {

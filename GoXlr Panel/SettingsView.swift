@@ -8,6 +8,7 @@
 import SwiftUI
 import ShellOut
 import SimplyCoreAudio
+import CoreAudio
 let simplyCA = SimplyCoreAudio()
 
 struct SettingsView: View {
@@ -43,6 +44,7 @@ struct SettingsView: View {
         }
         .alert("Please put the GoXlr as default system output", isPresented: $showingReminder) {
                     Button("Yes", role: .cancel) {
+                        
                         let goxlr = simplyCA.defaultOutputDevice
                         let system = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "System", uid: "system")
                         system?.setPreferredChannelsForStereo(channels: StereoPair(left: 1, right: 2), scope: Scope.output)
