@@ -15,14 +15,13 @@ Oh also, I have absolutely no link with TC-Helicon, i'm not affiliated with them
 
 #### Install the app:
 
-- Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases), and select the M1 or Intel version.
-- Verify that your GoXlr is initialised (not in the full-blue state when you power on the device). If not:
-    - Connect your GoXlr
-    - Run the command on terminal: `sudo path-to-the-.app-file/Contents/Resources/goxlr-daemon`
-    - Type your password
-    - Wait some time for the daemon to initialise the goxlr
-    - Quit the terminal or finish the process when you see the faders moving (and colours changing)
-- Unzip, move the app where you want and open it
+- Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases)
+- Open the .pkg and install the app.
+- If your GoXlr is plugged-in, unplug it and plug it.
+- Wait few seconds and launch the app
+- IF THE APP CRASHES:
+    - Run the command `killall goxlr-daemon`
+    - Wait few seconds & launch the app again.
 - Go to the settings tab and click "Create audio outputs"
 - Verify that you selected your GoXlr as default audio output before clicking “OK”
 - Enjoy !
@@ -36,7 +35,7 @@ Oh also, I have absolutely no link with TC-Helicon, i'm not affiliated with them
 
 - Synchronise sliders and pickers with the actual physical configuration of the GoXlr (it’s actually not the REAL data but quite)
 - Add chat mic / broadcast mix support (all mic system in general)
-- Add other features of the GoXlr (profiles, colours, micro, routing…)
+- Add other features of the GoXlr (lightning, samples, micros, fx…)
 - Many more...
 
 
