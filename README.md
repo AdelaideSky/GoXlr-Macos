@@ -55,6 +55,6 @@ of the GoXLR (actually not the REAL data but quite the same)
 ## Credits
 
 - A lot of love to the devs of the 
-[GoXlr-Utility](https://github.com/Adelenade/GoXlr-Macos/releases)! 
+[GoXLR-Utility](https://github.com/GoXLR-on-Linux/GoXLR-Utility)! 
 Without this project, the development of this application would not
 have been possible.
