@@ -1,44 +1,58 @@
-#  <img src="https://media.discordapp.net/attachments/756659826045485088/968640294033686619/icon_128x128.png" width="30"> GoXlr for Mac
-### MacOS app for managing GoXlr without any VM.
+<div align=center>
+
+#  <img src="https://media.discordapp.net/attachments/756659826045485088/968640294033686619/icon_128x128.png" width="30"> GoXLR for Mac
+### MacOS application to manage GoXLR without virtual machine.
 
 <img src="https://cdn.discordapp.com/attachments/756659826045485088/973891094351872010/unknown.png" width="700">
+</div>
 
-For now, full control & compatibility is not possible on mac, you still need a windows VM if you want to update colours, mic & effects but - unlike what TC-helicon said, the device is perfectly compatible with Macos and this app shows it.
+For now, full control and compatibility of the GoXLR are not available on Mac. 
+You would need a Windows virtual machine if you want to update
+colours, mic or effects settings but - unlike what TC-Helicon said, 
+the device is perfectly compatible with MacOS and this application proves it.
 
-Oh also, I have absolutely no link with TC-Helicon, i'm not affiliated with them and neither is this project. The official driver is on their website and it's not their responsibility if there is any damage to your device (GoXlr/GoXlr mini).
+**Disclaimer:** I have absolutely no link with TC-Helicon.
+I'm not affiliated with them and neither is this project.
+The official driver is available on their website and any damage caused to
+your device is your responsibility.
 
-## Installation
+
+## Set up
 
 #### Install the dependencies:
 
 - Install libusb: `brew install libusb`
 
-#### Install the app:
+#### Set up the app:
 
-- Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases)
-- Open the .pkg and install the app.
-- If your GoXlr is plugged-in, unplug it and plug it.
-- Wait few seconds and launch the app
-- IF THE APP CRASHES:
-    - Run the command `killall goxlr-daemon`
-    - Wait few seconds & launch the app again.
-- Go to the settings tab and click "Create audio outputs"
-- Verify that you selected your GoXlr as default audio output before clicking “OK”
-- Enjoy !
+- Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases), and select the M1 or Intel version.
+- Open the .pkg file and follow the instructions to install the app on your computer.
+- If your GoXLR is plugged in, unplug it and plug it in again.
+- Wait a few seconds before launching the app.
+- **If the app crashes**:
+  - Run the command `killall goxlr-daemon` in your terminal.
+  - Wait a few seconds before restarting the app.
+- Go to the settings tab and click on "Create audio outputs".
+- Make sure you have selected your GoXLR as the default audio output before clicking “OK”.
+- Enjoy!
 
-## Notes
+## Notice
 
-- The GoXlr can be initialised without restarting (no need to reboot each time your device loses power)
-- The app itself does no more than provide a graphic control of the GoXlr-Utility that you've installed below, and creating the sound outputs.
+- The GoXLR can be initialized without being rebooted each time it shuts down.
+- The app itself does no more than provide a graphic control panel of the
+GoXLR-Utility that you've already installed, and create the sound outputs.
 
-## ToDo
+## To-do list
 
-- Synchronise sliders and pickers with the actual physical configuration of the GoXlr (it’s actually not the REAL data but quite)
-- Add chat mic / broadcast mix support (all mic system in general)
-- Add other features of the GoXlr (lightning, samples, micros, fx…)
+- Synchronize sliders and pickers with the actual physical configuration 
+of the GoXLR (actually not the REAL data but quite the same)
+- Add chat mic and broadcast mix supports (all mic system in general)
+- Add other features of the GoXLR (profiles, colours, micro, routing…)
 - Many more...
-
 
 ## Credits
 
-- A lot of love to the devs of the [GoXlr-Utility](https://github.com/Adelenade/GoXlr-Macos/releases) ! Without that project, that app would not be possible.
+- A lot of love to the devs of the 
+[GoXLR-Utility](https://github.com/GoXLR-on-Linux/GoXLR-Utility)! 
+Without this project, the development of this application would not
+have been possible.
