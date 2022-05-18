@@ -16,24 +16,31 @@
 		7069D859282A6221008356E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A490A628159FA500BB2D4C /* Preview Assets.xcassets */; };
 		7069D866282A62CD008356E1 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 7069D864282A62CD008356E1 /* goxlr-daemon */; };
 		7069D867282A62CD008356E1 /* goxlr-client in Resources */ = {isa = PBXBuildFile; fileRef = 7069D865282A62CD008356E1 /* goxlr-client */; };
+		7096F8C9282EF7840020A9AC /* LightMixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7096F8C8282EF7840020A9AC /* LightMixerView.swift */; };
+		7096F8CA282EF7840020A9AC /* LightMixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7096F8C8282EF7840020A9AC /* LightMixerView.swift */; };
+		7096F8CB282F00D60020A9AC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBB7D282B0F850028D9D4 /* HomeView.swift */; };
+		7096F8CC282F00DA0020A9AC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7011E0A128184FAF00573593 /* SettingsView.swift */; };
+		7096F8CD282F00DC0020A9AC /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7011E09F28184F5B00573593 /* ControlView.swift */; };
+		7096F8CE282F00E00020A9AC /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBC2282BB5D90028D9D4 /* AboutView.swift */; };
 		70A490A028159FA300BB2D4C /* GoXlr_PanelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4909F28159FA300BB2D4C /* GoXlr_PanelApp.swift */; };
 		70A490A228159FA300BB2D4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A490A128159FA300BB2D4C /* ContentView.swift */; };
 		70A490A428159FA500BB2D4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A490A328159FA500BB2D4C /* Assets.xcassets */; };
 		70A490A728159FA500BB2D4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70A490A628159FA500BB2D4C /* Preview Assets.xcassets */; };
 		70A490CC2815A70200BB2D4C /* ShellOut in Frameworks */ = {isa = PBXBuildFile; productRef = 70A490CB2815A70200BB2D4C /* ShellOut */; };
-		70FCBB72282AA3660028D9D4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBB71282AA3660028D9D4 /* Info.plist */; };
+		70D298E4282D410D0041E3A4 /* GoLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D298E3282D410D0041E3A4 /* GoLib.swift */; };
+		70D298E5282D410D0041E3A4 /* GoLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D298E3282D410D0041E3A4 /* GoLib.swift */; };
+		70D298E7282D437F0041E3A4 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D298E6282D437F0041E3A4 /* RoutingView.swift */; };
+		70D298E8282D437F0041E3A4 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D298E6282D437F0041E3A4 /* RoutingView.swift */; };
+		70D29934282D8FF10041E3A4 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D29933282D8FF10041E3A4 /* MicView.swift */; };
+		70D29935282D8FF10041E3A4 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D29933282D8FF10041E3A4 /* MicView.swift */; };
 		70FCBB7C282B0D2D0028D9D4 /* NotCreatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBB7B282B0D2D0028D9D4 /* NotCreatedView.swift */; };
 		70FCBB7E282B0F850028D9D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBB7D282B0F850028D9D4 /* HomeView.swift */; };
 		70FCBBC3282BB5D90028D9D4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBC2282BB5D90028D9D4 /* AboutView.swift */; };
-		70FCBBFF282BCC620028D9D4 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBEA282BCC620028D9D4 /* AboutView.swift */; };
 		70FCBC00282BCC620028D9D4 /* NotCreatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBEB282BCC620028D9D4 /* NotCreatedView.swift */; };
-		70FCBC01282BCC620028D9D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBEC282BCC620028D9D4 /* SettingsView.swift */; };
 		70FCBC02282BCC620028D9D4 /* GoXlr_PanelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBED282BCC620028D9D4 /* GoXlr_PanelApp.swift */; };
 		70FCBC03282BCC620028D9D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBBEE282BCC620028D9D4 /* Assets.xcassets */; };
-		70FCBC04282BCC620028D9D4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBEF282BCC620028D9D4 /* HomeView.swift */; };
 		70FCBC0B282BCC620028D9D4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBBFB282BCC620028D9D4 /* MainMenu.xib */; };
 		70FCBC0C282BCC620028D9D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBFC282BCC620028D9D4 /* ContentView.swift */; };
-		70FCBC0D282BCC620028D9D4 /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FCBBFD282BCC620028D9D4 /* ControlView.swift */; };
 		70FCBC0F282BDD890028D9D4 /* LICENSE-3RD-PARTY in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBC0E282BDD880028D9D4 /* LICENSE-3RD-PARTY */; };
 		70FCBC10282BDD890028D9D4 /* LICENSE-3RD-PARTY in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBC0E282BDD880028D9D4 /* LICENSE-3RD-PARTY */; };
 		70FCBC14282BE16F0028D9D4 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 70FCBC12282BE16F0028D9D4 /* goxlr-daemon */; };
@@ -48,6 +55,7 @@
 		7069D864282A62CD008356E1 /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
 		7069D865282A62CD008356E1 /* goxlr-client */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-client"; sourceTree = "<group>"; };
 		7069D86F282A662D008356E1 /* M1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = M1; sourceTree = "<group>"; };
+		7096F8C8282EF7840020A9AC /* LightMixerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightMixerView.swift; sourceTree = "<group>"; };
 		70A4909C28159FA300BB2D4C /* GoXlr Panel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr Panel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A4909F28159FA300BB2D4C /* GoXlr_PanelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_PanelApp.swift; sourceTree = "<group>"; };
 		70A490A128159FA300BB2D4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,7 +63,14 @@
 		70A490A628159FA500BB2D4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70A490A828159FA500BB2D4C /* GoXlr_Panel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoXlr_Panel.entitlements; sourceTree = "<group>"; };
 		70D0127C2815EF1400DA0E1B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		70FCBB71282AA3660028D9D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70D298E2282D32730041E3A4 /* GoXlr-Panel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoXlr-Panel-Info.plist"; sourceTree = SOURCE_ROOT; };
+		70D298E3282D410D0041E3A4 /* GoLib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoLib.swift; sourceTree = "<group>"; };
+		70D298E6282D437F0041E3A4 /* RoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingView.swift; sourceTree = "<group>"; };
+		70D29927282D7F060041E3A4 /* xpchandler */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = xpchandler; sourceTree = "<group>"; };
+		70D29928282D7F060041E3A4 /* goxlr-initialiser */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-initialiser"; sourceTree = "<group>"; };
+		70D29929282D7F060041E3A4 /* com.adesky.goxlr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.adesky.goxlr.plist; sourceTree = "<group>"; };
+		70D2992A282D7F060041E3A4 /* loadagent.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = loadagent.sh; sourceTree = "<group>"; };
+		70D29933282D8FF10041E3A4 /* MicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicView.swift; sourceTree = "<group>"; };
 		70FCBB7B282B0D2D0028D9D4 /* NotCreatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotCreatedView.swift; sourceTree = "<group>"; };
 		70FCBB7D282B0F850028D9D4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		70FCBBC2282BB5D90028D9D4 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -115,12 +130,26 @@
 			path = Intel;
 			sourceTree = "<group>";
 		};
+		7096F8C7282EF73C0020A9AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7011E09F28184F5B00573593 /* ControlView.swift */,
+				7011E0A128184FAF00573593 /* SettingsView.swift */,
+				70FCBB7D282B0F850028D9D4 /* HomeView.swift */,
+				70FCBBC2282BB5D90028D9D4 /* AboutView.swift */,
+				70D298E6282D437F0041E3A4 /* RoutingView.swift */,
+				70D29933282D8FF10041E3A4 /* MicView.swift */,
+				7096F8C8282EF7840020A9AC /* LightMixerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		70A4909328159FA300BB2D4C = {
 			isa = PBXGroup;
 			children = (
+				70D29925282D7F060041E3A4 /* Initialiser agent */,
 				70FCBC13282BE16F0028D9D4 /* goxlr-client */,
 				70FCBC12282BE16F0028D9D4 /* goxlr-daemon */,
-				70FCBB71282AA3660028D9D4 /* Info.plist */,
 				70D0127C2815EF1400DA0E1B /* README.md */,
 				70A4909E28159FA300BB2D4C /* GoXlr Panel */,
 				70FCBBE9282BCC620028D9D4 /* GoXlr Panel */,
@@ -140,19 +169,18 @@
 		70A4909E28159FA300BB2D4C /* GoXlr Panel */ = {
 			isa = PBXGroup;
 			children = (
+				70D298E2282D32730041E3A4 /* GoXlr-Panel-Info.plist */,
 				70A4909F28159FA300BB2D4C /* GoXlr_PanelApp.swift */,
 				70A490A128159FA300BB2D4C /* ContentView.swift */,
-				7011E09F28184F5B00573593 /* ControlView.swift */,
-				7011E0A128184FAF00573593 /* SettingsView.swift */,
+				7096F8C7282EF73C0020A9AC /* Views */,
 				70A490A328159FA500BB2D4C /* Assets.xcassets */,
 				70A490A828159FA500BB2D4C /* GoXlr_Panel.entitlements */,
 				7069D862282A6272008356E1 /* Binaries */,
 				70A490A528159FA500BB2D4C /* Preview Content */,
 				7011E0A3281855EB00573593 /* MainMenu.xib */,
 				70FCBB7B282B0D2D0028D9D4 /* NotCreatedView.swift */,
-				70FCBB7D282B0F850028D9D4 /* HomeView.swift */,
-				70FCBBC2282BB5D90028D9D4 /* AboutView.swift */,
 				70FCBC0E282BDD880028D9D4 /* LICENSE-3RD-PARTY */,
+				70D298E3282D410D0041E3A4 /* GoLib.swift */,
 			);
 			path = "GoXlr Panel";
 			sourceTree = "<group>";
@@ -163,6 +191,25 @@
 				70A490A628159FA500BB2D4C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70D29925282D7F060041E3A4 /* Initialiser agent */ = {
+			isa = PBXGroup;
+			children = (
+				70D29926282D7F060041E3A4 /* com.adesky.goxlr */,
+				70D29929282D7F060041E3A4 /* com.adesky.goxlr.plist */,
+				70D2992A282D7F060041E3A4 /* loadagent.sh */,
+			);
+			path = "Initialiser agent";
+			sourceTree = "<group>";
+		};
+		70D29926282D7F060041E3A4 /* com.adesky.goxlr */ = {
+			isa = PBXGroup;
+			children = (
+				70D29927282D7F060041E3A4 /* xpchandler */,
+				70D29928282D7F060041E3A4 /* goxlr-initialiser */,
+			);
+			path = com.adesky.goxlr;
 			sourceTree = "<group>";
 		};
 		70FCBBE9282BCC620028D9D4 /* GoXlr Panel */ = {
@@ -265,8 +312,6 @@
 			packageReferences = (
 				70A490CA2815A70200BB2D4C /* XCRemoteSwiftPackageReference "ShellOut" */,
 				7011E0A528186D5100573593 /* XCRemoteSwiftPackageReference "SimplyCoreAudio" */,
-				70FCBB73282AEA6C0028D9D4 /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
-				70FCBB76282AEBE80028D9D4 /* XCRemoteSwiftPackageReference "swiftui-sliders" */,
 			);
 			productRefGroup = 70A4909D28159FA300BB2D4C /* Products */;
 			projectDirPath = "";
@@ -301,7 +346,6 @@
 				70A490A428159FA500BB2D4C /* Assets.xcassets in Resources */,
 				7011E0A4281855EB00573593 /* MainMenu.xib in Resources */,
 				7069D867282A62CD008356E1 /* goxlr-client in Resources */,
-				70FCBB72282AA3660028D9D4 /* Info.plist in Resources */,
 				70FCBC0F282BDD890028D9D4 /* LICENSE-3RD-PARTY in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,13 +357,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70FCBC04282BCC620028D9D4 /* HomeView.swift in Sources */,
-				70FCBC01282BCC620028D9D4 /* SettingsView.swift in Sources */,
-				70FCBC0D282BCC620028D9D4 /* ControlView.swift in Sources */,
+				70D298E8282D437F0041E3A4 /* RoutingView.swift in Sources */,
+				7096F8CB282F00D60020A9AC /* HomeView.swift in Sources */,
+				7096F8CD282F00DC0020A9AC /* ControlView.swift in Sources */,
+				7096F8CC282F00DA0020A9AC /* SettingsView.swift in Sources */,
+				70D298E5282D410D0041E3A4 /* GoLib.swift in Sources */,
+				7096F8CE282F00E00020A9AC /* AboutView.swift in Sources */,
 				70FCBC02282BCC620028D9D4 /* GoXlr_PanelApp.swift in Sources */,
+				70D29935282D8FF10041E3A4 /* MicView.swift in Sources */,
 				70FCBC0C282BCC620028D9D4 /* ContentView.swift in Sources */,
-				70FCBBFF282BCC620028D9D4 /* AboutView.swift in Sources */,
 				70FCBC00282BCC620028D9D4 /* NotCreatedView.swift in Sources */,
+				7096F8CA282EF7840020A9AC /* LightMixerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,13 +375,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D298E7282D437F0041E3A4 /* RoutingView.swift in Sources */,
 				70A490A228159FA300BB2D4C /* ContentView.swift in Sources */,
 				70FCBBC3282BB5D90028D9D4 /* AboutView.swift in Sources */,
 				70FCBB7E282B0F850028D9D4 /* HomeView.swift in Sources */,
+				70D298E4282D410D0041E3A4 /* GoLib.swift in Sources */,
 				7011E0A228184FAF00573593 /* SettingsView.swift in Sources */,
+				70D29934282D8FF10041E3A4 /* MicView.swift in Sources */,
 				7011E0A028184F5B00573593 /* ControlView.swift in Sources */,
 				70A490A028159FA300BB2D4C /* GoXlr_PanelApp.swift in Sources */,
 				70FCBB7C282B0D2D0028D9D4 /* NotCreatedView.swift in Sources */,
+				7096F8C9282EF7840020A9AC /* LightMixerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +588,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr-Panel-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -564,6 +617,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr-Panel-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -641,22 +695,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
-			};
-		};
-		70FCBB73282AEA6C0028D9D4 /* XCRemoteSwiftPackageReference "swiftui-sliders" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/spacenation/swiftui-sliders";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		70FCBB76282AEBE80028D9D4 /* XCRemoteSwiftPackageReference "swiftui-sliders" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/spacenation/swiftui-sliders";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

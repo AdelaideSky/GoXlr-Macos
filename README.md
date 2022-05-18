@@ -50,7 +50,6 @@ of the GoXLR (actually not the REAL data but quite the same)
 - Add other features of the GoXLR (profiles, colours, micro, routing…)
 - Many more...
 
-
 ## Credits
 
 - A lot of love to the devs of the 

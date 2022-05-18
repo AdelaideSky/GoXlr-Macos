@@ -15,7 +15,7 @@ struct ContentView: View {
                     .font(.system(size: 10))
                     .fontWeight(.bold)
                 Group{
-                    NavigationLink(destination: NotCreatedView()) {
+                    NavigationLink(destination: MicView()) {
                         Label("Mic", systemImage: "mic")
                     }
                     NavigationLink(destination: ControlView()) {
@@ -27,7 +27,7 @@ struct ContentView: View {
                     NavigationLink(destination: NotCreatedView()) {
                         Label("Sampler", systemImage: "waveform")
                     }
-                    NavigationLink(destination: NotCreatedView()) {
+                    NavigationLink(destination: RoutingView()) {
                         Label("Routing", systemImage: "app.connected.to.app.below.fill")
                     }
                 }
@@ -41,7 +41,7 @@ struct ContentView: View {
                     NavigationLink(destination: NotCreatedView()) {
                         Label("Global", systemImage: "sun.min")
                     }
-                    NavigationLink(destination: NotCreatedView()) {
+                    NavigationLink(destination: LightMixerView()) {
                         Label("Mixer", systemImage: "slider.vertical.3")
                     }
                     NavigationLink(destination: NotCreatedView()) {
