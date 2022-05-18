@@ -25,7 +25,7 @@ your device is your responsibility.
 
 #### Set up the app:
 
-- Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases), and select the M1 or Intel version.
+- Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases).
 - Open the .pkg file and follow the instructions to install the app on your computer.
 - If your GoXLR is plugged in, unplug it and plug it in again.
 - Wait a few seconds before launching the app.
