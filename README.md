@@ -1,6 +1,11 @@
 <div align=center>
 
 #  <img src="https://media.discordapp.net/attachments/756659826045485088/968640294033686619/icon_128x128.png" width="30"> GoXLR for Mac
+![LastRelease](https://img.shields.io/github/release-date/Adelenade/GoXlr-Macos)
+![Contributors](https://img.shields.io/github/contributors/Adelenade/GoXlr-Macos)
+![OpenIssues](https://img.shields.io/github/issues-raw/Adelenade/GoXlr-Macos)
+![ClosedIssues](https://img.shields.io/github/issues-closed-raw/Adelenade/GoXlr-Macos)
+<!-- ![License](https://img.shields.io/github/license/Adelenade/GoXlr-Macos) -->
 ### MacOS application to manage GoXLR without virtual machine.
 
 <img src="https://cdn.discordapp.com/attachments/756659826045485088/973891094351872010/unknown.png" width="700">
