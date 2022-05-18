@@ -7,7 +7,7 @@
 </div>
 
 For now, full control and compatibility of the GoXLR are not available on Mac. 
-You would need a Windows virtual machine (VM) if you want to update
+You would need a Windows virtual machine if you want to update
 colours, mic or effects settings but - unlike what TC-Helicon said, 
 the device is perfectly compatible with MacOS and this application proves it.
 
@@ -26,15 +26,14 @@ your device is your responsibility.
 #### Set up the app:
 
 - Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases), and select the M1 or Intel version.
-- Make sure your GoXLR is initialized, it should not display the full-blue state when you power it on. If it's not:
-    - Connect your GoXLR to your computer
-    - Run the following command on terminal: `sudo path-to-the-.app-file/Contents/Resources/goxlr-daemon`
-    - Type your password when asked for
-    - Wait some time for the daemon to initialize the device
-    - Quit the terminal or end the process when you see the faders move and the colours change
-- Unzip, move the app where you want and open it
-- Go to the settings tab and click on "Create audio outputs"
-- Make sure you have selected your GoXLR as the default audio output before clicking “OK”
+- Open the .pkg file and follow the instructions to install the app on your computer.
+- If your GoXLR is plugged in, unplug it and plug it in again.
+- Wait a few seconds before launching the app.
+- **If the app crashes**:
+  - Run the command `killall goxlr-daemon` in your terminal.
+  - Wait a few seconds before restarting the app.
+- Go to the settings tab and click on "Create audio outputs".
+- Make sure you have selected your GoXLR as the default audio output before clicking “OK”.
 - Enjoy!
 
 ## Notice
