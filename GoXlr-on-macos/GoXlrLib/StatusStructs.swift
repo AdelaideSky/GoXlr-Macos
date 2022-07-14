@@ -1,4 +1,3 @@
-
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
@@ -19,6 +18,17 @@ public struct daemonStatus: Codable {
 struct Status: Codable {
     let mixers: [String: Mixer]
     let paths: Paths
+    let files: Files
+}
+
+// MARK: - Files
+struct Files: Codable {
+    let profiles, micProfiles: [String]
+
+    enum CodingKeys: String, CodingKey {
+        case profiles
+        case micProfiles = "mic_profiles"
+    }
 }
 
 // MARK: - Mixer
@@ -28,6 +38,9 @@ struct Mixer: Codable {
     let micStatus: MicStatus
     let volumes, router: [Int]
     let routerTable: [[Bool]]
+    let coughButton: CoughButton
+    let bleepVolume: Int
+    let lighting: Lighting
     let profileName, micProfileName: String
 
     enum CodingKeys: String, CodingKey {
@@ -36,8 +49,22 @@ struct Mixer: Codable {
         case micStatus = "mic_status"
         case volumes, router
         case routerTable = "router_table"
+        case coughButton = "cough_button"
+        case bleepVolume = "bleep_volume"
+        case lighting
         case profileName = "profile_name"
         case micProfileName = "mic_profile_name"
+    }
+}
+
+// MARK: - CoughButton
+struct CoughButton: Codable {
+    let isToggle: Bool
+    let muteType: String
+
+    enum CodingKeys: String, CodingKey {
+        case isToggle = "is_toggle"
+        case muteType = "mute_type"
     }
 }
 
@@ -97,6 +124,55 @@ struct Versions: Codable {
     }
 }
 
+// MARK: - Lighting
+struct Lighting: Codable {
+    let faders: Faders
+    let buttons: [String: daemonButton]
+}
+
+// MARK: - daemonButton
+struct daemonButton: Codable {
+    let offStyle: OffStyle
+    let colours: Colours
+
+    enum CodingKeys: String, CodingKey {
+        case offStyle = "off_style"
+        case colours
+    }
+}
+
+// MARK: - Colours
+struct Colours: Codable {
+    let colourOne, colourTwo: String
+
+    enum CodingKeys: String, CodingKey {
+        case colourOne = "colour_one"
+        case colourTwo = "colour_two"
+    }
+}
+
+enum OffStyle: String, Codable {
+    case dimmed = "Dimmed"
+}
+
+// MARK: - Faders
+struct Faders: Codable {
+    let d, b, a, c: A
+
+    enum CodingKeys: String, CodingKey {
+        case d = "D"
+        case b = "B"
+        case a = "A"
+        case c = "C"
+    }
+}
+
+// MARK: - A
+struct A: Codable {
+    let style: String
+    let colours: Colours
+}
+
 // MARK: - MicStatus
 struct MicStatus: Codable {
     let micType: String
@@ -118,8 +194,7 @@ struct MicStatus: Codable {
 
 // MARK: - Compressor
 struct Compressor: Codable {
-    let threshold: Int
-    let ratio, attack, release: String
+    let threshold, ratio, attack, release: Int
     let makeupGain: Int
 
     enum CodingKeys: String, CodingKey {
@@ -130,19 +205,32 @@ struct Compressor: Codable {
 
 // MARK: - Equaliser
 struct Equaliser: Codable {
-    let gain: [String: Int]
-    let frequency: [String: Double]
+    let gain, frequency: [String: Double]
 }
 
 // MARK: - EqualiserMini
 struct EqualiserMini: Codable {
-    let gain, frequency: [String: Int]
+    let gain, frequency: Frequency
+}
+
+// MARK: - Frequency
+struct Frequency: Codable {
+    let equalizer250Hz, equalizer3KHz, equalizer1KHz, equalizer8KHz: Int
+    let equalizer90Hz, equalizer500Hz: Int
+
+    enum CodingKeys: String, CodingKey {
+        case equalizer250Hz = "Equalizer250Hz"
+        case equalizer3KHz = "Equalizer3KHz"
+        case equalizer1KHz = "Equalizer1KHz"
+        case equalizer8KHz = "Equalizer8KHz"
+        case equalizer90Hz = "Equalizer90Hz"
+        case equalizer500Hz = "Equalizer500Hz"
+    }
 }
 
 // MARK: - NoiseGate
 struct NoiseGate: Codable {
-    let threshold: Int
-    let attack, release: String
+    let threshold, attack, release: Int
     let enabled: Bool
     let attenuation: Int
 }

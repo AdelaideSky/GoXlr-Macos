@@ -145,6 +145,19 @@ public struct GoXlr {
         return devices
     }
     
+    public func deviceType() -> Model {
+        var mixertype: String
+        if self.device == "" { mixertype = self.status()!.status.mixers.first!.1.hardware.deviceType }
+        else { mixertype = self.status()!.status.mixers[device]!.hardware.deviceType }
+        
+        if mixertype == "Full" {
+            return .Full
+        }
+        else {
+            return .Mini
+        }
+    }
+    
     public func faderAssignements(fader: FaderName) -> ChannelName {
         let faderstatusesmixer = self.status()!.status.mixers
         let faderstatuses: [FaderStatus]
@@ -293,6 +306,21 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetCoughMuteFunction\":\"\(MuteFunction)\"}]}"
+            try socket.write(from: createrequest(request: request))
+            return JSON(DaemonSocket().read(socket: socket))
+                        
+        } catch {
+            print("SetFaderMuteFunction Error")
+            return "SetFaderMuteFunction Error"
+        }
+    }
+    
+    public func SetCoughIsHold(state: Bool) -> JSON {
+        //Set cough function. Same list of mutefunctions as the setfadermutefunction.
+        
+        do {
+            let socket = DaemonSocket().new()
+            let request = "{\"Command\":[\"\(device)\",{\"SetCoughIsHold\":\(state)}]}"
             try socket.write(from: createrequest(request: request))
             return JSON(DaemonSocket().read(socket: socket))
                         

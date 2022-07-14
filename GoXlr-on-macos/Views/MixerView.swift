@@ -40,7 +40,7 @@ extension View {
 struct MixerView: View {
     
 
-    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.3, on: .main, in: .common).autoconnect()
         
     @State var showFileChooser = false
     @State var tabname: String? = "Mixer"
@@ -57,12 +57,13 @@ struct MixerView: View {
     var goxlr = GoXlr(serial: "")
     
     
-    
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .top, spacing: 10){
                 VStack(){
-                    Slider(value: $mixer.mic, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
+                    Slider(value: $mixer.mic, in: 0...255){ newValue in
+                        mixer.selectedDevice.SetVolume(channel: .Mic, volume: Int(mixer.mic))
+                    }.rotationEffect(.degrees(-90.0), anchor: .center)
                         .padding(.bottom, 50)
                         .frame(width: 100.0)
                         .animation(.easeInOut, value: 4)
@@ -192,6 +193,9 @@ struct MixerView: View {
         .padding(.bottom, 10)
         .padding(.left, 70)
         .padding(.right, 70)
+        .onReceive(timer) { time in
+            mixer.mic = mixer.selectedDevice.channelVolume(channel: .Mic)
+        }
         .alert("ERROR", isPresented: $showingAlert) {
                     Button("OK", role: .cancel) { }
         } message: {

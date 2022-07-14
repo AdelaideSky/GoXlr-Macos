@@ -10,7 +10,9 @@ import Socket
 import Foundation
 import SwiftyJSON
 
+
 final class MixerStatus: ObservableObject {
+    
     
     var selectedDevice = GoXlr(serial: GoXlr().listDevices()[0].first)
     @Published var deviceSelect: String = "Select a goxlr" {
@@ -20,8 +22,7 @@ final class MixerStatus: ObservableObject {
     }
     //--------------------------------[SLIDERS - Mixer]-------------------------------------------------//
     
-    @Published var mic: Float = GoXlr().channelVolume(channel: .Mic) {
-        willSet { _ = selectedDevice.SetVolume(channel: .Mic, volume: Int(newValue)) } }
+    @Published var mic: Float = GoXlr().channelVolume(channel: .Mic)
     @Published var chat: Float = GoXlr().channelVolume(channel: .Chat) {
         willSet { _ = selectedDevice.SetVolume(channel: .Chat, volume: Int(newValue)) } }
     @Published var music: Float = GoXlr().channelVolume(channel: .Music) {
@@ -88,10 +89,7 @@ func testingParsing() -> String {
             try socket.read(into: &data)
             data = data.dropFirst(4)
             
-            
-            
             return try JSONDecoder().decode(daemonStatus.self, from: data).status.mixers.first?.value.micProfileName ?? "ah"
-
             
                         
         } catch {
@@ -100,3 +98,6 @@ func testingParsing() -> String {
         }
 }
 
+func updateStatus() {
+    MixerStatus().mic = GoXlr().channelVolume(channel: .Mic)
+}

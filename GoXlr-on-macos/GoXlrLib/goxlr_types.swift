@@ -7,6 +7,11 @@
 
 import Foundation
 
+public enum Model: String {
+    case Mini
+    case Full
+}
+
 public enum ChannelName: String, Equatable, CaseIterable {
     case Mic
     case LineIn
