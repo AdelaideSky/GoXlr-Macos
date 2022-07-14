@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		700E138B2870A6BE00FD6306 /* GoXlr_on_macosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E138A2870A6BE00FD6306 /* GoXlr_on_macosApp.swift */; };
+		700E138D2870A6BE00FD6306 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E138C2870A6BE00FD6306 /* ContentView.swift */; };
+		700E138F2870A6C500FD6306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700E138E2870A6C500FD6306 /* Assets.xcassets */; };
+		700E13922870A6C500FD6306 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700E13912870A6C500FD6306 /* Preview Assets.xcassets */; };
+		70563473287182D600985223 /* MixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70563472287182D600985223 /* MixerView.swift */; };
+		705634762871836F00985223 /* device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705634742871836F00985223 /* device.swift */; };
+		705634772871836F00985223 /* goxlr_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705634752871836F00985223 /* goxlr_types.swift */; };
+		7056347B2871838E00985223 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7056347A2871838E00985223 /* SwiftyJSON */; };
+		7056347E287183A500985223 /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = 7056347D287183A500985223 /* Socket */; };
+		7077E695287439E400D56C76 /* status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077E694287439E400D56C76 /* status.swift */; };
+		70B536E42877035900DE8ED0 /* homeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E32877035900DE8ED0 /* homeView.swift */; };
+		70B536E6287705FC00DE8ED0 /* NotSupportedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */; };
+		70B536E8287719DD00DE8ED0 /* StatusStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E7287719DD00DE8ED0 /* StatusStructs.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		700E13872870A6BE00FD6306 /* GoXlr-on-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr-on-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		700E138A2870A6BE00FD6306 /* GoXlr_on_macosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_on_macosApp.swift; sourceTree = "<group>"; };
+		700E138C2870A6BE00FD6306 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		700E138E2870A6C500FD6306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		700E13912870A6C500FD6306 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		700E13932870A6C500FD6306 /* GoXlr_on_macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoXlr_on_macos.entitlements; sourceTree = "<group>"; };
+		700E13992870A81900FD6306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70563472287182D600985223 /* MixerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerView.swift; sourceTree = "<group>"; };
+		705634742871836F00985223 /* device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = device.swift; sourceTree = "<group>"; };
+		705634752871836F00985223 /* goxlr_types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goxlr_types.swift; sourceTree = "<group>"; };
+		7077E694287439E400D56C76 /* status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = status.swift; sourceTree = "<group>"; };
+		70B536E32877035900DE8ED0 /* homeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeView.swift; sourceTree = "<group>"; };
+		70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSupportedView.swift; sourceTree = "<group>"; };
+		70B536E7287719DD00DE8ED0 /* StatusStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusStructs.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		700E13842870A6BE00FD6306 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7056347B2871838E00985223 /* SwiftyJSON in Frameworks */,
+				7056347E287183A500985223 /* Socket in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		700E137E2870A6BE00FD6306 = {
+			isa = PBXGroup;
+			children = (
+				700E13892870A6BE00FD6306 /* GoXlr-on-macos */,
+				700E13882870A6BE00FD6306 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		700E13882870A6BE00FD6306 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				700E13872870A6BE00FD6306 /* GoXlr-on-macos.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		700E13892870A6BE00FD6306 /* GoXlr-on-macos */ = {
+			isa = PBXGroup;
+			children = (
+				70B536E22877034100DE8ED0 /* Views */,
+				705634782871837700985223 /* GoXlrLib */,
+				700E13992870A81900FD6306 /* Info.plist */,
+				700E138A2870A6BE00FD6306 /* GoXlr_on_macosApp.swift */,
+				700E138E2870A6C500FD6306 /* Assets.xcassets */,
+				700E13932870A6C500FD6306 /* GoXlr_on_macos.entitlements */,
+				700E13902870A6C500FD6306 /* Preview Content */,
+			);
+			path = "GoXlr-on-macos";
+			sourceTree = "<group>";
+		};
+		700E13902870A6C500FD6306 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				700E13912870A6C500FD6306 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		705634782871837700985223 /* GoXlrLib */ = {
+			isa = PBXGroup;
+			children = (
+				705634742871836F00985223 /* device.swift */,
+				705634752871836F00985223 /* goxlr_types.swift */,
+				7077E694287439E400D56C76 /* status.swift */,
+				70B536E7287719DD00DE8ED0 /* StatusStructs.swift */,
+			);
+			path = GoXlrLib;
+			sourceTree = "<group>";
+		};
+		70B536E22877034100DE8ED0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				700E138C2870A6BE00FD6306 /* ContentView.swift */,
+				70563472287182D600985223 /* MixerView.swift */,
+				70B536E32877035900DE8ED0 /* homeView.swift */,
+				70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		700E13862870A6BE00FD6306 /* GoXlr-on-macos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 700E13962870A6C500FD6306 /* Build configuration list for PBXNativeTarget "GoXlr-on-macos" */;
+			buildPhases = (
+				700E13832870A6BE00FD6306 /* Sources */,
+				700E13842870A6BE00FD6306 /* Frameworks */,
+				700E13852870A6BE00FD6306 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GoXlr-on-macos";
+			packageProductDependencies = (
+				7056347A2871838E00985223 /* SwiftyJSON */,
+				7056347D287183A500985223 /* Socket */,
+			);
+			productName = "GoXlr-on-macos";
+			productReference = 700E13872870A6BE00FD6306 /* GoXlr-on-macos.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		700E137F2870A6BE00FD6306 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					700E13862870A6BE00FD6306 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = 700E13822870A6BE00FD6306 /* Build configuration list for PBXProject "GoXlr-on-macos" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 700E137E2870A6BE00FD6306;
+			packageReferences = (
+				705634792871838E00985223 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				7056347C287183A500985223 /* XCRemoteSwiftPackageReference "BlueSocket" */,
+			);
+			productRefGroup = 700E13882870A6BE00FD6306 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				700E13862870A6BE00FD6306 /* GoXlr-on-macos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		700E13852870A6BE00FD6306 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				700E13922870A6C500FD6306 /* Preview Assets.xcassets in Resources */,
+				700E138F2870A6C500FD6306 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		700E13832870A6BE00FD6306 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				700E138D2870A6BE00FD6306 /* ContentView.swift in Sources */,
+				705634772871836F00985223 /* goxlr_types.swift in Sources */,
+				70B536E42877035900DE8ED0 /* homeView.swift in Sources */,
+				70B536E6287705FC00DE8ED0 /* NotSupportedView.swift in Sources */,
+				700E138B2870A6BE00FD6306 /* GoXlr_on_macosApp.swift in Sources */,
+				70B536E8287719DD00DE8ED0 /* StatusStructs.swift in Sources */,
+				70563473287182D600985223 /* MixerView.swift in Sources */,
+				705634762871836F00985223 /* device.swift in Sources */,
+				7077E695287439E400D56C76 /* status.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		700E13942870A6C500FD6306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		700E13952870A6C500FD6306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		700E13972870A6C500FD6306 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "GoXlr-on-macos/GoXlr_on_macos.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Preview\\ Content GoXlr-on-macos/Assets.xcassets";
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr-on-macos/Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adecorp.GoXlr-on-macos";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		700E13982870A6C500FD6306 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "GoXlr-on-macos/GoXlr_on_macos.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Preview\\ Content GoXlr-on-macos/Assets.xcassets";
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr-on-macos/Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "adecorp.GoXlr-on-macos";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		700E13822870A6BE00FD6306 /* Build configuration list for PBXProject "GoXlr-on-macos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				700E13942870A6C500FD6306 /* Debug */,
+				700E13952870A6C500FD6306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		700E13962870A6C500FD6306 /* Build configuration list for PBXNativeTarget "GoXlr-on-macos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				700E13972870A6C500FD6306 /* Debug */,
+				700E13982870A6C500FD6306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		705634792871838E00985223 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7056347C287183A500985223 /* XCRemoteSwiftPackageReference "BlueSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/BlueSocket";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7056347A2871838E00985223 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 705634792871838E00985223 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		7056347D287183A500985223 /* Socket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7056347C287183A500985223 /* XCRemoteSwiftPackageReference "BlueSocket" */;
+			productName = Socket;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 700E137F2870A6BE00FD6306 /* Project object */;
+}
