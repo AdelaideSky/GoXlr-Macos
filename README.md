@@ -61,3 +61,9 @@ of the GoXLR (actually not the REAL data but quite the same)
 [GoXLR-Utility](https://github.com/GoXLR-on-Linux/GoXLR-Utility)! 
 Without this project, the development of this application would not
 have been possible.
+
+## Sponsors
+
+These are the super-cool sponsors of the project !
+
+<!-- sponsors --><!-- sponsors -->
