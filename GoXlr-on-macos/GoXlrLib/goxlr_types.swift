@@ -12,7 +12,7 @@ public enum Model: String {
     case Full
 }
 
-public enum ChannelName: String, Equatable, CaseIterable {
+public enum ChannelName: String, Equatable, CaseIterable, Codable {
     case Mic
     case LineIn
     case Console
@@ -265,7 +265,7 @@ public enum ButtonColourOffStyle: String {
 
 // MuteChat
 
-public enum MuteFunction: String, Equatable, CaseIterable {
+public enum MuteFunction: String, Equatable, CaseIterable, Codable {
     case All
     case ToStream
     case ToVoiceChat

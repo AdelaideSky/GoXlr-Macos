@@ -132,6 +132,24 @@ public struct GoXlr {
         }
     }
     
+    public func deviceStatus() -> Mixer? {
+        do {
+            let socket = DaemonSocket().new()
+            
+            try socket.write(from: createrequest(request: "\"GetStatus\""))
+            
+            let state = try JSONDecoder().decode(daemonStatus.self, from: DaemonSocket().dataRead(socket: socket))
+            
+            if self.device == "" { return state.status.mixers.first!.1 }
+            else { return state.status.mixers[device] }
+            
+                        
+        } catch {
+            print("Error")
+            return nil
+        }
+    }
+    
     
     //--------------------------------[Gettrs]-------------------------------------------------//
 
@@ -163,10 +181,10 @@ public struct GoXlr {
         let faderstatuses: [FaderStatus]
         if self.device == "" { faderstatuses = faderstatusesmixer.first!.1.faderStatus }
         else { faderstatuses = faderstatusesmixer[device]!.faderStatus }
-        if fader == .A { return ChannelName(rawValue: faderstatuses[0].channel)! }
-        else if fader == .B { return ChannelName(rawValue: faderstatuses[1].channel)! }
-        else if fader == .C { return ChannelName(rawValue: faderstatuses[2].channel)! }
-        else if fader == .D { return ChannelName(rawValue: faderstatuses[3].channel)! }
+        if fader == .A { return faderstatuses[0].channel }
+        else if fader == .B { return faderstatuses[1].channel }
+        else if fader == .C { return faderstatuses[2].channel }
+        else if fader == .D { return faderstatuses[3].channel }
         else { return .Mic }
     }
     
@@ -175,10 +193,10 @@ public struct GoXlr {
         let faderstatuses: [FaderStatus]
         if self.device == "" { faderstatuses = faderstatusesmixer.first!.1.faderStatus }
         else { faderstatuses = faderstatusesmixer[device]!.faderStatus }
-        if fader == .A { return MuteFunction(rawValue: faderstatuses[0].muteType)! }
-        else if fader == .B { return MuteFunction(rawValue: faderstatuses[1].muteType)! }
-        else if fader == .C { return MuteFunction(rawValue: faderstatuses[2].muteType)! }
-        else if fader == .D { return MuteFunction(rawValue: faderstatuses[3].muteType)! }
+        if fader == .A { return faderstatuses[0].muteType }
+        else if fader == .B { return faderstatuses[1].muteType }
+        else if fader == .C { return faderstatuses[2].muteType }
+        else if fader == .D { return faderstatuses[3].muteType }
         else { return .All }
     }
     
@@ -200,6 +218,40 @@ public struct GoXlr {
         else if channel == .MicMonitor { return Float(volumes[9]) }
         else if channel == .LineOut { return Float(volumes[10]) }
         else { return 0 }
+    }
+    
+    public func allChannelVolume() -> [ChannelName: Float] {
+        let allvolumes = self.status()!.status.mixers
+        let volumes: [Int]
+        if self.device == "" { volumes = allvolumes.first!.1.volumes }
+        else { volumes = allvolumes[device]!.volumes }
+        var allVol: [ChannelName:Float] = [:]
+        
+        allVol[.Mic] = Float(volumes[0])
+        allVol[.LineIn] = Float(volumes[1])
+        
+        allVol[.Console] = Float(volumes[2])
+        allVol[.System] = Float(volumes[3])
+        allVol[.Game] = Float(volumes[4])
+        allVol[.Chat] = Float(volumes[5])
+        allVol[.Sample] = Float(volumes[6])
+        allVol[.Music] = Float(volumes[7])
+        allVol[.Headphones] = Float(volumes[8])
+        allVol[.MicMonitor] = Float(volumes[9])
+        allVol[.LineOut] = Float(volumes[10])
+        print(allVol)
+        return allVol
+               
+
+    }
+    
+    
+    public func bleepVolume() -> Int {
+        let allbleepvolume = self.status()!.status.mixers
+        var bleepvolume = 0
+        if self.device == "" { bleepvolume = allbleepvolume.first!.1.bleepVolume }
+        else { bleepvolume = allbleepvolume[device]!.bleepVolume }
+        return bleepvolume
     }
     
 //--------------------------------[Commands]-------------------------------------------------//

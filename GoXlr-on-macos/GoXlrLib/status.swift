@@ -14,7 +14,64 @@ import SwiftyJSON
 final class MixerStatus: ObservableObject {
     
     
-    var selectedDevice = GoXlr(serial: GoXlr().listDevices()[0].first)
+    var selectedDevice: GoXlr
+    var status: Mixer
+    
+    public init() {
+        selectedDevice = GoXlr(serial: GoXlr().listDevices()[0].first)
+        status = selectedDevice.deviceStatus()!
+        mic = Float(status.volumes[0])
+        chat = Float(status.volumes[5])
+        music = Float(status.volumes[7])
+        game = Float(status.volumes[4])
+        console = Float(status.volumes[2])
+        linein = Float(status.volumes[1])
+        lineout = Float(status.volumes[10])
+        system = Float(status.volumes[3])
+        sample = Float(status.volumes[6])
+        bleep = Float(selectedDevice.bleepVolume())
+        headphones = Float(status.volumes[8])
+        micmonitor = Float(status.volumes[9])
+        
+        sliderA = status.faderStatus[0].channel
+        sliderB = status.faderStatus[1].channel
+        sliderC = status.faderStatus[2].channel
+        sliderD = status.faderStatus[3].channel
+        
+        muteA = status.faderStatus[0].muteType
+        muteB = status.faderStatus[1].muteType
+        muteC = status.faderStatus[2].muteType
+        muteD = status.faderStatus[3].muteType
+
+    }
+    public func updateMixerStatus() {
+        status = selectedDevice.deviceStatus()!
+        mic = Float(status.volumes[0])
+        chat = Float(status.volumes[5])
+        music = Float(status.volumes[7])
+        game = Float(status.volumes[4])
+        console = Float(status.volumes[2])
+        linein = Float(status.volumes[1])
+        lineout = Float(status.volumes[10])
+        system = Float(status.volumes[3])
+        sample = Float(status.volumes[6])
+        bleep = Float(selectedDevice.bleepVolume())
+        headphones = Float(status.volumes[8])
+        micmonitor = Float(status.volumes[9])
+    }
+    public func updateFaderDetails() {
+        status = selectedDevice.deviceStatus()!
+        sliderA = status.faderStatus[0].channel
+        sliderB = status.faderStatus[1].channel
+        sliderC = status.faderStatus[2].channel
+        sliderD = status.faderStatus[3].channel
+        
+        muteA = status.faderStatus[0].muteType
+        muteB = status.faderStatus[1].muteType
+        muteC = status.faderStatus[2].muteType
+        muteD = status.faderStatus[3].muteType
+
+    }
     @Published var deviceSelect: String = "Select a goxlr" {
         willSet {
             selectedDevice = GoXlr(serial: newValue)
@@ -22,48 +79,29 @@ final class MixerStatus: ObservableObject {
     }
     //--------------------------------[SLIDERS - Mixer]-------------------------------------------------//
     
-    @Published var mic: Float = GoXlr().channelVolume(channel: .Mic)
-    @Published var chat: Float = GoXlr().channelVolume(channel: .Chat) {
-        willSet { _ = selectedDevice.SetVolume(channel: .Chat, volume: Int(newValue)) } }
-    @Published var music: Float = GoXlr().channelVolume(channel: .Music) {
-        willSet { _ = selectedDevice.SetVolume(channel: .Music, volume: Int(newValue)) } }
-    @Published var game: Float = GoXlr().channelVolume(channel: .Game) {
-        willSet { _ = selectedDevice.SetVolume(channel: .Game, volume: Int(newValue)) } }
-    @Published var console: Float = GoXlr().channelVolume(channel: .Console) {
-        willSet { _ = selectedDevice.SetVolume(channel: .Console, volume: Int(newValue)) } }
-    @Published var linein: Float = GoXlr().channelVolume(channel: .LineIn) {
-        willSet { _ = selectedDevice.SetVolume(channel: .LineIn, volume: Int(newValue)) } }
-    @Published var lineout: Float = GoXlr().channelVolume(channel: .LineOut) {
-        willSet { _ = selectedDevice.SetVolume(channel: .LineOut, volume: Int(newValue)) } }
-    @Published var system: Float = GoXlr().channelVolume(channel: .System) {
-        willSet { _ = selectedDevice.SetVolume(channel: .System, volume: Int(newValue)) } }
-    @Published var sample: Float = GoXlr().channelVolume(channel: .Sample) {
-        willSet { _ = selectedDevice.SetVolume(channel: .Sample, volume: Int(newValue)) } }
-    @Published var bleep: Float = 0 {
-        willSet { _ = selectedDevice.SetSwearButtonVolume(volume: Int(newValue)) } }
-    @Published var headphones: Float = GoXlr().channelVolume(channel: .Headphones) {
-        willSet { _ = selectedDevice.SetVolume(channel: .Headphones, volume: Int(newValue)) } }
-    @Published var micmonitor: Float = GoXlr().channelVolume(channel: .MicMonitor) {
-        willSet { _ = selectedDevice.SetVolume(channel: .MicMonitor, volume: Int(newValue)) } }
+    @Published var mic: Float
+    @Published var chat: Float
+    @Published var music: Float
+    @Published var game: Float
+    @Published var console: Float
+    @Published var linein: Float
+    @Published var lineout: Float
+    @Published var system: Float
+    @Published var sample: Float
+    @Published var bleep: Float
+    @Published var headphones: Float
+    @Published var micmonitor: Float
     
     
-    @Published var sliderA: ChannelName = GoXlr().faderAssignements(fader: .A) {
-        didSet { _ = selectedDevice.SetFader(fader: .A, channel: sliderA)} }
-    @Published var sliderB: ChannelName = GoXlr().faderAssignements(fader: .B) {
-        didSet { _ = selectedDevice.SetFader(fader: .B, channel: sliderB)} }
-    @Published var sliderC: ChannelName = GoXlr().faderAssignements(fader: .C) {
-        didSet { _ = selectedDevice.SetFader(fader: .C, channel: sliderC)} }
-    @Published var sliderD: ChannelName = GoXlr().faderAssignements(fader: .D) {
-        didSet { _ = selectedDevice.SetFader(fader: .D, channel: sliderD)} }
+    @Published var sliderA: ChannelName
+    @Published var sliderB: ChannelName
+    @Published var sliderC: ChannelName
+    @Published var sliderD: ChannelName
 
-    @Published var muteA: MuteFunction = GoXlr().muteBehaviour(fader: .A) {
-        willSet { _ = selectedDevice.SetFaderMuteFunction(faderName: .A, MuteFunction: newValue)} }
-    @Published var muteB: MuteFunction = GoXlr().muteBehaviour(fader: .B) {
-        willSet { _ = selectedDevice.SetFaderMuteFunction(faderName: .B, MuteFunction: newValue)} }
-    @Published var muteC: MuteFunction = GoXlr().muteBehaviour(fader: .C) {
-        willSet { _ = selectedDevice.SetFaderMuteFunction(faderName: .C, MuteFunction: newValue)} }
-    @Published var muteD: MuteFunction = GoXlr().muteBehaviour(fader: .D) {
-        willSet { _ = selectedDevice.SetFaderMuteFunction(faderName: .D, MuteFunction: newValue)} }
+    @Published var muteA: MuteFunction
+    @Published var muteB: MuteFunction
+    @Published var muteC: MuteFunction
+    @Published var muteD: MuteFunction
 
 }
 

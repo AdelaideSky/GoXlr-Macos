@@ -32,7 +32,7 @@ struct Files: Codable {
 }
 
 // MARK: - Mixer
-struct Mixer: Codable {
+public struct Mixer: Codable {
     let hardware: Hardware
     let faderStatus: [FaderStatus]
     let micStatus: MicStatus
@@ -70,7 +70,8 @@ struct CoughButton: Codable {
 
 // MARK: - FaderStatus
 struct FaderStatus: Codable {
-    let channel, muteType: String
+    let channel: ChannelName
+    let muteType: MuteFunction
 
     enum CodingKeys: String, CodingKey {
         case channel

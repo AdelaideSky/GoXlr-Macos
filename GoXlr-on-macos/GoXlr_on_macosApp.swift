@@ -16,7 +16,7 @@ struct GoXlr_on_macosApp: App {
         var body: some Scene {
             WindowGroup("GoXLr Panel", id: "manager") {
                  ContentView()
-                    .frame(minWidth: 1000, idealWidth: 1200, minHeight: 520, idealHeight: 530)
+                    .frame(minWidth: 1100, idealWidth: 1200, minHeight: 520, idealHeight: 530)
             }
             MenuBarExtra(currentNumber, image: "devices.goxlr.logo") {
                 

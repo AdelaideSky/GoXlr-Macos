@@ -18,7 +18,7 @@ struct ContentView: View {
         if MixerStatus().selectedDevice.deviceType() == .Full {
             NavigationView {
                 List {
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: HomeView()) {
                         Label("Home", systemImage: "house")
                     }
                     
@@ -97,7 +97,7 @@ struct ContentView: View {
         else {
             NavigationView {
                 List {
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: HomeView()) {
                         Label("Home", systemImage: "house")
                     }
                     
