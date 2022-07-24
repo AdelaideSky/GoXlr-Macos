@@ -11,6 +11,7 @@
 		700E138D2870A6BE00FD6306 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E138C2870A6BE00FD6306 /* ContentView.swift */; };
 		700E138F2870A6C500FD6306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700E138E2870A6C500FD6306 /* Assets.xcassets */; };
 		700E13922870A6C500FD6306 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700E13912870A6C500FD6306 /* Preview Assets.xcassets */; };
+		703067C1288D607A00833836 /* audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703067C0288D607A00833836 /* audio.swift */; };
 		70563473287182D600985223 /* MixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70563472287182D600985223 /* MixerView.swift */; };
 		705634762871836F00985223 /* device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705634742871836F00985223 /* device.swift */; };
 		705634772871836F00985223 /* goxlr_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705634752871836F00985223 /* goxlr_types.swift */; };
@@ -20,6 +21,9 @@
 		70B536E42877035900DE8ED0 /* homeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E32877035900DE8ED0 /* homeView.swift */; };
 		70B536E6287705FC00DE8ED0 /* NotSupportedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */; };
 		70B536E8287719DD00DE8ED0 /* StatusStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E7287719DD00DE8ED0 /* StatusStructs.swift */; };
+		70BF7F7528888EEC00A7E6E8 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF7F7428888EEC00A7E6E8 /* MicView.swift */; };
+		70BF7F7828889B4E00A7E6E8 /* ControlCenterVSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF7F7728889B4E00A7E6E8 /* ControlCenterVSlider.swift */; };
+		70F64126288AECBB0048A7E4 /* MicSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F64125288AECBB0048A7E4 /* MicSetupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,7 @@
 		700E13912870A6C500FD6306 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		700E13932870A6C500FD6306 /* GoXlr_on_macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoXlr_on_macos.entitlements; sourceTree = "<group>"; };
 		700E13992870A81900FD6306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		703067C0288D607A00833836 /* audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audio.swift; sourceTree = "<group>"; };
 		70563472287182D600985223 /* MixerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerView.swift; sourceTree = "<group>"; };
 		705634742871836F00985223 /* device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = device.swift; sourceTree = "<group>"; };
 		705634752871836F00985223 /* goxlr_types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goxlr_types.swift; sourceTree = "<group>"; };
@@ -37,6 +42,9 @@
 		70B536E32877035900DE8ED0 /* homeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeView.swift; sourceTree = "<group>"; };
 		70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSupportedView.swift; sourceTree = "<group>"; };
 		70B536E7287719DD00DE8ED0 /* StatusStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusStructs.swift; sourceTree = "<group>"; };
+		70BF7F7428888EEC00A7E6E8 /* MicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicView.swift; sourceTree = "<group>"; };
+		70BF7F7728889B4E00A7E6E8 /* ControlCenterVSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCenterVSlider.swift; sourceTree = "<group>"; };
+		70F64125288AECBB0048A7E4 /* MicSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSetupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 		700E13892870A6BE00FD6306 /* GoXlr-on-macos */ = {
 			isa = PBXGroup;
 			children = (
+				70BF7F7628889B3C00A7E6E8 /* Elements */,
 				70B536E22877034100DE8ED0 /* Views */,
 				705634782871837700985223 /* GoXlrLib */,
 				700E13992870A81900FD6306 /* Info.plist */,
@@ -97,6 +106,7 @@
 				705634752871836F00985223 /* goxlr_types.swift */,
 				7077E694287439E400D56C76 /* status.swift */,
 				70B536E7287719DD00DE8ED0 /* StatusStructs.swift */,
+				703067C0288D607A00833836 /* audio.swift */,
 			);
 			path = GoXlrLib;
 			sourceTree = "<group>";
@@ -108,8 +118,18 @@
 				70563472287182D600985223 /* MixerView.swift */,
 				70B536E32877035900DE8ED0 /* homeView.swift */,
 				70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */,
+				70BF7F7428888EEC00A7E6E8 /* MicView.swift */,
+				70F64125288AECBB0048A7E4 /* MicSetupView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		70BF7F7628889B3C00A7E6E8 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				70BF7F7728889B4E00A7E6E8 /* ControlCenterVSlider.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,11 +213,15 @@
 				700E138D2870A6BE00FD6306 /* ContentView.swift in Sources */,
 				705634772871836F00985223 /* goxlr_types.swift in Sources */,
 				70B536E42877035900DE8ED0 /* homeView.swift in Sources */,
+				70BF7F7828889B4E00A7E6E8 /* ControlCenterVSlider.swift in Sources */,
 				70B536E6287705FC00DE8ED0 /* NotSupportedView.swift in Sources */,
 				700E138B2870A6BE00FD6306 /* GoXlr_on_macosApp.swift in Sources */,
 				70B536E8287719DD00DE8ED0 /* StatusStructs.swift in Sources */,
+				70BF7F7528888EEC00A7E6E8 /* MicView.swift in Sources */,
+				703067C1288D607A00833836 /* audio.swift in Sources */,
 				70563473287182D600985223 /* MixerView.swift in Sources */,
 				705634762871836F00985223 /* device.swift in Sources */,
+				70F64126288AECBB0048A7E4 /* MicSetupView.swift in Sources */,
 				7077E695287439E400D56C76 /* status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

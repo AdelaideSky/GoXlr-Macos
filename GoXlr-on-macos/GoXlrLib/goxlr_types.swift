@@ -7,6 +7,15 @@
 
 import Foundation
 
+extension Array where Element: (Comparable & SignedNumeric) {
+
+    func nearest(to value: Element) -> (offset: Int, element: Element)? {
+        self.enumerated().min(by: {
+            abs($0.element - value) < abs($1.element - value)
+        })
+    }
+}
+
 public enum Model: String {
     case Mini
     case Full
@@ -257,7 +266,7 @@ public enum ButtonColourGroups: String {
     case SamplerButtons
 }
 
-public enum ButtonColourOffStyle: String {
+public enum ButtonColourOffStyle: String, Codable {
     case Dimmed
     case Colour2
     case DimmedColour2
@@ -274,13 +283,17 @@ public enum MuteFunction: String, Equatable, CaseIterable, Codable {
 }
 
 
-public enum MicrophoneType: String {
+public enum MicrophoneType: String, Codable {
     case Dynamic
     case Condenser
     case Jack
 }
 
-
+public enum Eqsliders: String, Codable {
+    case Bass
+    case Mid
+    case Tremble
+}
 
 public enum MiniEqFrequencies: String {
     case Equalizer90Hz
@@ -292,7 +305,7 @@ public enum MiniEqFrequencies: String {
 }
 
 
-public enum EqFrequencies: String {
+public enum EqFrequencies: String, Codable {
     case Equalizer31Hz
     case Equalizer63Hz
     case Equalizer125Hz
@@ -305,18 +318,54 @@ public enum EqFrequencies: String {
     case Equalizer16KHz
 }
 
+extension Dictionary where Self == [String: Double] {
+    public func bassValue() -> Int {
+        let a = Double(Double(self["Equalizer31Hz"]!) + Double(self["Equalizer63Hz"]!) + Double(self["Equalizer125Hz"]!) + Double(self["Equalizer250Hz"]!))
+        return Int(a / Double(4))
+    }
+    public func midValue() -> Int {
+        let a = Double(Double(self["Equalizer500Hz"]!) + Double(self["Equalizer1KHz"]!) + Double(self["Equalizer2KHz"]!))
+        return Int(a / Double(3))
+
+    }
+    public func trembleValue() -> Int {
+        let a = Double(Double(self["Equalizer4KHz"]!) + Double(self["Equalizer8KHz"]!) + Double(self["Equalizer16KHz"]!))
+        return Int(a / Double(3))
+    }
+}
+
 public enum CompressorRatio: String {
     case Ratio1_0, Ratio1_1, Ratio1_2, Ratio1_4,  Ratio1_6,  Ratio1_8, Ratio2_0, Ratio2_5, Ratio3_2,
     Ratio4_0, Ratio5_6, Ratio8_0, Ratio16_0, Ratio32_0, Ratio64_0
 }
 
-public enum GateTimes: String {
+public enum GateTimes: String, CaseIterable {
     case Gate10ms,   Gate20ms,   Gate30ms,   Gate40ms,   Gate50ms,   Gate60ms,   Gate70ms,   Gate80ms,
     Gate90ms,   Gate100ms,  Gate110ms,  Gate120ms,  Gate130ms,  Gate140ms,  Gate150ms,  Gate160ms,
     Gate170ms,  Gate180ms,  Gate190ms,  Gate200ms,  Gate250ms,  Gate300ms,  Gate350ms,  Gate400ms,
     Gate450ms,  Gate500ms,  Gate550ms,  Gate600ms,  Gate650ms,  Gate700ms,  Gate750ms,  Gate800ms,
     Gate850ms,  Gate900ms,  Gate950ms,  Gate1000ms, Gate1100ms, Gate1200ms, Gate1300ms, Gate1400ms,
     Gate1500ms, Gate1600ms, Gate1700ms, Gate1800ms, Gate1900ms, Gate2000ms
+}
+
+extension CaseIterable where Self: Equatable {
+
+    var index: Self.AllCases.Index? {
+        return Self.allCases.index { self == $0 }
+    }
+}
+
+extension Int {
+    public func GetClosestGateTime() -> GateTimes {
+        let listimes = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]
+        let nearest = listimes.nearest(to: self)!.element as Int
+        return GateTimes(rawValue: "Gate\(nearest)ms")!
+        
+    }
+    public func GetIntGateTime() -> Int {
+        let listimes = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]
+        return listimes[self]
+    }
 }
 
 public enum CompressorAttackTime: String {

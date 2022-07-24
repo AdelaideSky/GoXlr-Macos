@@ -16,7 +16,7 @@ struct GoXlr_on_macosApp: App {
         var body: some Scene {
             WindowGroup("GoXLr Panel", id: "manager") {
                  ContentView()
-                    .frame(minWidth: 1100, idealWidth: 1200, minHeight: 520, idealHeight: 530)
+                    .frame(minWidth: 923, idealWidth: 923, minHeight: 490, idealHeight: 520)
             }
             MenuBarExtra(currentNumber, image: "devices.goxlr.logo") {
                 
@@ -58,22 +58,7 @@ struct OpenWindowButton: View {
     
         var body: some View {
             VStack(spacing: 16) {
-                HStack {
-                    Button {
-                        print(testingParsing())} label: {
-                        Text("Test things")
-                            .frame(maxWidth: .infinity)}
-                    Picker("", selection: $select) {
-                        Text("abcdeegrgr").tag("abcdeegdrgr")
-                        Text("abcdeegrgr").tag("abcdeezgrgr")
-                        Text("abcdeegrgr").tag("abcdeegrgra")
-                        Text("abcdeegrgr").tag("abcdgeegrgr")
-                    }
-                }
-                    .controlSize(.large)
                 
-                
-
                 HStack {
                     
                     Button {

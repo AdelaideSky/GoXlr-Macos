@@ -13,6 +13,7 @@ import SwiftyJSON
 
 final class MixerStatus: ObservableObject {
     
+    @Published var micSetup = false
     
     var selectedDevice: GoXlr
     var status: Mixer
@@ -20,18 +21,18 @@ final class MixerStatus: ObservableObject {
     public init() {
         selectedDevice = GoXlr(serial: GoXlr().listDevices()[0].first)
         status = selectedDevice.deviceStatus()!
-        mic = Float(status.volumes[0])
-        chat = Float(status.volumes[5])
-        music = Float(status.volumes[7])
-        game = Float(status.volumes[4])
-        console = Float(status.volumes[2])
-        linein = Float(status.volumes[1])
-        lineout = Float(status.volumes[10])
-        system = Float(status.volumes[3])
-        sample = Float(status.volumes[6])
-        bleep = Float(selectedDevice.bleepVolume())
-        headphones = Float(status.volumes[8])
-        micmonitor = Float(status.volumes[9])
+        mic = Float(status.levels.volumes[0])
+        chat = Float(status.levels.volumes[5])
+        music = Float(status.levels.volumes[7])
+        game = Float(status.levels.volumes[4])
+        console = Float(status.levels.volumes[2])
+        linein = Float(status.levels.volumes[1])
+        lineout = Float(status.levels.volumes[10])
+        system = Float(status.levels.volumes[3])
+        sample = Float(status.levels.volumes[6])
+        bleep = Float(status.levels.bleep)
+        headphones = Float(status.levels.volumes[8])
+        micmonitor = Float(status.levels.volumes[9])
         
         sliderA = status.faderStatus[0].channel
         sliderB = status.faderStatus[1].channel
@@ -42,22 +43,45 @@ final class MixerStatus: ObservableObject {
         muteB = status.faderStatus[1].muteType
         muteC = status.faderStatus[2].muteType
         muteD = status.faderStatus[3].muteType
+        
+        // ---- Mic ----
+        
+        micType = status.micStatus.micType
+        
+        if status.micStatus.micType == .Dynamic {activeGain = Float(status.micStatus.micGains[0])}
+        else if status.micStatus.micType == .Condenser {activeGain = Float(status.micStatus.micGains[1])}
+        else {activeGain = Float(status.micStatus.micGains[2])}
+
+        dynamicGain = Float(status.micStatus.micGains[0])
+        condenserGain = Float(status.micStatus.micGains[1])
+        jackGain = Float(status.micStatus.micGains[2])
+
+        deEsser = Float(status.levels.deess)
+        
+        gateThreshold = Float(status.micStatus.noiseGate.threshold)
+        gateAttenuation = Float(status.micStatus.noiseGate.attenuation)
+        gateAttack = Float(status.micStatus.noiseGate.attack.GetIntGateTime())
+        gateRelease = Float(status.micStatus.noiseGate.release.GetIntGateTime())
+        
+        eqBass = Float(status.micStatus.equaliser.gain.bassValue())
+        eqMid = Float(status.micStatus.equaliser.gain.midValue())
+        eqTremble = Float(status.micStatus.equaliser.gain.trembleValue())
 
     }
     public func updateMixerStatus() {
         status = selectedDevice.deviceStatus()!
-        mic = Float(status.volumes[0])
-        chat = Float(status.volumes[5])
-        music = Float(status.volumes[7])
-        game = Float(status.volumes[4])
-        console = Float(status.volumes[2])
-        linein = Float(status.volumes[1])
-        lineout = Float(status.volumes[10])
-        system = Float(status.volumes[3])
-        sample = Float(status.volumes[6])
-        bleep = Float(selectedDevice.bleepVolume())
-        headphones = Float(status.volumes[8])
-        micmonitor = Float(status.volumes[9])
+        mic = Float(status.levels.volumes[0])
+        chat = Float(status.levels.volumes[5])
+        music = Float(status.levels.volumes[7])
+        game = Float(status.levels.volumes[4])
+        console = Float(status.levels.volumes[2])
+        linein = Float(status.levels.volumes[1])
+        lineout = Float(status.levels.volumes[10])
+        system = Float(status.levels.volumes[3])
+        sample = Float(status.levels.volumes[6])
+        bleep = Float(status.levels.bleep)
+        headphones = Float(status.levels.volumes[8])
+        micmonitor = Float(status.levels.volumes[9])
     }
     public func updateFaderDetails() {
         status = selectedDevice.deviceStatus()!
@@ -70,7 +94,33 @@ final class MixerStatus: ObservableObject {
         muteB = status.faderStatus[1].muteType
         muteC = status.faderStatus[2].muteType
         muteD = status.faderStatus[3].muteType
+        
+        eqBass = Float(status.micStatus.equaliser.gain.bassValue())
+        eqMid = Float(status.micStatus.equaliser.gain.midValue())
+        eqTremble = Float(status.micStatus.equaliser.gain.trembleValue())
 
+    }
+    
+    public func updateMicDetails() {
+        
+        status = selectedDevice.deviceStatus()!
+        
+        micType = status.micStatus.micType
+        
+        if status.micStatus.micType == .Dynamic {activeGain = Float(status.micStatus.micGains[0])}
+        else if status.micStatus.micType == .Condenser {activeGain = Float(status.micStatus.micGains[1])}
+        else {activeGain = Float(status.micStatus.micGains[2])}
+
+        dynamicGain = Float(status.micStatus.micGains[0])
+        condenserGain = Float(status.micStatus.micGains[1])
+        jackGain = Float(status.micStatus.micGains[2])
+        
+        deEsser = Float(status.levels.deess)
+        
+        gateThreshold = Float(status.micStatus.noiseGate.threshold)
+        gateAttenuation = Float(status.micStatus.noiseGate.attenuation)
+        gateAttack = Float(status.micStatus.noiseGate.attack.GetIntGateTime())
+        gateRelease = Float(status.micStatus.noiseGate.release.GetIntGateTime())
     }
     @Published var deviceSelect: String = "Select a goxlr" {
         willSet {
@@ -102,6 +152,35 @@ final class MixerStatus: ObservableObject {
     @Published var muteB: MuteFunction
     @Published var muteC: MuteFunction
     @Published var muteD: MuteFunction
+    
+    //--------------------------------[Mic types / gain - MIC]-----------------------------------------//
+
+    @Published var micType: MicrophoneType
+    
+    @Published var activeGain: Float
+    @Published var dynamicGain: Float
+    @Published var condenserGain: Float
+    @Published var jackGain: Float
+    @Published var micLevel: Float = 0
+
+    
+    //--------------------------------[De-esser - MIC]-------------------------------------------------//
+    
+    @Published var deEsser: Float
+
+    //--------------------------------[Noise Gate - MIC]-----------------------------------------------//
+    
+    @Published var gateThreshold: Float
+    @Published var gateAttenuation: Float
+    @Published var gateAttack: Float
+    @Published var gateRelease: Float
+    
+    //--------------------------------[Equalizer - MIC]-----------------------------------------------//
+    
+    @Published var eqBass: Float
+    @Published var eqMid: Float
+    @Published var eqTremble: Float
+
 
 }
 

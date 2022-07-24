@@ -28,7 +28,7 @@ struct ContentView: View {
                         .font(.system(size: 10))
                         .fontWeight(.bold)
                     Group{
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: MicView().environmentObject(MixerStatus())) {
                             Label("Mic", systemImage: "mic")
                         }
                         NavigationLink(destination: MixerView().environmentObject(MixerStatus())) {
@@ -65,7 +65,6 @@ struct ContentView: View {
                         }
                     }
                     
-                    Spacer()
                     
                     Divider()
                     Group {
@@ -107,7 +106,7 @@ struct ContentView: View {
                         .font(.system(size: 10))
                         .fontWeight(.bold)
                     Group{
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: MicView().environmentObject(MixerStatus())) {
                             Label("Mic", systemImage: "mic")
                         }
                         NavigationLink(destination: MixerView().environmentObject(MixerStatus())) {

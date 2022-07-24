@@ -203,8 +203,8 @@ public struct GoXlr {
     public func channelVolume(channel: ChannelName) -> Float {
         let allvolumes = self.status()!.status.mixers
         let volumes: [Int]
-        if self.device == "" { volumes = allvolumes.first!.1.volumes }
-        else { volumes = allvolumes[device]!.volumes }
+        if self.device == "" { volumes = allvolumes.first!.1.levels.volumes }
+        else { volumes = allvolumes[device]!.levels.volumes }
         
         if channel == .Mic { return Float(volumes[0]) }
         else if channel == .LineIn { return Float(volumes[1]) }
@@ -223,8 +223,8 @@ public struct GoXlr {
     public func allChannelVolume() -> [ChannelName: Float] {
         let allvolumes = self.status()!.status.mixers
         let volumes: [Int]
-        if self.device == "" { volumes = allvolumes.first!.1.volumes }
-        else { volumes = allvolumes[device]!.volumes }
+        if self.device == "" { volumes = allvolumes.first!.1.levels.volumes }
+        else { volumes = allvolumes[device]!.levels.volumes }
         var allVol: [ChannelName:Float] = [:]
         
         allVol[.Mic] = Float(volumes[0])
@@ -249,8 +249,8 @@ public struct GoXlr {
     public func bleepVolume() -> Int {
         let allbleepvolume = self.status()!.status.mixers
         var bleepvolume = 0
-        if self.device == "" { bleepvolume = allbleepvolume.first!.1.bleepVolume }
-        else { bleepvolume = allbleepvolume[device]!.bleepVolume }
+        if self.device == "" { bleepvolume = allbleepvolume.first!.1.levels.bleep }
+        else { bleepvolume = allbleepvolume[device]!.levels.bleep }
         return bleepvolume
     }
     
@@ -461,6 +461,26 @@ public struct GoXlr {
             return "SetEqFreq Error"
         }
     }
+    
+    public func setSimplifiedEq(type: Eqsliders, value: Int) {
+        if type == .Bass {
+            SetEqGain(frequence: .Equalizer31Hz, gain: value)
+            SetEqGain(frequence: .Equalizer63Hz, gain: value)
+            SetEqGain(frequence: .Equalizer125Hz, gain: value)
+            SetEqGain(frequence: .Equalizer250Hz, gain: value)
+        }
+        else if type == .Mid {
+            SetEqGain(frequence: .Equalizer500Hz, gain: value)
+            SetEqGain(frequence: .Equalizer1KHz, gain: value)
+            SetEqGain(frequence: .Equalizer2KHz, gain: value)
+        }
+        else {
+            SetEqGain(frequence: .Equalizer4KHz, gain: value)
+            SetEqGain(frequence: .Equalizer8KHz, gain: value)
+            SetEqGain(frequence: .Equalizer16KHz, gain: value)
+        }
+
+    }
     //--------------------------------[Gate Settings]-------------------------------------------------//
 
     public func SetGateThreshold(treshold: Int) -> JSON {
@@ -498,7 +518,7 @@ public struct GoXlr {
         
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SetGateAttack\":\"\(attack)\"}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SetGateAttack\":\(attack.index!)}]}"
             try socket.write(from: createrequest(request: request))
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -513,7 +533,7 @@ public struct GoXlr {
         
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SetGateRelease\":\"\(release)\"}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SetGateRelease\":\(release.index!)}]}"
             try socket.write(from: createrequest(request: request))
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -537,6 +557,23 @@ public struct GoXlr {
             return "SetGateActive Error"
         }
     }
+    //--------------------------------[De-esser Settings]-------------------------------------------------//
+    
+    public func SetDeEsser(amount: Int) -> JSON {
+        //Set De-esser amount
+        
+        do {
+            let socket = DaemonSocket().new()
+            let request = "{\"Command\":[\"\(device)\",{\"SetDeeser\":\(amount)}]}"
+            try socket.write(from: createrequest(request: request))
+            return JSON(DaemonSocket().read(socket: socket))
+                        
+        } catch {
+            print("SetDeEsser Error")
+            return "SetDeEsser Error"
+        }
+    }
+
     //--------------------------------[Gate Settings]-------------------------------------------------//
 
     
@@ -841,7 +878,7 @@ public struct GoXlr {
         
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SaveMicProfile\":\"\"}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SaveMicProfile\":[]}]}"
             try socket.write(from: createrequest(request: request))
             return JSON(DaemonSocket().read(socket: socket))
                         
