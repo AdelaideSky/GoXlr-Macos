@@ -63,9 +63,42 @@ final class MixerStatus: ObservableObject {
         gateAttack = Float(status.micStatus.noiseGate.attack.GetIntGateTime())
         gateRelease = Float(status.micStatus.noiseGate.release.GetIntGateTime())
         
+        gateAmount = Float((((status.micStatus.noiseGate.threshold + 59) * 100 / 59) + (status.micStatus.noiseGate.attenuation - 50)) * 100 / 150)
+        
         eqBass = Float(status.micStatus.equaliser.gain.bassValue())
         eqMid = Float(status.micStatus.equaliser.gain.midValue())
         eqTremble = Float(status.micStatus.equaliser.gain.trembleValue())
+        
+        
+        eq31Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer31Hz.rawValue]!)
+        eq63Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer63Hz.rawValue]!)
+        eq125Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer125Hz.rawValue]!)
+        eq250Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer250Hz.rawValue]!)
+        eq500Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer500Hz.rawValue]!)
+        eq1KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer1KHz.rawValue]!)
+        eq2KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer2KHz.rawValue]!)
+        eq4KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer2KHz.rawValue]!)
+        eq8KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer8KHz.rawValue]!)
+        eq16KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer16KHz.rawValue]!)
+        
+        ft31Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer31Hz.rawValue]!)
+        ft63Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer63Hz.rawValue]!)
+        ft125Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer125Hz.rawValue]!)
+        ft250Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer250Hz.rawValue]!)
+        ft500Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer500Hz.rawValue]!)
+        ft1KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer1KHz.rawValue]!)
+        ft2KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer2KHz.rawValue]!)
+        ft4KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer4KHz.rawValue]!)
+        ft8KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer8KHz.rawValue]!)
+        ft16KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer16KHz.rawValue]!)
+        
+        compAmount = Float(((Double(status.micStatus.compressor.threshold + 24) * 100 / 24) + (Double(status.micStatus.compressor.ratio) * 100 / 14)) / 2)
+
+        compThreshold = Float(status.micStatus.compressor.threshold)
+        compAttack = Float(status.micStatus.compressor.attack.GetIntCompAtkTime())
+        compRelease = Float(status.micStatus.compressor.release.GetIntCompRelTime())
+        compRatio = Float(status.micStatus.compressor.ratio)
+        compMakeUpGain = Float(status.micStatus.compressor.makeupGain)
 
     }
     public func updateMixerStatus() {
@@ -117,10 +150,41 @@ final class MixerStatus: ObservableObject {
         
         deEsser = Float(status.levels.deess)
         
+        gateAmount = Float((((status.micStatus.noiseGate.threshold + 59) * 100 / 59) + (status.micStatus.noiseGate.attenuation - 50)) * 100 / 150)
         gateThreshold = Float(status.micStatus.noiseGate.threshold)
         gateAttenuation = Float(status.micStatus.noiseGate.attenuation)
         gateAttack = Float(status.micStatus.noiseGate.attack.GetIntGateTime())
         gateRelease = Float(status.micStatus.noiseGate.release.GetIntGateTime())
+        
+        eq31Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer31Hz.rawValue]!)
+        eq63Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer63Hz.rawValue]!)
+        eq125Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer125Hz.rawValue]!)
+        eq250Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer250Hz.rawValue]!)
+        eq500Hz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer500Hz.rawValue]!)
+        eq1KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer1KHz.rawValue]!)
+        eq2KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer2KHz.rawValue]!)
+        eq4KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer2KHz.rawValue]!)
+        eq8KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer8KHz.rawValue]!)
+        eq16KHz = Float(status.micStatus.equaliser.gain[EqFrequencies.Equalizer16KHz.rawValue]!)
+        
+        ft31Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer31Hz.rawValue]!)
+        ft63Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer63Hz.rawValue]!)
+        ft125Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer125Hz.rawValue]!)
+        ft250Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer250Hz.rawValue]!)
+        ft500Hz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer500Hz.rawValue]!)
+        ft1KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer1KHz.rawValue]!)
+        ft2KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer2KHz.rawValue]!)
+        ft4KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer4KHz.rawValue]!)
+        ft8KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer8KHz.rawValue]!)
+        ft16KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer16KHz.rawValue]!)
+        
+        compAmount = Float(((Double(status.micStatus.compressor.threshold + 24) * 100 / 24) + (Double(status.micStatus.compressor.ratio) * 100 / 14)) / 2)
+
+        compThreshold = Float(status.micStatus.compressor.threshold)
+        compAttack = Float(status.micStatus.compressor.attack.GetIntCompAtkTime())
+        compRelease = Float(status.micStatus.compressor.release.GetIntCompRelTime())
+        compRatio = Float(status.micStatus.compressor.ratio)
+        compMakeUpGain = Float(status.micStatus.compressor.makeupGain)
     }
     @Published var deviceSelect: String = "Select a goxlr" {
         willSet {
@@ -170,6 +234,8 @@ final class MixerStatus: ObservableObject {
 
     //--------------------------------[Noise Gate - MIC]-----------------------------------------------//
     
+    @Published var gateAmount: Float
+    
     @Published var gateThreshold: Float
     @Published var gateAttenuation: Float
     @Published var gateAttack: Float
@@ -180,7 +246,37 @@ final class MixerStatus: ObservableObject {
     @Published var eqBass: Float
     @Published var eqMid: Float
     @Published var eqTremble: Float
+    
+    @Published var eq31Hz: Float
+    @Published var eq63Hz: Float
+    @Published var eq125Hz: Float
+    @Published var eq250Hz: Float
+    @Published var eq500Hz: Float
+    @Published var eq1KHz: Float
+    @Published var eq2KHz: Float
+    @Published var eq4KHz: Float
+    @Published var eq8KHz: Float
+    @Published var eq16KHz: Float
+    
+    @Published var ft31Hz: Float
+    @Published var ft63Hz: Float
+    @Published var ft125Hz: Float
+    @Published var ft250Hz: Float
+    @Published var ft500Hz: Float
+    @Published var ft1KHz: Float
+    @Published var ft2KHz: Float
+    @Published var ft4KHz: Float
+    @Published var ft8KHz: Float
+    @Published var ft16KHz: Float
+    
+//--------------------------------[Compressor - MIC]-----------------------------------------------//
 
+    @Published var compAmount: Float
+    @Published var compThreshold: Float
+    @Published var compRatio: Float
+    @Published var compAttack: Float
+    @Published var compRelease: Float
+    @Published var compMakeUpGain: Float
 
 }
 

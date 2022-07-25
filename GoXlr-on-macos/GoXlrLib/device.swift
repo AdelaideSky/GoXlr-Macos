@@ -462,6 +462,23 @@ public struct GoXlr {
         }
     }
     
+    public func ResetEQ() {
+        for freq in EqFrequencies.allCases {
+            self.SetEqGain(frequence: freq, gain: 0)
+        }
+        self.SetEqFreq(frequence: .Equalizer31Hz, freq: 31)
+        self.SetEqFreq(frequence: .Equalizer63Hz, freq: 63)
+        self.SetEqFreq(frequence: .Equalizer125Hz, freq: 125)
+        self.SetEqFreq(frequence: .Equalizer250Hz, freq: 250)
+        self.SetEqFreq(frequence: .Equalizer500Hz, freq: 500)
+        self.SetEqFreq(frequence: .Equalizer1KHz, freq: 1000)
+        self.SetEqFreq(frequence: .Equalizer2KHz, freq: 2000)
+        self.SetEqFreq(frequence: .Equalizer4KHz, freq: 4000)
+        self.SetEqFreq(frequence: .Equalizer8KHz, freq: 8000)
+        self.SetEqFreq(frequence: .Equalizer16KHz, freq: 16000)
+
+    }
+    
     public func setSimplifiedEq(type: Eqsliders, value: Int) {
         if type == .Bass {
             SetEqGain(frequence: .Equalizer31Hz, gain: value)
@@ -557,6 +574,21 @@ public struct GoXlr {
             return "SetGateActive Error"
         }
     }
+    
+    public func SetGateAmount(amount: Double) {
+        //set gate Amount
+        print(amount)
+        self.SetGateThreshold(treshold: Int(amount/100*59-59))
+        print(amount/100*59-59)
+        self.SetGateAttenuation(attenuation: Int(((amount / 100) * 50) + 50))
+        print(((amount / 100) * 50) + 50)
+        if amount == 0 {
+            self.SetGateActive(state: false)
+        }
+        else {
+            self.SetGateActive(state: true)
+        }
+    }
     //--------------------------------[De-esser Settings]-------------------------------------------------//
     
     public func SetDeEsser(amount: Int) -> JSON {
@@ -607,7 +639,7 @@ public struct GoXlr {
         
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SetCompressorRatio\":\"\(ratio)\"}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SetCompressorRatio\":\(ratio.index!)}]}"
             try socket.write(from: createrequest(request: request))
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -624,7 +656,7 @@ public struct GoXlr {
 
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SetCompressorAttack\":\"\(attack)\"}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SetCompressorAttack\":\(attack.index!)}]}"
             try socket.write(from: createrequest(request: request))
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -635,12 +667,12 @@ public struct GoXlr {
     }
     
     public func SetCompressorReleaseTime(release: CompressorReleaseTime) -> JSON {
-        //Set gate attack with string (like Gate10ms min, Gate20ms, or Gate2000ms max)
+        //Set gate attack with comp time
         // Note: 0 is technically 15 :)
 
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SetCompressorReleaseTime\":\"\(release)\"}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SetCompressorReleaseTime\":\(release.index!)}]}"
             try socket.write(from: createrequest(request: request))
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -663,6 +695,11 @@ public struct GoXlr {
             print("SetCompressorMakeupGain Error")
             return "SetCompressorMakeupGain Error"
         }
+    }
+    
+    public func SetCompressorAmount(amount: Int) {
+        self.SetCompressorThreshold(treshold: Int((Double(amount) / 100 * 24) - 24))
+        self.SetCompressorRatio(ratio: Int((Double(amount) / 100 * 14)).GetCompRatio())
     }
     
     //--------------------------------[Color related Settings]-------------------------------------------------//

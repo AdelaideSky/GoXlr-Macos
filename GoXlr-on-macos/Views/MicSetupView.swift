@@ -59,8 +59,8 @@ struct MicSetupView: View {
         }.toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Done") {
+                    mixer.updateMicDetails()
                     mixer.micSetup = false
-
                 }
             }
         }
@@ -105,6 +105,9 @@ struct msDynamicView: View {
                 
             }
         }.padding(20)
+            .onAppear() {
+                mixer.selectedDevice.SetMicrophoneGain(microphoneType: .Dynamic, gain: Int(mixer.dynamicGain))
+            }
     }
 }
 
@@ -140,6 +143,9 @@ struct msCondenserView: View {
 
             }
         }.padding(20)
+            .onAppear() {
+                mixer.selectedDevice.SetMicrophoneGain(microphoneType: .Condenser, gain: Int(mixer.condenserGain))
+            }
     }
 }
 
@@ -176,5 +182,8 @@ struct msJackView: View {
 
             }
         }.padding(20)
+            .onAppear() {
+                mixer.selectedDevice.SetMicrophoneGain(microphoneType: .Jack, gain: Int(mixer.jackGain))
+            }
     }
 }

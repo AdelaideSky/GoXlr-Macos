@@ -295,7 +295,7 @@ public enum Eqsliders: String, Codable {
     case Tremble
 }
 
-public enum MiniEqFrequencies: String {
+public enum MiniEqFrequencies: String, Codable, CaseIterable {
     case Equalizer90Hz
     case Equalizer250Hz
     case Equalizer500Hz
@@ -305,7 +305,7 @@ public enum MiniEqFrequencies: String {
 }
 
 
-public enum EqFrequencies: String, Codable {
+public enum EqFrequencies: String, Codable, CaseIterable {
     case Equalizer31Hz
     case Equalizer63Hz
     case Equalizer125Hz
@@ -334,9 +334,32 @@ extension Dictionary where Self == [String: Double] {
     }
 }
 
-public enum CompressorRatio: String {
+extension Int {
+    public func hertz() -> String {
+        if self >= 1000 {
+            return("\(self / 1000)KHz")
+        }
+        else {
+            return("\(self)Hz")
+        }
+
+    }
+}
+
+public enum CompressorRatio: String, CaseIterable {
     case Ratio1_0, Ratio1_1, Ratio1_2, Ratio1_4,  Ratio1_6,  Ratio1_8, Ratio2_0, Ratio2_5, Ratio3_2,
     Ratio4_0, Ratio5_6, Ratio8_0, Ratio16_0, Ratio32_0, Ratio64_0
+}
+
+extension CompressorRatio {
+    public func humanReadable() -> String {
+        let string = self.rawValue.dropFirst(5)
+        let truncstring = string.split(separator: "_")
+        return truncstring[0] + ":" + truncstring[1]
+    }
+    public func intvalue() -> Int {
+        return self.index!
+    }
 }
 
 public enum GateTimes: String, CaseIterable {
@@ -351,11 +374,14 @@ public enum GateTimes: String, CaseIterable {
 extension CaseIterable where Self: Equatable {
 
     var index: Self.AllCases.Index? {
-        return Self.allCases.index { self == $0 }
+        return Self.allCases.firstIndex { self == $0 }
     }
 }
 
 extension Int {
+    public func GetCompRatio() -> CompressorRatio {
+        return CompressorRatio.allCases[self]
+    }
     public func GetClosestGateTime() -> GateTimes {
         let listimes = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]
         let nearest = listimes.nearest(to: self)!.element as Int
@@ -366,16 +392,35 @@ extension Int {
         let listimes = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000]
         return listimes[self]
     }
+    
+    public func GetClosestAtkCompTime () -> CompressorAttackTime {
+        let listimes = [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 23, 26, 30, 35, 40]
+        let nearest = listimes.nearest(to: self)!.element as Int
+        return CompressorAttackTime(rawValue: "Comp\(nearest)ms")!
+    }
+    public func GetIntCompAtkTime() -> Int {
+        let listimes = [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 23, 26, 30, 35, 40]
+        return listimes[self]
+    }
+    public func GetClosestRelCompTime () -> CompressorReleaseTime {
+        let listimes = [0, 15, 25, 35, 45, 55, 65, 75, 85, 95, 100, 115, 140, 170, 230, 340, 680, 1000, 1500, 2000, 3000]
+        let nearest = listimes.nearest(to: self)!.element as Int
+        return CompressorReleaseTime(rawValue: "Comp\(nearest)ms")!
+    }
+    public func GetIntCompRelTime() -> Int {
+        let listimes = [0, 15, 25, 35, 45, 55, 65, 75, 85, 95, 100, 115, 140, 170, 230, 340, 680, 1000, 1500, 2000, 3000]
+        return listimes[self]
+    }
 }
 
-public enum CompressorAttackTime: String {
+public enum CompressorAttackTime: String, CaseIterable {
     // Note: 0ms is technically 0.001ms
     case Comp0ms,  Comp2ms,  Comp3ms,  Comp4ms,  Comp5ms,  Comp6ms,  Comp7ms,  Comp8ms,  Comp9ms,
     Comp10ms, Comp12ms, Comp14ms, Comp16ms, Comp18ms, Comp20ms, Comp23ms, Comp26ms, Comp30ms,
     Comp35ms, Comp40ms
 }
 
-public enum CompressorReleaseTime: String {
+public enum CompressorReleaseTime: String, CaseIterable {
     // Note: 0 is technically 15 :)
     case Comp0ms,    Comp15ms,   Comp25ms,   Comp35ms,  Comp45ms,  Comp55ms,  Comp65ms,  Comp75ms,
     Comp85ms,   Comp100ms,  Comp115ms,  Comp140ms,  Comp170ms, Comp230ms, Comp340ms, Comp680ms,
