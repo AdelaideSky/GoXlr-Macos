@@ -22,7 +22,7 @@
 		70B536E6287705FC00DE8ED0 /* NotSupportedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */; };
 		70B536E8287719DD00DE8ED0 /* StatusStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E7287719DD00DE8ED0 /* StatusStructs.swift */; };
 		70BF7F7528888EEC00A7E6E8 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF7F7428888EEC00A7E6E8 /* MicView.swift */; };
-		70BF7F7828889B4E00A7E6E8 /* ControlCenterVSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF7F7728889B4E00A7E6E8 /* ControlCenterVSlider.swift */; };
+		70BF7F7828889B4E00A7E6E8 /* Sliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF7F7728889B4E00A7E6E8 /* Sliders.swift */; };
 		70F64126288AECBB0048A7E4 /* MicSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F64125288AECBB0048A7E4 /* MicSetupView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 		70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSupportedView.swift; sourceTree = "<group>"; };
 		70B536E7287719DD00DE8ED0 /* StatusStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusStructs.swift; sourceTree = "<group>"; };
 		70BF7F7428888EEC00A7E6E8 /* MicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicView.swift; sourceTree = "<group>"; };
-		70BF7F7728889B4E00A7E6E8 /* ControlCenterVSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCenterVSlider.swift; sourceTree = "<group>"; };
+		70BF7F7728889B4E00A7E6E8 /* Sliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sliders.swift; sourceTree = "<group>"; };
 		70F64125288AECBB0048A7E4 /* MicSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSetupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +127,7 @@
 		70BF7F7628889B3C00A7E6E8 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				70BF7F7728889B4E00A7E6E8 /* ControlCenterVSlider.swift */,
+				70BF7F7728889B4E00A7E6E8 /* Sliders.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -213,7 +213,7 @@
 				700E138D2870A6BE00FD6306 /* ContentView.swift in Sources */,
 				705634772871836F00985223 /* goxlr_types.swift in Sources */,
 				70B536E42877035900DE8ED0 /* homeView.swift in Sources */,
-				70BF7F7828889B4E00A7E6E8 /* ControlCenterVSlider.swift in Sources */,
+				70BF7F7828889B4E00A7E6E8 /* Sliders.swift in Sources */,
 				70B536E6287705FC00DE8ED0 /* NotSupportedView.swift in Sources */,
 				700E138B2870A6BE00FD6306 /* GoXlr_on_macosApp.swift in Sources */,
 				70B536E8287719DD00DE8ED0 /* StatusStructs.swift in Sources */,

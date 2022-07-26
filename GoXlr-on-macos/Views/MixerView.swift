@@ -37,6 +37,7 @@ extension View {
         self.modifier(NoFlipPadding(edge: edge, length: length))
     }
 }
+
 struct MixerView: View {
     
 
@@ -58,226 +59,346 @@ struct MixerView: View {
     
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(alignment: .top, spacing: 10){
-                VStack(){
-                    Slider(value: $mixer.mic, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                        .padding(.bottom, 50)
-                        .frame(width: 100.0)
-                        .animation(.easeInOut, value: 4)
-                    Text("Mic")}.onChange(of: mixer.mic) { newValue in
-                        mixer.selectedDevice.SetVolume(channel: .Mic, volume: Int(newValue))
-                    }
-                VStack(){
-                    Slider(value: $mixer.chat, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                        .padding(.bottom, 50)
-                        .frame(width: 100.0)
-                        .animation(.easeInOut, value: 4)
-                    Text("Chat")}.onChange(of: mixer.chat) { newValue in
-                        mixer.selectedDevice.SetVolume(channel: .Chat, volume: Int(newValue))
-                    }
-                
-                VStack(){
-                    Slider(value: $mixer.music, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                        .padding(.bottom, 50)
-                        .frame(width: 100.0)
-                        .animation(.easeInOut, value: 4)
-                    Text("Music")}.onChange(of: mixer.music) { newValue in
-                        mixer.selectedDevice.SetVolume(channel: .Music, volume: Int(newValue))
-                    }
-                VStack(){
-                    Slider(value: $mixer.game, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                        .padding(.bottom, 50)
-                        .frame(width: 100.0)
-                        .animation(.easeInOut, value: 4)
-                    Text("Game")}.onChange(of: mixer.game) { newValue in
-                        mixer.selectedDevice.SetVolume(channel: .Game, volume: Int(newValue))
-                    }
-                VStack(){
-                    Slider(value: $mixer.console, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                        .padding(.bottom, 50)
-                        .frame(width: 100.0)
-                        .animation(.easeInOut, value: 4)
-                    Text("Console")}.onChange(of: mixer.console) { newValue in
-                        mixer.selectedDevice.SetVolume(channel: .Console, volume: Int(newValue))
-                    }
-                VStack(){
-                    Slider(value: $mixer.linein, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                        .padding(.bottom, 50)
-                        .frame(width: 100.0)
-                        .animation(.easeInOut, value: 4)
-                    Text("Line-In")}.onChange(of: mixer.linein) { newValue in
-                        mixer.selectedDevice.SetVolume(channel: .LineIn, volume: Int(newValue))
-                    }
-                VStack(){
-                    Slider(value: $mixer.lineout, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                        .padding(.bottom, 50)
-                        .frame(width: 100.0)
-                        .animation(.easeInOut, value: 4)
-                    Text("Line-Out")}.onChange(of: mixer.lineout) { newValue in
-                        mixer.selectedDevice.SetVolume(channel: .LineOut, volume: Int(newValue))
-                    }
-                VStack(){
-                    Slider(value: $mixer.system, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                        .padding(.bottom, 50)
-                        .frame(width: 100.0)
-                        .animation(.easeInOut, value: 4)
-                    Text("System")}.onChange(of: mixer.system) { newValue in
-                        mixer.selectedDevice.SetVolume(channel: .System, volume: Int(newValue))
-                    }
-                VStack(){
-                    Slider(value: $mixer.sample, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                        .padding(.bottom, 50)
-                        .frame(width: 100.0)
-                        .animation(.easeInOut, value: 4)
-                    Text("Sample")}.onChange(of: mixer.sample) { newValue in
-                        mixer.selectedDevice.SetVolume(channel: .Sample, volume: Int(newValue))
-                    }
-                    .padding(.right, 60)
-                
-                Group() {
-                    VStack(){
-                        Slider(value: $mixer.headphones, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                            .padding(.bottom, 50)
-                            .frame(width: 100.0)
-                            .animation(.easeInOut, value: 4)
-                        Text("Headphones")}.onChange(of: mixer.headphones) { newValue in
-                            mixer.selectedDevice.SetVolume(channel: .Headphones, volume: Int(newValue))
-                        }
-                    VStack(){
-                        Slider(value: $mixer.micmonitor, in: 0...255){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                            .padding(.bottom, 50)
-                            .frame(width: 100.0)
-                            .animation(.easeInOut, value: 4)
-                        Text("Mic-Monitor")}.onChange(of: mixer.micmonitor) { newValue in
-                            mixer.selectedDevice.SetVolume(channel: .MicMonitor, volume: Int(newValue))
-                        }
-                    VStack(){
-                        Slider(value: $mixer.bleep, in: -34...0){ }.rotationEffect(.degrees(-90.0), anchor: .center)
-                            .padding(.bottom, 50)
-                            .frame(width: 100.0)
-                            .animation(.easeInOut, value: 4)
-                        Text("Bleep")}.onChange(of: mixer.bleep) { newValue in
-                            mixer.selectedDevice.SetSwearButtonVolume(volume: Int(newValue))
-                        }
-                }
-                
-            }.padding(.top, 40)
-        }
-        
-        HStack(alignment: .top, spacing: 10) {
-            VStack() {
-                Text("Fader A")
-                Picker("", selection: $mixer.sliderA) {
-                    ForEach(ChannelName.allCases, id: \.self) { value in
-                        Text(value.rawValue).tag(value)}}.padding()
-                    .onChange(of: mixer.sliderA) { newValue in
-                        mixer.selectedDevice.SetFader(fader: .A, channel: newValue)
-                        mixer.updateFaderDetails()
-                    }
+        ZStack {
+            RoundedRectangle(cornerRadius: 10).fill(.background)
+                .shadow(color:Color(hex: 000000, opacity: 0.1),radius: 15)
+            
+            
+            VStack(alignment: .leading) {
+                Text("Channels")
+                    .font(.system(.title2))
+                    .padding(.top, 15)
+                    .padding(.left, 20)
+
+                ScrollView(.horizontal, showsIndicators: false) {
                     
-                Text("Mute")
-                Picker("", selection: $mixer.muteA) {
-                    Text("All").tag(MuteFunction.All)
-                    Text("To stream").tag(MuteFunction.ToStream)
-                    Text("To voice chat").tag(MuteFunction.ToVoiceChat)
-                    Text("To phones").tag(MuteFunction.ToPhones)
-                    Text("To line-out").tag(MuteFunction.ToLineOut)
-                }
-                .onChange(of: mixer.muteA) { newValue in
-                    mixer.selectedDevice.SetFaderMuteFunction(faderName: .A, MuteFunction: newValue)
+                    HStack(alignment: .top){
+                        Group {
+                            VStack(){
+                                Text("Mic").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.mic, in: 0...255, display: "mic", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.mic) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                }.onChange(of: mixer.mic) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .Mic, volume: Int(newValue))
+                                }
+                            VStack(){
+                                Text("Chat").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.chat, in: 0...255, display: "speaker.wave.2.bubble.left", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.chat) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
 
-                    mixer.updateFaderDetails()
-                }
-            }.padding()
-                .background(graycolor)
-            VStack() {
-                Text("Fader B")
-                Picker("", selection: $mixer.sliderB) {
-                    ForEach(ChannelName.allCases, id: \.self) { value in
-                        Text(value.rawValue).tag(value)}}.padding()
-                    .onChange(of: mixer.sliderB) { newValue in
-                        mixer.selectedDevice.SetFader(fader: .B, channel: newValue)
-                        mixer.updateFaderDetails()
+                                }.onChange(of: mixer.chat) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .Chat, volume: Int(newValue))
+                                }
+                            
+                            VStack(){
+                                Text("Music").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.music, in: 0...255, display: "music.note", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.music) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                            }.onChange(of: mixer.music) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .Music, volume: Int(newValue))
+                                }
+                        }
+                        Group {
+                            VStack(){
+                                Text("Game").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.game, in: 0...255, display: "gamecontroller", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.game) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                }.onChange(of: mixer.game) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .Game, volume: Int(newValue))
+                                }
+                            VStack(){
+                                Text("Console").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.console, in: 0...255, display: "rectangle.on.rectangle", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.console) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                }.onChange(of: mixer.console) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .Console, volume: Int(newValue))
+                                }
+                            VStack(){
+                                Text("Line-In").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.linein, in: 0...255, display: "chevron.backward.to.line", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.linein) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                }.onChange(of: mixer.linein) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .LineIn, volume: Int(newValue))
+                                }
+                            VStack(){
+                                Text("Line-Out").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.lineout, in: 0...255, display: "chevron.right.to.line", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.lineout) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                }.onChange(of: mixer.lineout) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .LineOut, volume: Int(newValue))
+                                }
+                        }
+                        Group {
+                            VStack(){
+                                Text("System").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.system, in: 0...255, display: "menubar.dock.rectangle", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.system) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                }.onChange(of: mixer.system) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .System, volume: Int(newValue))
+                                }
+                            VStack(){
+                                Text("Sample").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.sample, in: 0...255, display: "waveform", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.sample) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                }.onChange(of: mixer.sample) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .Sample, volume: Int(newValue))
+                                }
+                                .padding(.right, 60)
+                        }
+                        
+                        Group() {
+                            VStack(){
+                                Text("Headphones").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.headphones, in: 0...255, display: "headphones", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.headphones) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                }.onChange(of: mixer.headphones) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .Headphones, volume: Int(newValue))
+                                }
+                            VStack(){
+                                Text("Mic-Monitor").font(.system(.subheadline)).padding(.bottom, 10)
+                                lightBSLIDER(value: $mixer.micmonitor, in: 0...255, display: "mic.and.signal.meter", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                Text("\(Int(Double(mixer.micmonitor) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                }.onChange(of: mixer.micmonitor) { newValue in
+                                    mixer.selectedDevice.SetVolume(channel: .MicMonitor, volume: Int(newValue))
+                                }
+                            VStack(){
+                                Text("Bleep").font(.system(.subheadline)).padding(.bottom, 10)
+
+                                lightBSLIDER(value: $mixer.bleep, in: -34...0, display: "exclamationmark.bubble", textsize: 11)
+                                    .padding(.bottom, 20)
+                                    .frame(width: 80)
+                                    .animation(.default, value: 4)
+                                
+                                Text("\(Int(Double(mixer.bleep) / 255 * 100))%")
+                                    .font(.system(.body))
+                                    .foregroundColor(.gray)
+                                
+                            }.onChange(of: mixer.bleep) { newValue in
+                                    mixer.selectedDevice.SetSwearButtonVolume(volume: Int(newValue))
+                                }
+                        }
+                        
                     }
-                Text("Mute")
-                Picker("", selection: $mixer.muteB) {
-                    Text("All").tag(MuteFunction.All)
-                    Text("To stream").tag(MuteFunction.ToStream)
-                    Text("To voice chat").tag(MuteFunction.ToVoiceChat)
-                    Text("To phones").tag(MuteFunction.ToPhones)
-                    Text("To line-out").tag(MuteFunction.ToLineOut)
+                }.padding(.top, 20)
+                    .padding(.bottom, 20)
+            }
+            
+            
+        }.frame(width: 740, height: 300)
+        HStack(alignment:.top, spacing: 14) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 10).fill(.background)
+                    .shadow(color:Color(hex: 000000, opacity: 0.1),radius: 15)
+                
+                VStack() {
+                    Text("Fader A")
+                        .font(.system(.title3))
+                        .padding(.top, 10)
+                        .padding(.right, 85)
+                        .padding(.bottom, 12)
+                    VStack() {
+                        Picker("", selection: $mixer.sliderA) {
+                            ForEach(ChannelName.allCases, id: \.self) { value in
+                                Text(value.rawValue).tag(value)}}
+                            .onChange(of: mixer.sliderA) { newValue in
+                                mixer.selectedDevice.SetFader(fader: .A, channel: newValue)
+                                mixer.updateFaderDetails()
+                            }
+                            .padding(.bottom, 10)
+                        Text("Mute")
+                        Picker("", selection: $mixer.muteA) {
+                            Text("All").tag(MuteFunction.All)
+                            Text("To stream").tag(MuteFunction.ToStream)
+                            Text("To voice chat").tag(MuteFunction.ToVoiceChat)
+                            Text("To phones").tag(MuteFunction.ToPhones)
+                            Text("To line-out").tag(MuteFunction.ToLineOut)
+                        }
+                        .onChange(of: mixer.muteA) { newValue in
+                            mixer.selectedDevice.SetFaderMuteFunction(faderName: .A, MuteFunction: newValue)
+                            mixer.updateFaderDetails()
+                        }
+                    }.padding(.left, 13)
+                        .padding(.right, 13)
+                        .padding(.bottom, 10)
                 }
-                .onChange(of: mixer.muteB) { newValue in
-                    mixer.selectedDevice.SetFaderMuteFunction(faderName: .B, MuteFunction: newValue)
+                
+            }.frame(width: 175, height: 145)
+            ZStack {
+                RoundedRectangle(cornerRadius: 10).fill(.background)
+                    .shadow(color:Color(hex: 000000, opacity: 0.1),radius: 15)
+                
+                VStack() {
+                    Text("Fader B")
+                        .font(.system(.title3))
+                        .padding(.top, 10)
+                        .padding(.right, 85)
+                        .padding(.bottom, 12)
+                    VStack() {
+                        Picker("", selection: $mixer.sliderB) {
+                            ForEach(ChannelName.allCases, id: \.self) { value in
+                                Text(value.rawValue).tag(value)}}
+                            .onChange(of: mixer.sliderB) { newValue in
+                                mixer.selectedDevice.SetFader(fader: .B, channel: newValue)
+                                mixer.updateFaderDetails()
+                            }
+                            .padding(.bottom, 10)
+                        Text("Mute")
+                        Picker("", selection: $mixer.muteB) {
+                            Text("All").tag(MuteFunction.All)
+                            Text("To stream").tag(MuteFunction.ToStream)
+                            Text("To voice chat").tag(MuteFunction.ToVoiceChat)
+                            Text("To phones").tag(MuteFunction.ToPhones)
+                            Text("To line-out").tag(MuteFunction.ToLineOut)
+                        }
+                        .onChange(of: mixer.muteB) { newValue in
+                            mixer.selectedDevice.SetFaderMuteFunction(faderName: .B, MuteFunction: newValue)
+                            mixer.updateFaderDetails()
+                        }
+                    }.padding(.left, 13)
+                        .padding(.right, 13)
+                        .padding(.bottom, 10)
+                }
+                
+            }.frame(width: 175, height: 145)
+            ZStack {
+                RoundedRectangle(cornerRadius: 10).fill(.background)
+                    .shadow(color:Color(hex: 000000, opacity: 0.1),radius: 15)
+                
+                VStack() {
+                    Text("Fader C")
+                        .font(.system(.title3))
+                        .padding(.top, 10)
+                        .padding(.right, 85)
+                        .padding(.bottom, 12)
+                    VStack() {
+                        Picker("", selection: $mixer.sliderC) {
+                            ForEach(ChannelName.allCases, id: \.self) { value in
+                                Text(value.rawValue).tag(value)}}
+                            .onChange(of: mixer.sliderC) { newValue in
+                                mixer.selectedDevice.SetFader(fader: .C, channel: newValue)
+                                mixer.updateFaderDetails()
+                            }
+                            .padding(.bottom, 10)
+                        Text("Mute")
+                        Picker("", selection: $mixer.muteC) {
+                            Text("All").tag(MuteFunction.All)
+                            Text("To stream").tag(MuteFunction.ToStream)
+                            Text("To voice chat").tag(MuteFunction.ToVoiceChat)
+                            Text("To phones").tag(MuteFunction.ToPhones)
+                            Text("To line-out").tag(MuteFunction.ToLineOut)
+                        }
+                        .onChange(of: mixer.muteC) { newValue in
+                            mixer.selectedDevice.SetFaderMuteFunction(faderName: .C, MuteFunction: newValue)
+                            mixer.updateFaderDetails()
+                        }
+                    }.padding(.left, 13)
+                        .padding(.right, 13)
+                        .padding(.bottom, 10)
+                }
+                
+            }.frame(width: 175, height: 145)
+            ZStack {
+                RoundedRectangle(cornerRadius: 10).fill(.background)
+                    .shadow(color:Color(hex: 000000, opacity: 0.1),radius: 15)
+                
+                VStack() {
+                    Text("Fader D")
+                        .font(.system(.title3))
+                        .padding(.top, 10)
+                        .padding(.right, 85)
+                        .padding(.bottom, 12)
+                    VStack() {
+                        Picker("", selection: $mixer.sliderD) {
+                            ForEach(ChannelName.allCases, id: \.self) { value in
+                                Text(value.rawValue).tag(value)}}
+                            .onChange(of: mixer.sliderD) { newValue in
+                                mixer.selectedDevice.SetFader(fader: .D, channel: newValue)
+                                mixer.updateFaderDetails()
+                            }
+                            .padding(.bottom, 10)
+                        Text("Mute")
+                        Picker("", selection: $mixer.muteD) {
+                            Text("All").tag(MuteFunction.All)
+                            Text("To stream").tag(MuteFunction.ToStream)
+                            Text("To voice chat").tag(MuteFunction.ToVoiceChat)
+                            Text("To phones").tag(MuteFunction.ToPhones)
+                            Text("To line-out").tag(MuteFunction.ToLineOut)
+                        }
+                        .onChange(of: mixer.muteD) { newValue in
+                            mixer.selectedDevice.SetFaderMuteFunction(faderName: .D, MuteFunction: newValue)
 
-                    mixer.updateFaderDetails()
+                            mixer.updateFaderDetails()
+                        }
+                    }.padding(.left, 13)
+                        .padding(.right, 13)
+                        .padding(.bottom, 10)
                 }
-            }.padding()
-                .background(graycolor)
-            VStack() {
-                Text("Fader C")
-                Picker("", selection: $mixer.sliderC) {
-                    ForEach(ChannelName.allCases, id: \.self) { value in
-                        Text(value.rawValue).tag(value)}}.padding()
-                    .onChange(of: mixer.sliderC) { newValue in
-                        mixer.selectedDevice.SetFader(fader: .C, channel: newValue)
-
-                        mixer.updateFaderDetails()
-                    }
-                Text("Mute")
-                Picker("", selection: $mixer.muteC) {
-                    Text("All").tag(MuteFunction.All)
-                    Text("To stream").tag(MuteFunction.ToStream)
-                    Text("To voice chat").tag(MuteFunction.ToVoiceChat)
-                    Text("To phones").tag(MuteFunction.ToPhones)
-                    Text("To line-out").tag(MuteFunction.ToLineOut)
-                }
-                .onChange(of: mixer.muteC) { newValue in
-                    mixer.selectedDevice.SetFaderMuteFunction(faderName: .C, MuteFunction: newValue)
-
-                    mixer.updateFaderDetails()
-                }
-            }.padding()
-                .background(graycolor)
-            VStack() {
-                Text("Fader D")
-                Picker("", selection: $mixer.sliderD) {
-                    ForEach(ChannelName.allCases, id: \.self) { value in
-                        Text(value.rawValue).tag(value)}}.padding()
-                    .onChange(of: mixer.sliderD) { newValue in
-                        mixer.selectedDevice.SetFader(fader: .D, channel: newValue)
-                        mixer.updateFaderDetails()
-                    }
-                Text("Mute")
-                Picker("", selection: $mixer.muteD) {
-                    Text("All").tag(MuteFunction.All)
-                    Text("To stream").tag(MuteFunction.ToStream)
-                    Text("To voice chat").tag(MuteFunction.ToVoiceChat)
-                    Text("To phones").tag(MuteFunction.ToPhones)
-                    Text("To line-out").tag(MuteFunction.ToLineOut)
-                }
-                .onChange(of: mixer.muteD) { newValue in
-                    mixer.selectedDevice.SetFaderMuteFunction(faderName: .D, MuteFunction: newValue)
-
-                    mixer.updateFaderDetails()
-                }
-            }.padding()
-                .background(graycolor)
+                
+            }.frame(width: 175, height: 145)
         }
-        .padding(.top, 70)
-        .padding(.bottom, 10)
-        .padding(.left, 70)
-        .padding(.right, 70)
         .onAppear() {
             mixer.updateMixerStatus()
         }
         .alert("ERROR", isPresented: $showingAlert) {
                     Button("OK", role: .cancel) { }
-        } message: {
-            Text("Is the daemon installed ?")
-        }.navigationTitle(tabname!)
-            .fileImporter(isPresented: $showFileChooser, allowedContentTypes: [profiletype!], onCompletion: { result in
+        }
+        .navigationTitle(tabname!)
+        .fileImporter(isPresented: $showFileChooser, allowedContentTypes: [profiletype!], onCompletion: { result in
             print("Picked: \(result)")
             do{
                 var fileUrl = try result.get()
