@@ -754,17 +754,19 @@ struct MicView: View {
         }.navigationTitle(tabname!)
             .animation(.default)
             .onAppear(perform: mixer.updateMicDetails)
+            .sheet(isPresented: $mixer.profileSheet, content: {LoadProfileView(defaultTab: "mic").environmentObject(mixer)})
             .toolbar {
                 ToolbarItem(placement: .automatic) {
-                    Button(action: {}, label: {
-                        Text("Load Mic Profile")
+                    Button(action: {mixer.profileSheet.toggle()}, label: {
+                        Text("Load Profile")
                     })
                 }
                 ToolbarItem(placement: .automatic) {
-                    Button(action: {mixer.selectedDevice.SaveMicProfile()}, label: {
+                    Button(action: {MixerStatus().selectedDevice.SaveMicProfile()}, label: {
                         Text("Save Mic Profile")
                     })
                 }
             }
+
     }
 }

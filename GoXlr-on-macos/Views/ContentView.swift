@@ -18,7 +18,7 @@ struct ContentView: View {
         if MixerStatus().selectedDevice.deviceType() == .Full {
             NavigationView {
                 List {
-                    NavigationLink(destination: HomeView()) {
+                    NavigationLink(destination: HomeView().environmentObject(MixerStatus())) {
                         Label("Home", systemImage: "house")
                     }
                     
@@ -34,13 +34,13 @@ struct ContentView: View {
                         NavigationLink(destination: MixerView().environmentObject(MixerStatus())) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Effects", systemImage: "fx")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Sampler", systemImage: "waveform")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Routing", systemImage: "app.connected.to.app.below.fill")
                         }
                     }
@@ -51,16 +51,16 @@ struct ContentView: View {
                         .font(.system(size: 10))
                         .fontWeight(.bold)
                     Group {
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Global", systemImage: "sun.min")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Effects", systemImage: "fx")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Sampler", systemImage: "waveform")
                         }
                     }
@@ -68,10 +68,10 @@ struct ContentView: View {
                     
                     Divider()
                     Group {
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Settings", systemImage: "gear")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("About", systemImage: "info.circle")
                         }
                     }

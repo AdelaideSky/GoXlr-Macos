@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NotCreatedView: View {
     @State var tabname: String? = "Not yet supported"
+    @EnvironmentObject var mixer: MixerStatus
     var body: some View {
         VStack(alignment: .center) {
             Text("Not yet supported !")
@@ -18,5 +19,19 @@ struct NotCreatedView: View {
             Text("Come back later ! :3")
                 .padding(.top)
         }.navigationTitle(tabname!)
+            .sheet(isPresented: $mixer.profileSheet, content: {LoadProfileView(defaultTab: "device").environmentObject(mixer)})
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button(action: {mixer.profileSheet.toggle()}, label: {
+                        Text("Load Profile")
+                    })
+                }
+                ToolbarItem(placement: .automatic) {
+                    Button(action: {MixerStatus().selectedDevice.SaveProfile()}, label: {
+                        Text("Save Profile")
+                    })
+                }
+            }
+
     }
 }

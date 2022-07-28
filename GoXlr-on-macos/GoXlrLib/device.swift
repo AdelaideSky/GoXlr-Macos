@@ -3,6 +3,29 @@ import Socket
 import Foundation
 import SwiftyJSON
 
+
+class Config {
+    public init() {
+        if UserDefaults.standard.bool(forKey: "debugMode") {
+            debugMode = true
+            
+            if UserDefaults.standard.bool(forKey: "showStatusRequest") {
+                showStatusRequests = true
+            }
+            else {
+                showStatusRequests = false
+            }
+        }
+        else {
+            
+            debugMode = false
+            showStatusRequests = false
+        }
+    }
+    let debugMode: Bool
+    let showStatusRequests: Bool
+}
+
 //--------------------------------[Extensions]-------------------------------------------------//
 
 extension Data {
@@ -10,18 +33,31 @@ extension Data {
         return [UInt8](self)
     }
 }
+extension Collection {
+
+    subscript(optional i: Index) -> Iterator.Element? {
+        return self.indices.contains(i) ? self[i] : nil
+    }
+
+}
 
 //--------------------------------[Funcs utils]-------------------------------------------------//
 
 func hexStringToData(string: String) -> Data {
     let stringArray = Array(string)
     var data: Data = Data()
+    
     for i in stride(from: 0, to: string.count, by: 2) {
+        
         let pair: String = String(stringArray[i]) + String(stringArray[i+1])
+        
         if let byteNum = UInt8(pair, radix: 16) {
+            
             let byte = Data([byteNum])
+            
             data.append(byte)
         }
+        
         else{
             fatalError()
         }
@@ -29,13 +65,12 @@ func hexStringToData(string: String) -> Data {
     return data
 }
 
-//Creating header with the last byte equal to length of the request
-//RE-WRITE THIS FUNC bcause with this version length is limited to 255 + uses lots of funcs
+//Creating header of 4 bytes containing the length of the request.
 func createrequest(request: String) -> Data {
-    let len = String(format: "%02X", request.count)
+    let len = String(format: "%02X", request.utf8.count)
     let hexlen = hexStringToData(string: len).bytes
-    let header = [0x00, 0x00, 0x00, hexlen[0]]
-    let body = Data(request.utf8)
+    let header = [hexlen.indices.contains(3) ? hexlen[3] : 0x00, hexlen.indices.contains(2) ? hexlen[2] : 0x00, hexlen.indices.contains(1) ? hexlen[1] : 0x00, hexlen[0]]
+    let body = request.data(using: .utf8)!
     let request = Data(header+body)
     return request
 }
@@ -66,31 +101,121 @@ public struct DaemonSocket {
     
     //Return a string of available data from the socket.
     public func read(socket: Socket) -> JSON {
-        do {
-            var data = Data()
-            try socket.read(into: &data)
-            
-            let string = String(decoding: data.dropFirst(4), as: UTF8.self)
-            return JSON.init(parseJSON: string)
-        } catch {
-            print("Error when reading the socket")
-            return "Error when reading the socket"
+        if Config().debugMode {
+            if Config().showStatusRequests {
+                do {
+                    var data = Data()
+                    try socket.read(into: &data)
+                    
+                    let string = String(decoding: data.dropFirst(4), as: UTF8.self)
+                    print("---------------------------------[ READ ]-----------------------------------------\n")
+                    print(string)
+                    print("\n")
+                    return JSON.init(parseJSON: string)
+                } catch {
+                    print("Error when reading the socket")
+                    return "Error when reading the socket"
+                }
+            }
+            else {
+                do {
+                    var data = Data()
+                    try socket.read(into: &data)
+                    
+                    let string = String(decoding: data.dropFirst(4), as: UTF8.self)
+                    
+                    if string.starts(with: "{\"Status\":") {
+                        return JSON.init(parseJSON: string)
+                    }
+                    
+                    else {
+                        print("---------------------------------[ READ ]-----------------------------------------\n")
+                        print(string)
+                        print("\n")
+                        
+
+                        
+                        return JSON.init(parseJSON: string)
+                    }
+                } catch {
+                    print("Error when reading the socket")
+                    return "Error when reading the socket"
+                }
+            }
+        }
+        else {
+            do {
+                var data = Data()
+                try socket.read(into: &data)
+                
+                let string = String(decoding: data.dropFirst(4), as: UTF8.self)
+                return JSON.init(parseJSON: string)
+            } catch {
+                print("Error when reading the socket")
+                return "Error when reading the socket"
+            }
         }
     }
     public func dataRead(socket: Socket) -> Data {
-        do {
-            var data = Data()
-            try socket.read(into: &data)
-            data = data.dropFirst(4)
-            return data
-        } catch {
-            print("Error when reading the socket")
-            return Data()
+        if Config().debugMode {
+            if Config().showStatusRequests {
+                do {
+                    var data = Data()
+                    try socket.read(into: &data)
+                    data = data.dropFirst(4)
+                    let string = String(decoding: data.dropFirst(4), as: UTF8.self)
+                    print("---------------------------------[ READ ]-----------------------------------------\n")
+                    print(string)
+                    print("\n")
+                    return data
+                } catch {
+                    print("Error when reading the socket")
+                    return Data()
+                }
+            }
+            else {
+                do {
+                    var data = Data()
+                    try socket.read(into: &data)
+                    data = data.dropFirst(4)
+                    let string = String(decoding: data.dropFirst(4), as: UTF8.self)
+                    
+                    if string.starts(with: "{\"Status\":") {
+                        return data
+                    }
+                    else if string.starts(with: "atus\":") {
+                        return data
+                    }
+                    else {
+                        print("---------------------------------[ READ ]-----------------------------------------\n")
+                        print(string)
+                        print("\n")
+                        
+                        return data
+                    }
+                    
+                } catch {
+                    print("Error when reading the socket")
+                    return Data()
+                }
+            }
+        }
+        else {
+            do {
+                var data = Data()
+                try socket.read(into: &data)
+                data = data.dropFirst(4)
+                return data
+            } catch {
+                print("Error when reading the socket")
+                return Data()
+            }
         }
     }
     
     //Return response from a "Ping" command, If it's OK, returns "OK", else, it's likely an error.
     public func ping() -> JSON {
+        
         do {
             let socket = DaemonSocket().new()
             
@@ -102,11 +227,49 @@ public struct DaemonSocket {
             return "Error"
         }
     }
+    
+    public func send(command: String, socket: Socket) {
+        if Config().debugMode {
+            if Config().showStatusRequests {
+                do {
+                    try socket.write(from: createrequest(request: command))
+                    print("---------------------------------[ SEND ]-----------------------------------------\n")
+                    print(command)
+                    print("\n")
+                                
+                } catch {
+                    print("Error")
+                }
+            }
+            else {
+                do {
+                    try socket.write(from: createrequest(request: command))
+                    if command != "\"GetStatus\"" {
+                        print("---------------------------------[ SEND ]-----------------------------------------\n")
+                        print(command)
+                        print("\n")
+                    }
+                                
+                } catch {
+                    print("Error")
+                }
+            }
+        }
+        else {
+            do {
+                try socket.write(from: createrequest(request: command))
+                            
+            } catch {
+                print("Error")
+            }
+
+        }
+    }
 }
 
 
 public struct GoXlr {
-    //Now let's devine a goxlr object.
+    //Now let's define a goxlr object.
     
     var device: String
     
@@ -122,7 +285,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             
-            try socket.write(from: createrequest(request: "\"GetStatus\""))
+            DaemonSocket().send(command: "\"GetStatus\"", socket: socket)
             
             return try JSONDecoder().decode(daemonStatus.self, from: DaemonSocket().dataRead(socket: socket))
                         
@@ -136,8 +299,8 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             
-            try socket.write(from: createrequest(request: "\"GetStatus\""))
-            
+            DaemonSocket().send(command: "\"GetStatus\"", socket: socket)
+
             let state = try JSONDecoder().decode(daemonStatus.self, from: DaemonSocket().dataRead(socket: socket))
             
             if self.device == "" { return state.status.mixers.first!.1 }
@@ -262,7 +425,8 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             
-            try socket.write(from: createrequest(request: command))
+            DaemonSocket().send(command: command, socket: socket)
+
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -279,8 +443,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetFader\":[\"\(fader)\",\"\(channel)\"]}]}"
-            try socket.write(from: createrequest(request: request))
-            MixerStatus().sliderC = .Mic
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -295,7 +458,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetFaderMuteFunction\":[\"\(faderName)\",\"\(MuteFunction)\"]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -310,7 +473,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetVolume\":[\"\(channel)\",\(volume)]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -325,7 +488,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetMicrophoneGain\":[\"\(microphoneType)\",\(gain)]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -340,7 +503,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetRouter\":[\"\(inputDevice)\",\"\(outputDevice)\",\(state)]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -358,7 +521,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetCoughMuteFunction\":\"\(MuteFunction)\"}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -373,7 +536,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetCoughIsHold\":\(state)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -390,7 +553,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetSwearButtonVolume\":\(volume)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -407,7 +570,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetEqMiniGain\":[\"\(frequence)\",\(gain)]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -422,7 +585,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetEqMiniFreq\":[\"\(frequence)\",\(freq)]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -438,7 +601,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetEqGain\":[\"\(frequence)\",\(gain)]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -453,7 +616,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetEqFreq\":[\"\(frequence)\",\(freq)]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -506,7 +669,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetGateThreshold\":\(treshold)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -521,7 +684,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetGateAttenuation\":\(attenuation)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -536,7 +699,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetGateAttack\":\(attack.index!)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -551,7 +714,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetGateRelease\":\(release.index!)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -566,7 +729,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetGateActive\":\(state)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -597,7 +760,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetDeeser\":\(amount)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -615,7 +778,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetCompressorThreshold\":\(treshold)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -640,7 +803,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetCompressorRatio\":\(ratio.index!)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -657,7 +820,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetCompressorAttack\":\(attack.index!)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -673,7 +836,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetCompressorReleaseTime\":\(release.index!)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -688,7 +851,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetCompressorMakeupGain\":\(gain)}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -711,7 +874,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetFaderDisplayStyle\":[\"\(faderName)\",\"\(displayStyle)\"]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -726,7 +889,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetAllFaderDisplayStyle\":\"\(displayStyle)\"}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -741,7 +904,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetFaderColours\":[\"\(faderName)\",\"\(colour1)\", \"\(colour2)\"]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -756,7 +919,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetAllFaderColours\":[\"\(colour1)\", \"\(colour2)\"]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -775,11 +938,11 @@ public struct GoXlr {
             let socket = DaemonSocket().new()
             if colour2 == nil {
                 let request = "{\"Command\":[\"\(device)\",{\"SetButtonColours\":[\"\(button)\",\"\(colour1)\"]}]}"
-                try socket.write(from: createrequest(request: request))
+                DaemonSocket().send(command: request, socket: socket)
             }
             else {
                 let request = "{\"Command\":[\"\(device)\",{\"SetButtonColours\":[\"\(button)\",\"\(colour1)\", \"\(colour2!)\"]}]}"
-                try socket.write(from: createrequest(request: request))
+                DaemonSocket().send(command: request, socket: socket)
             }
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -796,7 +959,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetButtonOffStyle\":[\"\(button)\", \"\(style)\"]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -812,11 +975,11 @@ public struct GoXlr {
             let socket = DaemonSocket().new()
             if colour2 == nil {
                 let request = "{\"Command\":[\"\(device)\",{\"SetButtonGroupColours\":[\"\(group)\",\"\(colour1)\"]}]}"
-                try socket.write(from: createrequest(request: request))
+                DaemonSocket().send(command: request, socket: socket)
             }
             else {
                 let request = "{\"Command\":[\"\(device)\",{\"SetButtonGroupColours\":[\"\(group)\",\"\(colour1)\", \"\(colour2!)\"]}]}"
-                try socket.write(from: createrequest(request: request))
+                DaemonSocket().send(command: request, socket: socket)
             }
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -832,7 +995,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetButtonGroupOffStyle\":[\"\(group)\", \"\(style)\"]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -851,7 +1014,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"LoadProfile\":\"\(path)\"}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -870,7 +1033,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"LoadProfile\":\"\"}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -885,7 +1048,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SaveProfileAs\":\"\(name)\"}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -894,6 +1057,35 @@ public struct GoXlr {
         }
     }
     
+    public func NewProfile(name:String) -> JSON {
+        //Save profile with name
+        
+        do {
+            let socket = DaemonSocket().new()
+            let request = "{\"Command\":[\"\(device)\",{\"NewProfile\":\"\(name)\"}]}"
+            DaemonSocket().send(command: request, socket: socket)
+            return JSON(DaemonSocket().read(socket: socket))
+                        
+        } catch {
+            print("NewProfile Error")
+            return "NewProfile Error"
+        }
+    }
+    
+    public func DeleteProfile(name:String) -> JSON {
+        //Load profile at path
+        
+        do {
+            let socket = DaemonSocket().new()
+            let request = "{\"Command\":[\"\(device)\",{\"DeleteProfile\":\"\(name)\"}]}"
+            DaemonSocket().send(command: request, socket: socket)
+            return JSON(DaemonSocket().read(socket: socket))
+                        
+        } catch {
+            print("DeleteProfile Error")
+            return "DeleteProfile Error"
+        }
+    }
     
     public func LoadMicProfile(path:String) -> JSON {
         //Load mic profile at path
@@ -901,7 +1093,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"LoadMicProfile\":\"\(path)\"}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -916,7 +1108,7 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SaveMicProfile\":[]}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
@@ -931,12 +1123,41 @@ public struct GoXlr {
         do {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SaveMicProfileAs\":\"\(name)\"}]}"
-            try socket.write(from: createrequest(request: request))
+            DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
         } catch {
             print("SaveMicProfileAs Error")
             return "SaveMicProfileAs Error"
+        }
+    }
+    public func NewMicProfile(name:String) -> JSON {
+        //Save profile with name
+        
+        do {
+            let socket = DaemonSocket().new()
+            let request = "{\"Command\":[\"\(device)\",{\"NewMicProfile\":\"\(name)\"}]}"
+            DaemonSocket().send(command: request, socket: socket)
+            return JSON(DaemonSocket().read(socket: socket))
+                        
+        } catch {
+            print("NewMicProfile Error")
+            return "NewMicProfile Error"
+        }
+    }
+    
+    public func DeleteMicProfile(name:String) -> JSON {
+        //Load profile at path
+        
+        do {
+            let socket = DaemonSocket().new()
+            let request = "{\"Command\":[\"\(device)\",{\"DeleteMicProfile\":\"\(name)\"}]}"
+            DaemonSocket().send(command: request, socket: socket)
+            return JSON(DaemonSocket().read(socket: socket))
+                        
+        } catch {
+            print("DeleteMicProfile Error")
+            return "DeleteMicProfile Error"
         }
     }
 }

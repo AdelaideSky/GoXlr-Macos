@@ -13,7 +13,9 @@ import SwiftyJSON
 
 final class MixerStatus: ObservableObject {
     
+    
     @Published var micSetup = false
+    @Published var profileSheet = false
     
     var selectedDevice: GoXlr
     var status: Mixer
@@ -21,6 +23,16 @@ final class MixerStatus: ObservableObject {
     public init() {
         selectedDevice = GoXlr(serial: GoXlr().listDevices()[0].first)
         status = selectedDevice.deviceStatus()!
+        let completestatus = selectedDevice.status()!.status
+        
+        profilesList = completestatus.files.profiles
+        profile = status.profileName
+        selectedProfile = status.profileName
+        
+        micProfilesList = completestatus.files.micProfiles
+        micProfile = status.micProfileName
+        selectedMicProfile = status.micProfileName
+        
         mic = Float(status.levels.volumes[0])
         chat = Float(status.levels.volumes[5])
         music = Float(status.levels.volumes[7])
@@ -186,11 +198,31 @@ final class MixerStatus: ObservableObject {
         compRatio = Float(status.micStatus.compressor.ratio)
         compMakeUpGain = Float(status.micStatus.compressor.makeupGain)
     }
+    
+    public func updateProfiles() {
+        let completestatus = selectedDevice.status()!
+        let status = selectedDevice.deviceStatus()!
+        profilesList = completestatus.status.files.profiles
+        profile = status.profileName
+        selectedProfile = profile
+
+    }
     @Published var deviceSelect: String = "Select a goxlr" {
         willSet {
             selectedDevice = GoXlr(serial: newValue)
         }
     }
+    
+    @Published var selectedProfile: String?
+    
+    @Published var profilesList: [String]
+    @Published var profile: String
+    
+    @Published var selectedMicProfile: String?
+    
+    @Published var micProfilesList: [String]
+    @Published var micProfile: String
+    
     //--------------------------------[SLIDERS - Mixer]-------------------------------------------------//
     
     @Published var mic: Float

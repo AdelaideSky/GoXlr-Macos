@@ -354,11 +354,13 @@ struct lightBSLIDER<V: BinaryFloatingPoint>: View {
                     .position(self.getPoint(in: geometry))
                     .foregroundColor(.white)
                     .shadow(radius: colorScheme == .dark ? 5 : 1)
-                Image(systemName: displayString)
-                    .frame(width: .none, height: self.drawRadius, alignment: .bottom)
-                    .foregroundColor(colorScheme == .dark ? self.darkGray.opacity(2) : self.lightGray.opacity(2))
-                    .font(.system(size: CGFloat(textSize)))
-                    .offset(x: 0, y: CGFloat(yVal))
+                if displayString != "" {
+                    Image(systemName: displayString)
+                        .frame(width: .none, height: self.drawRadius, alignment: .bottom)
+                        .foregroundColor(colorScheme == .dark ? self.darkGray.opacity(2) : self.lightGray.opacity(2))
+                        .font(.system(size: CGFloat(textSize)))
+                        .offset(x: 0, y: CGFloat(yVal))
+                }
 
                 // Catches drag gesture
                 Rectangle()
@@ -372,7 +374,7 @@ struct lightBSLIDER<V: BinaryFloatingPoint>: View {
                             })
                             .onChanged(self.handleDragged(in: geometry))
                 )
-            }
+            }.animation(.default, value: 10)
         }
     }
 }

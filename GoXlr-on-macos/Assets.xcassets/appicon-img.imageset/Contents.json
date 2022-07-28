@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "logo (1).svg",
+      "filename" : "Icon-1024.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icon_128x128 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logo (1).png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "preserves-vector-representation" : true
   }
 }

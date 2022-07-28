@@ -53,7 +53,7 @@ struct GoXlr_on_macosApp: App {
 struct OpenWindowButton: View {
     @Environment(\.openWindow) private var openWindow
     @State private var select = ""
-    @State var showFileChooser = false
+    @ObservedObject var mixer = MixerStatus()
     let profiletype = UTType(filenameExtension: "goxlr")
     
         var body: some View {
@@ -71,7 +71,7 @@ struct OpenWindowButton: View {
                             .frame(maxWidth: .infinity)}.keyboardShortcut("s")
                     
                     Button {
-                        showFileChooser = true} label: {
+                        mixer.profileSheet = true} label: {
                         Text("Load Profile")
                             .frame(maxWidth: .infinity)}.keyboardShortcut("o")
 
@@ -94,20 +94,8 @@ struct OpenWindowButton: View {
                 .labelStyle(.iconOnly)
                 .controlSize(.large)
             }
-            .fileImporter(isPresented: $showFileChooser, allowedContentTypes: [profiletype!], onCompletion: { result in
-            print("Picked: \(result)")
-            do{
-                var fileUrl = try result.get()
-                fileUrl = fileUrl.deletingPathExtension()
-                let strfileUrl = fileUrl.path
-                MixerStatus().selectedDevice.LoadProfile(path: strfileUrl)
-                            
-            } catch{
-                                        
-                print ("error reading")
-                print (error.localizedDescription)
-            }
-        })
+            .sheet(isPresented: $mixer.profileSheet, content: {LoadProfileView(defaultTab:"device").environmentObject(mixer)})
+            
             .padding(16)
         }
 }

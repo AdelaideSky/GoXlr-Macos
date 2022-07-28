@@ -9,10 +9,10 @@ import UniformTypeIdentifiers
 
 struct HomeView: View {
     @State var tabname: String? = "Home"
-    @State var showFileChooser = false
+    
     let profiletype = UTType(filenameExtension: "goxlr")
-    
-    
+    @State var onboarded = !UserDefaults.standard.bool(forKey: "firstLaunch")
+    @EnvironmentObject var mixer: MixerStatus
     var body: some View {
         VStack(alignment: .center) {
             
@@ -22,30 +22,18 @@ struct HomeView: View {
                 .bold()
                 .font(.system(size: 45))
                 .fontWeight(.heavy)
-            
             Text("Connect your GoXlr to get started")
                 .padding(.top)
                 .font(.title3)
             
+        }.sheet(isPresented: $onboarded) {
+            OnboardingView(onboarded: $onboarded)
         }
             .navigationTitle(tabname!)
-            .fileImporter(isPresented: $showFileChooser, allowedContentTypes: [profiletype!], onCompletion: { result in
-            print("Picked: \(result)")
-            do{
-                var fileUrl = try result.get()
-                fileUrl = fileUrl.deletingPathExtension()
-                let strfileUrl = fileUrl.path
-                MixerStatus().selectedDevice.LoadProfile(path: strfileUrl)
-                            
-            } catch{
-                                        
-                print ("error reading")
-                print (error.localizedDescription)
-            }
-        })
+            .sheet(isPresented: $mixer.profileSheet, content: {LoadProfileView(defaultTab: "device").environmentObject(mixer)})
             .toolbar {
                 ToolbarItem(placement: .automatic) {
-                    Button(action: {showFileChooser.toggle()}, label: {
+                    Button(action: {mixer.profileSheet.toggle()}, label: {
                         Text("Load Profile")
                     })
                 }

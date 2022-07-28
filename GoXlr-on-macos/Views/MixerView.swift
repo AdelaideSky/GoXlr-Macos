@@ -236,6 +236,7 @@ struct MixerView: View {
                     }
                 }.padding(.top, 20)
                     .padding(.bottom, 20)
+                    .animation(.default)
             }
             
             
@@ -412,9 +413,10 @@ struct MixerView: View {
                 print (error.localizedDescription)
             }
         })
+        .sheet(isPresented: $mixer.profileSheet, content: {LoadProfileView(defaultTab: "device").environmentObject(mixer)})
         .toolbar {
             ToolbarItem(placement: .automatic) {
-                Button(action: {showFileChooser.toggle()}, label: {
+                Button(action: {mixer.profileSheet.toggle()}, label: {
                     Text("Load Profile")
                 })
             }
