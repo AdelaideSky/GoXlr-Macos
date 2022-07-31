@@ -332,6 +332,20 @@ extension Dictionary where Self == [String: Double] {
         let a = Double(Double(self["Equalizer4KHz"]!) + Double(self["Equalizer8KHz"]!) + Double(self["Equalizer16KHz"]!))
         return Int(a / Double(3))
     }
+    
+    public func miniBassValue() -> Int {
+        let a = Double(Double(self["Equalizer90Hz"]!) + Double(self["Equalizer250Hz"]!))
+        return Int(a / Double(2))
+    }
+    public func miniMidValue() -> Int {
+        let a = Double(Double(self["Equalizer500Hz"]!) + Double(self["Equalizer1KHz"]!))
+        return Int(a / Double(2))
+
+    }
+    public func miniTrembleValue() -> Int {
+        let a = Double(Double(self["Equalizer3KHz"]!) + Double(self["Equalizer8KHz"]!))
+        return Int(a / Double(2))
+    }
 }
 
 extension Int {

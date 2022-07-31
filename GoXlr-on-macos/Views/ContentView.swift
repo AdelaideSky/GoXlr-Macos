@@ -40,7 +40,7 @@ struct ContentView: View {
                         NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Sampler", systemImage: "waveform")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: RoutingView().environmentObject(MixerStatus())) {
                             Label("Routing", systemImage: "app.connected.to.app.below.fill")
                         }
                     }
@@ -96,7 +96,7 @@ struct ContentView: View {
         else {
             NavigationView {
                 List {
-                    NavigationLink(destination: HomeView()) {
+                    NavigationLink(destination: HomeView().environmentObject(MixerStatus())) {
                         Label("Home", systemImage: "house")
                     }
                     
@@ -106,13 +106,13 @@ struct ContentView: View {
                         .font(.system(size: 10))
                         .fontWeight(.bold)
                     Group{
-                        NavigationLink(destination: MicView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: miniMicView().environmentObject(MixerStatus())) {
                             Label("Mic", systemImage: "mic")
                         }
                         NavigationLink(destination: MixerView().environmentObject(MixerStatus())) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: RoutingView().environmentObject(MixerStatus())) {
                             Label("Routing", systemImage: "app.connected.to.app.below.fill")
                         }
                     }
@@ -123,22 +123,27 @@ struct ContentView: View {
                         .font(.system(size: 10))
                         .fontWeight(.bold)
                     Group {
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Global", systemImage: "sun.min")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
                     }
                     
-                    Spacer()
+                    Group {
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                    }
                     
                     Divider()
                     Group {
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Settings", systemImage: "gear")
                         }
-                        NavigationLink(destination: NotCreatedView()) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("About", systemImage: "info.circle")
                         }
                     }

@@ -214,7 +214,7 @@ struct Equaliser: Codable {
 
 // MARK: - EqualiserMini
 struct EqualiserMini: Codable {
-    let gain, frequency: Frequency
+    let gain, frequency: [String: Double]
 }
 
 // MARK: - Frequency

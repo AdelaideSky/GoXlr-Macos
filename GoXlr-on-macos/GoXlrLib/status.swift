@@ -104,6 +104,26 @@ final class MixerStatus: ObservableObject {
         ft8KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer8KHz.rawValue]!)
         ft16KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer16KHz.rawValue]!)
         
+        
+        miniEqBass = Float(status.micStatus.equaliserMini.gain.miniBassValue())
+        miniEqMid = Float(status.micStatus.equaliserMini.gain.miniMidValue())
+        miniEqTremble = Float(status.micStatus.equaliserMini.gain.miniTrembleValue())
+        
+        miniEq90Hz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer90Hz.rawValue]!)
+        miniEq250Hz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer250Hz.rawValue]!)
+        miniEq500Hz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer500Hz.rawValue]!)
+        miniEq1KHz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer1KHz.rawValue]!)
+        miniEq3KHz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer3KHz.rawValue]!)
+        miniEq8KHz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer8KHz.rawValue]!)
+        
+        miniFt90Hz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer90Hz.rawValue]!)
+        miniFt250Hz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer250Hz.rawValue]!)
+        miniFt500Hz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer500Hz.rawValue]!)
+        miniFt1KHz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer1KHz.rawValue]!)
+        miniFt3KHz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer3KHz.rawValue]!)
+        miniFt8KHz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer8KHz.rawValue]!)
+        
+        
         compAmount = Float(((Double(status.micStatus.compressor.threshold + 24) * 100 / 24) + (Double(status.micStatus.compressor.ratio) * 100 / 14)) / 2)
 
         compThreshold = Float(status.micStatus.compressor.threshold)
@@ -112,6 +132,15 @@ final class MixerStatus: ObservableObject {
         compRatio = Float(status.micStatus.compressor.ratio)
         compMakeUpGain = Float(status.micStatus.compressor.makeupGain)
 
+        
+        routerMic = status.routerTable[0]
+        routerChat = status.routerTable[1]
+        routerMusic = status.routerTable[2]
+        routerGame = status.routerTable[3]
+        routerConsole = status.routerTable[4]
+        routerLineIn = status.routerTable[5]
+        routerSystem = status.routerTable[6]
+        routerSamples = status.routerTable[7]
     }
     public func updateMixerStatus() {
         status = selectedDevice.deviceStatus()!
@@ -190,6 +219,24 @@ final class MixerStatus: ObservableObject {
         ft8KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer8KHz.rawValue]!)
         ft16KHz = Float(status.micStatus.equaliser.frequency[EqFrequencies.Equalizer16KHz.rawValue]!)
         
+        miniEqBass = Float(status.micStatus.equaliserMini.gain.miniBassValue())
+        miniEqMid = Float(status.micStatus.equaliserMini.gain.miniMidValue())
+        miniEqTremble = Float(status.micStatus.equaliserMini.gain.miniTrembleValue())
+        
+        miniEq90Hz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer90Hz.rawValue]!)
+        miniEq250Hz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer250Hz.rawValue]!)
+        miniEq500Hz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer500Hz.rawValue]!)
+        miniEq1KHz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer1KHz.rawValue]!)
+        miniEq3KHz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer3KHz.rawValue]!)
+        miniEq8KHz = Float(status.micStatus.equaliserMini.gain[MiniEqFrequencies.Equalizer8KHz.rawValue]!)
+        
+        miniFt90Hz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer90Hz.rawValue]!)
+        miniFt250Hz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer250Hz.rawValue]!)
+        miniFt500Hz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer500Hz.rawValue]!)
+        miniFt1KHz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer1KHz.rawValue]!)
+        miniFt3KHz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer3KHz.rawValue]!)
+        miniFt8KHz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer8KHz.rawValue]!)
+        
         compAmount = Float(((Double(status.micStatus.compressor.threshold + 24) * 100 / 24) + (Double(status.micStatus.compressor.ratio) * 100 / 14)) / 2)
 
         compThreshold = Float(status.micStatus.compressor.threshold)
@@ -201,11 +248,23 @@ final class MixerStatus: ObservableObject {
     
     public func updateProfiles() {
         let completestatus = selectedDevice.status()!
-        let status = selectedDevice.deviceStatus()!
+        status = selectedDevice.deviceStatus()!
         profilesList = completestatus.status.files.profiles
         profile = status.profileName
         selectedProfile = profile
 
+    }
+    
+    public func updateRouter() {
+        status = selectedDevice.deviceStatus()!
+        routerMic = status.routerTable[0]
+        routerChat = status.routerTable[1]
+        routerMusic = status.routerTable[2]
+        routerGame = status.routerTable[3]
+        routerConsole = status.routerTable[4]
+        routerLineIn = status.routerTable[5]
+        routerSystem = status.routerTable[6]
+        routerSamples = status.routerTable[7]
     }
     @Published var deviceSelect: String = "Select a goxlr" {
         willSet {
@@ -301,6 +360,26 @@ final class MixerStatus: ObservableObject {
     @Published var ft8KHz: Float
     @Published var ft16KHz: Float
     
+    //--------------------------------[Equalizer MINI - MIC]-----------------------------------------------//
+
+    @Published var miniEqBass: Float
+    @Published var miniEqMid: Float
+    @Published var miniEqTremble: Float
+    
+    @Published var miniEq90Hz: Float
+    @Published var miniEq250Hz: Float
+    @Published var miniEq500Hz: Float
+    @Published var miniEq1KHz: Float
+    @Published var miniEq3KHz: Float
+    @Published var miniEq8KHz: Float
+    
+    @Published var miniFt90Hz: Float
+    @Published var miniFt250Hz: Float
+    @Published var miniFt500Hz: Float
+    @Published var miniFt1KHz: Float
+    @Published var miniFt3KHz: Float
+    @Published var miniFt8KHz: Float
+    
 //--------------------------------[Compressor - MIC]-----------------------------------------------//
 
     @Published var compAmount: Float
@@ -310,6 +389,15 @@ final class MixerStatus: ObservableObject {
     @Published var compRelease: Float
     @Published var compMakeUpGain: Float
 
+//--------------------------------[Router table - ROUTING]-----------------------------------------------//
+    @Published var routerMic: [Bool]
+    @Published var routerChat: [Bool]
+    @Published var routerMusic: [Bool]
+    @Published var routerGame: [Bool]
+    @Published var routerConsole: [Bool]
+    @Published var routerLineIn: [Bool]
+    @Published var routerSystem: [Bool]
+    @Published var routerSamples: [Bool]
 }
 
 func stringstatus() -> String {

@@ -642,22 +642,50 @@ public struct GoXlr {
 
     }
     
+    public func ResetMiniEQ() {
+        for freq in MiniEqFrequencies.allCases {
+            self.SetEqMiniGain(frequence: freq, gain: 0)
+        }
+        self.SetEqMiniFreq(frequence: .Equalizer90Hz, freq: 90)
+        self.SetEqMiniFreq(frequence: .Equalizer250Hz, freq: 250)
+        self.SetEqMiniFreq(frequence: .Equalizer500Hz, freq: 500)
+        self.SetEqMiniFreq(frequence: .Equalizer1KHz, freq: 1000)
+        self.SetEqMiniFreq(frequence: .Equalizer3KHz, freq: 3000)
+        self.SetEqMiniFreq(frequence: .Equalizer8KHz, freq: 8000)
+    }
+    
     public func setSimplifiedEq(type: Eqsliders, value: Int) {
         if type == .Bass {
-            SetEqGain(frequence: .Equalizer31Hz, gain: value)
-            SetEqGain(frequence: .Equalizer63Hz, gain: value)
-            SetEqGain(frequence: .Equalizer125Hz, gain: value)
-            SetEqGain(frequence: .Equalizer250Hz, gain: value)
+            self.SetEqGain(frequence: .Equalizer31Hz, gain: value)
+            self.SetEqGain(frequence: .Equalizer63Hz, gain: value)
+            self.SetEqGain(frequence: .Equalizer125Hz, gain: value)
+            self.SetEqGain(frequence: .Equalizer250Hz, gain: value)
         }
         else if type == .Mid {
-            SetEqGain(frequence: .Equalizer500Hz, gain: value)
-            SetEqGain(frequence: .Equalizer1KHz, gain: value)
-            SetEqGain(frequence: .Equalizer2KHz, gain: value)
+            self.SetEqGain(frequence: .Equalizer500Hz, gain: value)
+            self.SetEqGain(frequence: .Equalizer1KHz, gain: value)
+            self.SetEqGain(frequence: .Equalizer2KHz, gain: value)
         }
         else {
-            SetEqGain(frequence: .Equalizer4KHz, gain: value)
-            SetEqGain(frequence: .Equalizer8KHz, gain: value)
-            SetEqGain(frequence: .Equalizer16KHz, gain: value)
+            self.SetEqGain(frequence: .Equalizer4KHz, gain: value)
+            self.SetEqGain(frequence: .Equalizer8KHz, gain: value)
+            self.SetEqGain(frequence: .Equalizer16KHz, gain: value)
+        }
+
+    }
+    
+    public func setSimplifiedMiniEq(type: Eqsliders, value: Int) {
+        if type == .Bass {
+            self.SetEqMiniGain(frequence: .Equalizer90Hz, gain: value)
+            self.SetEqMiniGain(frequence: .Equalizer250Hz, gain: value)
+        }
+        else if type == .Mid {
+            self.SetEqMiniGain(frequence: .Equalizer500Hz, gain: value)
+            self.SetEqMiniGain(frequence: .Equalizer1KHz, gain: value)
+        }
+        else {
+            self.SetEqMiniGain(frequence: .Equalizer3KHz, gain: value)
+            self.SetEqMiniGain(frequence: .Equalizer8KHz, gain: value)
         }
 
     }
