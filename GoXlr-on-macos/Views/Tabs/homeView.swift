@@ -15,16 +15,6 @@ struct HomeView: View {
     @EnvironmentObject var mixer: MixerStatus
     var body: some View {
         VStack(alignment: .center) {
-            Button("test") {
-                print(mixer.routerMic)
-                print(mixer.routerChat)
-                print(mixer.routerMusic)
-                print(mixer.routerGame)
-                print(mixer.routerConsole)
-                print(mixer.routerLineIn)
-                print(mixer.routerSystem)
-                print(mixer.routerSamples)
-            }
             Text("👋")
                 .font(.system(size: 60))
             Text("Welcome " + NSFullUserName() + " !")
