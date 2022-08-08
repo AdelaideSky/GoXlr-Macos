@@ -5,6 +5,7 @@
 ![Contributors](https://img.shields.io/github/contributors/Adelenade/GoXlr-Macos)
 ![OpenIssues](https://img.shields.io/github/issues-raw/Adelenade/GoXlr-Macos)
 ![ClosedIssues](https://img.shields.io/github/issues-closed-raw/Adelenade/GoXlr-Macos)
+![Discord](https://img.shields.io/discord/1006144319289303140?label=Support%20server)
 <!-- ![License](https://img.shields.io/github/license/Adelenade/GoXlr-Macos) -->
 ### MacOS application to manage GoXLR without virtual machine.
 
@@ -13,8 +14,8 @@
 
 For now, full control and compatibility of the GoXLR are not available on Mac. 
 You would need a Windows virtual machine if you want to update
-colours, mic or effects settings but - unlike what TC-Helicon said, 
-the device is perfectly compatible with MacOS and this application proves it.
+colours or effects settings but - unlike what TC-Helicon said, 
+the device is perfectly compatible with MacOS.
 
 **Disclaimer:** I have absolutely no link with TC-Helicon.
 I'm not affiliated with them and neither is this project.
@@ -46,6 +47,12 @@ your device is your responsibility.
 - The GoXLR can be initialized without being rebooted each time it shuts down.
 - The app itself does no more than provide a graphic control panel of the
 GoXLR-Utility that you've already installed, and create the sound outputs.
+
+## Support
+
+If you have any problem using your app and don't feel confident using github issues, you can go to this support server to ask for help !
+
+[![Discord](https://img.shields.io/badge/%3CServer%3E-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/cyavp8F2WW)
 
 ## To-do list
 
