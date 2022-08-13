@@ -12,10 +12,9 @@
 <img src="https://cdn.discordapp.com/attachments/756659826045485088/973891094351872010/unknown.png" width="700">
 </div>
 
-For now, full control and compatibility of the GoXLR are not available on Mac. 
-You would need a Windows virtual machine if you want to update
-colours or effects settings but - unlike what TC-Helicon said, 
-the device is perfectly compatible with MacOS.
+There is currently no official support for the GoXLR on MacOS provided by TC-Helicon,
+however the GoXLR is compatible as a basic audio device. This project aims to bring
+unofficial support for all the GoXLRs features to MacOS.
 
 **Disclaimer:** I have absolutely no link with TC-Helicon.
 I'm not affiliated with them and neither is this project.
