@@ -286,11 +286,13 @@ public struct GoXlr {
             let socket = DaemonSocket().new()
             
             DaemonSocket().send(command: "\"GetStatus\"", socket: socket)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .useDefaultKeys
             
-            return try JSONDecoder().decode(daemonStatus.self, from: DaemonSocket().dataRead(socket: socket))
+            return try decoder.decode(daemonStatus.self, from: DaemonSocket().dataRead(socket: socket))
                         
         } catch {
-            print("Error")
+            print(error)
             return nil
         }
     }
@@ -889,64 +891,54 @@ public struct GoXlr {
     }
     
     public func SetCompressorAmount(amount: Int) {
-        self.SetCompressorThreshold(treshold: Int((Double(amount) / 100 * 24) - 24))
+        self.SetCompressorThreshold(treshold: Int((Double(amount) / 100 * 40) - 40))
         self.SetCompressorRatio(ratio: Int((Double(amount) / 100 * 14)).GetCompRatio())
     }
     
     //--------------------------------[Color related Settings]-------------------------------------------------//
 
     
-    public func SetFaderDisplayStyle(faderName: FaderName, displayStyle: FaderDisplayStyle) -> JSON {
+    public func SetFaderDisplayStyle(faderName: FadersLightning, displayStyle: FaderDisplayStyle) -> JSON {
         //Set fader display style
         
-        do {
-            let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SetFaderDisplayStyle\":[\"\(faderName)\",\"\(displayStyle)\"]}]}"
-            DaemonSocket().send(command: request, socket: socket)
-            return JSON(DaemonSocket().read(socket: socket))
-                        
-        } catch {
-            print("SetFaderDisplayStyle Error")
-            return "SetFaderDisplayStyle Error"
-        }
-    }
-    
-    public func SetAllFaderDisplayStyle(displayStyle: FaderDisplayStyle) -> JSON {
-        //Set fader all display style
-        
-        do {
+        if faderName == .All {
             let socket = DaemonSocket().new()
             let request = "{\"Command\":[\"\(device)\",{\"SetAllFaderDisplayStyle\":\"\(displayStyle)\"}]}"
             DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
-                        
-        } catch {
-            print("SetAllFaderDisplayStyle Error")
-            return "SetAllFaderDisplayStyle Error"
         }
-    }
-    
-    public func SetFaderColours(faderName: FaderName, colour1: String, colour2: String) -> JSON {
-        //Set colours of a specified fader
-        
-        do {
+        else {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SetFaderColours\":[\"\(faderName)\",\"\(colour1)\", \"\(colour2)\"]}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SetFaderDisplayStyle\":[\"\(faderName)\",\"\(displayStyle)\"]}]}"
             DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
-                        
-        } catch {
-            print("SetFaderColours Error")
-            return "SetFaderColours Error"
         }
     }
     
-    public func SetAllFaderColours(colour1: String, colour2: String) -> JSON {
+    public func SetFaderColours(faderName: FadersLightning, colourTop: String, colourBottom: String) -> JSON {
+        //Set colours of a specified fader
+        
+        
+        if faderName == .All {
+            let socket = DaemonSocket().new()
+            let request = "{\"Command\":[\"\(device)\",{\"SetAllFaderColours\":[\"\(colourTop)\", \"\(colourBottom)\"]}]}"
+            DaemonSocket().send(command: request, socket: socket)
+            return JSON(DaemonSocket().read(socket: socket))
+        }
+        else {
+            let socket = DaemonSocket().new()
+            let request = "{\"Command\":[\"\(device)\",{\"SetFaderColours\":[\"\(faderName)\",\"\(colourTop)\", \"\(colourBottom)\"]}]}"
+            DaemonSocket().send(command: request, socket: socket)
+            return JSON(DaemonSocket().read(socket: socket))
+        }
+    }
+    
+    public func SetAllFaderColours(colourTop: String, colourBottom: String) -> JSON {
         //Set all fader colours
         
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SetAllFaderColours\":[\"\(colour1)\", \"\(colour2)\"]}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SetAllFaderColours\":[\"\(colourTop)\", \"\(colourBottom)\"]}]}"
             DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -1060,7 +1052,7 @@ public struct GoXlr {
         
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"LoadProfile\":\"\"}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SaveProfile\"}]}"
             DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -1135,7 +1127,7 @@ public struct GoXlr {
         
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SaveMicProfile\":[]}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SaveMicProfile\"}]}"
             DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         

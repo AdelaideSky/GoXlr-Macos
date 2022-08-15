@@ -42,6 +42,7 @@ public struct Mixer: Codable {
     let routerTable: [[Bool]]
     let coughButton: CoughButton
     let lighting: Lighting
+    let effects: Effects
     let profileName, micProfileName: String
 
     enum CodingKeys: String, CodingKey {
@@ -51,11 +52,12 @@ public struct Mixer: Codable {
         case levels, router
         case routerTable = "router_table"
         case coughButton = "cough_button"
-        case lighting
+        case lighting, effects
         case profileName = "profile_name"
         case micProfileName = "mic_profile_name"
     }
 }
+
 
 // MARK: - CoughButton
 struct CoughButton: Codable {
@@ -67,6 +69,118 @@ struct CoughButton: Codable {
         case muteType = "mute_type"
     }
 }
+
+// MARK: - Effects
+struct Effects: Codable {
+    let reverb: Reverb
+    let echo: Echo
+    let pitch: Pitch
+    let gender: Gender
+    let megaphone: Megaphone
+    let robot: Robot
+    let hardTune: HardTune
+
+    enum CodingKeys: String, CodingKey {
+        case reverb, echo, pitch, gender, megaphone, robot
+        case hardTune = "hard_tune"
+    }
+}
+
+// MARK: - Echo
+struct Echo: Codable {
+    let style: EchoStyle
+    let amount, feedback, tempo, delayLeft: Int
+    let delayRight, feedbackLeft, feedbackRight, feedbackXfbLToR: Int
+    let feedbackXfbRToL: Int
+
+    enum CodingKeys: String, CodingKey {
+        case style, amount, feedback, tempo
+        case delayLeft = "delay_left"
+        case delayRight = "delay_right"
+        case feedbackLeft = "feedback_left"
+        case feedbackRight = "feedback_right"
+        case feedbackXfbLToR = "feedback_xfb_l_to_r"
+        case feedbackXfbRToL = "feedback_xfb_r_to_l"
+    }
+}
+
+// MARK: - Gender
+struct Gender: Codable {
+    let style: GenderStyle
+    let amount: Int
+}
+
+// MARK: - HardTune
+struct HardTune: Codable {
+    let style: HardTuneStyle
+    let amount, rate, window: Int
+    let source: HardTuneSource
+}
+
+// MARK: - Megaphone
+struct Megaphone: Codable {
+    let style: MegaphoneStyle
+    let amount, postGain: Int
+
+    enum CodingKeys: String, CodingKey {
+        case style, amount
+        case postGain = "post_gain"
+    }
+}
+
+// MARK: - Pitch
+struct Pitch: Codable {
+    let style: PitchStyle
+    let amount, character: Int
+}
+
+// MARK: - Reverb
+struct Reverb: Codable {
+    let style: ReverbStyle
+    let amount, decay, earlyLevel, tailLevel: Int
+    let preDelay, loColour, hiColour, hiFactor: Int
+    let diffuse, modSpeed, modDepth: Int
+
+    enum CodingKeys: String, CodingKey {
+        case style, amount, decay
+        case earlyLevel = "early_level"
+        case tailLevel = "tail_level"
+        case preDelay = "pre_delay"
+        case loColour = "lo_colour"
+        case hiColour = "hi_colour"
+        case hiFactor = "hi_factor"
+        case diffuse
+        case modSpeed = "mod_speed"
+        case modDepth = "mod_depth"
+    }
+}
+
+// MARK: - Robot
+struct Robot: Codable {
+    let style: RobotStyle
+    let lowGain, lowFreq, lowWidth, midGain: Int
+    let midFreq, midWidth, highGain, highFreq: Int
+    let highWidth, waveform, pulseWidth, threshold: Int
+    let dryMix: Int
+
+    enum CodingKeys: String, CodingKey {
+        case style
+        case lowGain = "low_gain"
+        case lowFreq = "low_freq"
+        case lowWidth = "low_width"
+        case midGain = "mid_gain"
+        case midFreq = "mid_freq"
+        case midWidth = "mid_width"
+        case highGain = "high_gain"
+        case highFreq = "high_freq"
+        case highWidth = "high_width"
+        case waveform
+        case pulseWidth = "pulse_width"
+        case threshold
+        case dryMix = "dry_mix"
+    }
+}
+
 
 // MARK: - FaderStatus
 struct FaderStatus: Codable {
@@ -135,7 +249,9 @@ struct Levels: Codable {
 struct Lighting: Codable {
     let faders: Faders
     let buttons: [String: daemonButton]
+    
 }
+
 
 struct daemonButton: Codable {
     let offStyle: ButtonColourOffStyle
@@ -161,19 +277,19 @@ struct daemonColours: Codable {
 
 // MARK: - Faders
 struct Faders: Codable {
-    let c, d, a, b: A
+    let b, c, d, a: A
 
     enum CodingKeys: String, CodingKey {
+        case b = "B"
         case c = "C"
         case d = "D"
         case a = "A"
-        case b = "B"
     }
 }
 
 // MARK: - A
 struct A: Codable {
-    let style: String
+    let style: FaderDisplayStyle
     let colours: daemonColours
 }
 

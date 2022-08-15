@@ -5,7 +5,7 @@
 //  Created by Christian P on 9/6/20.
 //  Copyright © 2020 Christian P. All rights reserved.
 //
-
+import AppKit
 extension NSImage {
     var CGImage: CGImage {
         get {
@@ -45,9 +45,9 @@ struct CIHueSaturationValueGradientView: NSViewRepresentable {
         return imageView
     }
     
-    func updateNSView(_ uiView: NSImageView, context: Context) {
+    func updateNSView(_ NSView: NSImageView, context: Context) {
         /// When the view updates eg. brightness changes, a new CIHueSaturationValueGradient will be generated.
-        uiView.image = renderFilter()
+        NSView.image = renderFilter()
     }
     
     /// Generate the CIHueSaturationValueGradient and output it as a UIImage.
@@ -61,7 +61,7 @@ struct CIHueSaturationValueGradientView: NSViewRepresentable {
         ])!
         
         /// Output as UIImageView
-        let size = NSSize(width: 150, height: 150)
+        let size = NSSize(width: 100, height: 100)
         let cgimage = convertCIImageToCGImage(inputImage: filter.outputImage!)
         let image = NSImage(cgImage: cgimage!, size: size)
         return image

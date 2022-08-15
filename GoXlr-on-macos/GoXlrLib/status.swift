@@ -10,6 +10,8 @@ import Socket
 import Foundation
 import SwiftyJSON
 
+var isdaemonLaunched = false
+
 
 final class MixerStatus: ObservableObject {
     
@@ -17,10 +19,15 @@ final class MixerStatus: ObservableObject {
     @Published var micSetup = false
     @Published var profileSheet = false
     
+    @Published var lightningFadersSelected: FadersLightning = .All
+    
     var selectedDevice: GoXlr
     var status: Mixer
     
     public init() {
+        if !isdaemonLaunched {
+            isdaemonLaunched = Daemon().start(args: nil)
+        }
         selectedDevice = GoXlr(serial: GoXlr().listDevices()[0].first)
         status = selectedDevice.deviceStatus()!
         let completestatus = selectedDevice.status()!.status
@@ -124,7 +131,7 @@ final class MixerStatus: ObservableObject {
         miniFt8KHz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer8KHz.rawValue]!)
         
         
-        compAmount = Float(((Double(status.micStatus.compressor.threshold + 24) * 100 / 24) + (Double(status.micStatus.compressor.ratio) * 100 / 14)) / 2)
+        compAmount = Float(((Double(status.micStatus.compressor.threshold + 40) * 100 / 40) + (Double(status.micStatus.compressor.ratio) * 100 / 14)) / 2)
 
         compThreshold = Float(status.micStatus.compressor.threshold)
         compAttack = Float(status.micStatus.compressor.attack.GetIntCompAtkTime())
@@ -141,6 +148,63 @@ final class MixerStatus: ObservableObject {
         routerLineIn = status.routerTable[5]
         routerSystem = status.routerTable[6]
         routerSamples = status.routerTable[7]
+        
+       
+        topFaderA = status.lighting.faders.a.colours.colourOne.toRGB().hsv
+        brTopFaderA = status.lighting.faders.a.colours.colourOne.toRGB().hsv.v
+        bottomFaderA = status.lighting.faders.a.colours.colourTwo.toRGB().hsv
+        brBottomFaderA = status.lighting.faders.a.colours.colourTwo.toRGB().hsv.v
+        
+        buttonMuteAColour1 = status.lighting.buttons["Fader1Mute"]!.colours.colourOne.toRGB().hsv
+        brButtonMuteAColour1 = status.lighting.buttons["Fader1Mute"]!.colours.colourOne.toRGB().hsv.v
+        buttonMuteAColour2 = status.lighting.buttons["Fader1Mute"]!.colours.colourTwo.toRGB().hsv
+        brButtonMuteAColour2 = status.lighting.buttons["Fader1Mute"]!.colours.colourTwo.toRGB().hsv.v
+
+        styleFaderA = status.lighting.faders.a.style
+        buttonMuteAStyle = status.lighting.buttons["Fader1Mute"]!.offStyle
+        
+        topFaderB = status.lighting.faders.b.colours.colourOne.toRGB().hsv
+        brTopFaderB = status.lighting.faders.b.colours.colourOne.toRGB().hsv.v
+        bottomFaderB = status.lighting.faders.b.colours.colourTwo.toRGB().hsv
+        brBottomFaderB = status.lighting.faders.b.colours.colourTwo.toRGB().hsv.v
+        
+        buttonMuteBColour1 = status.lighting.buttons["Fader2Mute"]!.colours.colourOne.toRGB().hsv
+        brButtonMuteBColour1 = status.lighting.buttons["Fader2Mute"]!.colours.colourOne.toRGB().hsv.v
+        buttonMuteBColour2 = status.lighting.buttons["Fader2Mute"]!.colours.colourTwo.toRGB().hsv
+        brButtonMuteBColour2 = status.lighting.buttons["Fader2Mute"]!.colours.colourTwo.toRGB().hsv.v
+        
+        styleFaderB = status.lighting.faders.b.style
+        buttonMuteBStyle = status.lighting.buttons["Fader2Mute"]!.offStyle
+
+        
+        topFaderC = status.lighting.faders.c.colours.colourOne.toRGB().hsv
+        brTopFaderC = status.lighting.faders.c.colours.colourOne.toRGB().hsv.v
+        bottomFaderC = status.lighting.faders.c.colours.colourTwo.toRGB().hsv
+        brBottomFaderC = status.lighting.faders.c.colours.colourTwo.toRGB().hsv.v
+        
+        buttonMuteCColour1 = status.lighting.buttons["Fader3Mute"]!.colours.colourOne.toRGB().hsv
+        brButtonMuteCColour1 = status.lighting.buttons["Fader3Mute"]!.colours.colourOne.toRGB().hsv.v
+        buttonMuteCColour2 = status.lighting.buttons["Fader3Mute"]!.colours.colourTwo.toRGB().hsv
+        brButtonMuteCColour2 = status.lighting.buttons["Fader3Mute"]!.colours.colourTwo.toRGB().hsv.v
+        
+        styleFaderC = status.lighting.faders.c.style
+        buttonMuteCStyle = status.lighting.buttons["Fader3Mute"]!.offStyle
+        
+        
+        topFaderD = status.lighting.faders.d.colours.colourOne.toRGB().hsv
+        brTopFaderD = status.lighting.faders.d.colours.colourOne.toRGB().hsv.v
+        bottomFaderD = status.lighting.faders.d.colours.colourTwo.toRGB().hsv
+        brBottomFaderD = status.lighting.faders.d.colours.colourTwo.toRGB().hsv.v
+        
+        buttonMuteDColour1 = status.lighting.buttons["Fader4Mute"]!.colours.colourOne.toRGB().hsv
+        brButtonMuteDColour1 = status.lighting.buttons["Fader4Mute"]!.colours.colourOne.toRGB().hsv.v
+        buttonMuteDColour2 = status.lighting.buttons["Fader4Mute"]!.colours.colourTwo.toRGB().hsv
+        brButtonMuteDColour2 = status.lighting.buttons["Fader4Mute"]!.colours.colourTwo.toRGB().hsv.v
+        
+        styleFaderD = status.lighting.faders.d.style
+        buttonMuteDStyle = status.lighting.buttons["Fader4Mute"]!.offStyle
+
+        
     }
     public func updateMixerStatus() {
         status = selectedDevice.deviceStatus()!
@@ -237,7 +301,7 @@ final class MixerStatus: ObservableObject {
         miniFt3KHz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer3KHz.rawValue]!)
         miniFt8KHz = Float(status.micStatus.equaliserMini.frequency[MiniEqFrequencies.Equalizer8KHz.rawValue]!)
         
-        compAmount = Float(((Double(status.micStatus.compressor.threshold + 24) * 100 / 24) + (Double(status.micStatus.compressor.ratio) * 100 / 14)) / 2)
+        compAmount = Float(((Double(status.micStatus.compressor.threshold + 40) * 100 / 40) + (Double(status.micStatus.compressor.ratio) * 100 / 14)) / 2)
 
         compThreshold = Float(status.micStatus.compressor.threshold)
         compAttack = Float(status.micStatus.compressor.attack.GetIntCompAtkTime())
@@ -266,6 +330,63 @@ final class MixerStatus: ObservableObject {
         routerSystem = status.routerTable[6]
         routerSamples = status.routerTable[7]
     }
+    public func updateSlidersLightning() {
+        status = selectedDevice.deviceStatus()!
+        topFaderA = status.lighting.faders.a.colours.colourOne.toRGB().hsv
+        brTopFaderA = status.lighting.faders.a.colours.colourOne.toRGB().hsv.v
+        bottomFaderA = status.lighting.faders.a.colours.colourTwo.toRGB().hsv
+        brBottomFaderA = status.lighting.faders.a.colours.colourTwo.toRGB().hsv.v
+        
+        buttonMuteAColour1 = status.lighting.buttons["Fader1Mute"]!.colours.colourOne.toRGB().hsv
+        brButtonMuteAColour1 = status.lighting.buttons["Fader1Mute"]!.colours.colourOne.toRGB().hsv.v
+        buttonMuteAColour2 = status.lighting.buttons["Fader1Mute"]!.colours.colourTwo.toRGB().hsv
+        brButtonMuteAColour2 = status.lighting.buttons["Fader1Mute"]!.colours.colourTwo.toRGB().hsv.v
+
+        styleFaderA = status.lighting.faders.a.style
+        buttonMuteAStyle = status.lighting.buttons["Fader1Mute"]!.offStyle
+        
+        topFaderB = status.lighting.faders.b.colours.colourOne.toRGB().hsv
+        brTopFaderB = status.lighting.faders.b.colours.colourOne.toRGB().hsv.v
+        bottomFaderB = status.lighting.faders.b.colours.colourTwo.toRGB().hsv
+        brBottomFaderB = status.lighting.faders.b.colours.colourTwo.toRGB().hsv.v
+        
+        buttonMuteBColour1 = status.lighting.buttons["Fader2Mute"]!.colours.colourOne.toRGB().hsv
+        brButtonMuteBColour1 = status.lighting.buttons["Fader2Mute"]!.colours.colourOne.toRGB().hsv.v
+        buttonMuteBColour2 = status.lighting.buttons["Fader2Mute"]!.colours.colourTwo.toRGB().hsv
+        brButtonMuteBColour2 = status.lighting.buttons["Fader2Mute"]!.colours.colourTwo.toRGB().hsv.v
+        
+        styleFaderB = status.lighting.faders.b.style
+        buttonMuteBStyle = status.lighting.buttons["Fader2Mute"]!.offStyle
+
+        
+        topFaderC = status.lighting.faders.c.colours.colourOne.toRGB().hsv
+        brTopFaderC = status.lighting.faders.c.colours.colourOne.toRGB().hsv.v
+        bottomFaderC = status.lighting.faders.c.colours.colourTwo.toRGB().hsv
+        brBottomFaderC = status.lighting.faders.c.colours.colourTwo.toRGB().hsv.v
+        
+        buttonMuteCColour1 = status.lighting.buttons["Fader3Mute"]!.colours.colourOne.toRGB().hsv
+        brButtonMuteCColour1 = status.lighting.buttons["Fader3Mute"]!.colours.colourOne.toRGB().hsv.v
+        buttonMuteCColour2 = status.lighting.buttons["Fader3Mute"]!.colours.colourTwo.toRGB().hsv
+        brButtonMuteCColour2 = status.lighting.buttons["Fader3Mute"]!.colours.colourTwo.toRGB().hsv.v
+        
+        styleFaderC = status.lighting.faders.c.style
+        buttonMuteCStyle = status.lighting.buttons["Fader3Mute"]!.offStyle
+        
+        
+        topFaderD = status.lighting.faders.d.colours.colourOne.toRGB().hsv
+        brTopFaderD = status.lighting.faders.d.colours.colourOne.toRGB().hsv.v
+        bottomFaderD = status.lighting.faders.d.colours.colourTwo.toRGB().hsv
+        brBottomFaderD = status.lighting.faders.d.colours.colourTwo.toRGB().hsv.v
+        
+        buttonMuteDColour1 = status.lighting.buttons["Fader4Mute"]!.colours.colourOne.toRGB().hsv
+        brButtonMuteDColour1 = status.lighting.buttons["Fader4Mute"]!.colours.colourOne.toRGB().hsv.v
+        buttonMuteDColour2 = status.lighting.buttons["Fader4Mute"]!.colours.colourTwo.toRGB().hsv
+        brButtonMuteDColour2 = status.lighting.buttons["Fader4Mute"]!.colours.colourTwo.toRGB().hsv.v
+        
+        styleFaderD = status.lighting.faders.d.style
+        buttonMuteDStyle = status.lighting.buttons["Fader4Mute"]!.offStyle
+    }
+    
     @Published var deviceSelect: String = "Select a goxlr" {
         willSet {
             selectedDevice = GoXlr(serial: newValue)
@@ -398,6 +519,67 @@ final class MixerStatus: ObservableObject {
     @Published var routerLineIn: [Bool]
     @Published var routerSystem: [Bool]
     @Published var routerSamples: [Bool]
+    
+    //--------------------------------[Mixer Colors - LIGHTNING]-----------------------------------------------//
+    
+    
+    
+    @Published var topFaderA: HSV
+    @Published var brTopFaderA: CGFloat
+    @Published var bottomFaderA: HSV
+    @Published var brBottomFaderA: CGFloat
+    
+    @Published var buttonMuteAColour1: HSV
+    @Published var brButtonMuteAColour1: CGFloat
+    @Published var buttonMuteAColour2: HSV
+    @Published var brButtonMuteAColour2: CGFloat
+    
+    
+    @Published var styleFaderA: FaderDisplayStyle
+    @Published var buttonMuteAStyle: ButtonColourOffStyle
+    
+    
+    @Published var topFaderB: HSV
+    @Published var brTopFaderB: CGFloat
+    @Published var bottomFaderB: HSV
+    @Published var brBottomFaderB: CGFloat
+    
+    @Published var buttonMuteBColour1: HSV
+    @Published var brButtonMuteBColour1: CGFloat
+    @Published var buttonMuteBColour2: HSV
+    @Published var brButtonMuteBColour2: CGFloat
+    
+    @Published var styleFaderB: FaderDisplayStyle
+    @Published var buttonMuteBStyle: ButtonColourOffStyle
+
+    
+    @Published var topFaderC: HSV
+    @Published var brTopFaderC: CGFloat
+    @Published var bottomFaderC: HSV
+    @Published var brBottomFaderC: CGFloat
+    
+    @Published var buttonMuteCColour1: HSV
+    @Published var brButtonMuteCColour1: CGFloat
+    @Published var buttonMuteCColour2: HSV
+    @Published var brButtonMuteCColour2: CGFloat
+    
+    @Published var styleFaderC: FaderDisplayStyle
+    @Published var buttonMuteCStyle: ButtonColourOffStyle
+
+
+    @Published var topFaderD: HSV
+    @Published var brTopFaderD: CGFloat
+    @Published var bottomFaderD: HSV
+    @Published var brBottomFaderD: CGFloat
+    
+    @Published var buttonMuteDColour1: HSV
+    @Published var brButtonMuteDColour1: CGFloat
+    @Published var buttonMuteDColour2: HSV
+    @Published var brButtonMuteDColour2: CGFloat
+    
+    @Published var styleFaderD: FaderDisplayStyle
+    @Published var buttonMuteDStyle: ButtonColourOffStyle
+
 }
 
 func stringstatus() -> String {

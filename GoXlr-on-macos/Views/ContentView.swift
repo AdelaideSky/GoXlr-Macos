@@ -54,7 +54,7 @@ struct ContentView: View {
                         NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
                             Label("Global", systemImage: "sun.min")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: MixerLightningView().environmentObject(MixerStatus())) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
                         NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {

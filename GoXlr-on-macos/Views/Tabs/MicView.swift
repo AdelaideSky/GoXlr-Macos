@@ -643,7 +643,7 @@ struct MicView: View {
                                 Text("Threshold")
                                     .font(.system(.subheadline))
                                     .padding(.top, 10)
-                                lightBSLIDER(value: $mixer.compThreshold, in: -24...0, display: "", textsize: 11).padding(.top, 10)
+                                lightBSLIDER(value: $mixer.compThreshold, in: -40...0, display: "", textsize: 11).padding(.top, 10)
                                     .onChange(of: mixer.compThreshold) { newValue in
                                         mixer.selectedDevice.SetCompressorThreshold(treshold: Int(newValue))
                                     }

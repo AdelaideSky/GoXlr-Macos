@@ -7,49 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		700E138B2870A6BE00FD6306 /* GoXlr_on_macosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E138A2870A6BE00FD6306 /* GoXlr_on_macosApp.swift */; };
-		700E138D2870A6BE00FD6306 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E138C2870A6BE00FD6306 /* ContentView.swift */; };
-		700E138F2870A6C500FD6306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700E138E2870A6C500FD6306 /* Assets.xcassets */; };
-		700E13922870A6C500FD6306 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700E13912870A6C500FD6306 /* Preview Assets.xcassets */; };
-		703067C1288D607A00833836 /* audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703067C0288D607A00833836 /* audio.swift */; };
 		704A9D8D2892C2A600AE234D /* SimplyCoreAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 704A9D8C2892C2A600AE234D /* SimplyCoreAudio */; };
-		70563473287182D600985223 /* MixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70563472287182D600985223 /* MixerView.swift */; };
-		705634762871836F00985223 /* device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705634742871836F00985223 /* device.swift */; };
-		705634772871836F00985223 /* goxlr_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705634752871836F00985223 /* goxlr_types.swift */; };
+		704CAA2A2897FE480061C717 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CAA292897FE480061C717 /* utils.swift */; };
 		7056347B2871838E00985223 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7056347A2871838E00985223 /* SwiftyJSON */; };
 		7056347E287183A500985223 /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = 7056347D287183A500985223 /* Socket */; };
-		7077E695287439E400D56C76 /* status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077E694287439E400D56C76 /* status.swift */; };
-		707F19962891C3610054DF04 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707F19952891C3610054DF04 /* OnboardingView.swift */; };
-		70B536E42877035900DE8ED0 /* homeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E32877035900DE8ED0 /* homeView.swift */; };
-		70B536E6287705FC00DE8ED0 /* NotSupportedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */; };
-		70B536E8287719DD00DE8ED0 /* StatusStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B536E7287719DD00DE8ED0 /* StatusStructs.swift */; };
-		70BF7F7528888EEC00A7E6E8 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF7F7428888EEC00A7E6E8 /* MicView.swift */; };
-		70BF7F7828889B4E00A7E6E8 /* Sliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BF7F7728889B4E00A7E6E8 /* Sliders.swift */; };
-		70F64126288AECBB0048A7E4 /* MicSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F64125288AECBB0048A7E4 /* MicSetupView.swift */; };
-		70FEF287288FE7AA00F6F92B /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEF286288FE7AA00F6F92B /* ProfilesView.swift */; };
+		7066F4BF289937BD00AFDE2D /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 7066F4B42899198000AFDE2D /* goxlr-daemon */; };
+		7066F4C828999DC600AFDE2D /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7D2896C54B0039E797 /* MicView.swift */; };
+		7066F4C928999DC600AFDE2D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA42897D3E80039E797 /* Helpers.swift */; };
+		7066F4CA28999DC600AFDE2D /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA12897D3E80039E797 /* CustomSlider.swift */; };
+		7066F4CB28999DC600AFDE2D /* ColourStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA32897D3E80039E797 /* ColourStructs.swift */; };
+		7066F4CC28999DC600AFDE2D /* MicView_mini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB862896C54B0039E797 /* MicView_mini.swift */; };
+		7066F4CD28999DC600AFDE2D /* ColourShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA52897D3E80039E797 /* ColourShowView.swift */; };
+		7066F4CE28999DC600AFDE2D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB882896C54B0039E797 /* ContentView.swift */; };
+		7066F4CF28999DC600AFDE2D /* ColourWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA62897D3E80039E797 /* ColourWheel.swift */; };
+		7066F4D028999DC600AFDE2D /* StatusStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB792896C54B0039E797 /* StatusStructs.swift */; };
+		7066F4D128999DC600AFDE2D /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB822896C54B0039E797 /* ProfilesView.swift */; };
+		7066F4D228999DC600AFDE2D /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CAA292897FE480061C717 /* utils.swift */; };
+		7066F4D328999DC600AFDE2D /* RoutingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7F2896C54B0039E797 /* RoutingTab.swift */; };
+		7066F4D428999DC600AFDE2D /* audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB782896C54B0039E797 /* audio.swift */; };
+		7066F4D528999DC600AFDE2D /* MixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB802896C54B0039E797 /* MixerView.swift */; };
+		7066F4D628999DC600AFDE2D /* Sliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB742896C54B0039E797 /* Sliders.swift */; };
+		7066F4D728999DC600AFDE2D /* device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB762896C54B0039E797 /* device.swift */; };
+		7066F4D828999DC600AFDE2D /* MixerLightningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABAD2897D4080039E797 /* MixerLightningView.swift */; };
+		7066F4D928999DC600AFDE2D /* homeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7E2896C54B0039E797 /* homeView.swift */; };
+		7066F4DA28999DC600AFDE2D /* daemonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */; };
+		7066F4DB28999DC600AFDE2D /* goxlr_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7A2896C54B0039E797 /* goxlr_types.swift */; };
+		7066F4DC28999DC600AFDE2D /* GoXlr_on_macosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB8B2896C54B0039E797 /* GoXlr_on_macosApp.swift */; };
+		7066F4DD28999DC600AFDE2D /* NotSupportedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB872896C54B0039E797 /* NotSupportedView.swift */; };
+		7066F4DE28999DC600AFDE2D /* MicSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB832896C54B0039E797 /* MicSetupView.swift */; };
+		7066F4DF28999DC600AFDE2D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB842896C54B0039E797 /* OnboardingView.swift */; };
+		7066F4E028999DC600AFDE2D /* CIHueSaturationValueGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA22897D3E80039E797 /* CIHueSaturationValueGradientView.swift */; };
+		7066F4E128999DC600AFDE2D /* status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB772896C54B0039E797 /* status.swift */; };
+		7066F4E328999DC600AFDE2D /* SimplyCoreAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 7066F4C528999DC600AFDE2D /* SimplyCoreAudio */; };
+		7066F4E428999DC600AFDE2D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7066F4C128999DC600AFDE2D /* SwiftyJSON */; };
+		7066F4E528999DC600AFDE2D /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = 7066F4C328999DC600AFDE2D /* Socket */; };
+		7066F4E928999DC600AFDE2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB702896C54B0039E797 /* Assets.xcassets */; };
+		7066F4EA28999DC600AFDE2D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB8A2896C54B0039E797 /* Info.plist */; };
+		7066F4F328999ECE00AFDE2D /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 7066F4F228999ECE00AFDE2D /* goxlr-daemon */; };
+		708DAB8C2896C54C0039E797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB702896C54B0039E797 /* Assets.xcassets */; };
+		708DAB8E2896C54C0039E797 /* Sliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB742896C54B0039E797 /* Sliders.swift */; };
+		708DAB8F2896C54C0039E797 /* device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB762896C54B0039E797 /* device.swift */; };
+		708DAB902896C54C0039E797 /* status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB772896C54B0039E797 /* status.swift */; };
+		708DAB912896C54C0039E797 /* audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB782896C54B0039E797 /* audio.swift */; };
+		708DAB922896C54C0039E797 /* StatusStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB792896C54B0039E797 /* StatusStructs.swift */; };
+		708DAB932896C54C0039E797 /* goxlr_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7A2896C54B0039E797 /* goxlr_types.swift */; };
+		708DAB942896C54C0039E797 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7D2896C54B0039E797 /* MicView.swift */; };
+		708DAB952896C54C0039E797 /* homeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7E2896C54B0039E797 /* homeView.swift */; };
+		708DAB962896C54C0039E797 /* RoutingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7F2896C54B0039E797 /* RoutingTab.swift */; };
+		708DAB972896C54C0039E797 /* MixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB802896C54B0039E797 /* MixerView.swift */; };
+		708DAB982896C54C0039E797 /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB822896C54B0039E797 /* ProfilesView.swift */; };
+		708DAB992896C54C0039E797 /* MicSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB832896C54B0039E797 /* MicSetupView.swift */; };
+		708DAB9A2896C54C0039E797 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB842896C54B0039E797 /* OnboardingView.swift */; };
+		708DAB9B2896C54C0039E797 /* MicView_mini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB862896C54B0039E797 /* MicView_mini.swift */; };
+		708DAB9C2896C54C0039E797 /* NotSupportedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB872896C54B0039E797 /* NotSupportedView.swift */; };
+		708DAB9D2896C54C0039E797 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB882896C54B0039E797 /* ContentView.swift */; };
+		708DAB9E2896C54C0039E797 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB8A2896C54B0039E797 /* Info.plist */; };
+		708DAB9F2896C54C0039E797 /* GoXlr_on_macosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB8B2896C54B0039E797 /* GoXlr_on_macosApp.swift */; };
+		708DABA72897D3E90039E797 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA12897D3E80039E797 /* CustomSlider.swift */; };
+		708DABA82897D3E90039E797 /* CIHueSaturationValueGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA22897D3E80039E797 /* CIHueSaturationValueGradientView.swift */; };
+		708DABA92897D3E90039E797 /* ColourStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA32897D3E80039E797 /* ColourStructs.swift */; };
+		708DABAA2897D3E90039E797 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA42897D3E80039E797 /* Helpers.swift */; };
+		708DABAB2897D3E90039E797 /* ColourShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA52897D3E80039E797 /* ColourShowView.swift */; };
+		708DABAC2897D3E90039E797 /* ColourWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA62897D3E80039E797 /* ColourWheel.swift */; };
+		708DABAE2897D4080039E797 /* MixerLightningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABAD2897D4080039E797 /* MixerLightningView.swift */; };
+		70AB8E2E28986ADC002EF0A9 /* daemonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		700E13872870A6BE00FD6306 /* GoXlr-on-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr-on-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		700E138A2870A6BE00FD6306 /* GoXlr_on_macosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_on_macosApp.swift; sourceTree = "<group>"; };
-		700E138C2870A6BE00FD6306 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		700E138E2870A6C500FD6306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		700E13912870A6C500FD6306 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		700E13932870A6C500FD6306 /* GoXlr_on_macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoXlr_on_macos.entitlements; sourceTree = "<group>"; };
-		700E13992870A81900FD6306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		703067C0288D607A00833836 /* audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audio.swift; sourceTree = "<group>"; };
-		70563472287182D600985223 /* MixerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerView.swift; sourceTree = "<group>"; };
-		705634742871836F00985223 /* device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = device.swift; sourceTree = "<group>"; };
-		705634752871836F00985223 /* goxlr_types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goxlr_types.swift; sourceTree = "<group>"; };
-		7077E694287439E400D56C76 /* status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = status.swift; sourceTree = "<group>"; };
-		707F19952891C3610054DF04 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		70B536E32877035900DE8ED0 /* homeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeView.swift; sourceTree = "<group>"; };
-		70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSupportedView.swift; sourceTree = "<group>"; };
-		70B536E7287719DD00DE8ED0 /* StatusStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusStructs.swift; sourceTree = "<group>"; };
-		70BF7F7428888EEC00A7E6E8 /* MicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicView.swift; sourceTree = "<group>"; };
-		70BF7F7728889B4E00A7E6E8 /* Sliders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sliders.swift; sourceTree = "<group>"; };
-		70F64125288AECBB0048A7E4 /* MicSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSetupView.swift; sourceTree = "<group>"; };
-		70FEF286288FE7AA00F6F92B /* ProfilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
+		704CAA292897FE480061C717 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		7066F4B42899198000AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
+		7066F4F228999ECE00AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
+		7077F24628AA4F9D0004F120 /* GoXlr App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GoXlr App.app"; path = "/Users/ade/Documents/GoXlr-on-macos/build/Debug/GoXlr App.app"; sourceTree = "<absolute>"; };
+		7077F24728AA4F9D0004F120 /* GoXlr App arm64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GoXlr App arm64.app"; path = "/Users/ade/Documents/GoXlr-on-macos/build/Debug/GoXlr App arm64.app"; sourceTree = "<absolute>"; };
+		708DAB702896C54B0039E797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		708DAB742896C54B0039E797 /* Sliders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sliders.swift; sourceTree = "<group>"; };
+		708DAB762896C54B0039E797 /* device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = device.swift; sourceTree = "<group>"; };
+		708DAB772896C54B0039E797 /* status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = status.swift; sourceTree = "<group>"; };
+		708DAB782896C54B0039E797 /* audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = audio.swift; sourceTree = "<group>"; };
+		708DAB792896C54B0039E797 /* StatusStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusStructs.swift; sourceTree = "<group>"; };
+		708DAB7A2896C54B0039E797 /* goxlr_types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goxlr_types.swift; sourceTree = "<group>"; };
+		708DAB7D2896C54B0039E797 /* MicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicView.swift; sourceTree = "<group>"; };
+		708DAB7E2896C54B0039E797 /* homeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeView.swift; sourceTree = "<group>"; };
+		708DAB7F2896C54B0039E797 /* RoutingTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingTab.swift; sourceTree = "<group>"; };
+		708DAB802896C54B0039E797 /* MixerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixerView.swift; sourceTree = "<group>"; };
+		708DAB822896C54B0039E797 /* ProfilesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilesView.swift; sourceTree = "<group>"; };
+		708DAB832896C54B0039E797 /* MicSetupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicSetupView.swift; sourceTree = "<group>"; };
+		708DAB842896C54B0039E797 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		708DAB862896C54B0039E797 /* MicView_mini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MicView_mini.swift; sourceTree = "<group>"; };
+		708DAB872896C54B0039E797 /* NotSupportedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotSupportedView.swift; sourceTree = "<group>"; };
+		708DAB882896C54B0039E797 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		708DAB892896C54B0039E797 /* GoXlr_on_macos.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = GoXlr_on_macos.entitlements; sourceTree = "<group>"; };
+		708DAB8A2896C54B0039E797 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		708DAB8B2896C54B0039E797 /* GoXlr_on_macosApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoXlr_on_macosApp.swift; sourceTree = "<group>"; };
+		708DABA12897D3E80039E797 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		708DABA22897D3E80039E797 /* CIHueSaturationValueGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIHueSaturationValueGradientView.swift; sourceTree = "<group>"; };
+		708DABA32897D3E80039E797 /* ColourStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourStructs.swift; sourceTree = "<group>"; };
+		708DABA42897D3E80039E797 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		708DABA52897D3E80039E797 /* ColourShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourShowView.swift; sourceTree = "<group>"; };
+		708DABA62897D3E80039E797 /* ColourWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourWheel.swift; sourceTree = "<group>"; };
+		708DABAD2897D4080039E797 /* MixerLightningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerLightningView.swift; sourceTree = "<group>"; };
+		70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daemonHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,89 +120,150 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7066F4E228999DC600AFDE2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7066F4E328999DC600AFDE2D /* SimplyCoreAudio in Frameworks */,
+				7066F4E428999DC600AFDE2D /* SwiftyJSON in Frameworks */,
+				7066F4E528999DC600AFDE2D /* Socket in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		700E137E2870A6BE00FD6306 = {
 			isa = PBXGroup;
 			children = (
-				700E13892870A6BE00FD6306 /* GoXlr-on-macos */,
-				700E13882870A6BE00FD6306 /* Products */,
+				708DAB6F2896C54B0039E797 /* GoXlr-on-macos */,
 			);
 			sourceTree = "<group>";
 		};
-		700E13882870A6BE00FD6306 /* Products */ = {
+		7066F4F028999E6800AFDE2D /* arm64 */ = {
 			isa = PBXGroup;
 			children = (
-				700E13872870A6BE00FD6306 /* GoXlr-on-macos.app */,
+				7066F4F228999ECE00AFDE2D /* goxlr-daemon */,
 			);
-			name = Products;
+			path = arm64;
 			sourceTree = "<group>";
 		};
-		700E13892870A6BE00FD6306 /* GoXlr-on-macos */ = {
+		7066F4F128999E7000AFDE2D /* x64-x86 */ = {
 			isa = PBXGroup;
 			children = (
-				70BF7F7628889B3C00A7E6E8 /* Elements */,
-				70B536E22877034100DE8ED0 /* Views */,
-				705634782871837700985223 /* GoXlrLib */,
-				700E13992870A81900FD6306 /* Info.plist */,
-				700E138A2870A6BE00FD6306 /* GoXlr_on_macosApp.swift */,
-				700E138E2870A6C500FD6306 /* Assets.xcassets */,
-				700E13932870A6C500FD6306 /* GoXlr_on_macos.entitlements */,
-				700E13902870A6C500FD6306 /* Preview Content */,
+				7066F4B42899198000AFDE2D /* goxlr-daemon */,
+			);
+			path = "x64-x86";
+			sourceTree = "<group>";
+		};
+		708DAB6F2896C54B0039E797 /* GoXlr-on-macos */ = {
+			isa = PBXGroup;
+			children = (
+				70AB8E2A2898698F002EF0A9 /* Daemons */,
+				708DAB702896C54B0039E797 /* Assets.xcassets */,
+				708DAB732896C54B0039E797 /* Elements */,
+				708DAB752896C54B0039E797 /* GoXlrLib */,
+				708DAB7B2896C54B0039E797 /* Views */,
+				708DAB892896C54B0039E797 /* GoXlr_on_macos.entitlements */,
+				708DAB8A2896C54B0039E797 /* Info.plist */,
+				708DAB8B2896C54B0039E797 /* GoXlr_on_macosApp.swift */,
 			);
 			path = "GoXlr-on-macos";
 			sourceTree = "<group>";
 		};
-		700E13902870A6C500FD6306 /* Preview Content */ = {
+		708DAB732896C54B0039E797 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				700E13912870A6C500FD6306 /* Preview Assets.xcassets */,
+				708DABA02897D3E80039E797 /* Color picker */,
+				708DAB742896C54B0039E797 /* Sliders.swift */,
 			);
-			path = "Preview Content";
+			path = Elements;
 			sourceTree = "<group>";
 		};
-		705634782871837700985223 /* GoXlrLib */ = {
+		708DAB752896C54B0039E797 /* GoXlrLib */ = {
 			isa = PBXGroup;
 			children = (
-				705634742871836F00985223 /* device.swift */,
-				705634752871836F00985223 /* goxlr_types.swift */,
-				7077E694287439E400D56C76 /* status.swift */,
-				70B536E7287719DD00DE8ED0 /* StatusStructs.swift */,
-				703067C0288D607A00833836 /* audio.swift */,
+				708DAB762896C54B0039E797 /* device.swift */,
+				708DAB772896C54B0039E797 /* status.swift */,
+				708DAB782896C54B0039E797 /* audio.swift */,
+				708DAB792896C54B0039E797 /* StatusStructs.swift */,
+				708DAB7A2896C54B0039E797 /* goxlr_types.swift */,
+				704CAA292897FE480061C717 /* utils.swift */,
+				70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */,
 			);
 			path = GoXlrLib;
 			sourceTree = "<group>";
 		};
-		70B536E22877034100DE8ED0 /* Views */ = {
+		708DAB7B2896C54B0039E797 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				700E138C2870A6BE00FD6306 /* ContentView.swift */,
-				70563472287182D600985223 /* MixerView.swift */,
-				70B536E32877035900DE8ED0 /* homeView.swift */,
-				70B536E5287705FC00DE8ED0 /* NotSupportedView.swift */,
-				70BF7F7428888EEC00A7E6E8 /* MicView.swift */,
-				70F64125288AECBB0048A7E4 /* MicSetupView.swift */,
-				70FEF286288FE7AA00F6F92B /* ProfilesView.swift */,
-				707F19952891C3610054DF04 /* OnboardingView.swift */,
+				708DAB7C2896C54B0039E797 /* Tabs */,
+				708DAB812896C54B0039E797 /* Sheets */,
+				708DAB852896C54B0039E797 /* MiniViews */,
+				708DAB872896C54B0039E797 /* NotSupportedView.swift */,
+				708DAB882896C54B0039E797 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		70BF7F7628889B3C00A7E6E8 /* Elements */ = {
+		708DAB7C2896C54B0039E797 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				70BF7F7728889B4E00A7E6E8 /* Sliders.swift */,
+				708DAB7D2896C54B0039E797 /* MicView.swift */,
+				708DAB7E2896C54B0039E797 /* homeView.swift */,
+				708DAB7F2896C54B0039E797 /* RoutingTab.swift */,
+				708DAB802896C54B0039E797 /* MixerView.swift */,
+				708DABAD2897D4080039E797 /* MixerLightningView.swift */,
 			);
-			path = Elements;
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		708DAB812896C54B0039E797 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				708DAB822896C54B0039E797 /* ProfilesView.swift */,
+				708DAB832896C54B0039E797 /* MicSetupView.swift */,
+				708DAB842896C54B0039E797 /* OnboardingView.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		708DAB852896C54B0039E797 /* MiniViews */ = {
+			isa = PBXGroup;
+			children = (
+				708DAB862896C54B0039E797 /* MicView_mini.swift */,
+			);
+			path = MiniViews;
+			sourceTree = "<group>";
+		};
+		708DABA02897D3E80039E797 /* Color picker */ = {
+			isa = PBXGroup;
+			children = (
+				708DABA12897D3E80039E797 /* CustomSlider.swift */,
+				708DABA22897D3E80039E797 /* CIHueSaturationValueGradientView.swift */,
+				708DABA32897D3E80039E797 /* ColourStructs.swift */,
+				708DABA42897D3E80039E797 /* Helpers.swift */,
+				708DABA52897D3E80039E797 /* ColourShowView.swift */,
+				708DABA62897D3E80039E797 /* ColourWheel.swift */,
+			);
+			path = "Color picker";
+			sourceTree = "<group>";
+		};
+		70AB8E2A2898698F002EF0A9 /* Daemons */ = {
+			isa = PBXGroup;
+			children = (
+				7066F4F128999E7000AFDE2D /* x64-x86 */,
+				7066F4F028999E6800AFDE2D /* arm64 */,
+			);
+			path = Daemons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		700E13862870A6BE00FD6306 /* GoXlr-on-macos */ = {
+		700E13862870A6BE00FD6306 /* GoXlr App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 700E13962870A6C500FD6306 /* Build configuration list for PBXNativeTarget "GoXlr-on-macos" */;
+			buildConfigurationList = 700E13962870A6C500FD6306 /* Build configuration list for PBXNativeTarget "GoXlr App" */;
 			buildPhases = (
 				700E13832870A6BE00FD6306 /* Sources */,
 				700E13842870A6BE00FD6306 /* Frameworks */,
@@ -155,14 +273,36 @@
 			);
 			dependencies = (
 			);
-			name = "GoXlr-on-macos";
+			name = "GoXlr App";
 			packageProductDependencies = (
 				7056347A2871838E00985223 /* SwiftyJSON */,
 				7056347D287183A500985223 /* Socket */,
 				704A9D8C2892C2A600AE234D /* SimplyCoreAudio */,
 			);
 			productName = "GoXlr-on-macos";
-			productReference = 700E13872870A6BE00FD6306 /* GoXlr-on-macos.app */;
+			productReference = 7077F24628AA4F9D0004F120 /* GoXlr App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7066F4C028999DC600AFDE2D /* GoXlr App arm64 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7066F4EB28999DC600AFDE2D /* Build configuration list for PBXNativeTarget "GoXlr App arm64" */;
+			buildPhases = (
+				7066F4C728999DC600AFDE2D /* Sources */,
+				7066F4E228999DC600AFDE2D /* Frameworks */,
+				7066F4E628999DC600AFDE2D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GoXlr App arm64";
+			packageProductDependencies = (
+				7066F4C128999DC600AFDE2D /* SwiftyJSON */,
+				7066F4C328999DC600AFDE2D /* Socket */,
+				7066F4C528999DC600AFDE2D /* SimplyCoreAudio */,
+			);
+			productName = "GoXlr-on-macos";
+			productReference = 7077F24728AA4F9D0004F120 /* GoXlr App arm64.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -194,11 +334,12 @@
 				7056347C287183A500985223 /* XCRemoteSwiftPackageReference "BlueSocket" */,
 				704A9D8B2892C2A600AE234D /* XCRemoteSwiftPackageReference "SimplyCoreAudio" */,
 			);
-			productRefGroup = 700E13882870A6BE00FD6306 /* Products */;
+			productRefGroup = 700E137E2870A6BE00FD6306;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				700E13862870A6BE00FD6306 /* GoXlr-on-macos */,
+				700E13862870A6BE00FD6306 /* GoXlr App */,
+				7066F4C028999DC600AFDE2D /* GoXlr App arm64 */,
 			);
 		};
 /* End PBXProject section */
@@ -208,8 +349,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				700E13922870A6C500FD6306 /* Preview Assets.xcassets in Resources */,
-				700E138F2870A6C500FD6306 /* Assets.xcassets in Resources */,
+				7066F4BF289937BD00AFDE2D /* goxlr-daemon in Resources */,
+				708DAB8C2896C54C0039E797 /* Assets.xcassets in Resources */,
+				708DAB9E2896C54C0039E797 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7066F4E628999DC600AFDE2D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7066F4F328999ECE00AFDE2D /* goxlr-daemon in Resources */,
+				7066F4E928999DC600AFDE2D /* Assets.xcassets in Resources */,
+				7066F4EA28999DC600AFDE2D /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,21 +372,65 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				700E138D2870A6BE00FD6306 /* ContentView.swift in Sources */,
-				705634772871836F00985223 /* goxlr_types.swift in Sources */,
-				70B536E42877035900DE8ED0 /* homeView.swift in Sources */,
-				707F19962891C3610054DF04 /* OnboardingView.swift in Sources */,
-				70BF7F7828889B4E00A7E6E8 /* Sliders.swift in Sources */,
-				70B536E6287705FC00DE8ED0 /* NotSupportedView.swift in Sources */,
-				700E138B2870A6BE00FD6306 /* GoXlr_on_macosApp.swift in Sources */,
-				70B536E8287719DD00DE8ED0 /* StatusStructs.swift in Sources */,
-				70BF7F7528888EEC00A7E6E8 /* MicView.swift in Sources */,
-				703067C1288D607A00833836 /* audio.swift in Sources */,
-				70563473287182D600985223 /* MixerView.swift in Sources */,
-				70FEF287288FE7AA00F6F92B /* ProfilesView.swift in Sources */,
-				705634762871836F00985223 /* device.swift in Sources */,
-				70F64126288AECBB0048A7E4 /* MicSetupView.swift in Sources */,
-				7077E695287439E400D56C76 /* status.swift in Sources */,
+				708DAB942896C54C0039E797 /* MicView.swift in Sources */,
+				708DABAA2897D3E90039E797 /* Helpers.swift in Sources */,
+				708DABA72897D3E90039E797 /* CustomSlider.swift in Sources */,
+				708DABA92897D3E90039E797 /* ColourStructs.swift in Sources */,
+				708DAB9B2896C54C0039E797 /* MicView_mini.swift in Sources */,
+				708DABAB2897D3E90039E797 /* ColourShowView.swift in Sources */,
+				708DAB9D2896C54C0039E797 /* ContentView.swift in Sources */,
+				708DABAC2897D3E90039E797 /* ColourWheel.swift in Sources */,
+				708DAB922896C54C0039E797 /* StatusStructs.swift in Sources */,
+				708DAB982896C54C0039E797 /* ProfilesView.swift in Sources */,
+				704CAA2A2897FE480061C717 /* utils.swift in Sources */,
+				708DAB962896C54C0039E797 /* RoutingTab.swift in Sources */,
+				708DAB912896C54C0039E797 /* audio.swift in Sources */,
+				708DAB972896C54C0039E797 /* MixerView.swift in Sources */,
+				708DAB8E2896C54C0039E797 /* Sliders.swift in Sources */,
+				708DAB8F2896C54C0039E797 /* device.swift in Sources */,
+				708DABAE2897D4080039E797 /* MixerLightningView.swift in Sources */,
+				708DAB952896C54C0039E797 /* homeView.swift in Sources */,
+				70AB8E2E28986ADC002EF0A9 /* daemonHandler.swift in Sources */,
+				708DAB932896C54C0039E797 /* goxlr_types.swift in Sources */,
+				708DAB9F2896C54C0039E797 /* GoXlr_on_macosApp.swift in Sources */,
+				708DAB9C2896C54C0039E797 /* NotSupportedView.swift in Sources */,
+				708DAB992896C54C0039E797 /* MicSetupView.swift in Sources */,
+				708DAB9A2896C54C0039E797 /* OnboardingView.swift in Sources */,
+				708DABA82897D3E90039E797 /* CIHueSaturationValueGradientView.swift in Sources */,
+				708DAB902896C54C0039E797 /* status.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7066F4C728999DC600AFDE2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7066F4C828999DC600AFDE2D /* MicView.swift in Sources */,
+				7066F4C928999DC600AFDE2D /* Helpers.swift in Sources */,
+				7066F4CA28999DC600AFDE2D /* CustomSlider.swift in Sources */,
+				7066F4CB28999DC600AFDE2D /* ColourStructs.swift in Sources */,
+				7066F4CC28999DC600AFDE2D /* MicView_mini.swift in Sources */,
+				7066F4CD28999DC600AFDE2D /* ColourShowView.swift in Sources */,
+				7066F4CE28999DC600AFDE2D /* ContentView.swift in Sources */,
+				7066F4CF28999DC600AFDE2D /* ColourWheel.swift in Sources */,
+				7066F4D028999DC600AFDE2D /* StatusStructs.swift in Sources */,
+				7066F4D128999DC600AFDE2D /* ProfilesView.swift in Sources */,
+				7066F4D228999DC600AFDE2D /* utils.swift in Sources */,
+				7066F4D328999DC600AFDE2D /* RoutingTab.swift in Sources */,
+				7066F4D428999DC600AFDE2D /* audio.swift in Sources */,
+				7066F4D528999DC600AFDE2D /* MixerView.swift in Sources */,
+				7066F4D628999DC600AFDE2D /* Sliders.swift in Sources */,
+				7066F4D728999DC600AFDE2D /* device.swift in Sources */,
+				7066F4D828999DC600AFDE2D /* MixerLightningView.swift in Sources */,
+				7066F4D928999DC600AFDE2D /* homeView.swift in Sources */,
+				7066F4DA28999DC600AFDE2D /* daemonHandler.swift in Sources */,
+				7066F4DB28999DC600AFDE2D /* goxlr_types.swift in Sources */,
+				7066F4DC28999DC600AFDE2D /* GoXlr_on_macosApp.swift in Sources */,
+				7066F4DD28999DC600AFDE2D /* NotSupportedView.swift in Sources */,
+				7066F4DE28999DC600AFDE2D /* MicSetupView.swift in Sources */,
+				7066F4DF28999DC600AFDE2D /* OnboardingView.swift in Sources */,
+				7066F4E028999DC600AFDE2D /* CIHueSaturationValueGradientView.swift in Sources */,
+				7066F4E128999DC600AFDE2D /* status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,11 +488,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -360,16 +556,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULE_DEBUGGING = NO;
 				CODE_SIGN_ENTITLEMENTS = "GoXlr-on-macos/GoXlr_on_macos.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = dev_1pb;
 				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Preview\\ Content GoXlr-on-macos/Assets.xcassets";
 				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=0";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "GoXlr-on-macos/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required to monitor your input level while doing Mic Setup.";
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
@@ -377,10 +579,13 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-on-macos";
+				MARKETING_VERSION = "1.0.0-alpha.2";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_SUPPRESS_WARNINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -391,7 +596,90 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULE_DEBUGGING = NO;
 				CODE_SIGN_ENTITLEMENTS = "GoXlr-on-macos/GoXlr_on_macos.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = dev_1pb;
+				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Preview\\ Content GoXlr-on-macos/Assets.xcassets";
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr-on-macos/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required to monitor your input level while doing Mic Setup.";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0-alpha.2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_SUPPRESS_WARNINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		7066F4EC28999DC600AFDE2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULE_DEBUGGING = NO;
+				CODE_SIGN_ENTITLEMENTS = "GoXlr-on-macos/GoXlr_on_macos.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Preview\\ Content GoXlr-on-macos/Assets.xcassets";
+				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=0";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr App copy2-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required to monitor your input level while doing Mic Setup.";
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = "1.0.0-alpha.1-arm64";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_SUPPRESS_WARNINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7066F4ED28999DC600AFDE2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULE_DEBUGGING = NO;
+				CODE_SIGN_ENTITLEMENTS = "GoXlr-on-macos/GoXlr_on_macos.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -400,7 +688,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GoXlr-on-macos/Info.plist";
+				INFOPLIST_FILE = "GoXlr App copy2-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required to monitor your input level while doing Mic Setup.";
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
@@ -408,10 +698,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-on-macos";
+				MARKETING_VERSION = "1.0.0-alpha.1-arm64";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_SUPPRESS_WARNINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -428,11 +720,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		700E13962870A6C500FD6306 /* Build configuration list for PBXNativeTarget "GoXlr-on-macos" */ = {
+		700E13962870A6C500FD6306 /* Build configuration list for PBXNativeTarget "GoXlr App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				700E13972870A6C500FD6306 /* Debug */,
 				700E13982870A6C500FD6306 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7066F4EB28999DC600AFDE2D /* Build configuration list for PBXNativeTarget "GoXlr App arm64" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7066F4EC28999DC600AFDE2D /* Debug */,
+				7066F4ED28999DC600AFDE2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -464,6 +765,30 @@
 				kind = branch;
 			};
 		};
+		7066F4C228999DC600AFDE2D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7066F4C428999DC600AFDE2D /* XCRemoteSwiftPackageReference "BlueSocket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/BlueSocket";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		7066F4C628999DC600AFDE2D /* XCRemoteSwiftPackageReference "SimplyCoreAudio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rnine/SimplyCoreAudio";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -481,6 +806,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7056347C287183A500985223 /* XCRemoteSwiftPackageReference "BlueSocket" */;
 			productName = Socket;
+		};
+		7066F4C128999DC600AFDE2D /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7066F4C228999DC600AFDE2D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		7066F4C328999DC600AFDE2D /* Socket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7066F4C428999DC600AFDE2D /* XCRemoteSwiftPackageReference "BlueSocket" */;
+			productName = Socket;
+		};
+		7066F4C528999DC600AFDE2D /* SimplyCoreAudio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7066F4C628999DC600AFDE2D /* XCRemoteSwiftPackageReference "SimplyCoreAudio" */;
+			productName = SimplyCoreAudio;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

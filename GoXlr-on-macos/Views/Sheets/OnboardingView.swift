@@ -8,13 +8,15 @@
 import Foundation
 import SwiftUI
 import SimplyCoreAudio
-let simplyCA = SimplyCoreAudio()
+import ServiceManagement
 
+let simplyCA = SimplyCoreAudio()
 
 struct OnboardingView: View {
     @State var step = 1
     @State var audioReminder = false
     @Binding var onboarded: Bool
+    @State var launchAtStartup = true
     var body: some View {
         VStack(alignment: .center) {
             if step == 1 {
@@ -117,16 +119,34 @@ struct OnboardingView: View {
                         Button("Yes", role: .cancel) {
                             
                             let goxlr = simplyCA.defaultOutputDevice
+                            goxlr!.setHogMode()
                             let system = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "System", uid: "system")
                             system?.setPreferredChannelsForStereo(channels: StereoPair(left: 1, right: 2), scope: Scope.output)
+                            system?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
                             let game = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Game", uid: "game")
                             game?.setPreferredChannelsForStereo(channels: StereoPair(left: 3, right: 4), scope: Scope.output)
+                            game?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
                             let chat = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Chat", uid: "chat")
                             chat?.setPreferredChannelsForStereo(channels: StereoPair(left: 5, right: 6), scope: Scope.output)
+                            chat?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
                             let music = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Music", uid: "music")
                             music?.setPreferredChannelsForStereo(channels: StereoPair(left: 7, right: 8), scope: Scope.output)
+                            music?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
                             let sample = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Sample", uid: "sample")
                             sample?.setPreferredChannelsForStereo(channels: StereoPair(left: 9, right: 10), scope: Scope.output)
+                            sample?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
+
+                            let broadcastMix = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Broadcast mix", uid: "broadcastmix")
+                            broadcastMix?.setPreferredChannelsForStereo(channels: StereoPair(left: 1, right: 2), scope: Scope.input)
+                            broadcastMix?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.output)
+
+                            let chatMic = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Chat mic", uid: "chatmic")
+                            chatMic?.setPreferredChannelsForStereo(channels: StereoPair(left: 3, right: 4), scope: Scope.input)
+                            chatMic?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.output)
+                            
+                            system?.isDefaultOutputDevice = true
+                            chatMic?.isDefaultInputDevice = true
+                            goxlr!.unsetHogMode()
                             step = 3
                             audioReminder = false
                         }
@@ -144,7 +164,13 @@ struct OnboardingView: View {
 
                     Text("Enjoy your device !")
                         .font(.system(.headline))
-                        .padding(.bottom, 5)
+                        .padding(.bottom, 10)
+                    HStack {
+                        Text("Launch at login")
+                        Toggle(isOn: $launchAtStartup) {}
+                            .toggleStyle(.switch)
+                            .scaleEffect(0.7)
+                    }.padding(.bottom, 5)
                     
                     Image(systemName:"checkmark.circle")
                         .font(.system(size: 70))
@@ -152,6 +178,14 @@ struct OnboardingView: View {
                         .padding(60)
                     
                     Button(action: {
+                        if launchAtStartup {
+                            let service = SMAppService.mainApp
+                            do {
+                               try service.register()
+                            } catch {
+                                print("Unable to register \(error)")
+                            }
+                        }
                         step = 4
                         UserDefaults.standard.set(true, forKey: "firstLaunch")
                         onboarded = false

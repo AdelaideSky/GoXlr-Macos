@@ -15,16 +15,12 @@ struct ColourWheel: View {
     var radius: CGFloat
     
     /// The RGB colour. Is a binding as it can change and the view will update when it does.
-    @Binding var rgbColour: RGB
+    @Binding var rgbColour: HSV
     
     /// The brightness/value of the colour wheel
     @Binding var brightness: CGFloat
     
     var body: some View {
-        
-        DispatchQueue.main.async {
-            self.rgbColour = HSV(h: self.rgbColour.hsv.h, s: self.rgbColour.hsv.s, v: self.brightness).rgb
-        }
         
         /// Geometry reader so we can know more about the geometry around and within the view.
         return GeometryReader { geometry in
@@ -57,13 +53,13 @@ struct ColourWheel: View {
                 /// The little knob that shows selected colour.
                 Circle()
                     .frame(width: 10, height: 10)
-                    .offset(x: (self.radius/2 - 10) * self.rgbColour.hsv.s)
-                    .rotationEffect(.degrees(-Double(self.rgbColour.hsv.h)))
+                    .offset(x: (self.radius/2 - 10) * self.rgbColour.s)
+                    .rotationEffect(.degrees(-Double(self.rgbColour.h)))
                 
             }
             /// The gesture so we can detect touches on the wheel.
             .gesture(
-                DragGesture(minimumDistance: 0, coordinateSpace: .global)
+                DragGesture(minimumDistance: 0.1, coordinateSpace: .global)
                     .onChanged { value in
                         
                         /// Work out angle which will be the hue.
@@ -80,17 +76,12 @@ struct ColourWheel: View {
                         let saturation = min(distance(center, value.location)/(self.radius/2), 1)
                         
                         /// Convert HSV to RGB and set the colour which will notify the views.
-                        self.rgbColour = HSV(h: hue, s: saturation, v: self.brightness).rgb
+                        self.rgbColour = HSV(h: hue, s: saturation, v: self.brightness)
+                        
                     }
             )
         }
         /// Set the size.
         .frame(width: self.radius, height: self.radius)
-    }
-}
-
-struct ColourWheel_Previews: PreviewProvider {
-    static var previews: some View {
-        ColourWheel(radius: 350, rgbColour: .constant(RGB(r: 1, g: 1, b: 1)), brightness: .constant(0))
     }
 }

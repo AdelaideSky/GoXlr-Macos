@@ -45,6 +45,14 @@ public enum FaderName: String {
     case D
 }
 
+public enum FadersLightning: String, Codable, CaseIterable {
+    case A
+    case B
+    case C
+    case D
+    case All
+}
+
 enum EncoderName: Int {
     case Pitch = 0x00
     case Gender = 0x01
@@ -218,45 +226,45 @@ enum MicrophoneParamKey: Int {
 }
 
 
-public enum FaderDisplayStyle: String {
+public enum FaderDisplayStyle: String, Codable {
     case TwoColour
     case Gradient
     case Meter
     case GradientMeter
 }
 
-public enum ButtonColourTargets: String {
+public enum ButtonColourTargets: String, Codable {
     // These are all the buttons from the GoXLR Mini.
-    case Fader1Mute
-    case Fader2Mute
-    case Fader3Mute
-    case Fader4Mute
-    case Bleep
-    case Cough
+        case Fader1Mute,
+        Fader2Mute,
+        Fader3Mute,
+        Fader4Mute,
+        Bleep,
+        Cough,
 
-    // The rest are GoXLR Full Buttons. On the mini, they will simply be ignored.
-    case EffectSelect1
-    case EffectSelect2
-    case EffectSelect3
-    case EffectSelect4
-    case EffectSelect5
-    case EffectSelect6
+        // The rest are GoXLR Full Buttons. On the mini, they will simply be ignored.
+        EffectSelect1,
+        EffectSelect2,
+        EffectSelect3,
+        EffectSelect4,
+        EffectSelect5,
+        EffectSelect6,
 
-    // FX Button labelled as 'fxClear' in config?
-    case EffectFx
-    case EffectMegaphone
-    case EffectRobot
-    case EffectHardTune
+        // FX Button labelled as 'fxClear' in config?
+        EffectFx,
+        EffectMegaphone,
+        EffectRobot,
+        EffectHardTune,
 
-    case SamplerSelectA
-    case SamplerSelectB
-    case SamplerSelectC
+        SamplerSelectA,
+        SamplerSelectB,
+        SamplerSelectC,
 
-    case SamplerTopLeft
-    case SamplerTopRight
-    case SamplerBottomLeft
-    case SamplerBottomRight
-    case SamplerClear
+        SamplerTopLeft,
+        SamplerTopRight,
+        SamplerBottomLeft,
+        SamplerBottomRight,
+        SamplerClear
 }
 
 public enum ButtonColourGroups: String {
@@ -440,3 +448,68 @@ public enum CompressorReleaseTime: String, CaseIterable {
     Comp85ms,   Comp100ms,  Comp115ms,  Comp140ms,  Comp170ms, Comp230ms, Comp340ms, Comp680ms,
     Comp1000ms, Comp1500ms, Comp2000ms, Comp3000ms
 }
+
+public enum ReverbStyle: String, Codable {
+    case Library,
+    DarkBloom,
+    MusicClub,
+    RealPlate,
+    Chapel,
+    HockeyArena
+}
+
+public enum EchoStyle: String, Codable {
+    case Quarter,
+    Eighth,
+    Triplet,
+    PingPong,
+    ClassicSlap,
+    MultiTap
+}
+
+public enum PitchStyle: String, Codable {
+    case Narrow
+    case Wide
+}
+
+public enum GenderStyle: String, Codable {
+    case Narrow,
+    Medium,
+    Wide
+}
+
+public enum MegaphoneStyle: String, Codable {
+    case Megaphone,
+    Radio,
+    OnThePhone,
+    Overdrive,
+    BuzzCut,
+    Tweed
+}
+
+public enum RobotStyle: String, Codable {
+    case Robot1,
+    Robot2,
+    Robot3
+}
+
+public enum RobotRange: String, Codable {
+    case Low,
+    Medium,
+    High
+}
+
+public enum HardTuneStyle: String, Codable {
+    case Natural,
+    Medium,
+    Hard
+}
+
+public enum HardTuneSource: String, Codable {
+    case All,
+    Music,
+    Game,
+    LineIn,
+    System
+}
+

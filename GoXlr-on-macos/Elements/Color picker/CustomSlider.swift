@@ -11,7 +11,7 @@ import SwiftUI
 struct CustomSlider: View {
     
     /// The slider will also show the selected colour.
-    @Binding var rgbColour: RGB
+    @Binding var rgbColour: HSV
     
     /// The value that the slider is currently showing.
     @Binding var value: CGFloat
@@ -26,8 +26,8 @@ struct CustomSlider: View {
     @State var isTouchingKnob = false
     
     /// Set the leading and trailing offset of the track for the knob.
-    var leadingOffset: CGFloat = 8
-    var trailingOffset: CGFloat = 8
+    var leadingOffset: CGFloat = 3
+    var trailingOffset: CGFloat = 3
     
     /// Set the knob size.
     var knobSize: CGSize = CGSize(width: 10, height: 10)
@@ -39,7 +39,7 @@ struct CustomSlider: View {
                 /// The slider track.
                 RoundedRectangle(cornerRadius: 30)
                     /// Set the colour to be the selected colour.
-                    .foregroundColor(Color.init(red: Double(self.rgbColour.r), green: Double(self.rgbColour.g), blue: Double(self.rgbColour.b)))
+                    .foregroundColor(Color.init(red: Double(self.rgbColour.rgb.r), green: Double(self.rgbColour.rgb.g), blue: Double(self.rgbColour.rgb.b)))
                     /// The outline.
                     .overlay(
                         RoundedRectangle(cornerRadius: 30)
@@ -56,7 +56,7 @@ struct CustomSlider: View {
                             .frame(width: self.knobSize.width, height: self.knobSize.height)
                         /// The knob center.
                         RoundedRectangle(cornerRadius: 50)
-                            .foregroundColor(Color.init(red: Double(self.rgbColour.r-0.1), green: Double(self.rgbColour.g-0.1), blue: Double(self.rgbColour.b-0.1)))
+                            .foregroundColor(Color.init(red: Double(self.rgbColour.rgb.r-0.1), green: Double(self.rgbColour.rgb.g-0.1), blue: Double(self.rgbColour.rgb.b-0.1)))
                             .frame(width: self.knobSize.width, height: self.knobSize.height)
                     }
                     /// Set the offset of the knob.
@@ -64,6 +64,7 @@ struct CustomSlider: View {
                     /// The knob shadow.
                     .shadow(color: Color("ShadowOuter"), radius: 10)
                     /// Gesture to detect drag.
+                    .animation(.default, value: 10)
                     .gesture(
                         DragGesture(minimumDistance: 0)
                             .onChanged { value in
@@ -79,6 +80,7 @@ struct CustomSlider: View {
                                 let sliderVal = sliderPos.map(from: self.leadingOffset...(geometry.size.width - self.knobSize.width - self.trailingOffset), to: self.range)
                                 
                                 self.value = sliderVal
+                                self.rgbColour.v = sliderVal
                             }
                             .onEnded { _ in
                                 
@@ -94,11 +96,3 @@ struct CustomSlider: View {
         .frame(height: 4)
     }
 }
-
-struct CustomSlider_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomSlider(rgbColour: .constant(RGB(r: 0.5, g: 0.1, b: 0.9)), value: .constant(10), range: 1...100)
-    }
-}
-
-

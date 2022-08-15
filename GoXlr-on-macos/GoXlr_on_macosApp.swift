@@ -6,17 +6,22 @@
 //
 
 import SwiftUI
-
 import UniformTypeIdentifiers
+
+class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationWillTerminate(_ notification: Notification) {
+        Daemon().stop()
+    }
+}
 
 @main
 struct GoXlr_on_macosApp: App {
     @State var currentNumber: String = "1"
-        
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
         var body: some Scene {
-            WindowGroup("GoXLr Panel", id: "manager") {
+            Settings {
                  ContentView()
-                    .frame(minWidth: 923, idealWidth: 923, minHeight: 490, idealHeight: 520)
+                    .frame(minWidth: 923, idealWidth: 923, minHeight: 500, idealHeight: 520)
             }
             MenuBarExtra(currentNumber, image: "devices.goxlr.logo") {
                 
@@ -54,11 +59,32 @@ struct OpenWindowButton: View {
     @Environment(\.openWindow) private var openWindow
     @State private var select = ""
     @ObservedObject var mixer = MixerStatus()
+    @State private var shortcutCount = 1
     let profiletype = UTType(filenameExtension: "goxlr")
     
         var body: some View {
             VStack(spacing: 16) {
-                
+                HStack {
+                    
+                    
+                    Menu("Mic profile") {
+                        
+                        ForEach(MixerStatus().micProfilesList, id: \.self) { profile in
+                            Button(profile) {
+                                MixerStatus().selectedDevice.LoadMicProfile(path: profile)
+                            }
+                            
+                        }
+                        
+                    }.keyboardShortcut("o")
+                    Button {
+                        MixerStatus().selectedDevice.SaveProfile()} label: {
+                        Text("Save Mic Profile")
+                            .frame(maxWidth: .infinity)}
+                    
+                    
+                }.labelStyle(.iconOnly)
+                .controlSize(.large)
                 HStack {
                     
                     Button {
@@ -69,23 +95,29 @@ struct OpenWindowButton: View {
                         MixerStatus().selectedDevice.SaveProfile()} label: {
                         Text("Save Profile")
                             .frame(maxWidth: .infinity)}.keyboardShortcut("s")
+                    Menu("Quick load") {
+                        
+                        ForEach(MixerStatus().profilesList, id: \.self) { profile in
+                            Button(profile) {
+                                MixerStatus().selectedDevice.LoadProfile(path: profile)
+                            }
+                            
+                        }
+                        
+                    }.keyboardShortcut("o")
                     
-                    Button {
-                        mixer.profileSheet = true} label: {
-                        Text("Load Profile")
-                            .frame(maxWidth: .infinity)}.keyboardShortcut("o")
 
                 }.labelStyle(.iconOnly)
                 .controlSize(.large)
-                
+                Spacer(minLength: 0.1)
                 HStack {
                     
                     Button {
-                        openWindow(id: "manager")} label: {
+                        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)} label: {
                         Text("Configure GoXlr")
                             .frame(maxWidth: .infinity)}.keyboardShortcut(";")
 
-                    ShareLink(items: ["SharingContent"])
+                    //ShareLink(items: ["SharingContent"])
                     Button() {
                         NSApplication.shared.terminate(nil)
                     } label: {

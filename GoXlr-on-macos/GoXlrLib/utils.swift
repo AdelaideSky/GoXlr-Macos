@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 extension StringProtocol {
     func dropping<S: StringProtocol>(prefix: S) -> SubSequence { hasPrefix(prefix) ? dropFirst(prefix.count) : self[...] }
     var hexaToDecimal: Int { Int(dropping(prefix: ""), radix: 16) ?? 0 }
@@ -25,9 +26,13 @@ extension RGB {
     public func onChangeCompatible() -> CGFloat {
         return (self.r+self.g+self.b)
     }
-    public func brightness() -> CGFloat {
-        return (0.2126*self.r + 0.7152*self.g + 0.0722*self.b)
+    
+}
+extension HSV {
+    public func onChangeCompatible(br:CGFloat) -> CGFloat {
+        return (self.h+self.s+self.v+br)
     }
+    
 }
 extension String {
     public func toRGB() -> RGB {
