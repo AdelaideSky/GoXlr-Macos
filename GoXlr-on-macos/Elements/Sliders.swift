@@ -50,10 +50,14 @@ struct BigSurSlider: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(colorScheme == .dark ? self.myGray : self.lightGray, lineWidth: 0.5)
                 )
-            .gesture(DragGesture(minimumDistance: 0)
+            .gesture(DragGesture(minimumDistance: 0.1)
                 .onChanged({ value in
                     self.percentage = min(max(0, Float(value.location.x / geometry.size.width * 100)), 100)
                 }))
+            .onChange(of: self.percentage) { newValue in
+                if newValue == 100 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
+                else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
+            }
             .animation(.default)
                 
 
@@ -150,6 +154,10 @@ struct bigVSlider<V: BinaryFloatingPoint>: View {
                             })
                             .onChanged(self.handleDragged(in: geometry))
                 )
+                    .onChange(of: self.value.wrappedValue) { newValue in
+                        if newValue == range.upperBound {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
+                        else if newValue == range.lowerBound {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
+                    }
             }
         }
     }
@@ -511,4 +519,68 @@ extension View {
                       touchEnd: @escaping (Bool) -> Void) -> some View {
         modifier(TouchGestureViewModifier(touchBegan: touchBegan, touchEnd: touchEnd))
     }
+}
+
+struct MenubarSlider: View {
+
+    
+    @Binding var percentage: Float // a number from 1 to 100
+    let image:String
+    var sliderWidth: Float = 230
+    var sliderHeight: Float = 22
+    
+    @Environment(\.colorScheme) var colorScheme
+    
+    let myGray: Color = Color(red: 0.5, green: 0.5, blue: 0.5)
+    let lightGray: Color = Color(red: 0.8, green: 0.8, blue: 0.8)
+
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                Rectangle()
+                    .foregroundColor(colorScheme == .dark ? self.myGray.opacity(0.5) : self.lightGray.opacity(0.5))
+                
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.accentColor)
+                        .frame(width: 15)
+                        .offset(x: -5)
+                    Rectangle()
+                        .foregroundColor(.accentColor)
+                        .frame(width: geometry.size.width * CGFloat(self.percentage / 255))
+                    Circle()
+                        .foregroundColor(.white)
+                        .shadow(radius: colorScheme == .dark ? 5 : 1)
+                        .frame(width: CGFloat(self.sliderHeight), height: CGFloat(self.sliderHeight - 0.2), alignment: .trailing)
+                        .offset(x: self.percentage == 255 ? CGFloat(self.percentage/2.2 - self.sliderHeight/2) : CGFloat(self.percentage/2.2), y: 0)
+                }
+                
+                // Delete this code if you don't want an image in your slider
+                // This is set up to support SF Symbols by default, but of course you can simply remove the systemName parameter to provide whatever image you like
+                
+                Image(systemName: self.image)
+                    .frame(width: CGFloat(self.sliderHeight - 20),height: CGFloat(self.sliderHeight - 20))
+                    .foregroundColor(self.myGray.opacity(1))
+                    .offset(x: 10, y: 0)
+            }
+            .frame(width: CGFloat(self.sliderWidth), height: CGFloat(self.sliderHeight))
+        .cornerRadius(20)
+            .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(self.myGray, lineWidth: 0.5)
+                )
+            .gesture(DragGesture(minimumDistance: 0.1)
+                .onChanged({ value in
+                    self.percentage = min(max(0, Float(value.location.x / geometry.size.width * 255)), 255)
+                }))
+            .onChange(of: self.percentage) { newValue in
+                if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
+                else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
+            }
+            .animation(.default)
+                
+
+        }.frame(width: CGFloat(sliderWidth), height: CGFloat(sliderHeight))
+    }
+    
 }

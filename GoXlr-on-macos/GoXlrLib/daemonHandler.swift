@@ -6,7 +6,7 @@
 //
 
 import Foundation
-let daemonProcess = Process()
+var daemonProcess = Process()
 public class Daemon {
     
     public func start(args: [daemonArguments.RawValue]?) -> Bool {
@@ -22,11 +22,17 @@ public class Daemon {
         daemonProcess.standardError = errorPipe
         
         try? daemonProcess.run()
-        sleep(2)
+        sleep(1)
         return true
     }
     public func stop() {
         daemonProcess.interrupt()
+    }
+    public func restart(args: [daemonArguments.RawValue]?) -> Bool {
+        daemonProcess.interrupt()
+        daemonProcess = Process()
+        
+        return self.start(args: args)
     }
 }
 

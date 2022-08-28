@@ -22,6 +22,7 @@ struct HomeView: View {
     @ObservedObject var test = testingLightning()
     var body: some View {
         VStack(alignment: .center) {
+            
             Text("👋")
                 .font(.system(size: 60))
             Text("Welcome " + NSFullUserName() + " !")

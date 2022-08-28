@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7013C8B628BBBA6200E88282 /* NoOptionalInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */; };
+		7013C8B728BBBA6200E88282 /* NoOptionalInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */; };
 		704A9D8D2892C2A600AE234D /* SimplyCoreAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 704A9D8C2892C2A600AE234D /* SimplyCoreAudio */; };
-		704CAA2A2897FE480061C717 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CAA292897FE480061C717 /* utils.swift */; };
+		704CAA2A2897FE480061C717 /* colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CAA292897FE480061C717 /* colour.swift */; };
 		7056347B2871838E00985223 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7056347A2871838E00985223 /* SwiftyJSON */; };
 		7056347E287183A500985223 /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = 7056347D287183A500985223 /* Socket */; };
 		7066F4BF289937BD00AFDE2D /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 7066F4B42899198000AFDE2D /* goxlr-daemon */; };
@@ -22,7 +24,7 @@
 		7066F4CF28999DC600AFDE2D /* ColourWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA62897D3E80039E797 /* ColourWheel.swift */; };
 		7066F4D028999DC600AFDE2D /* StatusStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB792896C54B0039E797 /* StatusStructs.swift */; };
 		7066F4D128999DC600AFDE2D /* ProfilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB822896C54B0039E797 /* ProfilesView.swift */; };
-		7066F4D228999DC600AFDE2D /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CAA292897FE480061C717 /* utils.swift */; };
+		7066F4D228999DC600AFDE2D /* colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CAA292897FE480061C717 /* colour.swift */; };
 		7066F4D328999DC600AFDE2D /* RoutingTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7F2896C54B0039E797 /* RoutingTab.swift */; };
 		7066F4D428999DC600AFDE2D /* audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB782896C54B0039E797 /* audio.swift */; };
 		7066F4D528999DC600AFDE2D /* MixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB802896C54B0039E797 /* MixerView.swift */; };
@@ -44,6 +46,8 @@
 		7066F4E928999DC600AFDE2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB702896C54B0039E797 /* Assets.xcassets */; };
 		7066F4EA28999DC600AFDE2D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB8A2896C54B0039E797 /* Info.plist */; };
 		7066F4F328999ECE00AFDE2D /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 7066F4F228999ECE00AFDE2D /* goxlr-daemon */; };
+		7077F24B28AA72890004F120 /* CoughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077F24A28AA72890004F120 /* CoughView.swift */; };
+		7077F24C28AA72890004F120 /* CoughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077F24A28AA72890004F120 /* CoughView.swift */; };
 		708DAB8C2896C54C0039E797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB702896C54B0039E797 /* Assets.xcassets */; };
 		708DAB8E2896C54C0039E797 /* Sliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB742896C54B0039E797 /* Sliders.swift */; };
 		708DAB8F2896C54C0039E797 /* device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB762896C54B0039E797 /* device.swift */; };
@@ -74,11 +78,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		704CAA292897FE480061C717 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOptionalInterpolation.swift; sourceTree = "<group>"; };
+		704CAA292897FE480061C717 /* colour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colour.swift; sourceTree = "<group>"; };
 		7066F4B42899198000AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
 		7066F4F228999ECE00AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
-		7077F24628AA4F9D0004F120 /* GoXlr App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GoXlr App.app"; path = "/Users/ade/Documents/GoXlr-on-macos/build/Debug/GoXlr App.app"; sourceTree = "<absolute>"; };
-		7077F24728AA4F9D0004F120 /* GoXlr App arm64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "GoXlr App arm64.app"; path = "/Users/ade/Documents/GoXlr-on-macos/build/Debug/GoXlr App arm64.app"; sourceTree = "<absolute>"; };
+		7077F24A28AA72890004F120 /* CoughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoughView.swift; sourceTree = "<group>"; };
+		707B307828B78DAA008E2343 /* GoXlr App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		707B307928B78DAA008E2343 /* GoXlr App arm64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr App arm64.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		708DAB702896C54B0039E797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		708DAB742896C54B0039E797 /* Sliders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sliders.swift; sourceTree = "<group>"; };
 		708DAB762896C54B0039E797 /* device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = device.swift; sourceTree = "<group>"; };
@@ -137,7 +143,27 @@
 			isa = PBXGroup;
 			children = (
 				708DAB6F2896C54B0039E797 /* GoXlr-on-macos */,
+				707B307828B78DAA008E2343 /* GoXlr App.app */,
+				707B307928B78DAA008E2343 /* GoXlr App arm64.app */,
 			);
+			sourceTree = "<group>";
+		};
+		7013C8B328BBBA2200E88282 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				708DAB7A2896C54B0039E797 /* goxlr_types.swift */,
+				708DAB792896C54B0039E797 /* StatusStructs.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		7013C8B428BBBA4F00E88282 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */,
+				704CAA292897FE480061C717 /* colour.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		7066F4F028999E6800AFDE2D /* arm64 */ = {
@@ -183,12 +209,11 @@
 		708DAB752896C54B0039E797 /* GoXlrLib */ = {
 			isa = PBXGroup;
 			children = (
+				7013C8B428BBBA4F00E88282 /* utils */,
 				708DAB762896C54B0039E797 /* device.swift */,
 				708DAB772896C54B0039E797 /* status.swift */,
 				708DAB782896C54B0039E797 /* audio.swift */,
-				708DAB792896C54B0039E797 /* StatusStructs.swift */,
-				708DAB7A2896C54B0039E797 /* goxlr_types.swift */,
-				704CAA292897FE480061C717 /* utils.swift */,
+				7013C8B328BBBA2200E88282 /* Structs */,
 				70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */,
 			);
 			path = GoXlrLib;
@@ -224,6 +249,7 @@
 				708DAB822896C54B0039E797 /* ProfilesView.swift */,
 				708DAB832896C54B0039E797 /* MicSetupView.swift */,
 				708DAB842896C54B0039E797 /* OnboardingView.swift */,
+				7077F24A28AA72890004F120 /* CoughView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -280,7 +306,7 @@
 				704A9D8C2892C2A600AE234D /* SimplyCoreAudio */,
 			);
 			productName = "GoXlr-on-macos";
-			productReference = 7077F24628AA4F9D0004F120 /* GoXlr App.app */;
+			productReference = 707B307828B78DAA008E2343 /* GoXlr App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7066F4C028999DC600AFDE2D /* GoXlr App arm64 */ = {
@@ -302,7 +328,7 @@
 				7066F4C528999DC600AFDE2D /* SimplyCoreAudio */,
 			);
 			productName = "GoXlr-on-macos";
-			productReference = 7077F24728AA4F9D0004F120 /* GoXlr App arm64.app */;
+			productReference = 707B307928B78DAA008E2343 /* GoXlr App arm64.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -382,11 +408,13 @@
 				708DABAC2897D3E90039E797 /* ColourWheel.swift in Sources */,
 				708DAB922896C54C0039E797 /* StatusStructs.swift in Sources */,
 				708DAB982896C54C0039E797 /* ProfilesView.swift in Sources */,
-				704CAA2A2897FE480061C717 /* utils.swift in Sources */,
+				704CAA2A2897FE480061C717 /* colour.swift in Sources */,
 				708DAB962896C54C0039E797 /* RoutingTab.swift in Sources */,
 				708DAB912896C54C0039E797 /* audio.swift in Sources */,
 				708DAB972896C54C0039E797 /* MixerView.swift in Sources */,
 				708DAB8E2896C54C0039E797 /* Sliders.swift in Sources */,
+				7013C8B628BBBA6200E88282 /* NoOptionalInterpolation.swift in Sources */,
+				7077F24B28AA72890004F120 /* CoughView.swift in Sources */,
 				708DAB8F2896C54C0039E797 /* device.swift in Sources */,
 				708DABAE2897D4080039E797 /* MixerLightningView.swift in Sources */,
 				708DAB952896C54C0039E797 /* homeView.swift in Sources */,
@@ -415,11 +443,13 @@
 				7066F4CF28999DC600AFDE2D /* ColourWheel.swift in Sources */,
 				7066F4D028999DC600AFDE2D /* StatusStructs.swift in Sources */,
 				7066F4D128999DC600AFDE2D /* ProfilesView.swift in Sources */,
-				7066F4D228999DC600AFDE2D /* utils.swift in Sources */,
+				7066F4D228999DC600AFDE2D /* colour.swift in Sources */,
 				7066F4D328999DC600AFDE2D /* RoutingTab.swift in Sources */,
 				7066F4D428999DC600AFDE2D /* audio.swift in Sources */,
 				7066F4D528999DC600AFDE2D /* MixerView.swift in Sources */,
 				7066F4D628999DC600AFDE2D /* Sliders.swift in Sources */,
+				7013C8B728BBBA6200E88282 /* NoOptionalInterpolation.swift in Sources */,
+				7077F24C28AA72890004F120 /* CoughView.swift in Sources */,
 				7066F4D728999DC600AFDE2D /* device.swift in Sources */,
 				7066F4D828999DC600AFDE2D /* MixerLightningView.swift in Sources */,
 				7066F4D928999DC600AFDE2D /* homeView.swift in Sources */,
@@ -562,8 +592,8 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = dev_1pb;
-				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Preview\\ Content GoXlr-on-macos/Assets.xcassets";
+				CURRENT_PROJECT_VERSION = dev_3pb;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -602,8 +632,8 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = dev_1pb;
-				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Preview\\ Content GoXlr-on-macos/Assets.xcassets";
+				CURRENT_PROJECT_VERSION = dev_3pb;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -641,14 +671,14 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Preview\\ Content GoXlr-on-macos/Assets.xcassets";
+				CURRENT_PROJECT_VERSION = dev_3pb;
+				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Assets.xcassets";
 				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=0";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GoXlr App copy2-Info.plist";
+				INFOPLIST_FILE = "GoXlr-on-macos/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -658,7 +688,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = "1.0.0-alpha.1-arm64";
+				MARKETING_VERSION = "1.0.0-alpha.2-arm64";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -682,13 +712,13 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Preview\\ Content GoXlr-on-macos/Assets.xcassets";
+				CURRENT_PROJECT_VERSION = dev_3pb;
+				DEVELOPMENT_ASSET_PATHS = "GoXlr-on-macos/Assets.xcassets";
 				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "GoXlr App copy2-Info.plist";
+				INFOPLIST_FILE = "GoXlr-on-macos/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -698,7 +728,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = "1.0.0-alpha.1-arm64";
+				MARKETING_VERSION = "1.0.0-alpha.2-arm64";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

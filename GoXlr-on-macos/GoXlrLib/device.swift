@@ -1,7 +1,9 @@
 import SwiftUI
 import Socket
+import AppKit
 import Foundation
 import SwiftyJSON
+import SimplyCoreAudio
 
 
 class Config {
@@ -214,13 +216,15 @@ public struct DaemonSocket {
     }
     
     //Return response from a "Ping" command, If it's OK, returns "OK", else, it's likely an error.
-    public func ping() -> JSON {
+    public func ping() -> String {
         
         do {
             let socket = DaemonSocket().new()
             
             try socket.write(from: createrequest(request: "\"Ping\""))
-            return DaemonSocket().read(socket: socket)
+            let data = DaemonSocket().dataRead(socket: socket)
+            return String(decoding: data, as: UTF8.self)
+            
                         
         } catch {
             print("Error")
@@ -297,6 +301,7 @@ public struct GoXlr {
         }
     }
     
+    
     public func deviceStatus() -> Mixer? {
         do {
             let socket = DaemonSocket().new()
@@ -314,6 +319,7 @@ public struct GoXlr {
             return nil
         }
     }
+    
     
     
     //--------------------------------[Gettrs]-------------------------------------------------//
@@ -417,6 +423,38 @@ public struct GoXlr {
         if self.device == "" { bleepvolume = allbleepvolume.first!.1.levels.bleep }
         else { bleepvolume = allbleepvolume[device]!.levels.bleep }
         return bleepvolume
+    }
+    
+//--------------------------------[Debug]-------------------------------------------------//
+
+    public func copyDebugInfo() {
+        let status = self.status()
+        let daemonPing = DaemonSocket().ping() ?? "Null"
+        let devicesList = self.listDevices().description
+        var audioDevices = ""
+        for device in simplyCA.allDevices {
+            audioDevices = audioDevices + "\(device.name) : aggregate: \(device.isAggregateDevice), id: \(device.id), isDefaultInputDevice: \(device.isDefaultInputDevice), isDefaultOutputDevice: \(device.isDefaultOutputDevice), isInputOnly: \(device.isInputOnlyDevice), isOutputOnly : \(device.isOutputOnlyDevice), prefferedChannelsForInput: \(device.preferredChannelsForStereo(scope: .input)), prefferedChannelsForOutput: \(device.preferredChannelsForStereo(scope: .output)); \n\n"
+        }
+        let returnValue = """
+                        ✧──────────────・「 Debug Info 」・──────────────✧
+                        ・ Daemon ping : \(daemonPing)
+                        
+                        ・ Device list : \(devicesList)
+                        
+                        ・ Status JSON :
+                        
+                        \(status)
+                        
+                        ・ All audio devices :
+                        
+                        \(audioDevices)
+                        
+                        ✧───────────────────────────────────────────────✧
+                        """
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(returnValue, forType: .string)
+
     }
     
 //--------------------------------[Commands]-------------------------------------------------//

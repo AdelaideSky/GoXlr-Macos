@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AppKit
 import UniformTypeIdentifiers
 
 enum NoFlipEdge {
@@ -40,7 +41,7 @@ extension View {
 
 struct MixerView: View {
     
-
+    @State var coughSheet = false
     
         
     @State var showFileChooser = false
@@ -85,6 +86,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                                 }.onChange(of: mixer.mic) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .Mic, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                             VStack(){
                                 Text("Chat").font(.system(.subheadline)).padding(.bottom, 10)
@@ -98,6 +101,8 @@ struct MixerView: View {
 
                                 }.onChange(of: mixer.chat) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .Chat, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                             
                             VStack(){
@@ -111,6 +116,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                             }.onChange(of: mixer.music) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .Music, volume: Int(newValue))
+                                if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                         }
                         Group {
@@ -125,6 +132,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                                 }.onChange(of: mixer.game) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .Game, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                             VStack(){
                                 Text("Console").font(.system(.subheadline)).padding(.bottom, 10)
@@ -137,6 +146,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                                 }.onChange(of: mixer.console) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .Console, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                             VStack(){
                                 Text("Line-In").font(.system(.subheadline)).padding(.bottom, 10)
@@ -149,6 +160,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                                 }.onChange(of: mixer.linein) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .LineIn, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                             VStack(){
                                 Text("Line-Out").font(.system(.subheadline)).padding(.bottom, 10)
@@ -161,6 +174,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                                 }.onChange(of: mixer.lineout) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .LineOut, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                         }
                         Group {
@@ -175,6 +190,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                                 }.onChange(of: mixer.system) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .System, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                             VStack(){
                                 Text("Sample").font(.system(.subheadline)).padding(.bottom, 10)
@@ -187,6 +204,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                                 }.onChange(of: mixer.sample) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .Sample, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                                 .padding(.right, 60)
                         }
@@ -203,6 +222,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                                 }.onChange(of: mixer.headphones) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .Headphones, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                             VStack(){
                                 Text("Mic-Monitor").font(.system(.subheadline)).padding(.bottom, 10)
@@ -215,6 +236,8 @@ struct MixerView: View {
                                     .foregroundColor(.gray)
                                 }.onChange(of: mixer.micmonitor) { newValue in
                                     mixer.selectedDevice.SetVolume(channel: .MicMonitor, volume: Int(newValue))
+                                    if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                    else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                             VStack(){
                                 Text("Bleep").font(.system(.subheadline)).padding(.bottom, 10)
@@ -224,12 +247,14 @@ struct MixerView: View {
                                     .frame(width: 80)
                                     .animation(.default, value: 4)
                                 
-                                Text("\(Int(Double(mixer.bleep) / 255 * 100))%")
+                                Text("\(Int(Double(mixer.bleep+34) / 34 * 100))%")
                                     .font(.system(.body))
                                     .foregroundColor(.gray)
                                 
                             }.onChange(of: mixer.bleep) { newValue in
                                     mixer.selectedDevice.SetSwearButtonVolume(volume: Int(newValue))
+                                if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
+                                else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }
                         }
                         
@@ -414,6 +439,7 @@ struct MixerView: View {
             }
         })
         .sheet(isPresented: $mixer.profileSheet, content: {LoadProfileView(defaultTab: "device").environmentObject(mixer)})
+        .sheet(isPresented: $mixer.coughSheet, content: {CoughView().environmentObject(mixer)})
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Button(action: {mixer.profileSheet.toggle()}, label: {
@@ -423,6 +449,15 @@ struct MixerView: View {
             ToolbarItem(placement: .automatic) {
                 Button(action: {goxlr.SaveProfile()}, label: {
                     Text("Save Profile")
+                })
+            }
+            ToolbarItem(placement: .automatic) {
+                Text("                         ")
+            }
+            
+            ToolbarItem(placement: .primaryAction) {
+                Button(action: {mixer.coughSheet.toggle()}, label: {
+                    Text("Cough settings")
                 })
             }
         }

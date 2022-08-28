@@ -13,11 +13,12 @@ import SwiftyJSON
 var isdaemonLaunched = false
 
 
-final class MixerStatus: ObservableObject {
+final public class MixerStatus: ObservableObject {
     
     
     @Published var micSetup = false
     @Published var profileSheet = false
+    @Published var coughSheet = false
     
     @Published var lightningFadersSelected: FadersLightning = .All
     
@@ -62,6 +63,9 @@ final class MixerStatus: ObservableObject {
         muteB = status.faderStatus[1].muteType
         muteC = status.faderStatus[2].muteType
         muteD = status.faderStatus[3].muteType
+        
+        coughBehaviourIsHold = !status.coughButton.isToggle
+        coughMuteBehaviour = status.coughButton.muteType
         
         // ---- Mic ----
         
@@ -203,6 +207,8 @@ final class MixerStatus: ObservableObject {
         
         styleFaderD = status.lighting.faders.d.style
         buttonMuteDStyle = status.lighting.buttons["Fader4Mute"]!.offStyle
+        
+        
 
         
     }
@@ -220,6 +226,7 @@ final class MixerStatus: ObservableObject {
         bleep = Float(status.levels.bleep)
         headphones = Float(status.levels.volumes[8])
         micmonitor = Float(status.levels.volumes[9])
+        
     }
     public func updateFaderDetails() {
         status = selectedDevice.deviceStatus()!
@@ -236,6 +243,8 @@ final class MixerStatus: ObservableObject {
         eqBass = Float(status.micStatus.equaliser.gain.bassValue())
         eqMid = Float(status.micStatus.equaliser.gain.midValue())
         eqTremble = Float(status.micStatus.equaliser.gain.trembleValue())
+        coughBehaviourIsHold = !status.coughButton.isToggle
+        coughMuteBehaviour = status.coughButton.muteType
 
     }
     
@@ -429,6 +438,9 @@ final class MixerStatus: ObservableObject {
     @Published var muteC: MuteFunction
     @Published var muteD: MuteFunction
     
+    @Published var coughBehaviourIsHold: Bool
+    @Published var coughMuteBehaviour: MuteFunction
+
     //--------------------------------[Mic types / gain - MIC]-----------------------------------------//
 
     @Published var micType: MicrophoneType
