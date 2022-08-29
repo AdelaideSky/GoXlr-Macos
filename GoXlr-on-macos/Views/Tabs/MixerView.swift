@@ -242,17 +242,17 @@ struct MixerView: View {
                             VStack(){
                                 Text("Bleep").font(.system(.subheadline)).padding(.bottom, 10)
 
-                                lightBSLIDER(value: $mixer.bleep, in: -34...0, display: "exclamationmark.bubble", textsize: 11)
+                                lightBSLIDER(value: $mixer.bleep, in: 0...34, display: "exclamationmark.bubble", textsize: 11)
                                     .padding(.bottom, 20)
                                     .frame(width: 80)
                                     .animation(.default, value: 4)
                                 
-                                Text("\(Int(Double(mixer.bleep+34) / 34 * 100))%")
+                                Text("\(Int(Double(mixer.bleep) / 34 * 100))%")
                                     .font(.system(.body))
                                     .foregroundColor(.gray)
                                 
                             }.onChange(of: mixer.bleep) { newValue in
-                                    mixer.selectedDevice.SetSwearButtonVolume(volume: Int(newValue))
+                                    mixer.selectedDevice.SetSwearButtonVolume(volume: Int(Double(newValue)-34))
                                 if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .now)}
                                 }

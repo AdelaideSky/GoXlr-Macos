@@ -20,6 +20,14 @@ public enum Model: String {
     case Mini
     case Full
 }
+public enum BleepName: String, Equatable, CaseIterable, Codable {
+    case Bleep
+}
+extension BleepName {
+    func icon() -> String {
+        return "exclamationmark.bubble"
+    }
+}
 
 public enum ChannelName: String, Equatable, CaseIterable, Codable {
     case Mic
@@ -35,6 +43,62 @@ public enum ChannelName: String, Equatable, CaseIterable, Codable {
     case LineOut
     
     
+}
+extension ChannelName {
+    func icon() -> String {
+        if self == .Mic {
+            return "mic"
+        }
+        else if self == .LineIn {return "chevron.backward.to.line"}
+        else if self == .Console {return "rectangle.on.rectangle"}
+        else if self == .System {return "menubar.dock.rectangle"}
+        else if self == .Game {return "gamecontroller"}
+        else if self == .Chat {return "speaker.wave.2.bubble.left"}
+        else if self == .Sample {return "waveform"}
+        else if self == .Music {return "music.note"}
+        else if self == .Headphones {return "headphones"}
+        else if self == .MicMonitor {return "mic.and.signal.meter"}
+        else {return "chevron.right.to.line"}
+        
+    }
+}
+
+public enum OnscreenFaderChannelName: String, Equatable, CaseIterable, Codable {
+    case None
+    case Mic
+    case LineIn
+    case Console
+    case System
+    case Game
+    case Chat
+    case Sample
+    case Music
+    case Headphones
+    case MicMonitor
+    case LineOut
+    case Bleep
+    
+    
+}
+extension OnscreenFaderChannelName {
+    func icon() -> String {
+        if self == .Mic {
+            return "mic"
+        }
+        else if self == .LineIn {return "chevron.backward.to.line"}
+        else if self == .Console {return "rectangle.on.rectangle"}
+        else if self == .System {return "menubar.dock.rectangle"}
+        else if self == .Game {return "gamecontroller"}
+        else if self == .Chat {return "speaker.wave.2.bubble.left"}
+        else if self == .Sample {return "waveform"}
+        else if self == .Music {return "music.note"}
+        else if self == .Headphones {return "headphones"}
+        else if self == .MicMonitor {return "mic.and.signal.meter"}
+        else if self == .LineOut {return "chevron.right.to.line"}
+        else if self == .Bleep {return "exclamationmark.bubble"}
+        else {return ""}
+        
+    }
 }
 
 

@@ -50,7 +50,7 @@ final public class MixerStatus: ObservableObject {
         lineout = Float(status.levels.volumes[10])
         system = Float(status.levels.volumes[3])
         sample = Float(status.levels.volumes[6])
-        bleep = Float(status.levels.bleep)
+        bleep = Float(status.levels.bleep)+34
         headphones = Float(status.levels.volumes[8])
         micmonitor = Float(status.levels.volumes[9])
         
@@ -223,7 +223,7 @@ final public class MixerStatus: ObservableObject {
         lineout = Float(status.levels.volumes[10])
         system = Float(status.levels.volumes[3])
         sample = Float(status.levels.volumes[6])
-        bleep = Float(status.levels.bleep)
+        bleep = Float(Double(status.levels.bleep)+34)
         headphones = Float(status.levels.volumes[8])
         micmonitor = Float(status.levels.volumes[9])
         

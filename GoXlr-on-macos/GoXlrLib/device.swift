@@ -6,7 +6,7 @@ import SwiftyJSON
 import SimplyCoreAudio
 
 
-class Config {
+class Config: ObservableObject {
     public init() {
         if UserDefaults.standard.bool(forKey: "debugMode") {
             debugMode = true
@@ -23,9 +23,25 @@ class Config {
             debugMode = false
             showStatusRequests = false
         }
+        onScreenFader1 = UserDefaults.standard.string(forKey: "onScreenFader1") ?? "none"
+        onScreenFader1Vol = UserDefaults.standard.float(forKey: "onScreenFader1Vol")
+
+        onScreenFader2 = UserDefaults.standard.string(forKey: "onScreenFader2") ?? "none"
+        onScreenFader2Vol = UserDefaults.standard.float(forKey: "onScreenFader2Vol")
+
+
+        
+
     }
     let debugMode: Bool
     let showStatusRequests: Bool
+    @Published var onScreenFader1: String
+    @Published var onScreenFader1Vol: Float
+
+    @Published var onScreenFader2: String
+    @Published var onScreenFader2Vol: Float
+
+
 }
 
 //--------------------------------[Extensions]-------------------------------------------------//

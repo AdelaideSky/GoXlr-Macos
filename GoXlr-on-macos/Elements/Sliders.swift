@@ -526,7 +526,7 @@ struct MenubarSlider: View {
     
     @Binding var percentage: Float // a number from 1 to 100
     let image:String
-    var sliderWidth: Float = 230
+    var sliderWidth: Float = 252.5
     var sliderHeight: Float = 22
     
     @Environment(\.colorScheme) var colorScheme
@@ -543,16 +543,12 @@ struct MenubarSlider: View {
                 ZStack {
                     Rectangle()
                         .foregroundColor(.accentColor)
-                        .frame(width: 15)
-                        .offset(x: -5)
-                    Rectangle()
-                        .foregroundColor(.accentColor)
                         .frame(width: geometry.size.width * CGFloat(self.percentage / 255))
                     Circle()
                         .foregroundColor(.white)
                         .shadow(radius: colorScheme == .dark ? 5 : 1)
                         .frame(width: CGFloat(self.sliderHeight), height: CGFloat(self.sliderHeight - 0.2), alignment: .trailing)
-                        .offset(x: self.percentage == 255 ? CGFloat(self.percentage/2.2 - self.sliderHeight/2) : CGFloat(self.percentage/2.2), y: 0)
+                        .offset(x: self.percentage == 255 ? CGFloat(self.percentage/2.02 - self.sliderHeight/2) : CGFloat(self.percentage/2.02), y: 0)
                 }
                 
                 // Delete this code if you don't want an image in your slider

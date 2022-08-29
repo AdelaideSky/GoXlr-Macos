@@ -288,96 +288,100 @@ struct MicView: View {
                                 
                                 
                                 HStack {
-                                    VStack {
-                                        Text(fineTune ? "\(Int(mixer.ft31Hz).hertz())" : "31Hz")
-                                            .font(.system(.subheadline))
-                                            .padding(.top, 10)
-                                        lightBSLIDER(value: $mixer.eq31Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
-                                            .onChange(of: mixer.eq31Hz) { newValue in
-                                                mixer.selectedDevice.SetEqGain(frequence: .Equalizer31Hz, gain: Int(newValue))
-                                            }
-                                        
-                                        Text("\(Int(mixer.eq31Hz))")
-                                            .font(.system(.body))
-                                            .foregroundColor(.gray)
-                                            .padding(.top, 5)
-                                        
-                                    }.padding(.bottom, 10)
-                                    VStack {
-                                        Text(fineTune ? "\(Int(mixer.ft63Hz).hertz())" : "63Hz")
-                                            .font(.system(.subheadline))
-                                            .padding(.top, 10)
-                                        lightBSLIDER(value: $mixer.eq63Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
-                                            .onChange(of: mixer.eq63Hz) { newValue in
-                                                mixer.selectedDevice.SetEqGain(frequence: .Equalizer63Hz, gain: Int(newValue))
-                                            }
-                                        
-                                        Text("\(Int(mixer.eq63Hz))")
-                                            .font(.system(.body))
-                                            .foregroundColor(.gray)
-                                            .padding(.top, 5)
-                                        
-                                    }.padding(.bottom, 10)
-                                    VStack {
-                                        Text(fineTune ? "\(Int(mixer.ft125Hz).hertz())" : "125Hz")
-                                            .font(.system(.subheadline))
-                                            .padding(.top, 10)
-                                        lightBSLIDER(value: $mixer.eq125Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
-                                            .onChange(of: mixer.eq125Hz) { newValue in
-                                                mixer.selectedDevice.SetEqGain(frequence: .Equalizer125Hz, gain: Int(newValue))
-                                            }
-                                        
-                                        Text("\(Int(mixer.eq125Hz))")
-                                            .font(.system(.body))
-                                            .foregroundColor(.gray)
-                                            .padding(.top, 5)
-                                        
-                                    }.padding(.bottom, 10)
-                                    VStack {
-                                        Text(fineTune ? "\(Int(mixer.ft250Hz).hertz())" : "250Hz")
-                                            .font(.system(.subheadline))
-                                            .padding(.top, 10)
-                                        lightBSLIDER(value: $mixer.eq250Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
-                                            .onChange(of: mixer.eq250Hz) { newValue in
-                                                mixer.selectedDevice.SetEqGain(frequence: .Equalizer250Hz, gain: Int(newValue))
-                                            }
-                                        
-                                        Text("\(Int(mixer.eq250Hz))")
-                                            .font(.system(.body))
-                                            .foregroundColor(.gray)
-                                            .padding(.top, 5)
-                                        
-                                    }.padding(.bottom, 10)
-                                    VStack {
-                                        Text(fineTune ? "\(Int(mixer.ft500Hz).hertz())" : "500Hz")
-                                            .font(.system(.subheadline))
-                                            .padding(.top, 10)
-                                        lightBSLIDER(value: $mixer.eq500Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
-                                            .onChange(of: mixer.eq500Hz) { newValue in
-                                                mixer.selectedDevice.SetEqGain(frequence: .Equalizer500Hz, gain: Int(newValue))
-                                            }
-                                        
-                                        Text("\(Int(mixer.eq500Hz))")
-                                            .font(.system(.body))
-                                            .foregroundColor(.gray)
-                                            .padding(.top, 5)
-                                        
-                                    }.padding(.bottom, 10)
-                                    VStack {
-                                        Text(fineTune ? "\(Int(mixer.ft1KHz).hertz())" : "1KHz")
-                                            .font(.system(.subheadline))
-                                            .padding(.top, 10)
-                                        lightBSLIDER(value: $mixer.eq1KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
-                                            .onChange(of: mixer.eq1KHz) { newValue in
-                                                mixer.selectedDevice.SetEqGain(frequence: .Equalizer1KHz, gain: Int(newValue))
-                                            }
-                                        
-                                        Text("\(Int(mixer.eq1KHz))")
-                                            .font(.system(.body))
-                                            .foregroundColor(.gray)
-                                            .padding(.top, 5)
-                                        
-                                    }.padding(.bottom, 10)
+                                    Group {
+                                        VStack {
+                                            Text(fineTune ? "\(Int(mixer.ft31Hz).hertz())" : "31Hz")
+                                                .font(.system(.subheadline))
+                                                .padding(.top, 10)
+                                            lightBSLIDER(value: $mixer.eq31Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                                                .onChange(of: mixer.eq31Hz) { newValue in
+                                                    mixer.selectedDevice.SetEqGain(frequence: .Equalizer31Hz, gain: Int(newValue))
+                                                }
+                                            
+                                            Text("\(Int(mixer.eq31Hz))")
+                                                .font(.system(.body))
+                                                .foregroundColor(.gray)
+                                                .padding(.top, 5)
+                                            
+                                        }.padding(.bottom, 10)
+                                        VStack {
+                                            Text(fineTune ? "\(Int(mixer.ft63Hz).hertz())" : "63Hz")
+                                                .font(.system(.subheadline))
+                                                .padding(.top, 10)
+                                            lightBSLIDER(value: $mixer.eq63Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                                                .onChange(of: mixer.eq63Hz) { newValue in
+                                                    mixer.selectedDevice.SetEqGain(frequence: .Equalizer63Hz, gain: Int(newValue))
+                                                }
+                                            
+                                            Text("\(Int(mixer.eq63Hz))")
+                                                .font(.system(.body))
+                                                .foregroundColor(.gray)
+                                                .padding(.top, 5)
+                                            
+                                        }.padding(.bottom, 10)
+                                        VStack {
+                                            Text(fineTune ? "\(Int(mixer.ft125Hz).hertz())" : "125Hz")
+                                                .font(.system(.subheadline))
+                                                .padding(.top, 10)
+                                            lightBSLIDER(value: $mixer.eq125Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                                                .onChange(of: mixer.eq125Hz) { newValue in
+                                                    mixer.selectedDevice.SetEqGain(frequence: .Equalizer125Hz, gain: Int(newValue))
+                                                }
+                                            
+                                            Text("\(Int(mixer.eq125Hz))")
+                                                .font(.system(.body))
+                                                .foregroundColor(.gray)
+                                                .padding(.top, 5)
+                                            
+                                        }.padding(.bottom, 10)
+                                    }
+                                    Group {
+                                        VStack {
+                                            Text(fineTune ? "\(Int(mixer.ft250Hz).hertz())" : "250Hz")
+                                                .font(.system(.subheadline))
+                                                .padding(.top, 10)
+                                            lightBSLIDER(value: $mixer.eq250Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                                                .onChange(of: mixer.eq250Hz) { newValue in
+                                                    mixer.selectedDevice.SetEqGain(frequence: .Equalizer250Hz, gain: Int(newValue))
+                                                }
+                                            
+                                            Text("\(Int(mixer.eq250Hz))")
+                                                .font(.system(.body))
+                                                .foregroundColor(.gray)
+                                                .padding(.top, 5)
+                                            
+                                        }.padding(.bottom, 10)
+                                        VStack {
+                                            Text(fineTune ? "\(Int(mixer.ft500Hz).hertz())" : "500Hz")
+                                                .font(.system(.subheadline))
+                                                .padding(.top, 10)
+                                            lightBSLIDER(value: $mixer.eq500Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                                                .onChange(of: mixer.eq500Hz) { newValue in
+                                                    mixer.selectedDevice.SetEqGain(frequence: .Equalizer500Hz, gain: Int(newValue))
+                                                }
+                                            
+                                            Text("\(Int(mixer.eq500Hz))")
+                                                .font(.system(.body))
+                                                .foregroundColor(.gray)
+                                                .padding(.top, 5)
+                                            
+                                        }.padding(.bottom, 10)
+                                        VStack {
+                                            Text(fineTune ? "\(Int(mixer.ft1KHz).hertz())" : "1KHz")
+                                                .font(.system(.subheadline))
+                                                .padding(.top, 10)
+                                            lightBSLIDER(value: $mixer.eq1KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                                                .onChange(of: mixer.eq1KHz) { newValue in
+                                                    mixer.selectedDevice.SetEqGain(frequence: .Equalizer1KHz, gain: Int(newValue))
+                                                }
+                                            
+                                            Text("\(Int(mixer.eq1KHz))")
+                                                .font(.system(.body))
+                                                .foregroundColor(.gray)
+                                                .padding(.top, 5)
+                                            
+                                        }.padding(.bottom, 10)
+                                    }
                                     VStack {
                                         Text(fineTune ? "\(Int(mixer.ft2KHz).hertz())" : "2KHz")
                                             .font(.system(.subheadline))

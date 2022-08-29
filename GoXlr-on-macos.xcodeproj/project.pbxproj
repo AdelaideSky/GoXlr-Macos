@@ -74,6 +74,12 @@
 		708DABAB2897D3E90039E797 /* ColourShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA52897D3E80039E797 /* ColourShowView.swift */; };
 		708DABAC2897D3E90039E797 /* ColourWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA62897D3E80039E797 /* ColourWheel.swift */; };
 		708DABAE2897D4080039E797 /* MixerLightningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABAD2897D4080039E797 /* MixerLightningView.swift */; };
+		7098F5DE28BCC0BF005EDDC4 /* menubarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098F5DD28BCC0BF005EDDC4 /* menubarView.swift */; };
+		7098F5E028BCC121005EDDC4 /* OnscreenSlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098F5DF28BCC121005EDDC4 /* OnscreenSlidersView.swift */; };
+		7098F5E128BCC121005EDDC4 /* OnscreenSlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098F5DF28BCC121005EDDC4 /* OnscreenSlidersView.swift */; };
+		7098F5E228BCC131005EDDC4 /* menubarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098F5DD28BCC0BF005EDDC4 /* menubarView.swift */; };
+		7098F5E428BCEB92005EDDC4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098F5E328BCEB92005EDDC4 /* SettingsView.swift */; };
+		7098F5E528BCEB92005EDDC4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098F5E328BCEB92005EDDC4 /* SettingsView.swift */; };
 		70AB8E2E28986ADC002EF0A9 /* daemonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +118,9 @@
 		708DABA52897D3E80039E797 /* ColourShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourShowView.swift; sourceTree = "<group>"; };
 		708DABA62897D3E80039E797 /* ColourWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourWheel.swift; sourceTree = "<group>"; };
 		708DABAD2897D4080039E797 /* MixerLightningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerLightningView.swift; sourceTree = "<group>"; };
+		7098F5DD28BCC0BF005EDDC4 /* menubarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menubarView.swift; sourceTree = "<group>"; };
+		7098F5DF28BCC121005EDDC4 /* OnscreenSlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnscreenSlidersView.swift; sourceTree = "<group>"; };
+		7098F5E328BCEB92005EDDC4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daemonHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,6 +231,7 @@
 		708DAB7B2896C54B0039E797 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7098F5DC28BCC0A2005EDDC4 /* Menubar */,
 				708DAB7C2896C54B0039E797 /* Tabs */,
 				708DAB812896C54B0039E797 /* Sheets */,
 				708DAB852896C54B0039E797 /* MiniViews */,
@@ -239,6 +249,7 @@
 				708DAB7F2896C54B0039E797 /* RoutingTab.swift */,
 				708DAB802896C54B0039E797 /* MixerView.swift */,
 				708DABAD2897D4080039E797 /* MixerLightningView.swift */,
+				7098F5E328BCEB92005EDDC4 /* SettingsView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -273,6 +284,15 @@
 				708DABA62897D3E80039E797 /* ColourWheel.swift */,
 			);
 			path = "Color picker";
+			sourceTree = "<group>";
+		};
+		7098F5DC28BCC0A2005EDDC4 /* Menubar */ = {
+			isa = PBXGroup;
+			children = (
+				7098F5DD28BCC0BF005EDDC4 /* menubarView.swift */,
+				7098F5DF28BCC121005EDDC4 /* OnscreenSlidersView.swift */,
+			);
+			path = Menubar;
 			sourceTree = "<group>";
 		};
 		70AB8E2A2898698F002EF0A9 /* Daemons */ = {
@@ -402,6 +422,7 @@
 				708DABAA2897D3E90039E797 /* Helpers.swift in Sources */,
 				708DABA72897D3E90039E797 /* CustomSlider.swift in Sources */,
 				708DABA92897D3E90039E797 /* ColourStructs.swift in Sources */,
+				7098F5E028BCC121005EDDC4 /* OnscreenSlidersView.swift in Sources */,
 				708DAB9B2896C54C0039E797 /* MicView_mini.swift in Sources */,
 				708DABAB2897D3E90039E797 /* ColourShowView.swift in Sources */,
 				708DAB9D2896C54C0039E797 /* ContentView.swift in Sources */,
@@ -426,6 +447,8 @@
 				708DAB9A2896C54C0039E797 /* OnboardingView.swift in Sources */,
 				708DABA82897D3E90039E797 /* CIHueSaturationValueGradientView.swift in Sources */,
 				708DAB902896C54C0039E797 /* status.swift in Sources */,
+				7098F5E428BCEB92005EDDC4 /* SettingsView.swift in Sources */,
+				7098F5DE28BCC0BF005EDDC4 /* menubarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7098F5E228BCC131005EDDC4 /* menubarView.swift in Sources */,
 				7066F4C828999DC600AFDE2D /* MicView.swift in Sources */,
 				7066F4C928999DC600AFDE2D /* Helpers.swift in Sources */,
 				7066F4CA28999DC600AFDE2D /* CustomSlider.swift in Sources */,
@@ -449,6 +473,7 @@
 				7066F4D528999DC600AFDE2D /* MixerView.swift in Sources */,
 				7066F4D628999DC600AFDE2D /* Sliders.swift in Sources */,
 				7013C8B728BBBA6200E88282 /* NoOptionalInterpolation.swift in Sources */,
+				7098F5E128BCC121005EDDC4 /* OnscreenSlidersView.swift in Sources */,
 				7077F24C28AA72890004F120 /* CoughView.swift in Sources */,
 				7066F4D728999DC600AFDE2D /* device.swift in Sources */,
 				7066F4D828999DC600AFDE2D /* MixerLightningView.swift in Sources */,
@@ -460,6 +485,7 @@
 				7066F4DE28999DC600AFDE2D /* MicSetupView.swift in Sources */,
 				7066F4DF28999DC600AFDE2D /* OnboardingView.swift in Sources */,
 				7066F4E028999DC600AFDE2D /* CIHueSaturationValueGradientView.swift in Sources */,
+				7098F5E528BCEB92005EDDC4 /* SettingsView.swift in Sources */,
 				7066F4E128999DC600AFDE2D /* status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

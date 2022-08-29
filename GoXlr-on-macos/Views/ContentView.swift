@@ -68,7 +68,7 @@ struct ContentView: View {
                     
                     Divider()
                     Group {
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: SettingsView().environmentObject(MixerStatus())) {
                             Label("Settings", systemImage: "gear")
                         }
                         NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
@@ -140,7 +140,7 @@ struct ContentView: View {
                     
                     Divider()
                     Group {
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: SettingsView().environmentObject(MixerStatus())) {
                             Label("Settings", systemImage: "gear")
                         }
                         NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
