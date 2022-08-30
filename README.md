@@ -73,6 +73,5 @@ have been possible.
 These are the super-cool sponsors of the project !
 
 <div align=center>
-<a href="https://github.com/blacksails"><img src="https://github.com/blacksails.png" width="60px" alt="Benjamin Nørgaard" /></a>
 <!-- sponsors --><a href="https://github.com/brymon68"><img src="https://github.com/brymon68.png" width="60px" alt="Bryce Montano" /></a><!-- sponsors -->
 </div>
