@@ -57,6 +57,7 @@ If you have any problem using your app and don't feel confident using github iss
 
 - Synchronize sliders and pickers with the actual physical configuration 
 of the GoXLR (actually not the REAL data but quite the same)
+- Full multi-device compatibility
 - Add other features of the GoXLR (profiles, colours, micro, routing…)
 - Many more...
 
