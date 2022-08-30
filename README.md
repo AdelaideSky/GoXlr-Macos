@@ -57,7 +57,6 @@ If you have any problem using your app and don't feel confident using github iss
 
 - Synchronize sliders and pickers with the actual physical configuration 
 of the GoXLR (actually not the REAL data but quite the same)
-- Add chat mic and broadcast mix supports (all mic system in general)
 - Add other features of the GoXLR (profiles, colours, micro, routing…)
 - Many more...
 
