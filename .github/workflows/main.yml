@@ -15,9 +15,12 @@ jobs:
         with:
           token: ${{ secrets.PAT_SPONSORS }}
           file: 'README.md'
-
+          organization: false
+          minimum: 2
+        
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main
           folder: '.'
+
