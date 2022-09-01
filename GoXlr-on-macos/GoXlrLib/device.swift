@@ -4,30 +4,30 @@ import AppKit
 import Foundation
 import SwiftyJSON
 import SimplyCoreAudio
-
+import ServiceManagement
 
 class Config: ObservableObject {
     public init() {
-        if UserDefaults.standard.bool(forKey: "debugMode") {
-            debugMode = true
-            
-            if UserDefaults.standard.bool(forKey: "showStatusRequest") {
-                showStatusRequests = true
-            }
+        if UserDefaults.standard.bool(forKey: "debugMode") { debugMode = true
+            if UserDefaults.standard.bool(forKey: "showStatusRequest") {showStatusRequests = true}
             else {
-                showStatusRequests = false
-            }
-        }
-        else {
-            
-            debugMode = false
-            showStatusRequests = false
-        }
+                showStatusRequests = false}}
+        else {debugMode = false
+            showStatusRequests = false}
+        
+        if SMAppService.mainApp.status.rawValue == 1 {launchAtStartup = true}
+        else {launchAtStartup = false}
+        
+        if SMAppService.agent(plistName: "com.adesky.goxlr.autolaunch.plist").status.rawValue == 1 {launchOnConnect = true}
+        else {launchOnConnect = false}
+        
         onScreenFader1 = UserDefaults.standard.string(forKey: "onScreenFader1") ?? "none"
         onScreenFader1Vol = UserDefaults.standard.float(forKey: "onScreenFader1Vol")
 
         onScreenFader2 = UserDefaults.standard.string(forKey: "onScreenFader2") ?? "none"
         onScreenFader2Vol = UserDefaults.standard.float(forKey: "onScreenFader2Vol")
+        
+        
 
 
         
@@ -35,6 +35,10 @@ class Config: ObservableObject {
     }
     let debugMode: Bool
     let showStatusRequests: Bool
+    @Published var launchAtStartup: Bool
+    @Published var launchOnConnect: Bool
+    
+    
     @Published var onScreenFader1: String
     @Published var onScreenFader1Vol: Float
 
@@ -1234,4 +1238,22 @@ public struct GoXlr {
             return "DeleteMicProfile Error"
         }
     }
+    
+    //------------------------------------[FX]-------------------------------------------------//
+    
+    public func SetActiveFXPreset(preset:String) -> JSON {
+        //set active preset
+        
+        do {
+            let socket = DaemonSocket().new()
+            let request = "{\"Command\":[\"\(device)\",{\"SetActiveEffectPreset\":\"\(preset)\"}]}"
+            DaemonSocket().send(command: request, socket: socket)
+            return JSON(DaemonSocket().read(socket: socket))
+                        
+        } catch {
+            print("SetActiveFXPreset Error")
+            return "SetActiveFXPreset Error"
+        }
+    }
+
 }

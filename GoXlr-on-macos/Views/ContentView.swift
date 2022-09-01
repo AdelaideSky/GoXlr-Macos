@@ -34,7 +34,7 @@ struct ContentView: View {
                         NavigationLink(destination: MixerView().environmentObject(MixerStatus())) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: FxView().environmentObject(MixerStatus())) {
                             Label("Effects", systemImage: "fx")
                         }
                         NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {

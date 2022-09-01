@@ -171,7 +171,6 @@ struct OnboardingView: View {
                             .toggleStyle(.switch)
                             .scaleEffect(0.7)
                     }.padding(.bottom, 5)
-                    
                     Image(systemName:"checkmark.circle")
                         .font(.system(size: 70))
                         .foregroundColor(.accentColor)
@@ -180,12 +179,14 @@ struct OnboardingView: View {
                     Button(action: {
                         if launchAtStartup {
                             let service = SMAppService.mainApp
-                            do {
-                               try service.register()
-                            } catch {
-                                print("Unable to register \(error)")
-                            }
+                            do { try service.register()
+                            } catch { print("Unable to register \(error)") }
                         }
+                        
+                        let agent = SMAppService.agent(plistName: "com.adesky.goxlr.plist")
+                        do { try agent.register()
+                        } catch { print("Unable to register \(error)") }
+                        
                         step = 4
                         UserDefaults.standard.set(true, forKey: "firstLaunch")
                         onboarded = false

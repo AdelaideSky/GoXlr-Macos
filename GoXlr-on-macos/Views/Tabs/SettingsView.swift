@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import UniformTypeIdentifiers
+import ServiceManagement
 
 struct SettingsView: View {
     @State var tabname: String? = "Settings"
@@ -21,6 +22,38 @@ struct SettingsView: View {
         VStack(alignment: .center) {
             
             Form {
+                Section(header: Text("General")) {
+                    Toggle("Launch at startup", isOn: $userSettings.launchAtStartup)
+                        .toggleStyle(.switch)
+                        .onChange(of: userSettings.launchAtStartup) { newValue in
+                            let service = SMAppService.mainApp
+                            do {
+                                if newValue {
+                                    try service.register()
+                                }
+                                else {
+                                    try service.unregister()
+                                }
+                            } catch {
+                                
+                            }
+                        }
+                    Toggle("Launch on device connect", isOn: $userSettings.launchOnConnect)
+                        .toggleStyle(.switch)
+                        .onChange(of: userSettings.launchOnConnect) { newValue in
+                            let service = SMAppService.agent(plistName: "com.adesky.goxlr.autolaunch.plist")
+                            do {
+                                if newValue {
+                                    try service.register()
+                                }
+                                else {
+                                    try service.unregister()
+                                }
+                            } catch {
+                                
+                            }
+                        }
+                }
                 Section(header: Text("On-screen faders")) {
                     Picker("Fader 1", selection: $userSettings.onScreenFader1) {
                         Group {

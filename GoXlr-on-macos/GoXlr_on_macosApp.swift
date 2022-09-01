@@ -12,6 +12,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ notification: Notification) {
         Daemon().stop()
     }
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        xpc_set_event_stream_handler("com.apple.iokit.matching", nil) { event in
+            let name = xpc_dictionary_get_string(event, XPC_EVENT_KEY_NAME)
+            let id = xpc_dictionary_get_uint64(event, "IOMatchLaunchServiceID")
+            print("Received event: \(name), \(id)")
+        }
+    }
 }
 
 @main

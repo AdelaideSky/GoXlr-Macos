@@ -39,7 +39,7 @@
 		7066F4DE28999DC600AFDE2D /* MicSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB832896C54B0039E797 /* MicSetupView.swift */; };
 		7066F4DF28999DC600AFDE2D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB842896C54B0039E797 /* OnboardingView.swift */; };
 		7066F4E028999DC600AFDE2D /* CIHueSaturationValueGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA22897D3E80039E797 /* CIHueSaturationValueGradientView.swift */; };
-		7066F4E128999DC600AFDE2D /* status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB772896C54B0039E797 /* status.swift */; };
+		7066F4E128999DC600AFDE2D /* mixerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB772896C54B0039E797 /* mixerStatus.swift */; };
 		7066F4E328999DC600AFDE2D /* SimplyCoreAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 7066F4C528999DC600AFDE2D /* SimplyCoreAudio */; };
 		7066F4E428999DC600AFDE2D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7066F4C128999DC600AFDE2D /* SwiftyJSON */; };
 		7066F4E528999DC600AFDE2D /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = 7066F4C328999DC600AFDE2D /* Socket */; };
@@ -51,7 +51,7 @@
 		708DAB8C2896C54C0039E797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB702896C54B0039E797 /* Assets.xcassets */; };
 		708DAB8E2896C54C0039E797 /* Sliders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB742896C54B0039E797 /* Sliders.swift */; };
 		708DAB8F2896C54C0039E797 /* device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB762896C54B0039E797 /* device.swift */; };
-		708DAB902896C54C0039E797 /* status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB772896C54B0039E797 /* status.swift */; };
+		708DAB902896C54C0039E797 /* mixerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB772896C54B0039E797 /* mixerStatus.swift */; };
 		708DAB912896C54C0039E797 /* audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB782896C54B0039E797 /* audio.swift */; };
 		708DAB922896C54C0039E797 /* StatusStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB792896C54B0039E797 /* StatusStructs.swift */; };
 		708DAB932896C54C0039E797 /* goxlr_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7A2896C54B0039E797 /* goxlr_types.swift */; };
@@ -81,7 +81,36 @@
 		7098F5E428BCEB92005EDDC4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098F5E328BCEB92005EDDC4 /* SettingsView.swift */; };
 		7098F5E528BCEB92005EDDC4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7098F5E328BCEB92005EDDC4 /* SettingsView.swift */; };
 		70AB8E2E28986ADC002EF0A9 /* daemonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */; };
+		70C6092A28BD47ED0091181D /* fxStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092928BD47ED0091181D /* fxStatus.swift */; };
+		70C6092B28BD47ED0091181D /* fxStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092928BD47ED0091181D /* fxStatus.swift */; };
+		70C6092D28BD4A960091181D /* FxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092C28BD4A960091181D /* FxView.swift */; };
+		70C6092E28BD4A960091181D /* FxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092C28BD4A960091181D /* FxView.swift */; };
+		70D9E03A28BF94840078765C /* Library in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D9E03628BF93E00078765C /* Library */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		70D9E03C28BF974F0078765C /* Library in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D9E03628BF93E00078765C /* Library */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		70D9E03928BF94700078765C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = Contents;
+			dstSubfolderSpec = 1;
+			files = (
+				70D9E03A28BF94840078765C /* Library in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70D9E03B28BF97450078765C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents;
+			dstSubfolderSpec = 1;
+			files = (
+				70D9E03C28BF974F0078765C /* Library in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOptionalInterpolation.swift; sourceTree = "<group>"; };
@@ -94,7 +123,7 @@
 		708DAB702896C54B0039E797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		708DAB742896C54B0039E797 /* Sliders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sliders.swift; sourceTree = "<group>"; };
 		708DAB762896C54B0039E797 /* device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = device.swift; sourceTree = "<group>"; };
-		708DAB772896C54B0039E797 /* status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = status.swift; sourceTree = "<group>"; };
+		708DAB772896C54B0039E797 /* mixerStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mixerStatus.swift; sourceTree = "<group>"; };
 		708DAB782896C54B0039E797 /* audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = audio.swift; sourceTree = "<group>"; };
 		708DAB792896C54B0039E797 /* StatusStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusStructs.swift; sourceTree = "<group>"; };
 		708DAB7A2896C54B0039E797 /* goxlr_types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goxlr_types.swift; sourceTree = "<group>"; };
@@ -122,6 +151,9 @@
 		7098F5DF28BCC121005EDDC4 /* OnscreenSlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnscreenSlidersView.swift; sourceTree = "<group>"; };
 		7098F5E328BCEB92005EDDC4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daemonHandler.swift; sourceTree = "<group>"; };
+		70C6092928BD47ED0091181D /* fxStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fxStatus.swift; sourceTree = "<group>"; };
+		70C6092C28BD4A960091181D /* FxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FxView.swift; sourceTree = "<group>"; };
+		70D9E03628BF93E00078765C /* Library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Library; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +226,7 @@
 		708DAB6F2896C54B0039E797 /* GoXlr-on-macos */ = {
 			isa = PBXGroup;
 			children = (
+				70D9E03128BF8E7E0078765C /* Resources */,
 				70AB8E2A2898698F002EF0A9 /* Daemons */,
 				708DAB702896C54B0039E797 /* Assets.xcassets */,
 				708DAB732896C54B0039E797 /* Elements */,
@@ -220,10 +253,11 @@
 			children = (
 				7013C8B428BBBA4F00E88282 /* utils */,
 				708DAB762896C54B0039E797 /* device.swift */,
-				708DAB772896C54B0039E797 /* status.swift */,
+				708DAB772896C54B0039E797 /* mixerStatus.swift */,
 				708DAB782896C54B0039E797 /* audio.swift */,
 				7013C8B328BBBA2200E88282 /* Structs */,
 				70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */,
+				70C6092928BD47ED0091181D /* fxStatus.swift */,
 			);
 			path = GoXlrLib;
 			sourceTree = "<group>";
@@ -250,6 +284,7 @@
 				708DAB802896C54B0039E797 /* MixerView.swift */,
 				708DABAD2897D4080039E797 /* MixerLightningView.swift */,
 				7098F5E328BCEB92005EDDC4 /* SettingsView.swift */,
+				70C6092C28BD4A960091181D /* FxView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -304,6 +339,14 @@
 			path = Daemons;
 			sourceTree = "<group>";
 		};
+		70D9E03128BF8E7E0078765C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70D9E03628BF93E00078765C /* Library */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,6 +357,7 @@
 				700E13832870A6BE00FD6306 /* Sources */,
 				700E13842870A6BE00FD6306 /* Frameworks */,
 				700E13852870A6BE00FD6306 /* Resources */,
+				70D9E03928BF94700078765C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -336,6 +380,7 @@
 				7066F4C728999DC600AFDE2D /* Sources */,
 				7066F4E228999DC600AFDE2D /* Frameworks */,
 				7066F4E628999DC600AFDE2D /* Resources */,
+				70D9E03B28BF97450078765C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -429,6 +474,7 @@
 				708DABAC2897D3E90039E797 /* ColourWheel.swift in Sources */,
 				708DAB922896C54C0039E797 /* StatusStructs.swift in Sources */,
 				708DAB982896C54C0039E797 /* ProfilesView.swift in Sources */,
+				70C6092A28BD47ED0091181D /* fxStatus.swift in Sources */,
 				704CAA2A2897FE480061C717 /* colour.swift in Sources */,
 				708DAB962896C54C0039E797 /* RoutingTab.swift in Sources */,
 				708DAB912896C54C0039E797 /* audio.swift in Sources */,
@@ -439,6 +485,7 @@
 				708DAB8F2896C54C0039E797 /* device.swift in Sources */,
 				708DABAE2897D4080039E797 /* MixerLightningView.swift in Sources */,
 				708DAB952896C54C0039E797 /* homeView.swift in Sources */,
+				70C6092D28BD4A960091181D /* FxView.swift in Sources */,
 				70AB8E2E28986ADC002EF0A9 /* daemonHandler.swift in Sources */,
 				708DAB932896C54C0039E797 /* goxlr_types.swift in Sources */,
 				708DAB9F2896C54C0039E797 /* GoXlr_on_macosApp.swift in Sources */,
@@ -446,7 +493,7 @@
 				708DAB992896C54C0039E797 /* MicSetupView.swift in Sources */,
 				708DAB9A2896C54C0039E797 /* OnboardingView.swift in Sources */,
 				708DABA82897D3E90039E797 /* CIHueSaturationValueGradientView.swift in Sources */,
-				708DAB902896C54C0039E797 /* status.swift in Sources */,
+				708DAB902896C54C0039E797 /* mixerStatus.swift in Sources */,
 				7098F5E428BCEB92005EDDC4 /* SettingsView.swift in Sources */,
 				7098F5DE28BCC0BF005EDDC4 /* menubarView.swift in Sources */,
 			);
@@ -467,6 +514,7 @@
 				7066F4CF28999DC600AFDE2D /* ColourWheel.swift in Sources */,
 				7066F4D028999DC600AFDE2D /* StatusStructs.swift in Sources */,
 				7066F4D128999DC600AFDE2D /* ProfilesView.swift in Sources */,
+				70C6092B28BD47ED0091181D /* fxStatus.swift in Sources */,
 				7066F4D228999DC600AFDE2D /* colour.swift in Sources */,
 				7066F4D328999DC600AFDE2D /* RoutingTab.swift in Sources */,
 				7066F4D428999DC600AFDE2D /* audio.swift in Sources */,
@@ -477,6 +525,7 @@
 				7077F24C28AA72890004F120 /* CoughView.swift in Sources */,
 				7066F4D728999DC600AFDE2D /* device.swift in Sources */,
 				7066F4D828999DC600AFDE2D /* MixerLightningView.swift in Sources */,
+				70C6092E28BD4A960091181D /* FxView.swift in Sources */,
 				7066F4D928999DC600AFDE2D /* homeView.swift in Sources */,
 				7066F4DA28999DC600AFDE2D /* daemonHandler.swift in Sources */,
 				7066F4DB28999DC600AFDE2D /* goxlr_types.swift in Sources */,
@@ -486,7 +535,7 @@
 				7066F4DF28999DC600AFDE2D /* OnboardingView.swift in Sources */,
 				7066F4E028999DC600AFDE2D /* CIHueSaturationValueGradientView.swift in Sources */,
 				7098F5E528BCEB92005EDDC4 /* SettingsView.swift in Sources */,
-				7066F4E128999DC600AFDE2D /* status.swift in Sources */,
+				7066F4E128999DC600AFDE2D /* mixerStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
