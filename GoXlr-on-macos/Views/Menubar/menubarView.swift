@@ -71,6 +71,7 @@ struct MenubarView: View {
                         
                     }.padding(.horizontal, 10)
                         .frame(height: userSettings.onScreenFader2 == "none" ? 70 : 90)
+                        .padding(.bottom, userSettings.Route1in == "none" ? 10 : userSettings.Route1out == "none" ? 10 : 0)
                 }
                 
                 if userSettings.Route1in != "none" {
