@@ -124,23 +124,49 @@ enum EncoderName: Int {
     case Echo = 0x03
 }
 
+
 public enum InputDevice: String {
-    case Microphone
-    case Chat
-    case Music
-    case Game
-    case Console
-    case LineIn
-    case System
-    case Samples
+    case Microphone = "Microphone"
+    case Chat = "Chat"
+    case Music = "Music"
+    case Game = "Game"
+    case Console = "Console"
+    case LineIn = "LineIn"
+    case System = "System"
+    case Samples = "Samples"
+}
+extension InputDevice {
+    func icon() -> String {
+        if self == .Microphone {
+            return "mic"
+        }
+        else if self == .Chat {return "speaker.wave.2.bubble.left"}
+        else if self == .Music {return "music.note"}
+        else if self == .Game {return "gamecontroller"}
+        else if self == .Console {return "rectangle.on.rectangle"}
+        else if self == .LineIn {return "chevron.backward.to.line"}
+        else if self == .System {return "menubar.dock.rectangle"}
+        else if self == .Samples {return "speaker.wave.2.bubble.left"}
+        else {return ""}
+    }
 }
 
 public enum OutputDevice: String {
-    case Headphones
-    case BroadcastMix
-    case LineOut
-    case ChatMic
-    case Sampler
+    case Headphones = "Headphones"
+    case BroadcastMix = "BroadcastMix"
+    case LineOut = "LineOut"
+    case ChatMic = "ChatMic"
+    case Sampler = "Sampler"
+}
+
+extension OutputDevice {
+    func icon() -> String {
+        if self == .Headphones {return "headphones"}
+        else if self == .BroadcastMix {return "waveform"}
+        else if self == .LineOut {return "chevron.right.to.line"}
+        else if self == .ChatMic {return "message.and.waveform"}
+        else {return "speaker.wave.2.bubble.left"}
+    }
 }
 
 enum EffectKey: Int {

@@ -15,6 +15,7 @@ struct MenubarView: View {
     @State private var select = ""
     @ObservedObject var mixer = MixerStatus()
     @State private var advanced = false
+    let settingsRefreshTimer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
     
     @ObservedObject var userSettings = Config()
 
@@ -23,7 +24,7 @@ struct MenubarView: View {
     
         var body: some View {
             
-            VStack(alignment: .center, spacing: 30) {
+            VStack(alignment: .center, spacing: 20) {
                 if userSettings.onScreenFader1 != "none" {
                     ZStack {
                         EffectsView(material: NSVisualEffectView.Material.popover, blendingMode: NSVisualEffectView.BlendingMode.behindWindow)
@@ -69,7 +70,48 @@ struct MenubarView: View {
                         }
                         
                     }.padding(.horizontal, 10)
-                        .frame(height: userSettings.onScreenFader2 == "none" ? 70 : 115)
+                        .frame(height: userSettings.onScreenFader2 == "none" ? 70 : 90)
+                }
+                
+                if userSettings.Route1in != "none" {
+                    if userSettings.Route1out != "none" {
+                        ZStack {
+                            EffectsView(material: NSVisualEffectView.Material.popover, blendingMode: NSVisualEffectView.BlendingMode.behindWindow)
+                                .mask {
+                                    RoundedRectangle(cornerRadius: 10).fill(.gray)
+                                }
+                                .opacity(1)
+                                .shadow(radius: 2)
+                            
+                            VStack(alignment: .center, spacing: 3) {
+                                Text("Routing")
+                                    .font(.headline)
+                                    .scaleEffect(0.9)
+                                    .padding(.top, 5)
+                                    .padding(.bottom, 15)
+                                    .padding(.right, 200)
+                                HStack {
+                                    
+                                    MenubarRoutingView(channelin: InputDevice(rawValue: userSettings.Route1in)!, channelout: OutputDevice(rawValue: userSettings.Route1out)!, mixer: mixer)
+                                    if userSettings.Route2in != "none" {
+                                        if userSettings.Route2out != "none" {
+                                            Divider().padding(.horizontal, 5)
+                                            MenubarRoutingView(channelin: InputDevice(rawValue: userSettings.Route2in)!, channelout: OutputDevice(rawValue: userSettings.Route2out)!, mixer: mixer)
+                                            if userSettings.Route3in != "none" {
+                                                if userSettings.Route3out != "none" {
+                                                    Divider().padding(.horizontal, 5)
+                                                    MenubarRoutingView(channelin: InputDevice(rawValue: userSettings.Route3in)!, channelout: OutputDevice(rawValue: userSettings.Route3out)!, mixer: mixer)
+                                                }
+                                            }
+                                        }
+                                    }
+                                }.padding(.bottom, 10)
+                                
+                            }
+                            
+                        }.padding(.horizontal, 10)
+                            .frame(width: 290, height: 100)
+                    }
                 }
                     
                 
@@ -112,9 +154,19 @@ struct MenubarView: View {
 
                             HStack {
                                 
-                                Button {
-                                    mixer.selectedDevice.Sleep() } label: {
-                                        Label("Sleep", systemImage: "powersleep")}.keyboardShortcut(.escape)
+                                Toggle(isOn: !$mixer.routerMic[0]) {
+                                    ZStack {
+                                        Label("Mute mic monitor", systemImage: "mic.and.signal.meter.fill")
+                                        if !mixer.routerMic[0] {
+                                            Image(systemName: "line.diagonal")
+                                                .scaleEffect(1.7)
+                                        }
+                                    }
+                                }.toggleStyle(.button)
+                                .onChange(of: mixer.routerMic[0]) { newValue in
+                                    _ = mixer.selectedDevice.SetRouter(inputDevice: .Microphone, outputDevice: .Headphones, state: newValue)
+                                }
+
                                 
                                 Button {
                                     mixer.selectedDevice.SaveProfile()} label: {
@@ -148,6 +200,7 @@ struct MenubarView: View {
                 
                 HStack {
                     Button() {
+                        Daemon().stop()
                         NSApplication.shared.terminate(nil)
                     } label: {
                         Label("Power", systemImage: "power")}.keyboardShortcut("q")
@@ -177,6 +230,10 @@ struct MenubarView: View {
                 .labelStyle(.iconOnly)
                 .controlSize(.large)
             }
+            .padding(.top, 5)
+            .onReceive(settingsRefreshTimer) { input in
+                userSettings.refreshOSFaders()
+            }
             .sheet(isPresented: $mixer.profileSheet, content: {LoadProfileView(defaultTab:"device").environmentObject(mixer)})
             .padding(16)
 
@@ -184,9 +241,6 @@ struct MenubarView: View {
                 EffectsView(material: NSVisualEffectView.Material.hudWindow, blendingMode: NSVisualEffectView.BlendingMode.behindWindow)
                     .opacity(1)
 
-            }
-            .onDisappear() {
-                print("disappear")
             }
         }
 }
@@ -208,4 +262,11 @@ struct EffectsView: NSViewRepresentable {
         visualEffectView.material = material
         visualEffectView.blendingMode = blendingMode
     }
+}
+
+prefix func ! (value: Binding<Bool>) -> Binding<Bool> {
+    Binding<Bool>(
+        get: { !value.wrappedValue },
+        set: { value.wrappedValue = !$0 }
+    )
 }

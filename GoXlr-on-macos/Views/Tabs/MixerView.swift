@@ -195,7 +195,7 @@ struct MixerView: View {
                                 }
                             VStack(){
                                 Text("Sample").font(.system(.subheadline)).padding(.bottom, 10)
-                                lightBSLIDER(value: $mixer.sample, in: 0...255, display: "waveform", textsize: 11)
+                                lightBSLIDER(value: $mixer.sample, in: 0...255, display: "speaker.wave.2.bubble.left", textsize: 11)
                                     .padding(.bottom, 20)
                                     .frame(width: 80)
                                     .animation(.default, value: 4)

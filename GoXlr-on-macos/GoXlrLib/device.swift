@@ -22,28 +22,41 @@ class Config: ObservableObject {
         else {launchOnConnect = false}
         
         onScreenFader1 = UserDefaults.standard.string(forKey: "onScreenFader1") ?? "none"
-        onScreenFader1Vol = UserDefaults.standard.float(forKey: "onScreenFader1Vol")
-
         onScreenFader2 = UserDefaults.standard.string(forKey: "onScreenFader2") ?? "none"
-        onScreenFader2Vol = UserDefaults.standard.float(forKey: "onScreenFader2Vol")
         
+        Route1in = UserDefaults.standard.string(forKey: "Route1in") ?? "none"
+        Route1out = UserDefaults.standard.string(forKey: "Route1out") ?? "none"
+        Route2in = UserDefaults.standard.string(forKey: "Route2in") ?? "none"
+        Route2out = UserDefaults.standard.string(forKey: "Route2out") ?? "none"
+        Route3in = UserDefaults.standard.string(forKey: "Route3in") ?? "none"
+        Route3out = UserDefaults.standard.string(forKey: "Route3out") ?? "none"
+    }
+    public func refreshOSFaders() {
+        onScreenFader1 = UserDefaults.standard.string(forKey: "onScreenFader1") ?? "none"
+        onScreenFader2 = UserDefaults.standard.string(forKey: "onScreenFader2") ?? "none"
         
-
-
-        
-
+        Route1in = UserDefaults.standard.string(forKey: "Route1in") ?? "none"
+        Route1out = UserDefaults.standard.string(forKey: "Route1out") ?? "none"
+        Route2in = UserDefaults.standard.string(forKey: "Route2in") ?? "none"
+        Route2out = UserDefaults.standard.string(forKey: "Route2out") ?? "none"
+        Route3in = UserDefaults.standard.string(forKey: "Route3in") ?? "none"
+        Route3out = UserDefaults.standard.string(forKey: "Route3out") ?? "none"
     }
     let debugMode: Bool
     let showStatusRequests: Bool
+    
     @Published var launchAtStartup: Bool
     @Published var launchOnConnect: Bool
     
-    
     @Published var onScreenFader1: String
-    @Published var onScreenFader1Vol: Float
-
     @Published var onScreenFader2: String
-    @Published var onScreenFader2Vol: Float
+    
+    @Published var Route1in: String
+    @Published var Route1out: String
+    @Published var Route2in: String
+    @Published var Route2out: String
+    @Published var Route3in: String
+    @Published var Route3out: String
 
 
 }
