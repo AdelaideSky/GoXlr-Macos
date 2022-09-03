@@ -97,7 +97,7 @@ struct SettingsView: View {
                     .disabled(userSettings.onScreenFader1 == "none" ? true : false)
                 }
                 
-                Section(header: Text("Routing")) {
+                Section(header: Text("Quick routing")) {
                     HStack {
                         Text("Route 1")
                         VStack {
