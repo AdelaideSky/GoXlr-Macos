@@ -1,6 +1,6 @@
 <div align=center>
 
-#  <img src="https://media.discordapp.net/attachments/756659826045485088/968640294033686619/icon_128x128.png" width="30"> GoXLR for Mac
+#  <img src="https://media.discordapp.net/attachments/972979685350854666/1017145717409710180/Icon-128.png" width="30"> GoXLR for Mac
 ![LastRelease](https://img.shields.io/github/release-date/Adelenade/GoXlr-Macos)
 ![Contributors](https://img.shields.io/github/contributors/Adelenade/GoXlr-Macos)
 ![OpenIssues](https://img.shields.io/github/issues-raw/Adelenade/GoXlr-Macos)
@@ -11,6 +11,13 @@
 
 <img src="https://cdn.discordapp.com/attachments/756659826045485088/973891094351872010/unknown.png" width="700">
 </div>
+
+<div align=center>
+<h2>⚠️・ALL VERSIONS BEFORE 1.0.0 ARE BUGGY AND NOT SUPPORTED ANYMORE・⚠️</h2>
+Please upgrate to Ventura beta or use directly the <a href="https://github.com/GoXLR-on-Linux/GoXLR-Utility">GoXLR-Utility</a>
+</div>
+&nbsp
+
 
 There is currently no official support for the GoXLR on MacOS provided by TC-Helicon,
 however the GoXLR is compatible as a basic audio device. This project aims to bring
