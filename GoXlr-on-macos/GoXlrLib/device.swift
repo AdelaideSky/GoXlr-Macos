@@ -371,6 +371,9 @@ public struct GoXlr: Hashable {
     }
     
     public func numberDevices() -> Int {
+        if !isdaemonLaunched {
+            isdaemonLaunched = Daemon().start(args: nil)
+        }
         return self.status()!.status.mixers.count
     }
     public func deviceType() -> Model {

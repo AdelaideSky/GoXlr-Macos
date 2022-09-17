@@ -217,7 +217,7 @@ struct MenubarView: View {
                         Button("Reload Daemon") {
                             Daemon().restart(args:[])
                         }
-                        Button("Copy debug info") {
+                        Button("Copy debugg info") {
                             GoXlr().copyDebugInfo()
                         }
                     } label: {
