@@ -75,6 +75,37 @@ struct NullView: View {
     var body: some View {
         VStack {
             Text("No GoXlr Connected")
+                .padding(.bottom, 15)
+                .font(.system(.body))
+            HStack {
+                Button() {
+                    Daemon().stop()
+                    NSApplication.shared.terminate(nil)
+                } label: {
+                    Label("Power", systemImage: "power")}.keyboardShortcut("q")
+                    .padding(.right, 70)
+                
+
+                //ShareLink(items: ["SharingContent"])
+                
+                Menu {
+                    Button("Reload Daemon") {
+                        Daemon().restart(args:[])
+                    }
+                    Button("Copy debugg info") {
+                        GoXlr().copyDebugInfo()
+                    }
+                } label: {
+                    Image(systemName: "ellipsis")
+                }
+                .menuIndicator(.hidden)
+                .frame(width: 30)
+                
+                
+            }
+            
+            .labelStyle(.iconOnly)
+            .controlSize(.large)
         }.padding(16)
         
             .background {
