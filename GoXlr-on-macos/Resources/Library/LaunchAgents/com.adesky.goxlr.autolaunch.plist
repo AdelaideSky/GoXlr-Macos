@@ -6,10 +6,16 @@
     <false/>
     <key>Label</key>
     <string>com.adesky.goxlr.autolaunch</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/goxlr-stderr.log</string>
+    <key>StandardOutPath</key>
+    <string>tmp/goxlr-stdout.log</string>
     <key>ProgramArguments</key>
     <array>
         <string>/Library/Application Support/com.adesky.goxlr/xpchandler</string>
-	<string>/Applications/GoXlr App.app/Contents/MacOS/GoXlr App</string>
+        <string>/usr/bin/open</string>
+		<string>-W</string>
+		<string>/Applications/GoXlr App.app</string>
     </array>
     <key>LaunchEvents</key>
     <dict>

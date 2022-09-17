@@ -115,40 +115,15 @@ struct OnboardingView: View {
                             }).background(Color.clear)
                         }
                     }
-                    .alert("Is the GoXLR selected as default system output ?", isPresented: $audioReminder) {
-                        Button("Yes", role: .cancel) {
-                            
-                            let goxlr = simplyCA.defaultOutputDevice
-                            goxlr!.setHogMode()
-                            let system = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "System", uid: "system")
-                            system?.setPreferredChannelsForStereo(channels: StereoPair(left: 1, right: 2), scope: Scope.output)
-                            system?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
-                            let game = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Game", uid: "game")
-                            game?.setPreferredChannelsForStereo(channels: StereoPair(left: 3, right: 4), scope: Scope.output)
-                            game?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
-                            let chat = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Chat", uid: "chat")
-                            chat?.setPreferredChannelsForStereo(channels: StereoPair(left: 5, right: 6), scope: Scope.output)
-                            chat?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
-                            let music = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Music", uid: "music")
-                            music?.setPreferredChannelsForStereo(channels: StereoPair(left: 7, right: 8), scope: Scope.output)
-                            music?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
-                            let sample = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Sample", uid: "sample")
-                            sample?.setPreferredChannelsForStereo(channels: StereoPair(left: 9, right: 10), scope: Scope.output)
-                            sample?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
-
-                            let broadcastMix = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Broadcast mix", uid: "broadcastmix")
-                            broadcastMix?.setPreferredChannelsForStereo(channels: StereoPair(left: 1, right: 2), scope: Scope.input)
-                            broadcastMix?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.output)
-
-                            let chatMic = simplyCA.createAggregateDevice(masterDevice: goxlr!, secondDevice: goxlr, named: "Chat mic", uid: "chatmic")
-                            chatMic?.setPreferredChannelsForStereo(channels: StereoPair(left: 3, right: 4), scope: Scope.input)
-                            chatMic?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.output)
-                            
-                            system?.isDefaultOutputDevice = true
-                            chatMic?.isDefaultInputDevice = true
-                            goxlr!.unsetHogMode()
-                            step = 3
+                    .alert("What is the model of your GoXlr ?", isPresented: $audioReminder) {
+                        Button("Cancel", role: .cancel) {
                             audioReminder = false
+                        }
+                        Button("Mini", role: .destructive) {
+                            audioReminder = AudioSetup(model: .Mini)
+                        }
+                        Button("Full", role: .destructive) {
+                            audioReminder = AudioSetup(model: .Full)
                         }
                     }
                     

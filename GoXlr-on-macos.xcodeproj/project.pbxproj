@@ -683,6 +683,7 @@
 				INFOPLIST_FILE = "GoXlr-on-macos/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required to monitor your input level while doing Mic Setup.";
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
@@ -722,6 +723,7 @@
 				INFOPLIST_FILE = "GoXlr-on-macos/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone access is required to monitor your input level while doing Mic Setup.";
 				INFOPLIST_KEY_UILaunchStoryboardName = "";

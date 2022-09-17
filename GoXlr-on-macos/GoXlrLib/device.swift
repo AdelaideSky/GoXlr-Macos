@@ -305,7 +305,7 @@ public struct DaemonSocket {
 }
 
 
-public struct GoXlr {
+public struct GoXlr: Hashable {
     //Now let's define a goxlr object.
     
     var device: String
@@ -313,6 +313,9 @@ public struct GoXlr {
     //Daemon needs to know to wich goxlr he has to send the command, let's init the struct with the wanted serial.
     public init(serial:String? = "") {
         device = serial ?? ""
+    }
+    public func getSerial() -> String {
+        return device
     }
     
 //--------------------------------[Status]-------------------------------------------------//
@@ -358,7 +361,7 @@ public struct GoXlr {
     //--------------------------------[Gettrs]-------------------------------------------------//
 
     
-    public func listDevices() -> [[String]]{
+    public func listDevices() -> [[String]] {
         var devices: [[String]] = []
         
         for i in self.status()!.status.mixers {
@@ -367,6 +370,9 @@ public struct GoXlr {
         return devices
     }
     
+    public func numberDevices() -> Int {
+        return self.status()!.status.mixers.count
+    }
     public func deviceType() -> Model {
         var mixertype: String
         if self.device == "" { mixertype = self.status()!.status.mixers.first!.1.hardware.deviceType }
@@ -1123,7 +1129,7 @@ public struct GoXlr {
         
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SaveProfile\"}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SaveProfile\":[]}]}"
             DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         
@@ -1198,7 +1204,7 @@ public struct GoXlr {
         
         do {
             let socket = DaemonSocket().new()
-            let request = "{\"Command\":[\"\(device)\",{\"SaveMicProfile\"}]}"
+            let request = "{\"Command\":[\"\(device)\",{\"SaveMicProfile\":[]}]}"
             DaemonSocket().send(command: request, socket: socket)
             return JSON(DaemonSocket().read(socket: socket))
                         

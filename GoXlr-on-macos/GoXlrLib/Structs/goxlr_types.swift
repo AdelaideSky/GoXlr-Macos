@@ -20,6 +20,16 @@ public enum Model: String {
     case Mini
     case Full
 }
+extension Model {
+    func audioDeviceName() -> String {
+        if self == .Mini {
+            return "GoXLRMini"
+        }
+        else {
+            return "GoXLR"
+        }
+    }
+}
 public enum BleepName: String, Equatable, CaseIterable, Codable {
     case Bleep
 }

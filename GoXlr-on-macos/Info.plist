@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key></key>
+	<string></string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -11,6 +13,12 @@
 			</array>
 		</dict>
 	</array>
+	<key>INIntentsSupported</key>
+	<array>
+		<string>PrintTests</string>
+	</array>
+	<key>NSExtensionPointIdentifier</key>
+	<string>com.apple.intents-service</string>
 	<key>LSUIElement</key>
 	<true/>
 </dict>

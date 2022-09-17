@@ -9,38 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.openWindow) private var openWindow
-    
+    @ObservedObject var mixer: MixerStatus
     func toggleSidebar() {
             NSApp.keyWindow?.firstResponder?.tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
     }
     
     var body: some View {
-        if MixerStatus().selectedDevice.deviceType() == .Full {
+        if mixer.selectedDevice.deviceType() == .Full {
             NavigationView {
                 List {
-                    NavigationLink(destination: HomeView().environmentObject(MixerStatus())) {
-                        Label("Home", systemImage: "house")
+
+                    Group {
+                        NavigationLink(destination: HomeView().environmentObject(mixer)) {
+                            Label("Home", systemImage: "house")
+                        }
+                        
+                        Spacer()
+                        
+                        Text("AUDIO")
+                            .font(.system(size: 10))
+                            .fontWeight(.bold)
                     }
-                    
-                    Spacer()
-                    
-                    Text("AUDIO")
-                        .font(.system(size: 10))
-                        .fontWeight(.bold)
                     Group{
-                        NavigationLink(destination: MicView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: MicView().environmentObject(mixer)) {
                             Label("Mic", systemImage: "mic")
                         }
-                        NavigationLink(destination: MixerView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: MixerView().environmentObject(mixer)) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
-                        NavigationLink(destination: FxView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: FxView().environmentObject(mixer)) {
                             Label("Effects", systemImage: "fx")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(mixer)) {
                             Label("Sampler", systemImage: "waveform")
                         }
-                        NavigationLink(destination: RoutingView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: RoutingView().environmentObject(mixer)) {
                             Label("Routing", systemImage: "app.connected.to.app.below.fill")
                         }
                     }
@@ -51,16 +54,16 @@ struct ContentView: View {
                         .font(.system(size: 10))
                         .fontWeight(.bold)
                     Group {
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(mixer)) {
                             Label("Global", systemImage: "sun.min")
                         }
-                        NavigationLink(destination: MixerLightningView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: MixerLightningView().environmentObject(mixer)) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(mixer)) {
                             Label("Effects", systemImage: "fx")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(mixer)) {
                             Label("Sampler", systemImage: "waveform")
                         }
                     }
@@ -68,10 +71,10 @@ struct ContentView: View {
                     
                     Divider()
                     Group {
-                        NavigationLink(destination: SettingsView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: SettingsView().environmentObject(mixer)) {
                             Label("Settings", systemImage: "gear")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(mixer)) {
                             Label("About", systemImage: "info.circle")
                         }
                     }
@@ -81,10 +84,18 @@ struct ContentView: View {
                 .navigationTitle("Explore")
                 .frame(minWidth: 150, idealWidth: 250, maxWidth: 300)
                 .toolbar {
+                    
                     ToolbarItem(placement: .navigation) {
                         Button(action: toggleSidebar, label: {
                             Image(systemName: "sidebar.left")
                         })
+                    }
+                    if GoXlr().listDevices().count > 1 {
+                        ToolbarItem(placement: .navigation) {
+                            Picker("", selection: $mixer.selectedDevice) {
+                                ForEach(GoXlr().listDevices(), id: \.self) { value in
+                                    Text(value[1]+" - "+value[0]).tag(GoXlr(serial: value[0]))}}
+                        }
                     }
                 }
                 
@@ -96,23 +107,26 @@ struct ContentView: View {
         else {
             NavigationView {
                 List {
-                    NavigationLink(destination: HomeView().environmentObject(MixerStatus())) {
-                        Label("Home", systemImage: "house")
+                    
+                    Group {
+                        NavigationLink(destination: HomeView().environmentObject(mixer)) {
+                            Label("Home", systemImage: "house")
+                        }
+                        
+                        Spacer()
+                        
+                        Text("AUDIO")
+                            .font(.system(size: 10))
+                            .fontWeight(.bold)
                     }
-                    
-                    Spacer()
-                    
-                    Text("AUDIO")
-                        .font(.system(size: 10))
-                        .fontWeight(.bold)
                     Group{
-                        NavigationLink(destination: miniMicView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: miniMicView().environmentObject(mixer)) {
                             Label("Mic", systemImage: "mic")
                         }
-                        NavigationLink(destination: MixerView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: MixerView().environmentObject(mixer)) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
-                        NavigationLink(destination: RoutingView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: RoutingView().environmentObject(mixer)) {
                             Label("Routing", systemImage: "app.connected.to.app.below.fill")
                         }
                     }
@@ -123,10 +137,10 @@ struct ContentView: View {
                         .font(.system(size: 10))
                         .fontWeight(.bold)
                     Group {
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(mixer)) {
                             Label("Global", systemImage: "sun.min")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: MixerLightningView().environmentObject(mixer)) {
                             Label("Mixer", systemImage: "slider.vertical.3")
                         }
                     }
@@ -140,10 +154,10 @@ struct ContentView: View {
                     
                     Divider()
                     Group {
-                        NavigationLink(destination: SettingsView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: SettingsView().environmentObject(mixer)) {
                             Label("Settings", systemImage: "gear")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(MixerStatus())) {
+                        NavigationLink(destination: NotCreatedView().environmentObject(mixer)) {
                             Label("About", systemImage: "info.circle")
                         }
                     }
@@ -152,23 +166,26 @@ struct ContentView: View {
                 .listStyle(SidebarListStyle())
                 .navigationTitle("Explore")
                 .frame(minWidth: 150, idealWidth: 250, maxWidth: 300)
+                
                 .toolbar {
+                    
                     ToolbarItem(placement: .navigation) {
                         Button(action: toggleSidebar, label: {
                             Image(systemName: "sidebar.left")
                         })
                     }
+                    if GoXlr().listDevices().count > 1 {
+                        ToolbarItem(placement: .navigation) {
+                            Picker("", selection: $mixer.selectedDevice) {
+                                ForEach(GoXlr().listDevices(), id: \.self) { value in
+                                    Text(value[1]+" - "+value[0]).tag(GoXlr(serial: value[0]))}}
+                        }
+                    }
                 }
                 
                 HomeView()
-                    .environmentObject(MixerStatus())
+                    .environmentObject(mixer)
             }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

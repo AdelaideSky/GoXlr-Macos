@@ -22,7 +22,7 @@ final public class MixerStatus: ObservableObject {
     
     @Published var lightningFadersSelected: FadersLightning = .All
     
-    var selectedDevice: GoXlr
+    @Published var selectedDevice: GoXlr = GoXlr()
     var status: Mixer
     
     public init() {
@@ -30,8 +30,8 @@ final public class MixerStatus: ObservableObject {
             isdaemonLaunched = Daemon().start(args: nil)
         }
         selectedDevice = GoXlr(serial: GoXlr().listDevices()[0].first)
-        status = selectedDevice.deviceStatus()!
-        let completestatus = selectedDevice.status()!.status
+        status = GoXlr(serial: GoXlr().listDevices()[0].first).deviceStatus()!
+        let completestatus = GoXlr(serial: GoXlr().listDevices()[0].first).status()!.status
         
         profilesList = completestatus.files.profiles
         profile = status.profileName

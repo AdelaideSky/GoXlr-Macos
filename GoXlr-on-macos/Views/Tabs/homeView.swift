@@ -9,7 +9,7 @@ import UniformTypeIdentifiers
 
 struct HomeView: View {
     @State var tabname: String? = "Home"
-    
+    @State var pickerDevice: String = "default"
     @State var onboarded = !UserDefaults.standard.bool(forKey: "firstLaunch")
     @EnvironmentObject var mixer: MixerStatus
     
@@ -43,6 +43,7 @@ struct HomeView: View {
                         Text("Save Profile")
                     })
                 }
+                
             }
                 
     }

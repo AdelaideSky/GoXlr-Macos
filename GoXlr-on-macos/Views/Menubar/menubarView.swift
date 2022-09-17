@@ -13,7 +13,7 @@ import UniformTypeIdentifiers
 struct MenubarView: View {
     @Environment(\.openWindow) private var openWindow
     @State private var select = ""
-    @ObservedObject var mixer = MixerStatus()
+    @ObservedObject var mixer: MixerStatus
     @State private var advanced = false
     let settingsRefreshTimer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
     
@@ -163,6 +163,7 @@ struct MenubarView: View {
                                                 .scaleEffect(1.7)
                                         }
                                     }
+
                                 }.toggleStyle(.button)
                                 .onChange(of: mixer.routerMic[0]) { newValue in
                                     _ = mixer.selectedDevice.SetRouter(inputDevice: .Microphone, outputDevice: .Headphones, state: newValue)
@@ -263,11 +264,4 @@ struct EffectsView: NSViewRepresentable {
         visualEffectView.material = material
         visualEffectView.blendingMode = blendingMode
     }
-}
-
-prefix func ! (value: Binding<Bool>) -> Binding<Bool> {
-    Binding<Bool>(
-        get: { !value.wrappedValue },
-        set: { value.wrappedValue = !$0 }
-    )
 }

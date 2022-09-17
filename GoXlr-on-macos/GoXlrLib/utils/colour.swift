@@ -34,6 +34,12 @@ extension HSV {
     }
     
 }
+prefix func ! (value: Binding<Bool>) -> Binding<Bool> {
+    Binding<Bool>(
+        get: { !value.wrappedValue },
+        set: { value.wrappedValue = !$0 }
+    )
+}
 extension String {
     public func toRGB() -> RGB {
         

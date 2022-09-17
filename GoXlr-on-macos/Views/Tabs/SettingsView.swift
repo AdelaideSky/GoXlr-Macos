@@ -15,6 +15,7 @@ struct SettingsView: View {
     @State private var noneString = "none"
     
     @ObservedObject var userSettings = Config()
+    @State private var audioReminder = false
 
     @EnvironmentObject var mixer: MixerStatus
     var body: some View {
@@ -52,6 +53,20 @@ struct SettingsView: View {
                                 
                             }
                         }
+                    Button("Run Audio Setup") {
+                        audioReminder = true
+                    }.alert("What is the model of your GoXlr ?", isPresented: $audioReminder) {
+                        Button("Cancel", role: .cancel) {
+                            audioReminder = false
+                        }
+                        Button("Mini", role: .destructive) {
+                            audioReminder = AudioSetup(model: .Mini)
+                        }
+                        Button("Full", role: .destructive) {
+                            audioReminder = AudioSetup(model: .Full)
+                        }
+                    }
+                    
                 }
                 Section(header: Text("On-screen faders")) {
                     Picker("Fader 1", selection: $userSettings.onScreenFader1) {
