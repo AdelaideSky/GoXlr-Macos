@@ -1,6 +1,6 @@
 <div align=center>
 
-#  <img src="https://media.discordapp.net/attachments/756659826045485089/1027326364396830790/qdsfdgnf.png?width=2520&height=621" width="2520">
+#  <a href="https://www.adesky.fr/goxlr-macos/"><img src="https://media.discordapp.net/attachments/756659826045485089/1027326364396830790/qdsfdgnf.png?width=2520&height=621" width="2520"></a>
 ![LastRelease](https://img.shields.io/github/release-date/Adelenade/GoXlr-Macos)
 ![Contributors](https://img.shields.io/github/contributors/Adelenade/GoXlr-Macos)
 ![OpenIssues](https://img.shields.io/github/issues-raw/Adelenade/GoXlr-Macos)
