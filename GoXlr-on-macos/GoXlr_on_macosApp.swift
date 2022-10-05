@@ -9,19 +9,28 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+    func application(_ application: NSApplication, open urls: [URL]) {
+        print("orjeng")
+            guard
+                urls.count == 1,
+                let videoUrl = urls.first
+            else {
+                print("oejn")
+                return
+
+            }
+        }
     func applicationWillTerminate(_ notification: Notification) {
         Daemon().stop()
     }
+    
 }
-
 @main
 struct GoXlr_on_macosApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let deviceCountRefreshTimer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
     @State var deviceCount = GoXlr().numberDevices()
         var body: some Scene {
-            
             Settings {
                 AppropriateSettingsView()
             }
@@ -30,6 +39,7 @@ struct GoXlr_on_macosApp: App {
                 AppropriateMenuView()
                     
             }.menuBarExtraStyle(.window)
+                
             
         }
 }
@@ -46,12 +56,10 @@ struct AppropriateMenuView: View {
             
         } else {
             MenubarView(mixer: MixerStatus()).frame(width: 305)
-                .onReceive(deviceCountRefreshTimer) { input in
-                    deviceCount = GoXlr().numberDevices()
-                }
         }
     }
 }
+
 struct AppropriateSettingsView: View {
     @State var deviceCount = GoXlr().numberDevices()
     let deviceCountRefreshTimer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
@@ -92,9 +100,10 @@ struct NullView: View {
                     Button("Reload Daemon") {
                         Daemon().restart(args:[])
                     }
-                    Button("Copy debugg info") {
+                    Button("Copy debug info") {
                         GoXlr().copyDebugInfo()
                     }
+                    Link("Join support server", destination: URL(string: "https://discord.gg/cyavp8F2WW")!)
                 } label: {
                     Image(systemName: "ellipsis")
                 }
@@ -113,6 +122,18 @@ struct NullView: View {
                     .opacity(1)
 
             }
+    }
+}
+
+struct AutoCloseView: View {
+    @Environment(\.presentationMode) var presentationMode
+
+    var body: some View {
+        Text("fjb").onAppear() {
+            print("erkhb")
+            presentationMode.wrappedValue.dismiss()
+        }
+        .frame(width: 50, height: 50)
     }
 }
 

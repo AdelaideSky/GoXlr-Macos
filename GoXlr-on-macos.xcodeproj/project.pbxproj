@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		7013C8B628BBBA6200E88282 /* NoOptionalInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */; };
 		7013C8B728BBBA6200E88282 /* NoOptionalInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */; };
+		701D956728E783F5007C2FDF /* filesTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D956628E783F5007C2FDF /* filesTypes.swift */; };
+		701D956828E783F5007C2FDF /* filesTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D956628E783F5007C2FDF /* filesTypes.swift */; };
 		704A9D8D2892C2A600AE234D /* SimplyCoreAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 704A9D8C2892C2A600AE234D /* SimplyCoreAudio */; };
 		704CAA2A2897FE480061C717 /* colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CAA292897FE480061C717 /* colour.swift */; };
-		7056347B2871838E00985223 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7056347A2871838E00985223 /* SwiftyJSON */; };
+		704F4BCF28ECC3F000DC029D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 704F4BCE28ECC3F000DC029D /* SwiftyJSON */; };
 		7056347E287183A500985223 /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = 7056347D287183A500985223 /* Socket */; };
 		7066F4BF289937BD00AFDE2D /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 7066F4B42899198000AFDE2D /* goxlr-daemon */; };
 		7066F4C828999DC600AFDE2D /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7D2896C54B0039E797 /* MicView.swift */; };
@@ -116,6 +118,7 @@
 
 /* Begin PBXFileReference section */
 		7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOptionalInterpolation.swift; sourceTree = "<group>"; };
+		701D956628E783F5007C2FDF /* filesTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filesTypes.swift; sourceTree = "<group>"; };
 		704CAA292897FE480061C717 /* colour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colour.swift; sourceTree = "<group>"; };
 		7066F4B42899198000AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
 		7066F4F228999ECE00AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
@@ -164,8 +167,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				704F4BCF28ECC3F000DC029D /* SwiftyJSON in Frameworks */,
 				704A9D8D2892C2A600AE234D /* SimplyCoreAudio in Frameworks */,
-				7056347B2871838E00985223 /* SwiftyJSON in Frameworks */,
 				7056347E287183A500985223 /* Socket in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +264,7 @@
 				7013C8B328BBBA2200E88282 /* Structs */,
 				70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */,
 				70C6092928BD47ED0091181D /* fxStatus.swift */,
+				701D956628E783F5007C2FDF /* filesTypes.swift */,
 			);
 			path = GoXlrLib;
 			sourceTree = "<group>";
@@ -369,9 +373,9 @@
 			);
 			name = "GoXlr App";
 			packageProductDependencies = (
-				7056347A2871838E00985223 /* SwiftyJSON */,
 				7056347D287183A500985223 /* Socket */,
 				704A9D8C2892C2A600AE234D /* SimplyCoreAudio */,
+				704F4BCE28ECC3F000DC029D /* SwiftyJSON */,
 			);
 			productName = "GoXlr-on-macos";
 			productReference = 707B307828B78DAA008E2343 /* GoXlr App.app */;
@@ -425,9 +429,9 @@
 			);
 			mainGroup = 700E137E2870A6BE00FD6306;
 			packageReferences = (
-				705634792871838E00985223 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				7056347C287183A500985223 /* XCRemoteSwiftPackageReference "BlueSocket" */,
 				704A9D8B2892C2A600AE234D /* XCRemoteSwiftPackageReference "SimplyCoreAudio" */,
+				704F4BCD28ECC3F000DC029D /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 700E137E2870A6BE00FD6306;
 			projectDirPath = "";
@@ -488,6 +492,7 @@
 				7077F24B28AA72890004F120 /* CoughView.swift in Sources */,
 				70ADFAB728C3CA3100369346 /* MenubarRoutingView.swift in Sources */,
 				708DAB8F2896C54C0039E797 /* device.swift in Sources */,
+				701D956728E783F5007C2FDF /* filesTypes.swift in Sources */,
 				708DABAE2897D4080039E797 /* MixerLightningView.swift in Sources */,
 				708DAB952896C54C0039E797 /* homeView.swift in Sources */,
 				70C6092D28BD4A960091181D /* FxView.swift in Sources */,
@@ -529,6 +534,7 @@
 				7098F5E128BCC121005EDDC4 /* OnscreenSlidersView.swift in Sources */,
 				70ADFAB828C3CA3100369346 /* MenubarRoutingView.swift in Sources */,
 				7077F24C28AA72890004F120 /* CoughView.swift in Sources */,
+				701D956828E783F5007C2FDF /* filesTypes.swift in Sources */,
 				7066F4D728999DC600AFDE2D /* device.swift in Sources */,
 				7066F4D828999DC600AFDE2D /* MixerLightningView.swift in Sources */,
 				70C6092E28BD4A960091181D /* FxView.swift in Sources */,
@@ -862,7 +868,7 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		705634792871838E00985223 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+		704F4BCD28ECC3F000DC029D /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
 			requirement = {
@@ -910,9 +916,9 @@
 			package = 704A9D8B2892C2A600AE234D /* XCRemoteSwiftPackageReference "SimplyCoreAudio" */;
 			productName = SimplyCoreAudio;
 		};
-		7056347A2871838E00985223 /* SwiftyJSON */ = {
+		704F4BCE28ECC3F000DC029D /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 705634792871838E00985223 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			package = 704F4BCD28ECC3F000DC029D /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
 		};
 		7056347D287183A500985223 /* Socket */ = {

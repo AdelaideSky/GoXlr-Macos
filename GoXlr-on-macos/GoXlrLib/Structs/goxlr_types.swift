@@ -615,3 +615,17 @@ public enum HardTuneSource: String, Codable {
     System
 }
 
+public enum SimpleColourTargets: String, Codable {
+    case Global
+    case Scribble1
+    case Scribble2
+    case Scribble3
+    case Scribble4
+}
+
+public enum EncoderColourTargets: String, Codable {
+    case Reverb
+    case Pitch
+    case Echo
+    case Gender
+}

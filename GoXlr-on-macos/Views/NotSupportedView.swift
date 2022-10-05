@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotCreatedView: View {
-    @State var tabname: String? = "Not yet supported"
+    @State var tabname: String? = "Not yetz supported"
     @EnvironmentObject var mixer: MixerStatus
     var body: some View {
         VStack(alignment: .center) {

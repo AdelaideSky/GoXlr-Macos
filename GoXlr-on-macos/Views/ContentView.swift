@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     @Environment(\.openWindow) private var openWindow
     @ObservedObject var mixer: MixerStatus

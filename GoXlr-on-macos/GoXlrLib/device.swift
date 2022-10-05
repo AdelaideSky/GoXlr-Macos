@@ -328,7 +328,6 @@ public struct GoXlr: Hashable {
             DaemonSocket().send(command: "\"GetStatus\"", socket: socket)
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .useDefaultKeys
-            
             return try decoder.decode(daemonStatus.self, from: DaemonSocket().dataRead(socket: socket))
                         
         } catch {
@@ -850,11 +849,8 @@ public struct GoXlr: Hashable {
     
     public func SetGateAmount(amount: Double) {
         //set gate Amount
-        print(amount)
         self.SetGateThreshold(treshold: Int(amount/100*59-59))
-        print(amount/100*59-59)
         self.SetGateAttenuation(attenuation: Int(((amount / 100) * 50) + 50))
-        print(((amount / 100) * 50) + 50)
         if amount == 0 {
             self.SetGateActive(state: false)
         }

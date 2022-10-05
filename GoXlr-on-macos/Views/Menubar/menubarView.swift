@@ -217,9 +217,11 @@ struct MenubarView: View {
                         Button("Reload Daemon") {
                             Daemon().restart(args:[])
                         }
-                        Button("Copy debugg info") {
+                        Button("Copy debug info") {
                             GoXlr().copyDebugInfo()
                         }
+                        Link("Join support server", destination: URL(string: "https://discord.gg/cyavp8F2WW")!)
+
                     } label: {
                         Image(systemName: "ellipsis")
                     }

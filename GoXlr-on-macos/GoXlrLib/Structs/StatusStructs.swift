@@ -262,10 +262,30 @@ struct Levels: Codable {
 struct Lighting: Codable {
     let faders: Faders
     let buttons: [String: daemonButton]
-    
+    let simple: [String: simpleColours]
+    let sampler: [String: samplerColours]
+    let encoders: [String: threeColoursSet]
 }
 
+struct samplerColours: Codable{
+    let off_style: ButtonColourOffStyle
+    let colours: threeColoursSet
+}
+struct threeColoursSet: Codable {
+    let colour_one: String
+    let colour_two: String
+    let colour_three: String
+    
+    enum CodingKeys: String, CodingKey {
+        case colour_one
+        case colour_two
+        case colour_three
+    }
+}
 
+struct simpleColours: Codable {
+    let colour_one: String
+}
 struct daemonButton: Codable {
     let offStyle: ButtonColourOffStyle
     let colours: daemonColours

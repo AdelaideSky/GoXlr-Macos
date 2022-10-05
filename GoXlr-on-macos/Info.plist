@@ -2,8 +2,65 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key></key>
-	<string></string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>logo-icon</string>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<integer>1</integer>
+			<key>CFBundleTypeName</key>
+			<string>GoXLR Profile</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.adecorp.GoXlr-Profile</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>NSDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>logo-icon</string>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<integer>1</integer>
+			<key>CFBundleTypeName</key>
+			<string>GoXLR Mic Profile</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.adecorp.GoXlr-Mic-Profile</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>NSDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>logo-icon</string>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<integer>1</integer>
+			<key>CFBundleTypeName</key>
+			<string>GoXLR FX Preset</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.adecorp.GoXlr-FX-Preset</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>NSDocument</string>
+		</dict>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -19,7 +76,98 @@
 	</array>
 	<key>NSExtensionPointIdentifier</key>
 	<string>com.apple.intents-service</string>
-	<key>LSUIElement</key>
-	<true/>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.zip-archive</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>GoXLR Profile</string>
+			<key>UTTypeIconFile</key>
+			<string>logo-icon</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBadgeName</key>
+				<string>logo-icon</string>
+				<key>UTTypeIconText</key>
+				<string>profile</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.adecorp.GoXlr-Profile</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>goxlr</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>goxlr</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.xml</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>GoXLR Mic Profile</string>
+			<key>UTTypeIconFile</key>
+			<string>logo-icon</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBadgeName</key>
+				<string>logo-icon</string>
+				<key>UTTypeIconText</key>
+				<string>Mic Profile</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.adecorp.GoXlr-Mic-Profile</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>goxlrMicProfile</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>goxlrMicProfile</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.xml</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>GoXLR FX Preset</string>
+			<key>UTTypeIconFile</key>
+			<string>logo-icon</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBadgeName</key>
+				<string>logo-icon</string>
+				<key>UTTypeIconText</key>
+				<string>FX Preset</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.adecorp.GoXlr-FX-Preset</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>preset</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>preset</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

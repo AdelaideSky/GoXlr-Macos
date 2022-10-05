@@ -101,7 +101,6 @@ struct profileDevice: View {
                         }.padding(.bottom, 0.5)
                             .padding(.top, 0.5)
                             .accentColor(Color.accentColor)
-                            .frame(width: .infinity, height: .infinity)
                             .gesture(TapGesture(count: 2).onEnded {
                                 mixer.selectedDevice.LoadProfile(path: string)
                                 mixer.profileSheet = false

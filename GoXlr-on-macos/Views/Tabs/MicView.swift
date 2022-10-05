@@ -458,7 +458,7 @@ struct EqualiserView: View {
                         Text(fineTune ? "\(Int(mixer.ft31Hz).hertz())" : "31Hz")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.eq31Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.eq31Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.eq31Hz) { newValue in
                                 mixer.selectedDevice.SetEqGain(frequence: .Equalizer31Hz, gain: Int(newValue))
                             }
@@ -473,7 +473,7 @@ struct EqualiserView: View {
                         Text(fineTune ? "\(Int(mixer.ft63Hz).hertz())" : "63Hz")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.eq63Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.eq63Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.eq63Hz) { newValue in
                                 mixer.selectedDevice.SetEqGain(frequence: .Equalizer63Hz, gain: Int(newValue))
                             }
@@ -488,7 +488,7 @@ struct EqualiserView: View {
                         Text(fineTune ? "\(Int(mixer.ft125Hz).hertz())" : "125Hz")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.eq125Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.eq125Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.eq125Hz) { newValue in
                                 mixer.selectedDevice.SetEqGain(frequence: .Equalizer125Hz, gain: Int(newValue))
                             }
@@ -505,7 +505,7 @@ struct EqualiserView: View {
                         Text(fineTune ? "\(Int(mixer.ft250Hz).hertz())" : "250Hz")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.eq250Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.eq250Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.eq250Hz) { newValue in
                                 mixer.selectedDevice.SetEqGain(frequence: .Equalizer250Hz, gain: Int(newValue))
                             }
@@ -520,7 +520,7 @@ struct EqualiserView: View {
                         Text(fineTune ? "\(Int(mixer.ft500Hz).hertz())" : "500Hz")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.eq500Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.eq500Hz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.eq500Hz) { newValue in
                                 mixer.selectedDevice.SetEqGain(frequence: .Equalizer500Hz, gain: Int(newValue))
                             }
@@ -535,7 +535,7 @@ struct EqualiserView: View {
                         Text(fineTune ? "\(Int(mixer.ft1KHz).hertz())" : "1KHz")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.eq1KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.eq1KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.eq1KHz) { newValue in
                                 mixer.selectedDevice.SetEqGain(frequence: .Equalizer1KHz, gain: Int(newValue))
                             }
@@ -551,7 +551,7 @@ struct EqualiserView: View {
                     Text(fineTune ? "\(Int(mixer.ft2KHz).hertz())" : "2KHz")
                         .font(.system(.subheadline))
                         .padding(.top, 10)
-                    lightBSLIDER(value: $mixer.eq2KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                    EQSlider(value: $mixer.eq2KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                         .onChange(of: mixer.eq2KHz) { newValue in
                             mixer.selectedDevice.SetEqGain(frequence: .Equalizer2KHz, gain: Int(newValue))
                         }
@@ -566,7 +566,7 @@ struct EqualiserView: View {
                     Text(fineTune ? "\(Int(mixer.ft4KHz).hertz())" : "4KHz")
                         .font(.system(.subheadline))
                         .padding(.top, 10)
-                    lightBSLIDER(value: $mixer.eq4KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                    EQSlider(value: $mixer.eq4KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                         .onChange(of: mixer.eq4KHz) { newValue in
                             mixer.selectedDevice.SetEqGain(frequence: .Equalizer4KHz, gain: Int(newValue))
                         }
@@ -581,7 +581,7 @@ struct EqualiserView: View {
                     Text(fineTune ? "\(Int(mixer.ft8KHz).hertz())" : "8KHz")
                         .font(.system(.subheadline))
                         .padding(.top, 10)
-                    lightBSLIDER(value: $mixer.eq8KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                    EQSlider(value: $mixer.eq8KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                         .onChange(of: mixer.eq8KHz) { newValue in
                             mixer.selectedDevice.SetEqGain(frequence: .Equalizer8KHz, gain: Int(newValue))
                         }
@@ -596,7 +596,7 @@ struct EqualiserView: View {
                     Text(fineTune ? "\(Int(mixer.ft16KHz).hertz())" : "16KHz")
                         .font(.system(.subheadline))
                         .padding(.top, 10)
-                    lightBSLIDER(value: $mixer.eq16KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
+                    EQSlider(value: $mixer.eq16KHz, in: -9...9, display: "", textsize: 11).padding(.top, 10)
                         .onChange(of: mixer.eq16KHz) { newValue in
                             mixer.selectedDevice.SetEqGain(frequence: .Equalizer16KHz, gain: Int(newValue))
                         }
@@ -757,7 +757,7 @@ struct CompressorView: View {
                         Text("Threshold")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.compThreshold, in: -40...0, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.compThreshold, in: -40...0, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.compThreshold) { newValue in
                                 mixer.selectedDevice.SetCompressorThreshold(treshold: Int(newValue))
                             }
@@ -773,7 +773,7 @@ struct CompressorView: View {
                         Text("Ratio")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.compRatio, in: 0...14, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.compRatio, in: 0...14, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.compRatio) { newValue in
                                 mixer.selectedDevice.SetCompressorRatio(ratio: Int(newValue).GetCompRatio())
                             }
@@ -788,7 +788,7 @@ struct CompressorView: View {
                         Text("Attack")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.compAttack, in: 0...40, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.compAttack, in: 0...40, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.compAttack) { newValue in
                                 mixer.selectedDevice.SetCompressorAttack(attack: Int(newValue).GetClosestAtkCompTime())
                             }
@@ -803,7 +803,7 @@ struct CompressorView: View {
                         Text("Release")
                             .font(.system(.subheadline))
                             .padding(.top, 10)
-                        lightBSLIDER(value: $mixer.compRelease, in: 0...3000, display: "", textsize: 11).padding(.top, 10)
+                        EQSlider(value: $mixer.compRelease, in: 0...3000, display: "", textsize: 11).padding(.top, 10)
                             .onChange(of: mixer.compRelease) { newValue in
                                 mixer.selectedDevice.SetCompressorReleaseTime(release: Int(newValue).GetClosestRelCompTime())
                             }

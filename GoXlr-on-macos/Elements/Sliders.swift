@@ -58,7 +58,7 @@ struct BigSurSlider: View {
                 if newValue == 100 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
                 else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
             }
-            .animation(.default)
+            .animation(.default, value: 1)
                 
 
         }.frame(width: CGFloat(sliderWidth), height: CGFloat(sliderHeight))
@@ -147,7 +147,7 @@ struct bigVSlider<V: BinaryFloatingPoint>: View {
                     .frame(minWidth: CGFloat(self.dragRadius))
                     .foregroundColor(Color.red.opacity(0.001))
                     .gesture(
-                        DragGesture(minimumDistance: 0)
+                        DragGesture(minimumDistance: 0.1)
                             .onEnded({ _ in
                                 self.validDrag = false
                                 self.onEditingChanged(false)
@@ -375,7 +375,7 @@ struct lightBSLIDER<V: BinaryFloatingPoint>: View {
                     .frame(minWidth: CGFloat(self.dragRadius))
                     .foregroundColor(Color.red.opacity(0.001))
                     .gesture(
-                        DragGesture(minimumDistance: 0)
+                        DragGesture(minimumDistance: 0.1)
                             .onEnded({ _ in
                                 self.validDrag = false
                                 self.onEditingChanged(false)
@@ -414,6 +414,143 @@ extension lightBSLIDER {
                     self.value.wrappedValue = round((clampedValue - self.range.lowerBound) / step) * step + self.range.lowerBound
                 } else {
                     self.value.wrappedValue = clampedValue
+                }
+            }
+        }
+    }
+}
+
+struct EQSlider<V: BinaryFloatingPoint>: View {
+    var value: Binding<V>
+    var range: ClosedRange<V> = 0...1
+    var step: V.Stride? = nil
+    var onEditingChanged: (Bool) -> Void = { _ in }
+    let darkGray: Color = Color(red: 0.3, green: 0.3, blue: 0.3)
+    let lightGray: Color = Color(red: 0.8, green: 0.8, blue: 0.8)
+    var displayString: String
+    var textSize: Int = 11
+    var yVal: Int = -4
+    @Environment(\.colorScheme) var colorScheme
+
+    private let drawRadius: CGFloat = 11
+    private let dragRadius: CGFloat = 21
+    private let lineWidth: CGFloat = 21
+    
+
+    @State private var validDrag = false
+
+    init(value: Binding<V>, in range: ClosedRange<V> = 0...1, step: V.Stride? = nil, display: String, textsize: Int, onEditingChanged: @escaping (Bool) -> Void = { _ in }) {
+        self.value = value
+        self.displayString = display
+        self.textSize = textsize
+        
+        if textsize == 9 {
+            yVal = -7
+        }
+
+        if let step = step {
+            self.step = step
+            var newUpperbound = range.lowerBound
+            while newUpperbound.advanced(by: step) <= range.upperBound{
+                newUpperbound = newUpperbound.advanced(by: step)
+            }
+            self.range = ClosedRange(uncheckedBounds: (range.lowerBound, newUpperbound))
+        } else {
+            self.range = range
+        }
+
+        self.onEditingChanged = onEditingChanged
+    }
+
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .bottom) {
+                ZStack(alignment: .bottom) {
+                    // Gray section of line
+
+                    Rectangle()
+                        .foregroundColor(colorScheme == .dark ? self.darkGray.opacity(0.5) : self.lightGray.opacity(0.5))
+                        .cornerRadius(20)
+                        .frame(width: self.lineWidth+2)
+                    
+                    // Blue section of line
+                    Rectangle()
+                        .foregroundColor(.accentColor)
+                        .frame(height: geometry.size.height - self.getPoint(in: geometry).y+11)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .frame(width: self.lineWidth)
+                }
+                
+
+                // Handle
+                Circle()
+                    .frame(width: 2 * self.drawRadius, height: 2 * self.drawRadius)
+                    .position(self.getPoint(in: geometry))
+                    .foregroundColor(.white)
+                    .shadow(radius: colorScheme == .dark ? 5 : 1)
+                if displayString != "" {
+                    Image(systemName: displayString)
+                        .frame(width: .none, height: self.drawRadius, alignment: .bottom)
+                        .foregroundColor(colorScheme == .dark ? self.darkGray.opacity(2) : self.lightGray.opacity(2))
+                        .font(.system(size: CGFloat(textSize)))
+                        .offset(x: 0, y: CGFloat(yVal))
+                }
+
+                // Catches drag gesture
+                Rectangle()
+                    .frame(minWidth: CGFloat(self.dragRadius))
+                    .foregroundColor(Color.red.opacity(0.001))
+                    .gesture(
+                        DragGesture(minimumDistance: 1)
+                            .onEnded({ _ in
+                                self.validDrag = false
+                                self.onEditingChanged(false)
+                            })
+                            .onChanged(self.handleDragged(in: geometry))
+                )
+            }.animation(.default, value: 1)
+        }
+    }
+}
+
+extension EQSlider {
+    private func getPoint(in geometry: GeometryProxy) -> CGPoint {
+        let x = geometry.size.width / 2
+        let location = value.wrappedValue - range.lowerBound
+        let scale = V(2 * drawRadius - geometry.size.height) / (range.upperBound - range.lowerBound)
+        let y = CGFloat(location * scale) + geometry.size.height - drawRadius
+        return CGPoint(x: x, y: y)
+    }
+
+    private func handleDragged(in geometry: GeometryProxy) -> (DragGesture.Value) -> Void {
+        return { drag in
+            if drag.startLocation.distance(to: self.getPoint(in: geometry)) < self.dragRadius && !self.validDrag {
+                self.validDrag = true
+                self.onEditingChanged(true)
+            }
+
+            if self.validDrag {
+                let location = drag.location.y - geometry.size.height + self.drawRadius
+                let scale = CGFloat(self.range.upperBound - self.range.lowerBound) / (2 * self.drawRadius - geometry.size.height)
+                let newValue = V(location * scale) + self.range.lowerBound
+                let clampedValue = max(min(newValue, self.range.upperBound), self.range.lowerBound)
+
+                if self.step != nil {
+                    let step = V.zero.advanced(by: self.step!)
+                    self.value.wrappedValue = round((clampedValue - self.range.lowerBound) / step) * step + self.range.lowerBound
+                    
+                } else {
+                    if Int(self.value.wrappedValue) != Int(clampedValue) {
+                        if Int(clampedValue) == -9 {
+                            NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)
+                        } else if Int(clampedValue) == 9 {
+                            NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)
+                        } else if Int(clampedValue) == 0 {
+                            NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)
+                        }
+                    }
+                    self.value.wrappedValue = clampedValue
+                    
                 }
             }
         }
@@ -463,11 +600,11 @@ struct makupGainSlider: View {
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(colorScheme == .dark ? self.myGray : self.lightGray, lineWidth: 0.5)
                 )
-            .gesture(DragGesture(minimumDistance: 0)
+            .gesture(DragGesture(minimumDistance: 0.1)
                 .onChanged({ value in
                     self.percentage = min(max(0, Float(value.location.x / geometry.size.width * 24)), 24)
                 }))
-            .animation(.default)
+            .animation(.default, value: 1)
                 
 
         }.frame(width: CGFloat(sliderWidth), height: CGFloat(sliderHeight))
@@ -491,7 +628,7 @@ struct TouchGestureViewModifier: ViewModifier {
     }
 
     func body(content: Content) -> some View {
-        content.gesture(DragGesture(minimumDistance: 0)
+        content.gesture(DragGesture(minimumDistance: 0.1)
                 .onChanged { event in
                     guard !self.hasEnded else { return }
 
@@ -573,7 +710,7 @@ struct MenubarSlider: View {
                 if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
                 else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
             }
-            .animation(.default)
+            .animation(.default, value: 1)
                 
 
         }.frame(width: CGFloat(sliderWidth), height: CGFloat(sliderHeight))
