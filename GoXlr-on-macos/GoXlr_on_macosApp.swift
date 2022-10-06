@@ -9,6 +9,9 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationWillTerminate(_ notification: Notification) {
+        Daemon().stop()
+    }
     func application(_ application: NSApplication, open urls: [URL]) {
         print("reviced url: \(urls)")    // << here !!
         if urls.first!.pathExtension == "goxlr" {
