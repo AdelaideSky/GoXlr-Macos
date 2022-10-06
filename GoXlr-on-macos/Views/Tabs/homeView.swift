@@ -16,15 +16,19 @@ struct HomeView: View {
     var body: some View {
         VStack(alignment: .center) {
             
-            Text("👋")
-                .font(.system(size: 60))
-            Text("Welcome " + NSFullUserName() + " !")
-                .bold()
-                .font(.system(size: 45))
-                .fontWeight(.heavy)
-            Text("Connect your GoXlr to get started")
-                .padding(.top)
-                .font(.title3)
+            HStack {
+                VStack {
+                    Text("👋")
+                        .font(.system(size: 60))
+                    Text("Welcome " + NSFullUserName() + " !")
+                        .bold()
+                        .font(.system(size: 45))
+                        .fontWeight(.heavy)
+                    Text("Connect your GoXlr to get started")
+                        .padding(.top)
+                        .font(.title3)
+                }
+            }
             
         }.sheet(isPresented: $onboarded) {
             OnboardingView(onboarded: $onboarded)

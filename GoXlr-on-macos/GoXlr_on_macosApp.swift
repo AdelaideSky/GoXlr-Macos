@@ -10,41 +10,50 @@ import UniformTypeIdentifiers
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     func application(_ application: NSApplication, open urls: [URL]) {
-        print("orjeng")
-            guard
-                urls.count == 1,
-                let videoUrl = urls.first
-            else {
-                print("oejn")
-                return
-
-            }
+        print("reviced url: \(urls)")    // << here !!
+        if urls.first!.pathExtension == "goxlr" {
+            print("handling profile...")
+            copyprofile(url: urls.first!, path: .profiles)
+            GoXlr(serial: GoXlr().listDevices()[0].first).LoadProfile(path: String(urls.first!.lastPathComponent.dropLast(6)))
         }
-    func applicationWillTerminate(_ notification: Notification) {
-        Daemon().stop()
+        if urls.first!.pathExtension == "goxlrMicProfile" {
+            print("handling mic profile...")
+            copyprofile(url: urls.first!, path: .micprofiles)
+            GoXlr(serial: GoXlr().listDevices()[0].first).LoadMicProfile(path: String(urls.first!.lastPathComponent.dropLast(16)))
+        }
+        if urls.first!.pathExtension == "preset" {
+            print("handling FX preset...")
+            copyprofile(url: urls.first!, path: .presets)
+            GoXlr(serial: GoXlr().listDevices()[0].first).LoadProfile(path: String(urls.first!.lastPathComponent.dropLast(7)))
+        }
     }
-    
 }
 @main
 struct GoXlr_on_macosApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.scenePhase) var scenePhase
     let deviceCountRefreshTimer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
+    @ObservedObject var mixer = MixerStatus()
+    
     @State var deviceCount = GoXlr().numberDevices()
         var body: some Scene {
+            
             Settings {
-                AppropriateSettingsView()
+                AppropriateSettingsView(mixer:mixer)
             }
             MenuBarExtra("GoXlr-App", image: "devices.goxlr.logo") {
                 
-                AppropriateMenuView()
+                AppropriateMenuView(mixer:mixer)
                     
             }.menuBarExtraStyle(.window)
+                    
                 
             
         }
 }
 
 struct AppropriateMenuView: View {
+    @ObservedObject var mixer: MixerStatus
     @State var deviceCount = GoXlr().numberDevices()
     let deviceCountRefreshTimer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
     var body: some View {
@@ -55,12 +64,13 @@ struct AppropriateMenuView: View {
                 }
             
         } else {
-            MenubarView(mixer: MixerStatus()).frame(width: 305)
+            MenubarView(mixer: mixer).frame(width: 305)
         }
     }
 }
 
 struct AppropriateSettingsView: View {
+    @ObservedObject var mixer: MixerStatus
     @State var deviceCount = GoXlr().numberDevices()
     let deviceCountRefreshTimer = Timer.publish(every: 10, on: .main, in: .common).autoconnect()
     var body: some View {
@@ -70,7 +80,7 @@ struct AppropriateSettingsView: View {
                     deviceCount = GoXlr().numberDevices()
                 }
         } else {
-            ContentView(mixer: MixerStatus())
+            ContentView(mixer: mixer)
                .frame(minWidth: 923, idealWidth: 923, minHeight: 500, idealHeight: 520)
                .onReceive(deviceCountRefreshTimer) { input in
                    deviceCount = GoXlr().numberDevices()
@@ -125,15 +135,5 @@ struct NullView: View {
     }
 }
 
-struct AutoCloseView: View {
-    @Environment(\.presentationMode) var presentationMode
 
-    var body: some View {
-        Text("fjb").onAppear() {
-            print("erkhb")
-            presentationMode.wrappedValue.dismiss()
-        }
-        .frame(width: 50, height: 50)
-    }
-}
 

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		7013C8B628BBBA6200E88282 /* NoOptionalInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */; };
 		7013C8B728BBBA6200E88282 /* NoOptionalInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */; };
-		701D956728E783F5007C2FDF /* filesTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D956628E783F5007C2FDF /* filesTypes.swift */; };
-		701D956828E783F5007C2FDF /* filesTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D956628E783F5007C2FDF /* filesTypes.swift */; };
 		704A9D8D2892C2A600AE234D /* SimplyCoreAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 704A9D8C2892C2A600AE234D /* SimplyCoreAudio */; };
 		704CAA2A2897FE480061C717 /* colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CAA292897FE480061C717 /* colour.swift */; };
 		704F4BCF28ECC3F000DC029D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 704F4BCE28ECC3F000DC029D /* SwiftyJSON */; };
@@ -85,6 +83,8 @@
 		70AB8E2E28986ADC002EF0A9 /* daemonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */; };
 		70ADFAB728C3CA3100369346 /* MenubarRoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADFAB628C3CA3100369346 /* MenubarRoutingView.swift */; };
 		70ADFAB828C3CA3100369346 /* MenubarRoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ADFAB628C3CA3100369346 /* MenubarRoutingView.swift */; };
+		70B616DB28EF7D8700C8BBF1 /* fileHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B616DA28EF7D8700C8BBF1 /* fileHandling.swift */; };
+		70B616DC28EF7D8700C8BBF1 /* fileHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B616DA28EF7D8700C8BBF1 /* fileHandling.swift */; };
 		70C6092A28BD47ED0091181D /* fxStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092928BD47ED0091181D /* fxStatus.swift */; };
 		70C6092B28BD47ED0091181D /* fxStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092928BD47ED0091181D /* fxStatus.swift */; };
 		70C6092D28BD4A960091181D /* FxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092C28BD4A960091181D /* FxView.swift */; };
@@ -118,7 +118,6 @@
 
 /* Begin PBXFileReference section */
 		7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOptionalInterpolation.swift; sourceTree = "<group>"; };
-		701D956628E783F5007C2FDF /* filesTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filesTypes.swift; sourceTree = "<group>"; };
 		704CAA292897FE480061C717 /* colour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colour.swift; sourceTree = "<group>"; };
 		7066F4B42899198000AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
 		7066F4F228999ECE00AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
@@ -157,6 +156,7 @@
 		7098F5E328BCEB92005EDDC4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daemonHandler.swift; sourceTree = "<group>"; };
 		70ADFAB628C3CA3100369346 /* MenubarRoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarRoutingView.swift; sourceTree = "<group>"; };
+		70B616DA28EF7D8700C8BBF1 /* fileHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fileHandling.swift; sourceTree = "<group>"; };
 		70C6092928BD47ED0091181D /* fxStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fxStatus.swift; sourceTree = "<group>"; };
 		70C6092C28BD4A960091181D /* FxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FxView.swift; sourceTree = "<group>"; };
 		70D9E03628BF93E00078765C /* Library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Library; sourceTree = "<group>"; };
@@ -209,6 +209,7 @@
 			children = (
 				7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */,
 				704CAA292897FE480061C717 /* colour.swift */,
+				70B616DA28EF7D8700C8BBF1 /* fileHandling.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -264,7 +265,6 @@
 				7013C8B328BBBA2200E88282 /* Structs */,
 				70AB8E2D28986ADC002EF0A9 /* daemonHandler.swift */,
 				70C6092928BD47ED0091181D /* fxStatus.swift */,
-				701D956628E783F5007C2FDF /* filesTypes.swift */,
 			);
 			path = GoXlrLib;
 			sourceTree = "<group>";
@@ -492,7 +492,6 @@
 				7077F24B28AA72890004F120 /* CoughView.swift in Sources */,
 				70ADFAB728C3CA3100369346 /* MenubarRoutingView.swift in Sources */,
 				708DAB8F2896C54C0039E797 /* device.swift in Sources */,
-				701D956728E783F5007C2FDF /* filesTypes.swift in Sources */,
 				708DABAE2897D4080039E797 /* MixerLightningView.swift in Sources */,
 				708DAB952896C54C0039E797 /* homeView.swift in Sources */,
 				70C6092D28BD4A960091181D /* FxView.swift in Sources */,
@@ -500,6 +499,7 @@
 				708DAB932896C54C0039E797 /* goxlr_types.swift in Sources */,
 				708DAB9F2896C54C0039E797 /* GoXlr_on_macosApp.swift in Sources */,
 				708DAB9C2896C54C0039E797 /* NotSupportedView.swift in Sources */,
+				70B616DB28EF7D8700C8BBF1 /* fileHandling.swift in Sources */,
 				708DAB992896C54C0039E797 /* MicSetupView.swift in Sources */,
 				708DAB9A2896C54C0039E797 /* OnboardingView.swift in Sources */,
 				708DABA82897D3E90039E797 /* CIHueSaturationValueGradientView.swift in Sources */,
@@ -534,7 +534,6 @@
 				7098F5E128BCC121005EDDC4 /* OnscreenSlidersView.swift in Sources */,
 				70ADFAB828C3CA3100369346 /* MenubarRoutingView.swift in Sources */,
 				7077F24C28AA72890004F120 /* CoughView.swift in Sources */,
-				701D956828E783F5007C2FDF /* filesTypes.swift in Sources */,
 				7066F4D728999DC600AFDE2D /* device.swift in Sources */,
 				7066F4D828999DC600AFDE2D /* MixerLightningView.swift in Sources */,
 				70C6092E28BD4A960091181D /* FxView.swift in Sources */,
@@ -542,6 +541,7 @@
 				7066F4DA28999DC600AFDE2D /* daemonHandler.swift in Sources */,
 				7066F4DB28999DC600AFDE2D /* goxlr_types.swift in Sources */,
 				7066F4DC28999DC600AFDE2D /* GoXlr_on_macosApp.swift in Sources */,
+				70B616DC28EF7D8700C8BBF1 /* fileHandling.swift in Sources */,
 				7066F4DD28999DC600AFDE2D /* NotSupportedView.swift in Sources */,
 				7066F4DE28999DC600AFDE2D /* MicSetupView.swift in Sources */,
 				7066F4DF28999DC600AFDE2D /* OnboardingView.swift in Sources */,
