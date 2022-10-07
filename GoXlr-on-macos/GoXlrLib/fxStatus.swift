@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fb6ef2d3953299eb6b367672be95fdcba066c7d1a34f6bdde443d460c1421e86
-size 788
+//
+//  fxStatus.swift
+//  GoXlr-on-macos
+//
+//  Created by Adélaïde Sky on 29/08/2022.
+//
+
+import Foundation
+
+final public class FxStatus: ObservableObject {
+    
+    
+    @Published var micSetup = false
+    @Published var profileSheet = false
+    @Published var coughSheet = false
+    
+    
+    var selectedDevice: GoXlr
+    var status: Mixer
+    
+    public init() {
+        selectedDevice = GoXlr(serial: GoXlr().listDevices()[0].first)
+        status = selectedDevice.deviceStatus()!
+        let completestatus = selectedDevice.status()!.status
+        let fxStatus = status.effects!
+        
+    }
+    public func update() {
+        status = selectedDevice.deviceStatus()!
+        let completestatus = selectedDevice.status()!.status
+        let fxStatus = status.effects!
+    }
+}

@@ -1,3 +1,101 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:37292a9c89cd7613e10988314ec1136bb26e7299de8e6f5dc28709c1fed5f5e8
-size 5766
+//
+//  audio.swift
+//  GoXlr-on-macos
+//
+//  Created by Adélaïde Sky on 24/07/2022.
+//
+
+import Foundation
+import AVFAudio
+import AVFoundation
+import SimplyCoreAudio
+
+public func getGoXlrAD() -> AVCaptureDevice? {
+    let devices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInMicrophone], mediaType: .audio, position: .unspecified).devices
+    for device in devices {
+        if device.localizedName == "GoXLR" {
+            return device
+        }
+        else if device.localizedName == "GoXLRMini" {
+            return device
+        }
+    }
+    
+    return nil
+}
+
+public func goXlrCaptureSession() -> AVCaptureSession {
+        
+    let captureSession = AVCaptureSession()
+    let audioDevice = AVCaptureDevice.default(for: .audio)
+    let audioOutput = AVCaptureAudioDataOutput()
+    do {
+        // Wrap the audio device in a capture device input.
+        let audioInput = try AVCaptureDeviceInput(device: getGoXlrAD()!)
+        // If the input can be added, add it to the session.
+        if captureSession.canAddInput(audioInput) {
+            captureSession.addInput(audioInput)
+        }
+        captureSession.addOutput(audioOutput)
+    } catch {
+        // Configuration failed. Handle error.
+        print("Error creating the capture session.")
+        }
+    return captureSession
+}
+
+public func AudioSetup(model: Model) -> Bool {
+    print("Starting audio setup...")
+    let listdevices = simplyCA.allNonAggregateDevices
+    
+    for device in listdevices {
+        if device.name == model.audioDeviceName() {
+            let goxlr = device
+            print("Found device \(device.description)")
+            
+            print("Setting up System...")
+            let system = simplyCA.createAggregateDevice(masterDevice: goxlr, secondDevice: goxlr, named: "System", uid: String("com.adecorp.goxlr.audio-device.system:"+UUID().uuidString.dropLast(28)))
+            system?.setPreferredChannelsForStereo(channels: StereoPair(left: 1, right: 2), scope: Scope.output)
+            system?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
+            print("Setting up Game...")
+            let game = simplyCA.createAggregateDevice(masterDevice: goxlr, secondDevice: goxlr, named: "Game", uid: String("com.adecorp.goxlr.audio-device.game:"+UUID().uuidString.dropLast(28)))
+            game?.setPreferredChannelsForStereo(channels: StereoPair(left: 3, right: 4), scope: Scope.output)
+            game?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
+            print("Setting up Chat...")
+            let chat = simplyCA.createAggregateDevice(masterDevice: goxlr, secondDevice: goxlr, named: "Chat", uid: String("com.adecorp.goxlr.audio-device.chat:"+UUID().uuidString.dropLast(28)))
+            chat?.setPreferredChannelsForStereo(channels: StereoPair(left: 5, right: 6), scope: Scope.output)
+            chat?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
+            print("Setting up Music...")
+            let music = simplyCA.createAggregateDevice(masterDevice: goxlr, secondDevice: goxlr, named: "Music", uid: String("com.adecorp.goxlr.audio-device.music:"+UUID().uuidString.dropLast(28)))
+            music?.setPreferredChannelsForStereo(channels: StereoPair(left: 7, right: 8), scope: Scope.output)
+            music?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
+            if model == .Full {
+                print("Setting up Sampler source 1...")
+                let sample = simplyCA.createAggregateDevice(masterDevice: goxlr, secondDevice: goxlr, named: "Sample", uid: String("com.adecorp.goxlr.audio-device.sample:"+UUID().uuidString.dropLast(28)))
+                sample?.setPreferredChannelsForStereo(channels: StereoPair(left: 9, right: 10), scope: Scope.output)
+                sample?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.input)
+                print("Setting up Sampler source 2...")
+                let sampleinput = simplyCA.createAggregateDevice(masterDevice: goxlr, secondDevice: goxlr, named: "Sample", uid: String("com.adecorp.goxlr.audio-device.sample:"+UUID().uuidString.dropLast(28)))
+                sampleinput?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.output)
+                sampleinput?.setPreferredChannelsForStereo(channels: StereoPair(left: 5, right: 6), scope: Scope.input)
+            }
+            
+            print("Setting up Broadcast Mix...")
+            let broadcastMix = simplyCA.createAggregateDevice(masterDevice: goxlr, secondDevice: goxlr, named: "Broadcast mix", uid: String("com.adecorp.goxlr.audio-device.broadcastmix:"+UUID().uuidString.dropLast(28)))
+            broadcastMix?.setPreferredChannelsForStereo(channels: StereoPair(left: 1, right: 2), scope: Scope.input)
+            broadcastMix?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.output)
+            
+            print("Setting up Chat Mic...")
+            let chatMic = simplyCA.createAggregateDevice(masterDevice: goxlr, secondDevice: goxlr, named: "Chat mic", uid: String("com.adecorp.goxlr.audio-device.chatmix:"+UUID().uuidString.dropLast(28)))
+            chatMic?.setPreferredChannelsForStereo(channels: StereoPair(left: 3, right: 4), scope: Scope.input)
+            chatMic?.setPreferredChannelsForStereo(channels: StereoPair(left: 0, right: 0), scope: Scope.output)
+            
+            print("Setting default audio device...")
+            system?.isDefaultOutputDevice = true
+            chatMic?.isDefaultInputDevice = true
+            
+        }
+    }
+    print("Finished Audio Setup")
+    return false
+}

@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:625853f2ce6b3add12b70a1991c7455991855c114ea90f33269b05b6d8b802ef
-size 316
+{
+  "images" : [
+    {
+      "filename" : "goxlr-macos-banner.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
