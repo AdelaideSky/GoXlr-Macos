@@ -1,0 +1,3 @@
+[submodule "GoXLR-Utility"]
+	path = GoXLR-Utility
+	url = https://github.com/GoXLR-on-Linux/GoXLR-Utility
