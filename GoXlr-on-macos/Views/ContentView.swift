@@ -75,7 +75,7 @@ struct ContentView: View {
                         NavigationLink(destination: SettingsView().environmentObject(mixer)) {
                             Label("Settings", systemImage: "gear")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(mixer)) {
+                        NavigationLink(destination: AboutView().environmentObject(mixer)) {
                             Label("About", systemImage: "info.circle")
                         }
                     }
@@ -158,7 +158,7 @@ struct ContentView: View {
                         NavigationLink(destination: SettingsView().environmentObject(mixer)) {
                             Label("Settings", systemImage: "gear")
                         }
-                        NavigationLink(destination: NotCreatedView().environmentObject(mixer)) {
+                        NavigationLink(destination: AboutView().environmentObject(mixer)) {
                             Label("About", systemImage: "info.circle")
                         }
                     }

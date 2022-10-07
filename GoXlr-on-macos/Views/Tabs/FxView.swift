@@ -20,7 +20,7 @@ struct FxView: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            Text("chalu")
+            Text("Coming soon - WIP.")
         }.navigationTitle(tabname!)
             .padding(.top, 1)
             .onAppear() {

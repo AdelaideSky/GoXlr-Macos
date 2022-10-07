@@ -13,7 +13,6 @@
 		704CAA2A2897FE480061C717 /* colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704CAA292897FE480061C717 /* colour.swift */; };
 		704F4BCF28ECC3F000DC029D /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 704F4BCE28ECC3F000DC029D /* SwiftyJSON */; };
 		7056347E287183A500985223 /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = 7056347D287183A500985223 /* Socket */; };
-		7066F4BF289937BD00AFDE2D /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 7066F4B42899198000AFDE2D /* goxlr-daemon */; };
 		7066F4C828999DC600AFDE2D /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DAB7D2896C54B0039E797 /* MicView.swift */; };
 		7066F4C928999DC600AFDE2D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA42897D3E80039E797 /* Helpers.swift */; };
 		7066F4CA28999DC600AFDE2D /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DABA12897D3E80039E797 /* CustomSlider.swift */; };
@@ -45,7 +44,6 @@
 		7066F4E528999DC600AFDE2D /* Socket in Frameworks */ = {isa = PBXBuildFile; productRef = 7066F4C328999DC600AFDE2D /* Socket */; };
 		7066F4E928999DC600AFDE2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB702896C54B0039E797 /* Assets.xcassets */; };
 		7066F4EA28999DC600AFDE2D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB8A2896C54B0039E797 /* Info.plist */; };
-		7066F4F328999ECE00AFDE2D /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 7066F4F228999ECE00AFDE2D /* goxlr-daemon */; };
 		7077F24B28AA72890004F120 /* CoughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077F24A28AA72890004F120 /* CoughView.swift */; };
 		7077F24C28AA72890004F120 /* CoughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7077F24A28AA72890004F120 /* CoughView.swift */; };
 		708DAB8C2896C54C0039E797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708DAB702896C54B0039E797 /* Assets.xcassets */; };
@@ -89,6 +87,10 @@
 		70C6092B28BD47ED0091181D /* fxStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092928BD47ED0091181D /* fxStatus.swift */; };
 		70C6092D28BD4A960091181D /* FxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092C28BD4A960091181D /* FxView.swift */; };
 		70C6092E28BD4A960091181D /* FxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C6092C28BD4A960091181D /* FxView.swift */; };
+		70CC7C3F28F0C20900026DA1 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 70CC7C3E28F0C20900026DA1 /* goxlr-daemon */; };
+		70CC7C4028F0C20900026DA1 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 70CC7C3E28F0C20900026DA1 /* goxlr-daemon */; };
+		70CC7C4228F0CD6000026DA1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC7C4128F0CD6000026DA1 /* AboutView.swift */; };
+		70CC7C4328F0CD6000026DA1 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CC7C4128F0CD6000026DA1 /* AboutView.swift */; };
 		70D9E03A28BF94840078765C /* Library in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D9E03628BF93E00078765C /* Library */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		70D9E03C28BF974F0078765C /* Library in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70D9E03628BF93E00078765C /* Library */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -119,8 +121,6 @@
 /* Begin PBXFileReference section */
 		7013C8B528BBBA6200E88282 /* NoOptionalInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoOptionalInterpolation.swift; sourceTree = "<group>"; };
 		704CAA292897FE480061C717 /* colour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colour.swift; sourceTree = "<group>"; };
-		7066F4B42899198000AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
-		7066F4F228999ECE00AFDE2D /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
 		7077F24A28AA72890004F120 /* CoughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoughView.swift; sourceTree = "<group>"; };
 		707B307828B78DAA008E2343 /* GoXlr App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		707B307928B78DAA008E2343 /* GoXlr App arm64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr App arm64.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +159,8 @@
 		70B616DA28EF7D8700C8BBF1 /* fileHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fileHandling.swift; sourceTree = "<group>"; };
 		70C6092928BD47ED0091181D /* fxStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fxStatus.swift; sourceTree = "<group>"; };
 		70C6092C28BD4A960091181D /* FxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FxView.swift; sourceTree = "<group>"; };
+		70CC7C3E28F0C20900026DA1 /* goxlr-daemon */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-daemon"; sourceTree = "<group>"; };
+		70CC7C4128F0CD6000026DA1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		70D9E03628BF93E00078765C /* Library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Library; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,27 +216,11 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
-		7066F4F028999E6800AFDE2D /* arm64 */ = {
-			isa = PBXGroup;
-			children = (
-				7066F4F228999ECE00AFDE2D /* goxlr-daemon */,
-			);
-			path = arm64;
-			sourceTree = "<group>";
-		};
-		7066F4F128999E7000AFDE2D /* x64-x86 */ = {
-			isa = PBXGroup;
-			children = (
-				7066F4B42899198000AFDE2D /* goxlr-daemon */,
-			);
-			path = "x64-x86";
-			sourceTree = "<group>";
-		};
 		708DAB6F2896C54B0039E797 /* GoXlr-on-macos */ = {
 			isa = PBXGroup;
 			children = (
+				70CC7C3D28F0C20900026DA1 /* Daemon */,
 				70D9E03128BF8E7E0078765C /* Resources */,
-				70AB8E2A2898698F002EF0A9 /* Daemons */,
 				708DAB702896C54B0039E797 /* Assets.xcassets */,
 				708DAB732896C54B0039E797 /* Elements */,
 				708DAB752896C54B0039E797 /* GoXlrLib */,
@@ -292,6 +278,7 @@
 				708DABAD2897D4080039E797 /* MixerLightningView.swift */,
 				7098F5E328BCEB92005EDDC4 /* SettingsView.swift */,
 				70C6092C28BD4A960091181D /* FxView.swift */,
+				70CC7C4128F0CD6000026DA1 /* AboutView.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -338,13 +325,12 @@
 			path = Menubar;
 			sourceTree = "<group>";
 		};
-		70AB8E2A2898698F002EF0A9 /* Daemons */ = {
+		70CC7C3D28F0C20900026DA1 /* Daemon */ = {
 			isa = PBXGroup;
 			children = (
-				7066F4F128999E7000AFDE2D /* x64-x86 */,
-				7066F4F028999E6800AFDE2D /* arm64 */,
+				70CC7C3E28F0C20900026DA1 /* goxlr-daemon */,
 			);
-			path = Daemons;
+			path = Daemon;
 			sourceTree = "<group>";
 		};
 		70D9E03128BF8E7E0078765C /* Resources */ = {
@@ -448,7 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7066F4BF289937BD00AFDE2D /* goxlr-daemon in Resources */,
+				70CC7C3F28F0C20900026DA1 /* goxlr-daemon in Resources */,
 				708DAB8C2896C54C0039E797 /* Assets.xcassets in Resources */,
 				708DAB9E2896C54C0039E797 /* Info.plist in Resources */,
 			);
@@ -458,7 +444,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7066F4F328999ECE00AFDE2D /* goxlr-daemon in Resources */,
+				70CC7C4028F0C20900026DA1 /* goxlr-daemon in Resources */,
 				7066F4E928999DC600AFDE2D /* Assets.xcassets in Resources */,
 				7066F4EA28999DC600AFDE2D /* Info.plist in Resources */,
 			);
@@ -475,6 +461,7 @@
 				708DABAA2897D3E90039E797 /* Helpers.swift in Sources */,
 				708DABA72897D3E90039E797 /* CustomSlider.swift in Sources */,
 				708DABA92897D3E90039E797 /* ColourStructs.swift in Sources */,
+				70CC7C4228F0CD6000026DA1 /* AboutView.swift in Sources */,
 				7098F5E028BCC121005EDDC4 /* OnscreenSlidersView.swift in Sources */,
 				708DAB9B2896C54C0039E797 /* MicView_mini.swift in Sources */,
 				708DABAB2897D3E90039E797 /* ColourShowView.swift in Sources */,
@@ -517,6 +504,7 @@
 				7066F4C828999DC600AFDE2D /* MicView.swift in Sources */,
 				7066F4C928999DC600AFDE2D /* Helpers.swift in Sources */,
 				7066F4CA28999DC600AFDE2D /* CustomSlider.swift in Sources */,
+				70CC7C4328F0CD6000026DA1 /* AboutView.swift in Sources */,
 				7066F4CB28999DC600AFDE2D /* ColourStructs.swift in Sources */,
 				7066F4CC28999DC600AFDE2D /* MicView_mini.swift in Sources */,
 				7066F4CD28999DC600AFDE2D /* ColourShowView.swift in Sources */,
@@ -699,7 +687,7 @@
 				);
 				MARKETING_VERSION = "1.0.0-alpha.4";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adesky.GoXLR-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -738,7 +726,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = "1.0.0-alpha.4";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adesky.GoXLR-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -779,7 +767,7 @@
 				);
 				MARKETING_VERSION = "1.0.0-alpha.4-arm64";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adesky.GoXLR-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -818,7 +806,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = "1.0.0-alpha.4-arm64";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-app";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adesky.GoXLR-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
