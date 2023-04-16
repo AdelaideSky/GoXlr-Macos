@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70060640299FE6BC00E412F4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7006063F299FE6BC00E412F4 /* SwiftyJSON */; };
+		70060643299FE6C600E412F4 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 70060642299FE6C600E412F4 /* Starscream */; };
+		70B67F34299D3EDE00A4BA17 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70B67F33299D3EDE00A4BA17 /* GoXlrKit */; };
 		70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */; };
 		70CD08D3295B2745003BF9EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D2295B2745003BF9EB /* ContentView.swift */; };
 		70CD08D5295B274A003BF9EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70CD08D4295B274A003BF9EB /* Assets.xcassets */; };
@@ -14,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70B67F2E299D3E0F00A4BA17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70B67F32299D3EC400A4BA17 /* GoXlrKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GoXlrKit; path = ../GoXlrKit; sourceTree = "<group>"; };
 		70CD08CD295B2745003BF9EB /* GoXlr-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_AppApp.swift; sourceTree = "<group>"; };
 		70CD08D2295B2745003BF9EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +32,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70060640299FE6BC00E412F4 /* SwiftyJSON in Frameworks */,
+				70B67F34299D3EDE00A4BA17 /* GoXlrKit in Frameworks */,
+				70060643299FE6C600E412F4 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +44,7 @@
 		70CD08C4295B2745003BF9EB = {
 			isa = PBXGroup;
 			children = (
+				70CD08DF295B2760003BF9EB /* Packages */,
 				70CD08CF295B2745003BF9EB /* GoXlr-App */,
 				70CD08CE295B2745003BF9EB /* Products */,
 			);
@@ -52,6 +61,7 @@
 		70CD08CF295B2745003BF9EB /* GoXlr-App */ = {
 			isa = PBXGroup;
 			children = (
+				70B67F2E299D3E0F00A4BA17 /* Info.plist */,
 				70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */,
 				70CD08D2295B2745003BF9EB /* ContentView.swift */,
 				70CD08D4295B274A003BF9EB /* Assets.xcassets */,
@@ -67,6 +77,14 @@
 				70CD08D7295B274A003BF9EB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70CD08DF295B2760003BF9EB /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				70B67F32299D3EC400A4BA17 /* GoXlrKit */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +103,11 @@
 			dependencies = (
 			);
 			name = "GoXlr-App";
+			packageProductDependencies = (
+				70B67F33299D3EDE00A4BA17 /* GoXlrKit */,
+				7006063F299FE6BC00E412F4 /* SwiftyJSON */,
+				70060642299FE6C600E412F4 /* Starscream */,
+			);
 			productName = "GoXlr-App";
 			productReference = 70CD08CD295B2745003BF9EB /* GoXlr-App.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +136,10 @@
 				Base,
 			);
 			mainGroup = 70CD08C4295B2745003BF9EB;
+			packageReferences = (
+				7006063E299FE6BC00E412F4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				70060641299FE6C600E412F4 /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = 70CD08CE295B2745003BF9EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,17 +297,18 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GoXlr-App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				DEVELOPMENT_TEAM = V2737Q4C7F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr-App/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -297,17 +325,18 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GoXlr-App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2CPY2SAJ3X;
+				DEVELOPMENT_TEAM = V2737Q4C7F;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr-App/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adecorp.GoXlr-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -336,6 +365,42 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7006063E299FE6BC00E412F4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		70060641299FE6C600E412F4 /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7006063F299FE6BC00E412F4 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7006063E299FE6BC00E412F4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		70060642299FE6C600E412F4 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70060641299FE6C600E412F4 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+		70B67F33299D3EDE00A4BA17 /* GoXlrKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GoXlrKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 70CD08C5295B2745003BF9EB /* Project object */;
 }
