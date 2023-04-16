@@ -9,75 +9,32 @@ import SwiftUI
 import GoXlrKit
 
 struct ContentView: View {
+    
     @ObservedObject var goxlr = GoXlr.shared
-    @State var volume = GoXlr.shared.status?.data.status.mixers.first!.value.levels.volumes.lineOut ?? 0
-    @State var path = ""
+    
     var body: some View {
-        HStack {
-            VStack {
-                Button("sdfdf") {
-                    GoXlr.shared.daemon.start(args: nil)
-                }
-                Button("te") {
-                    GoXlr.shared.daemon.restart(args: nil)
-                }
-                Button("éerdg") {
-                    GoXlr.shared.daemon.stop()
-                }
-                Button("oegirehnt") {
-                    GoXlr.shared.startObserving()
-                }
-                Button("é'(§") {
-                    print(GoXlr.shared.status?.data.status.mixers.first!.value.levels.volumes.lineOut ?? 0)
-                }
-                HStack {
-                    Text("\(goxlr.status?.data.status.mixers.first!.value.levels.volumes.lineOut ?? 39587)")
-                    Text("\(goxlr.status?.data.status.mixers.first!.value.levels.volumes.lineIn ?? 39587)")
-                    Text("\(goxlr.status?.data.status.mixers.first!.value.levels.volumes.music ?? 39587)")
-                    Text("\(goxlr.status?.data.status.mixers.first!.value.levels.volumes.system ?? 39587)")
-                }
-                HStack {
-                    Text("\(goxlr.status?.data.status.mixers.first!.value.faderStatus.a.channel.rawValue ?? "None")")
-                    Text("\(goxlr.status?.data.status.mixers.first!.value.faderStatus.b.channel.rawValue ?? "None")")
-                    Text("\(goxlr.status?.data.status.mixers.first!.value.faderStatus.c.channel.rawValue ?? "None")")
-                    Text("\(goxlr.status?.data.status.mixers.first!.value.faderStatus.d.channel.rawValue ?? "None")")
-                }
-                if goxlr.status != nil {
-                    VolumeSlider(percentage: $goxlr.status.unwrap()!.data.status.mixers.values.first!.levels.volumes.lineOut, image: "headphones", channel: .LineOut)
-                    Slider(value: $goxlr.status.unwrap()!.data.status.mixers.values.first!.levels.volumes.system, in: 0...255)
-                    Slider(value: $goxlr.status.unwrap()!.data.status.mixers.values.first!.levels.volumes.headphones, in: 0...255)
-                    Picker("Fader A", selection: $goxlr.status.unwrap()!.data.status.mixers.values.first!.faderStatus.a.channel, content: {
-                        ForEach(ChannelName.allCases, id: \.self) { channel in
-                            Text(channel.rawValue).tag(channel)
-                        }
-                    })
-                    Picker("Fader B", selection: $goxlr.status.unwrap()!.data.status.mixers.values.first!.faderStatus.b.channel, content: {
-                        ForEach(ChannelName.allCases, id: \.self) { channel in
-                            Text(channel.rawValue).tag(channel)
-                        }
-                    })
-                    Picker("Fader C", selection: $goxlr.status.unwrap()!.data.status.mixers.values.first!.faderStatus.c.channel, content: {
-                        ForEach(ChannelName.allCases, id: \.self) { channel in
-                            Text(channel.rawValue).tag(channel)
-                        }
-                    })
-                    Picker("Fader D", selection: $goxlr.status.unwrap()!.data.status.mixers.values.first!.faderStatus.d.channel, content: {
-                        ForEach(ChannelName.allCases, id: \.self) { channel in
-                            Text(channel.rawValue).tag(channel)
-                        }
-                    })
-                        
-                }
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                Text("Hello, world!")
+        VStack {
+            if goxlr.status != nil {
+                Text("Connected to the Daemon with GoXlr \(goxlr.device)")
+                    .padding()
+                Text("Goxlr's System volume: \(goxlr.mixer?.levels.volumes.system ?? 0)")
+                Button("Set System volume to 100%") {
+                    guard goxlr.device != "" else { return } // check if a GoXlr is connected
+                    
+                    goxlr.mixer!.levels.volumes.system = 255 //Set System volume to maximum. Volumes are a Float going from 0 to 255 (The daemon only uses Int values but GoXlrKit provides Float values to allow directly binding to sliders)
+                    //As you can see, you don't need to manually send the commands to the Daemon: the module does it by itself.
+                }.disabled(goxlr.status == nil)
+                
+            } else {
+                ProgressView()
             }
-            .padding()
+        }.onAppear() {
+            //goxlr.startObserving() // Start the Daemon and connect to its WebSocket
+            //If you don't need to connect to the websocket, you can do goxlr.daemon.start(args: [DaemonArguments])
+            //If you only need to connect to the websocket, do goxlr.socket.connect()
+            //Make sure the utility isn't already launched, else the app will crash
         }
-        if goxlr.status != nil {
-            bigVSlider(value: $goxlr.status.unwrap()!.data.status.mixers.values.first!.levels.volumes.lineOut, in:0...255, display: "", textsize: 1)
-        }
+        .padding()
     }
 }
 
