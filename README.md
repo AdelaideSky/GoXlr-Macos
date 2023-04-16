@@ -1,6 +1,7 @@
 <div align=center>
 
 #  <a href="https://www.adesky.fr/goxlr-macos/"><img src="https://media.discordapp.net/attachments/756659826045485089/1027326364396830790/qdsfdgnf.png?width=2520&height=621" width="2520"></a>
+
 ![LastRelease](https://img.shields.io/github/release-date/Adelenade/GoXlr-Macos)
 ![Contributors](https://img.shields.io/github/contributors/Adelenade/GoXlr-Macos)
 ![OpenIssues](https://img.shields.io/github/issues-raw/Adelenade/GoXlr-Macos)
@@ -17,6 +18,7 @@
 >There is currently no official support for the GoXLR on MacOS provided by TC-Helicon,
 >however the GoXLR is compatible as a basic audio device. This project aims to bring
 >unofficial support for all the GoXLRs features to MacOS.
+
 
 **Disclaimer:** I have absolutely no link with TC-Helicon.
 I'm not affiliated with them and neither is this project.
@@ -50,11 +52,18 @@ If you have any problem using your app and don't feel confident using github iss
 
 [![Discord](https://img.shields.io/badge/%3CServer%3E-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/cyavp8F2WW)
 
+## Support
+
+If you have any problem using your app and don't feel confident using github issues, you can go to this support server to ask for help !
+
+[![Discord](https://img.shields.io/badge/%3CServer%3E-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/cyavp8F2WW)
+
 ## To-do list
 
 - Live-UI (like windows behaviour in mixer tab)
 - Full audio support with Audio-server plug-in.
 - Add other features of the GoXLR (colours, sampler...)
+
 - Many more...
 
 ## Credits
