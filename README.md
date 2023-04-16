@@ -52,12 +52,6 @@ If you have any problem using your app and don't feel confident using github iss
 
 [![Discord](https://img.shields.io/badge/%3CServer%3E-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/cyavp8F2WW)
 
-## Support
-
-If you have any problem using your app and don't feel confident using github issues, you can go to this support server to ask for help !
-
-[![Discord](https://img.shields.io/badge/%3CServer%3E-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/cyavp8F2WW)
-
 ## To-do list
 
 - Live-UI (like windows behaviour in mixer tab)
