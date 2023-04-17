@@ -10,8 +10,8 @@
 		70060640299FE6BC00E412F4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7006063F299FE6BC00E412F4 /* SwiftyJSON */; };
 		70060643299FE6C600E412F4 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 70060642299FE6C600E412F4 /* Starscream */; };
 		709EB1A629ED7CD40095FC64 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 709EB1A529ED7CD40095FC64 /* GoXlrKit */; };
-		709EB1A929ED7DBE0095FC64 /* goxlr-defaults in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1A729ED7DBE0095FC64 /* goxlr-defaults */; };
-		709EB1AA29ED7DBE0095FC64 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1A829ED7DBE0095FC64 /* goxlr-daemon */; };
+		709EB1B429ED80330095FC64 /* goxlr-defaults in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1B229ED80330095FC64 /* goxlr-defaults */; };
+		709EB1B529ED80330095FC64 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1B329ED80330095FC64 /* goxlr-daemon */; };
 		70B67F34299D3EDE00A4BA17 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70B67F33299D3EDE00A4BA17 /* GoXlrKit */; };
 		70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */; };
 		70CD08D3295B2745003BF9EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D2295B2745003BF9EB /* ContentView.swift */; };
@@ -20,8 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		709EB1A729ED7DBE0095FC64 /* goxlr-defaults */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-defaults"; path = "Dependices/GoXLR-Utility/target/release/goxlr-defaults"; sourceTree = SOURCE_ROOT; };
-		709EB1A829ED7DBE0095FC64 /* goxlr-daemon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-daemon"; path = "Dependices/GoXLR-Utility/target/release/goxlr-daemon"; sourceTree = SOURCE_ROOT; };
+		709EB1B229ED80330095FC64 /* goxlr-defaults */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-defaults"; path = "Dependices/GoXLR-Utility/target/release/goxlr-defaults"; sourceTree = SOURCE_ROOT; };
+		709EB1B329ED80330095FC64 /* goxlr-daemon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-daemon"; path = "Dependices/GoXLR-Utility/target/release/goxlr-daemon"; sourceTree = SOURCE_ROOT; };
 		70B67F2E299D3E0F00A4BA17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		70CD08CD295B2745003BF9EB /* GoXlr-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_AppApp.swift; sourceTree = "<group>"; };
@@ -46,13 +46,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		709EB19F29ED79D80095FC64 /* Resources */ = {
+		709EB1AB29ED7FBE0095FC64 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				709EB1A829ED7DBE0095FC64 /* goxlr-daemon */,
-				709EB1A729ED7DBE0095FC64 /* goxlr-defaults */,
+				709EB1B329ED80330095FC64 /* goxlr-daemon */,
+				709EB1B229ED80330095FC64 /* goxlr-defaults */,
 			);
-			path = Resources;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		70CD08C4295B2745003BF9EB = {
@@ -74,7 +74,7 @@
 		70CD08CF295B2745003BF9EB /* GoXlr-App */ = {
 			isa = PBXGroup;
 			children = (
-				709EB19F29ED79D80095FC64 /* Resources */,
+				709EB1AB29ED7FBE0095FC64 /* Resources */,
 				70B67F2E299D3E0F00A4BA17 /* Info.plist */,
 				70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */,
 				70CD08D2295B2745003BF9EB /* ContentView.swift */,
@@ -163,9 +163,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				70CD08D8295B274A003BF9EB /* Preview Assets.xcassets in Resources */,
-				709EB1AA29ED7DBE0095FC64 /* goxlr-daemon in Resources */,
+				709EB1B529ED80330095FC64 /* goxlr-daemon in Resources */,
 				70CD08D5295B274A003BF9EB /* Assets.xcassets in Resources */,
-				709EB1A929ED7DBE0095FC64 /* goxlr-defaults in Resources */,
+				709EB1B429ED80330095FC64 /* goxlr-defaults in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
