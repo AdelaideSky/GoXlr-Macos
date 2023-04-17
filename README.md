@@ -8,8 +8,10 @@
 ![ClosedIssues](https://img.shields.io/github/issues-closed-raw/Adelenade/GoXlr-Macos)
 ![Discord](https://img.shields.io/discord/1006144319289303140?label=Support%20server)
 <!-- ![License](https://img.shields.io/github/license/Adelenade/GoXlr-Macos) -->
-### SwiftUI application to manage the GoXLR on MacOS.
-
+## SwiftUI application to manage the GoXLR on MacOS.
+  
+### 🎏 **Currently looking for contributors !** 🎏
+If you have some (even small !) experience with SwiftUI, join the support server to contact the team ! 
 
 </div>
 &nbsp
