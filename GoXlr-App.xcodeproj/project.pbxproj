@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		70060640299FE6BC00E412F4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 7006063F299FE6BC00E412F4 /* SwiftyJSON */; };
 		70060643299FE6C600E412F4 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 70060642299FE6C600E412F4 /* Starscream */; };
+		709EB1A129ED7C500095FC64 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1A029ED7C4F0095FC64 /* goxlr-daemon */; };
+		709EB1A329ED7C590095FC64 /* goxlr-defaults in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1A229ED7C590095FC64 /* goxlr-defaults */; };
+		709EB1A629ED7CD40095FC64 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 709EB1A529ED7CD40095FC64 /* GoXlrKit */; };
 		70B67F34299D3EDE00A4BA17 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70B67F33299D3EDE00A4BA17 /* GoXlrKit */; };
 		70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */; };
 		70CD08D3295B2745003BF9EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D2295B2745003BF9EB /* ContentView.swift */; };
@@ -17,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		709EB1A029ED7C4F0095FC64 /* goxlr-daemon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-daemon"; path = "Dependices/GoXLR-Utility/target/release/goxlr-daemon"; sourceTree = SOURCE_ROOT; };
+		709EB1A229ED7C590095FC64 /* goxlr-defaults */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-defaults"; sourceTree = "<group>"; };
 		70B67F2E299D3E0F00A4BA17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		70CD08CD295B2745003BF9EB /* GoXlr-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_AppApp.swift; sourceTree = "<group>"; };
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709EB1A629ED7CD40095FC64 /* GoXlrKit in Frameworks */,
 				70060640299FE6BC00E412F4 /* SwiftyJSON in Frameworks */,
 				70B67F34299D3EDE00A4BA17 /* GoXlrKit in Frameworks */,
 				70060643299FE6C600E412F4 /* Starscream in Frameworks */,
@@ -40,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		709EB19F29ED79D80095FC64 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				709EB1A029ED7C4F0095FC64 /* goxlr-daemon */,
+				709EB1A229ED7C590095FC64 /* goxlr-defaults */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		70CD08C4295B2745003BF9EB = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +74,7 @@
 		70CD08CF295B2745003BF9EB /* GoXlr-App */ = {
 			isa = PBXGroup;
 			children = (
+				709EB19F29ED79D80095FC64 /* Resources */,
 				70B67F2E299D3E0F00A4BA17 /* Info.plist */,
 				70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */,
 				70CD08D2295B2745003BF9EB /* ContentView.swift */,
@@ -97,6 +113,7 @@
 				70B67F33299D3EDE00A4BA17 /* GoXlrKit */,
 				7006063F299FE6BC00E412F4 /* SwiftyJSON */,
 				70060642299FE6C600E412F4 /* Starscream */,
+				709EB1A529ED7CD40095FC64 /* GoXlrKit */,
 			);
 			productName = "GoXlr-App";
 			productReference = 70CD08CD295B2745003BF9EB /* GoXlr-App.app */;
@@ -129,6 +146,7 @@
 			packageReferences = (
 				7006063E299FE6BC00E412F4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				70060641299FE6C600E412F4 /* XCRemoteSwiftPackageReference "Starscream" */,
+				709EB1A429ED7CD40095FC64 /* XCRemoteSwiftPackageReference "GoXlrKit" */,
 			);
 			productRefGroup = 70CD08CE295B2745003BF9EB /* Products */;
 			projectDirPath = "";
@@ -144,8 +162,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709EB1A129ED7C500095FC64 /* goxlr-daemon in Resources */,
 				70CD08D8295B274A003BF9EB /* Preview Assets.xcassets in Resources */,
 				70CD08D5295B274A003BF9EB /* Assets.xcassets in Resources */,
+				709EB1A329ED7C590095FC64 /* goxlr-defaults in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +393,14 @@
 				kind = branch;
 			};
 		};
+		709EB1A429ED7CD40095FC64 /* XCRemoteSwiftPackageReference "GoXlrKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Adelenade/GoXlrKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -385,6 +413,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70060641299FE6C600E412F4 /* XCRemoteSwiftPackageReference "Starscream" */;
 			productName = Starscream;
+		};
+		709EB1A529ED7CD40095FC64 /* GoXlrKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 709EB1A429ED7CD40095FC64 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
+			productName = GoXlrKit;
 		};
 		70B67F33299D3EDE00A4BA17 /* GoXlrKit */ = {
 			isa = XCSwiftPackageProductDependency;
