@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "goxlrkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Adelenade/GoXlrKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "775352e9d061038cb379ab146c6fffb4ca2f1f70"
+      }
+    },
+    {
       "identity" : "starscream",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/daltoniam/Starscream",

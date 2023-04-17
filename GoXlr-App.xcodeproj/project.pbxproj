@@ -18,7 +18,6 @@
 
 /* Begin PBXFileReference section */
 		70B67F2E299D3E0F00A4BA17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		70B67F32299D3EC400A4BA17 /* GoXlrKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GoXlrKit; path = ../GoXlrKit; sourceTree = "<group>"; };
 		70CD08CD295B2745003BF9EB /* GoXlr-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_AppApp.swift; sourceTree = "<group>"; };
 		70CD08D2295B2745003BF9EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,7 +43,6 @@
 		70CD08C4295B2745003BF9EB = {
 			isa = PBXGroup;
 			children = (
-				70CD08DF295B2760003BF9EB /* Packages */,
 				70CD08CF295B2745003BF9EB /* GoXlr-App */,
 				70CD08CE295B2745003BF9EB /* Products */,
 			);
@@ -77,14 +75,6 @@
 				70CD08D7295B274A003BF9EB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		70CD08DF295B2760003BF9EB /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				70B67F32299D3EC400A4BA17 /* GoXlrKit */,
-			);
-			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

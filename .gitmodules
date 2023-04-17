@@ -2,3 +2,6 @@
 [submodule "GoXLR-Utility"]
 	path = GoXLR-Utility
 	url = https://github.com/GoXLR-on-Linux/GoXLR-Utility/
+[submodule "GoXlrKit"]
+	path = GoXlrKit
+	url = https://github.com/Adelenade/GoXlrKit
