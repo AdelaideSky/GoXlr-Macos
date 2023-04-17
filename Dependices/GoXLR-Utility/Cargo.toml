@@ -1,0 +1,15 @@
+[workspace]
+
+members = [
+    "launcher",
+    "usb",
+    "daemon",
+    "audio",
+    "client",
+    "ipc",
+    "types",
+    "profile",
+    "initialiser",
+    "scribbles",
+    "defaults",
+]

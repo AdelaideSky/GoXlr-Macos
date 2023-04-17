@@ -1,7 +1,7 @@
 
 [submodule "GoXLR-Utility"]
-	path = GoXLR-Utility
+	path = Dependices/GoXLR-Utility
 	url = https://github.com/GoXLR-on-Linux/GoXLR-Utility/
 [submodule "GoXlrKit"]
-	path = GoXlrKit
+	path = Dependices/GoXlrKit
 	url = https://github.com/Adelenade/GoXlrKit

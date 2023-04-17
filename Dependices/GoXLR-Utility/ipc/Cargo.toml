@@ -1,0 +1,32 @@
+[package]
+name = "goxlr-ipc"
+version = "0.10.2"
+edition = "2021"
+authors = ["Nathan Adams <dinnerbone@dinnerbone.com>", "Craig McLure <craig@mclure.net>", "Lars Mühlbauer <lm41@dismail.de>"]
+description = "An indirect interface to the TC-Helicon GoXLR & GoXLR Mini via IPC and a daemon."
+repository = "https://github.com/GoXLR-on-Linux/GoXLR-Utility"
+license = "MIT"
+categories = ["hardware-support", "api-bindings"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+goxlr-types = { path = "../types", features = ["serde"] }
+serde = { version = "1.0.152", features = ["derive"] }
+tokio = {version = "1.23.0", features = ["net"]}
+tokio-util = { version = "0.7.4", features=["codec", "compat"]}
+tokio-serde = { version = "0.8.0", features=["bincode", "json"] }
+interprocess = { version = "1.2.1", features=["tokio_support"]}
+serde_repr = "0.1.10"
+futures = "0.3.25"
+strum = { version = "0.24.1" }
+enumset = {version = "1.0.12", features=["serde"] }
+enum-map = { version = "2.4.2", features=["serde"] }
+anyhow = "1.0.68"
+async-trait = "0.1.64"
+
+# Used for Web Requests
+reqwest = { version = "0.11", features = ["json"] }
+
+# Used to handle 'Patch' events..
+json-patch = "0.3.0"
