@@ -15,10 +15,12 @@ struct FadersRowMixerElement: View {
     var body: some View {
         Section("Faders") {
             HStack {
+                Spacer(minLength: 0)
                 FadersMixerElement(fader: .A, channelAssignation: $faderStatus.a.channel, muteFunction: $faderStatus.a.muteType)
                 FadersMixerElement(fader: .B, channelAssignation: $faderStatus.b.channel, muteFunction: $faderStatus.b.muteType)
                 FadersMixerElement(fader: .C, channelAssignation: $faderStatus.c.channel, muteFunction: $faderStatus.c.muteType)
                 FadersMixerElement(fader: .D, channelAssignation: $faderStatus.d.channel, muteFunction: $faderStatus.d.muteType)
+                Spacer(minLength: 0)
             }
         }
     }
@@ -50,6 +52,6 @@ struct FadersMixerElement: View {
                 }
             }.formStyle(.grouped)
                 .padding(-10)
-        }
+        }.frame(maxWidth: 250)
     }
 }

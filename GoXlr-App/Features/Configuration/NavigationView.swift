@@ -38,6 +38,8 @@ struct NavigationView: View {
                 .navigationDestination(for: Tab.self) { tab in
                     Group {
                         switch tab.id {
+                        case .mic:
+                            MicView()
                         case .mixer:
                             MixerView()
                         default:

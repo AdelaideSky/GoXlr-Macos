@@ -19,6 +19,13 @@
 		700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFB29EEC37700EE867A /* Tabs.swift */; };
 		700C9DFE29EECD1100EE867A /* Binding+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */; };
 		700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */; };
+		7066D04629F16B5700619AC2 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D04529F16B5700619AC2 /* MicView.swift */; };
+		7066D04B29F16CF000619AC2 /* MicProfilesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */; };
+		7066D04E29F19CFE00619AC2 /* GentleFillingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D04D29F19CFE00619AC2 /* GentleFillingButtonStyle.swift */; };
+		7066D05129F1CCAD00619AC2 /* MicSetupMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05029F1CCAD00619AC2 /* MicSetupMicModule.swift */; };
+		7066D05329F1D53900619AC2 /* GateMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05229F1D53900619AC2 /* GateMicModule.swift */; };
+		7066D05629F1EA1D00619AC2 /* VolumePercentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05529F1EA1D00619AC2 /* VolumePercentParser.swift */; };
+		7066D05929F1EA3F00619AC2 /* ThresholdParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05829F1EA3F00619AC2 /* ThresholdParser.swift */; };
 		709EB1B429ED80330095FC64 /* goxlr-defaults in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1B229ED80330095FC64 /* goxlr-defaults */; };
 		709EB1BC29EDAA180095FC64 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 709EB1BB29EDAA180095FC64 /* GoXlrKit */; };
 		709EB1BE29EDAA180095FC64 /* GoXlrKit-Audio in Frameworks */ = {isa = PBXBuildFile; productRef = 709EB1BD29EDAA180095FC64 /* GoXlrKit-Audio */; };
@@ -47,6 +54,13 @@
 		700C9DFB29EEC37700EE867A /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Unwrap.swift"; sourceTree = "<group>"; };
 		700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSliderElement.swift; sourceTree = "<group>"; };
+		7066D04529F16B5700619AC2 /* MicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicView.swift; sourceTree = "<group>"; };
+		7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicProfilesElement.swift; sourceTree = "<group>"; };
+		7066D04D29F19CFE00619AC2 /* GentleFillingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GentleFillingButtonStyle.swift; sourceTree = "<group>"; };
+		7066D05029F1CCAD00619AC2 /* MicSetupMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSetupMicModule.swift; sourceTree = "<group>"; };
+		7066D05229F1D53900619AC2 /* GateMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateMicModule.swift; sourceTree = "<group>"; };
+		7066D05529F1EA1D00619AC2 /* VolumePercentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumePercentParser.swift; sourceTree = "<group>"; };
+		7066D05829F1EA3F00619AC2 /* ThresholdParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdParser.swift; sourceTree = "<group>"; };
 		709EB1B229ED80330095FC64 /* goxlr-defaults */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-defaults"; path = "Dependices/GoXLR-Utility/target/release/goxlr-defaults"; sourceTree = SOURCE_ROOT; };
 		709EB1D229EDAD7E0095FC64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		709EB1D429EDAD9D0095FC64 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -80,6 +94,7 @@
 		700C9DF629EEC07D00EE867A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				7066D04429F16B4700619AC2 /* Mic */,
 				700C9DF729EEC09600EE867A /* Mixer */,
 			);
 			path = Pages;
@@ -101,6 +116,41 @@
 				700C9DFB29EEC37700EE867A /* Tabs.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7066D04429F16B4700619AC2 /* Mic */ = {
+			isa = PBXGroup;
+			children = (
+				7066D04F29F1CAC700619AC2 /* Modules */,
+				7066D04529F16B5700619AC2 /* MicView.swift */,
+			);
+			path = Mic;
+			sourceTree = "<group>";
+		};
+		7066D04C29F19CF200619AC2 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				7066D04D29F19CFE00619AC2 /* GentleFillingButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		7066D04F29F1CAC700619AC2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7066D05029F1CCAD00619AC2 /* MicSetupMicModule.swift */,
+				7066D05229F1D53900619AC2 /* GateMicModule.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7066D05429F1EA0E00619AC2 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				7066D05529F1EA1D00619AC2 /* VolumePercentParser.swift */,
+				7066D05829F1EA3F00619AC2 /* ThresholdParser.swift */,
+			);
+			path = Parsers;
 			sourceTree = "<group>";
 		};
 		709EB1AB29ED7FBE0095FC64 /* Resources */ = {
@@ -134,6 +184,7 @@
 		709EB1B829ED86A50095FC64 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7066D05429F1EA0E00619AC2 /* Parsers */,
 				700C29FF29EDEC6100BC0AE8 /* View+HideTitlebar.swift */,
 				700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */,
 			);
@@ -143,10 +194,12 @@
 		709EB1B929ED86A90095FC64 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7066D04C29F19CF200619AC2 /* Styles */,
 				709EB1DA29EDB2B10095FC64 /* EffectsView.swift */,
 				70FF91A429EDCD5300316D56 /* LoadingElement.swift */,
 				700C9DF429EEC00D00EE867A /* ModuleElement.swift */,
 				700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */,
+				7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -334,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7066D05329F1D53900619AC2 /* GateMicModule.swift in Sources */,
 				700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */,
 				7003C3E929F098FA00B20817 /* FadersMixerElements.swift in Sources */,
 				709EB1D929EDB2170095FC64 /* NoGoXLRView.swift in Sources */,
@@ -341,12 +395,18 @@
 				700C9DFE29EECD1100EE867A /* Binding+Unwrap.swift in Sources */,
 				70FF91A929EDD6CC00316D56 /* ConfigurationScene.swift in Sources */,
 				700C29FE29EDEA9300BC0AE8 /* SettingsScene.swift in Sources */,
+				7066D05129F1CCAD00619AC2 /* MicSetupMicModule.swift in Sources */,
 				70FF91A529EDCD5300316D56 /* LoadingElement.swift in Sources */,
 				700C2A0029EDEC6100BC0AE8 /* View+HideTitlebar.swift in Sources */,
 				700C9DF929EEC0A000EE867A /* MixerView.swift in Sources */,
+				7066D04E29F19CFE00619AC2 /* GentleFillingButtonStyle.swift in Sources */,
+				7066D04B29F16CF000619AC2 /* MicProfilesElement.swift in Sources */,
 				709EB1DB29EDB2B10095FC64 /* EffectsView.swift in Sources */,
 				700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */,
+				7066D05929F1EA3F00619AC2 /* ThresholdParser.swift in Sources */,
 				709EB1D629EDADE30095FC64 /* MenubarScene.swift in Sources */,
+				7066D04629F16B5700619AC2 /* MicView.swift in Sources */,
+				7066D05629F1EA1D00619AC2 /* VolumePercentParser.swift in Sources */,
 				700C9DF329EEB23300EE867A /* SettingsView.swift in Sources */,
 				70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */,
 				7003C3E729F0988900B20817 /* VolumesSlidersMixerElements.swift in Sources */,

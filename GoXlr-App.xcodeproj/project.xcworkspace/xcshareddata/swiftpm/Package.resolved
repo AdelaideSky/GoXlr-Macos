@@ -6,7 +6,25 @@
       "location" : "https://github.com/Adelenade/GoXlrKit",
       "state" : {
         "branch" : "main",
-        "revision" : "972518c1fb60a1b2c7e3927c0c691dc0855087b7"
+        "revision" : "5c369da8609fc5ad2a1ec874fb46010bdef4f26a"
+      }
+    },
+    {
+      "identity" : "keyvaluecoding",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ikhvorost/KeyValueCoding",
+      "state" : {
+        "branch" : "main",
+        "revision" : "69640864f3f3f6f8e0c8e6421e0ad53074c2c54f"
+      }
+    },
+    {
+      "identity" : "simplycoreaudio",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rnine/SimplyCoreAudio",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "73014324f2a916b445b4da5a4232aa57033267af"
       }
     },
     {
@@ -16,6 +34,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "c68359159dcf0b5de9b536b9a959e9e435e968d3"
+      }
+    },
+    {
+      "identity" : "swift-atomics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-atomics.git",
+      "state" : {
+        "revision" : "6c89474e62719ddcc1e9614989fff2f68208fe10",
+        "version" : "1.1.0"
       }
     },
     {
