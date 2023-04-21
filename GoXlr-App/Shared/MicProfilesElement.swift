@@ -13,6 +13,7 @@ struct MicProfilesElement: View {
     @ObservedObject var mixer = GoXlr.shared.mixer!
     
     @State var showDeleteAlert: Bool = false
+    
     var body: some View {
         Section("Mic Profiles") {
             VStack {
@@ -42,7 +43,9 @@ struct MicProfileRowElement: View {
     
     @State var profile: String
     @State var showDeleteAlert: Bool = false
-        
+    
+    @State var showLoadActiveAlert: Bool = false
+
     init(_ profile: String) {
         self.profile = profile
     }
@@ -53,7 +56,11 @@ struct MicProfileRowElement: View {
             Spacer()
             Menu(content: {
                 Button("Load profile") {
-                    GoXlr.shared.mixer!.micProfileName = profile
+                    if profile != GoXlr.shared.mixer!.micProfileName {
+                        GoXlr.shared.mixer!.micProfileName = profile
+                    } else {
+                        showLoadActiveAlert = true
+                    }
                 }
                 Button("Delete profile") {
                     showDeleteAlert = true
@@ -74,6 +81,15 @@ struct MicProfileRowElement: View {
                 GoXlr.shared.command(.DeleteMicProfile(profile))
             }
         }
+        .alert("Are you sure you want to reload the profile \(profile)", isPresented: $showLoadActiveAlert, actions: {
+            
+            Button("Cancel", role: .cancel) {}
+            Button("Reload", role: .destructive) {
+                GoXlr.shared.command(.LoadMicProfile(profile))
+            }
+        }, message: {
+            Text("You will loose all modifications.")
+        })
     }
 }
 struct MicProfileActionsRowElement: View {

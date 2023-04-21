@@ -19,6 +19,12 @@
 		700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFB29EEC37700EE867A /* Tabs.swift */; };
 		700C9DFE29EECD1100EE867A /* Binding+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */; };
 		700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */; };
+		705A2A3429F2E8B00096BDA6 /* LabelledEditableVSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3329F2E8B00096BDA6 /* LabelledEditableVSlider.swift */; };
+		705A2A3729F2FA0D0096BDA6 /* RoundedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3629F2FA0D0096BDA6 /* RoundedParser.swift */; };
+		705A2A3929F31CDD0096BDA6 /* EqualizerMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3829F31CDD0096BDA6 /* EqualizerMicModule.swift */; };
+		705A2A3C29F332860096BDA6 /* EqualizerMiniMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3B29F332860096BDA6 /* EqualizerMiniMicModule.swift */; };
+		705A2A3F29F333290096BDA6 /* CompressorMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3E29F333290096BDA6 /* CompressorMicModule.swift */; };
+		705A2A4129F333610096BDA6 /* ExtrasMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A4029F333610096BDA6 /* ExtrasMicModule.swift */; };
 		7066D04629F16B5700619AC2 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D04529F16B5700619AC2 /* MicView.swift */; };
 		7066D04B29F16CF000619AC2 /* MicProfilesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */; };
 		7066D04E29F19CFE00619AC2 /* GentleFillingButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D04D29F19CFE00619AC2 /* GentleFillingButtonStyle.swift */; };
@@ -54,6 +60,12 @@
 		700C9DFB29EEC37700EE867A /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Unwrap.swift"; sourceTree = "<group>"; };
 		700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSliderElement.swift; sourceTree = "<group>"; };
+		705A2A3329F2E8B00096BDA6 /* LabelledEditableVSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledEditableVSlider.swift; sourceTree = "<group>"; };
+		705A2A3629F2FA0D0096BDA6 /* RoundedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedParser.swift; sourceTree = "<group>"; };
+		705A2A3829F31CDD0096BDA6 /* EqualizerMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizerMicModule.swift; sourceTree = "<group>"; };
+		705A2A3B29F332860096BDA6 /* EqualizerMiniMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizerMiniMicModule.swift; sourceTree = "<group>"; };
+		705A2A3E29F333290096BDA6 /* CompressorMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressorMicModule.swift; sourceTree = "<group>"; };
+		705A2A4029F333610096BDA6 /* ExtrasMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasMicModule.swift; sourceTree = "<group>"; };
 		7066D04529F16B5700619AC2 /* MicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicView.swift; sourceTree = "<group>"; };
 		7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicProfilesElement.swift; sourceTree = "<group>"; };
 		7066D04D29F19CFE00619AC2 /* GentleFillingButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GentleFillingButtonStyle.swift; sourceTree = "<group>"; };
@@ -118,6 +130,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		705A2A3A29F31D3D0096BDA6 /* Equalizer */ = {
+			isa = PBXGroup;
+			children = (
+				705A2A3829F31CDD0096BDA6 /* EqualizerMicModule.swift */,
+				705A2A3B29F332860096BDA6 /* EqualizerMiniMicModule.swift */,
+			);
+			path = Equalizer;
+			sourceTree = "<group>";
+		};
 		7066D04429F16B4700619AC2 /* Mic */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +159,11 @@
 		7066D04F29F1CAC700619AC2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				705A2A3A29F31D3D0096BDA6 /* Equalizer */,
 				7066D05029F1CCAD00619AC2 /* MicSetupMicModule.swift */,
 				7066D05229F1D53900619AC2 /* GateMicModule.swift */,
+				705A2A3E29F333290096BDA6 /* CompressorMicModule.swift */,
+				705A2A4029F333610096BDA6 /* ExtrasMicModule.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -149,6 +173,7 @@
 			children = (
 				7066D05529F1EA1D00619AC2 /* VolumePercentParser.swift */,
 				7066D05829F1EA3F00619AC2 /* ThresholdParser.swift */,
+				705A2A3629F2FA0D0096BDA6 /* RoundedParser.swift */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -200,6 +225,7 @@
 				700C9DF429EEC00D00EE867A /* ModuleElement.swift */,
 				700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */,
 				7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */,
+				705A2A3329F2E8B00096BDA6 /* LabelledEditableVSlider.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -387,6 +413,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705A2A3929F31CDD0096BDA6 /* EqualizerMicModule.swift in Sources */,
+				705A2A3729F2FA0D0096BDA6 /* RoundedParser.swift in Sources */,
 				7066D05329F1D53900619AC2 /* GateMicModule.swift in Sources */,
 				700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */,
 				7003C3E929F098FA00B20817 /* FadersMixerElements.swift in Sources */,
@@ -395,13 +423,16 @@
 				700C9DFE29EECD1100EE867A /* Binding+Unwrap.swift in Sources */,
 				70FF91A929EDD6CC00316D56 /* ConfigurationScene.swift in Sources */,
 				700C29FE29EDEA9300BC0AE8 /* SettingsScene.swift in Sources */,
+				705A2A3F29F333290096BDA6 /* CompressorMicModule.swift in Sources */,
 				7066D05129F1CCAD00619AC2 /* MicSetupMicModule.swift in Sources */,
 				70FF91A529EDCD5300316D56 /* LoadingElement.swift in Sources */,
 				700C2A0029EDEC6100BC0AE8 /* View+HideTitlebar.swift in Sources */,
 				700C9DF929EEC0A000EE867A /* MixerView.swift in Sources */,
 				7066D04E29F19CFE00619AC2 /* GentleFillingButtonStyle.swift in Sources */,
 				7066D04B29F16CF000619AC2 /* MicProfilesElement.swift in Sources */,
+				705A2A3429F2E8B00096BDA6 /* LabelledEditableVSlider.swift in Sources */,
 				709EB1DB29EDB2B10095FC64 /* EffectsView.swift in Sources */,
+				705A2A4129F333610096BDA6 /* ExtrasMicModule.swift in Sources */,
 				700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */,
 				7066D05929F1EA3F00619AC2 /* ThresholdParser.swift in Sources */,
 				709EB1D629EDADE30095FC64 /* MenubarScene.swift in Sources */,
@@ -409,6 +440,7 @@
 				7066D05629F1EA1D00619AC2 /* VolumePercentParser.swift in Sources */,
 				700C9DF329EEB23300EE867A /* SettingsView.swift in Sources */,
 				70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */,
+				705A2A3C29F332860096BDA6 /* EqualizerMiniMicModule.swift in Sources */,
 				7003C3E729F0988900B20817 /* VolumesSlidersMixerElements.swift in Sources */,
 				70FF91A729EDCFD900316D56 /* MenubarView.swift in Sources */,
 				700C9DF529EEC00D00EE867A /* ModuleElement.swift in Sources */,

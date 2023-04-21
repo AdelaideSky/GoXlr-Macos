@@ -16,7 +16,23 @@ struct GateMicModule: View {
     @FocusState var amountFocused: Bool
     
     var body: some View {
-        Section(content: {
+        Section("Gate") {
+            DisclosureGroup("Advanced...", isExpanded: $showDetail) {
+                HStack {
+                    Spacer()
+                    Group {
+                        LabelledVSliderElement(label: "Threshold", value: $noiseGate.threshold, range: -59...0, unity: "dB")
+                        LabelledVSliderElement(label: "Attenuation", value: $noiseGate.attenuation, range: 0...100, unity: "%")
+                        LabelledVSliderElement(label: "Attack", value: $noiseGate.attack, range: 0...44, formatValue: { value in
+                            return GateTimes(rawValue: Int(value))!.float.roundedString + "ms"
+                        })
+                        LabelledVSliderElement(label: "Release", value: $noiseGate.release, range: 0...44, formatValue: { value in
+                            return GateTimes(rawValue: Int(value))!.float.roundedString + "ms"
+                        })
+                    }.frame(width: 80)
+                    Spacer()
+                }.frame(height: 300)
+            }
             if !showDetail {
                 HStack(alignment: .center) {
                     Text("Amount")
@@ -27,26 +43,15 @@ struct GateMicModule: View {
                         .textFieldStyle(.plain)
                         .font(.system(.body))
                         .foregroundColor(.secondary)
-                        .frame(maxWidth: 25)
+//                        .fixedSize()
+                        .frame(width: 25)
                         .offset(y: -2.5)
                         .focused($amountFocused)
                         .onSubmit {
                             amountFocused.toggle()
                         }
                 }
-            } else {
-                HStack(alignment: .center) {
-                }.frame(height: 300)
             }
-        }, header: {
-            HStack {
-                Text("Gate")
-                    .font(.headline)
-                Spacer()
-                Toggle("Advanced", isOn: $showDetail)
-                    .toggleStyle(.switch)
-                    .controlSize(.mini)
-            }
-        })
+        }
     }
 }

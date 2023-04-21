@@ -8,20 +8,25 @@
 import Foundation
 import SwiftUI
 
+enum customError: Error {
+    case runtimeError(String)
+}
+
 struct ThresholdStrategy: ParseStrategy {
     func parse(_ value: String) throws -> Float {
-        let parsable = value.dropLast()
-        var value = -Float((Double(parsable) ?? 0) / 100 * 59).rounded()
-        value = max(-59, min(0, value))
-        return value
+        guard let floatValue = Float(value) else {
+            throw customError.runtimeError("Error parsing")
+        }
+        let adjustedValue = -59 + (59/100) * floatValue
+        return max(-59, min(0, adjustedValue))
     }
 }
 struct ThresholdStyle: ParseableFormatStyle {
 
-    var parseStrategy: VolumePercentageStrategy = .init()
+    var parseStrategy: ThresholdStrategy = .init()
 
     func format(_ value: Float) -> String {
-        return "\((-(value) / 59 * 100).rounded().stringWithoutZeroFraction)"
+        return "\(100-Int(-(value) / 59 * 100))"
     }
 }
 extension FormatStyle where Self == ThresholdStyle {

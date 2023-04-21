@@ -77,10 +77,12 @@ struct HVolumeSlider: View {
     
 }
 
-struct VVolumeSlider: View {
+struct VSlider: View {
 
     @Binding var value: Float
     let image: String
+    
+    var range: ClosedRange<Float> = 0...255
     
     var sliderWidth: Float = 25
     var sliderHeight: Float = 200
@@ -88,6 +90,18 @@ struct VVolumeSlider: View {
     
     let myGray: Color = Color(red: 0.5, green: 0.5, blue: 0.5)
     let lightGray: Color = Color(red: 0.8, green: 0.8, blue: 0.8)
+    
+    var progressHeight: CGFloat {
+        let ratio = (value - range.lowerBound) / (range.upperBound - range.lowerBound)
+        let maxProgressHeight = sliderHeight - sliderWidth
+        return CGFloat(maxProgressHeight) * CGFloat(ratio) + CGFloat(sliderWidth)
+    }
+
+
+    private var knobOffset: CGFloat {
+        let progress = max(min(CGFloat(value - range.lowerBound) / CGFloat(range.upperBound - range.lowerBound), 1.0), 0.0)
+        return -progress * CGFloat(sliderHeight - sliderWidth)
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -99,25 +113,27 @@ struct VVolumeSlider: View {
                     Spacer(minLength: 0)
                     RoundedRectangle(cornerRadius: 50)
                         .foregroundColor(.accentColor)
-                        .frame(height: max(0, (CGFloat(sliderHeight) - CGFloat(self.sliderWidth)) * CGFloat(self.value / 255)) + CGFloat(self.sliderWidth))
+                        .frame(height: progressHeight)
                 }
 
                 VStack {
                     Spacer(minLength: 0)
                     Circle()
                         .foregroundColor(.white)
-                        .shadow(radius: colorScheme == .dark ? 5 : 1)
-                        .frame(width: CGFloat(self.sliderWidth), height: CGFloat(self.sliderWidth))
-                        .offset(y: -max(0, (geometry.size.height - geometry.size.width) * CGFloat(self.value / 255)))
-                    
+                            .shadow(radius: colorScheme == .dark ? 5 : 1)
+                            .frame(width: CGFloat(self.sliderWidth), height: CGFloat(self.sliderWidth))
+                            .offset(y: knobOffset)
+
                 }
                 
-                VStack {
-                    Spacer(minLength: 0)
-                    Image(systemName: self.image)
-                        .frame(width: CGFloat(self.sliderWidth - 20),height: CGFloat(self.sliderWidth - 20))
-                        .foregroundColor(self.myGray.opacity(1))
-                        .offset(x: 10, y: -10)
+                if image != "" {
+                    VStack {
+                        Spacer(minLength: 0)
+                        Image(systemName: self.image)
+                            .frame(width: CGFloat(self.sliderWidth - 20),height: CGFloat(self.sliderWidth - 20))
+                            .foregroundColor(self.myGray.opacity(1))
+                            .offset(x: 10, y: -10)
+                    }
                 }
             }
             .frame(width: CGFloat(self.sliderWidth), height: CGFloat(self.sliderHeight))
@@ -130,20 +146,19 @@ struct VVolumeSlider: View {
                 .onChanged({ value in
                     GoXlr.shared.socket.holdUpdates = true
                     let newY = max(min(value.location.y, geometry.size.height - CGFloat(self.sliderWidth) / 2), CGFloat(self.sliderWidth) / 2)
-                    let newValue = min(max(0, Float((255 - (newY - CGFloat(self.sliderWidth) / 2) / (geometry.size.height - CGFloat(self.sliderWidth)) * 255))), 255)
-
+                    var newValue = Float(range.upperBound) - Float((newY - CGFloat(self.sliderWidth) / 2) / (geometry.size.height - CGFloat(self.sliderWidth)) * CGFloat(range.upperBound - range.lowerBound))
+                    newValue = min(max(Float(range.lowerBound), newValue), Float(range.upperBound))
+                    
                     if Int(newValue) != Int(self.value) {
-                        if newValue == 255 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
-                        else if newValue == 0 {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
+                        if newValue == Float(range.upperBound) {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
+                        else if newValue == Float(range.lowerBound) {NSHapticFeedbackManager.defaultPerformer.perform(.levelChange, performanceTime: .drawCompleted)}
                         
                         self.value = newValue
                     }
-                
                 })
                     .onEnded() {_ in
                         GoXlr.shared.socket.holdUpdates = false
                     })
-                
 
         }.frame(width: CGFloat(sliderWidth), height: CGFloat(sliderHeight))
     }

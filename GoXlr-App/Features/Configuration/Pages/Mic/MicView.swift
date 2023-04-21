@@ -15,22 +15,32 @@ struct MicView: View {
         ScrollView(showsIndicators: false) {
             VStack {
                 HStack {
-                    Form {
-                        MicProfilesElement()
+                    Group {
+                        Form {
+                            MicProfilesElement()
+                        }.frame(minWidth: 300)
+                            
+                        Form {
+                            MicSetupMicModule()
+                        }.frame(width: 150)
+//                            .padding(.trailing, 20)
+                        Form {
+                            ExtrasMicModule()
+                        }.frame(width: 165)
                     }.scrollContentBackground(.hidden)
-                        .frame(minWidth: 300)
-                        
-                    Form {
-                        MicSetupMicModule()
-                    }.scrollContentBackground(.hidden)
-                        .frame(width: 150)
-                        .padding(.trailing, 20)
-                    Spacer()
                 }
                 Form {
                     GateMicModule()
+                    switch GoXlr.shared.mixer!.hardware.deviceType {
+                    case .Full:
+                        EqualizerMicModule()
+                    case .Mini:
+                        EqualizerMiniMicModule()
+                    }
+                    CompressorMicModule()
                 }.scrollContentBackground(.hidden)
             }.frame(width: 700)
         }.formStyle(.grouped)
+            .frame(maxWidth: .infinity)
     }
 }

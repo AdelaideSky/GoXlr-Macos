@@ -44,21 +44,8 @@ struct VolumeSliderMixerElement: View {
     @FocusState var focus: Bool
     
     var body: some View {
-        VStack {
-            Text(channel.displayName).font(.system(.subheadline)).padding(.bottom, 10)
-            VVolumeSlider(value: $value, image: channel.icon)
-                .padding(.bottom, 20)
-                .frame(width: 80)
-            TextField("", value: $value, format: .volumePercent())
-            
-                .textFieldStyle(.plain)
-                .font(.system(.body))
-                .foregroundColor(.secondary)
-                .focused($focus)
-                .onSubmit {
-                    focus.toggle()
-                }
-                .multilineTextAlignment(.center)
-        }.padding(.horizontal, 5)    }
+        LabelledEditableVSliderElement(label: channel.displayName, format: .volumePercent(), value: $value, range: 0...255, icon: channel.icon, unity: "%")
+            .frame(width: 80)
+    }
 }
 
