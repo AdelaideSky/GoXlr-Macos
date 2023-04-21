@@ -10,26 +10,17 @@ import GoXlrKit
 
 struct MixerView: View {
     var body: some View {
-        ZStack {
-            
+        VStack {
+            ScrollView(.horizontal, showsIndicators: false) {
+                VolumeSlidersRowMixerElement()
+                    .frame(height: 380)
+            }.scrollContentBackground(.hidden)
             Form {
-                Section("Channels") {
-                    Spacer().frame(height: 300)
-                }
                 FadersRowMixerElement()
                 
             }.formStyle(.grouped)
                 .scrollContentBackground(.hidden)
                 .scrollDisabled(true)
-            
-            VStack {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    VolumeSlidersRowMixerElement()
-                }.frame(height: 300)
-                
-                Spacer()
-            }.padding(20)
-                .padding(.top, 35)
             
         }.navigationTitle("Mixer")
     }
