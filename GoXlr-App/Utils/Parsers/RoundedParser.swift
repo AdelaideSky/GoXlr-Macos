@@ -10,16 +10,12 @@ import SwiftUI
 
 struct RoundedStrategy: ParseStrategy {
     func parse(_ value: String) throws -> Float {
-        let numberFormatter = NumberFormatter()
-        guard let floatValue = numberFormatter.number(from: value) else {
-            throw customError.runtimeError("Error parsing")
-        }
-        return Float(truncating: floatValue)
+        return (value as NSString).floatValue
     }
 }
 struct RoundedStyle: ParseableFormatStyle {
 
-    var parseStrategy: ThresholdStrategy = .init()
+    var parseStrategy: RoundedStrategy = .init()
 
     func format(_ value: Float) -> String {
         return "\(Int(value))"

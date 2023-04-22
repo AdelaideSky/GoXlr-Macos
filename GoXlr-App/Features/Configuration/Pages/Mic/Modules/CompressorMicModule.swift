@@ -15,12 +15,12 @@ struct CompressorMicModule: View {
     
     var simplifiedAmount: Binding<Float> = .init(
         get: {
-            let compressor = GoXlr.shared.mixer!.micStatus.compressor
-            return ( ( compressor.makeupGain / 24 * 100 ) + compressor.threshold / -40 * 100 ) / 2
+            return 0
         },
         set: { newValue in
-            GoXlr.shared.mixer!.micStatus.compressor.threshold = -40 + (newValue/100*40)
-            GoXlr.shared.mixer!.micStatus.compressor.makeupGain = newValue/100*24
+            let newThreshold = -40 + (newValue/100*40)
+            GoXlr.shared.mixer!.micStatus.compressor.threshold = newThreshold
+            GoXlr.shared.mixer!.micStatus.compressor.makeupGain = max(0, (-6 + newThreshold * -3 / 4).rounded())
         }
     )
     
@@ -30,11 +30,11 @@ struct CompressorMicModule: View {
                 HStack {
                     Spacer()
                     Group {
-                        LabelledVSliderElement(label: "Threshold", value: $compressor.threshold, range: -40...0)
+                        LabelledVSliderElement(label: "Threshold", value: $compressor.threshold, range: -40...0, unity: "dB")
                         LabelledVSliderElement(label: "Ratio", value: $compressor.ratio, range: 0...14, formatValue: {CompressorRatio(rawValue: Int($0))?.display ?? "error"})
-                        LabelledVSliderElement(label: "Attack", value: $compressor.attack, range: 0...19)
-                        LabelledVSliderElement(label: "Release", value: $compressor.release, range: 0...19)
-                        LabelledVSliderElement(label: "Make-Up Gain", value: $compressor.threshold, range: 0...24)
+                        LabelledVSliderElement(label: "Attack", value: $compressor.attack, range: 0...19, unity: "ms", formatValue: {CompressorAttackTime(rawValue: Int($0))?.display ?? "error"})
+                        LabelledVSliderElement(label: "Release", value: $compressor.release, range: 0...19, unity: "ms", formatValue: {CompressorReleaseTime(rawValue: Int($0))?.display ?? "error"})
+                        LabelledVSliderElement(label: "Make-Up Gain", value: $compressor.makeupGain, range: 0...24, unity: "dB")
                     }.frame(maxWidth: .infinity)
                     Spacer()
                 }.frame(height: 300)

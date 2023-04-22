@@ -30,6 +30,6 @@ extension FormatStyle where Self == VolumePercentageStyle {
 }
 extension Float {
     var roundedString: String {
-        return truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
+        return "\(Int(self))"
     }
 }

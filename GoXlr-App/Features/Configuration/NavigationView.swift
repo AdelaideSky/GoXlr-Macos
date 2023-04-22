@@ -42,6 +42,8 @@ struct NavigationView: View {
                             MicView()
                         case .mixer:
                             MixerView()
+                        case .effects:
+                            FXView()
                         default:
                             Text("Not yet implemented !")
                                 .font(.headline)

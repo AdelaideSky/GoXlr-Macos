@@ -54,6 +54,12 @@ struct EqualizerMicModule: View {
         }
     )
     
+    func reset() {
+        for frequency in equalizer.gain.keys {
+            equalizer.gain[frequency] = 0
+        }
+    }
+    
     func sort(lhs: (String, Float), rhs: (String, Float)) -> Bool {
         let lhsParseable = lhs.0.dropFirst(9)
         let rhsParseable = rhs.0.dropFirst(9)
@@ -110,9 +116,17 @@ struct EqualizerMicModule: View {
                 Text("Equalizer")
                     .font(.headline)
                 Spacer()
-                Toggle("Fine Tune", isOn: $fineTune)
-                    .toggleStyle(.switch)
-                    .controlSize(.mini)
+                if showDetail {
+                    Toggle("Fine Tune", isOn: $fineTune)
+                        .toggleStyle(.switch)
+                        .controlSize(.mini)
+                    Divider()
+                        .padding(.leading, 5)
+                }
+                Button(action: reset, label: {
+                    Label("Reset", systemImage: "arrow.clockwise")
+                        .labelStyle(.iconOnly)
+                }).buttonStyle(.gentleFlipping)
             }
         })
     }

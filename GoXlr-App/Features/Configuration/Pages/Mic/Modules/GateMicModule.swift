@@ -43,7 +43,6 @@ struct GateMicModule: View {
                         .textFieldStyle(.plain)
                         .font(.system(.body))
                         .foregroundColor(.secondary)
-//                        .fixedSize()
                         .frame(width: 25)
                         .offset(y: -2.5)
                         .focused($amountFocused)

@@ -15,7 +15,7 @@ struct MicProfilesElement: View {
     @State var showDeleteAlert: Bool = false
     
     var body: some View {
-        Section("Mic Profiles") {
+        Section(content: {
             VStack {
                 List(files.micProfiles.prefix(files.micProfiles.count == 6 ? 6 : 5), id:\.self, selection: $mixer.micProfileName) { profile in
                     MicProfileRowElement(profile)
@@ -33,7 +33,17 @@ struct MicProfilesElement: View {
                 }
             }
                 
-        }
+        }, header: {
+            HStack {
+                Text("Mic Profiles")
+                Spacer()
+                Button(action: {
+                    URL(fileURLWithPath: GoXlr.shared.status!.data.status.paths.micProfileDirectory).showInFinder()
+                }, label: {
+                    Image(systemName: "folder.fill")
+                }).buttonStyle(.borderless)
+            }
+        })
         Section {
             MicProfileActionsRowElement()
         }
