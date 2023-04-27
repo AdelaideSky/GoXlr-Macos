@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "70CD08CC295B2745003BF9EB"
-               BuildableName = "GoXlr-App.app"
-               BlueprintName = "GoXlr-App"
-               ReferencedContainer = "container:GoXlr-App.xcodeproj">
+               BuildableName = "GoXlr App.app"
+               BlueprintName = "GoXlr App"
+               ReferencedContainer = "container:GoXlr App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "70CD08CC295B2745003BF9EB"
-            BuildableName = "GoXlr-App.app"
-            BlueprintName = "GoXlr-App"
-            ReferencedContainer = "container:GoXlr-App.xcodeproj">
+            BuildableName = "GoXlr App.app"
+            BlueprintName = "GoXlr App"
+            ReferencedContainer = "container:GoXlr App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "70CD08CC295B2745003BF9EB"
-            BuildableName = "GoXlr-App.app"
-            BlueprintName = "GoXlr-App"
-            ReferencedContainer = "container:GoXlr-App.xcodeproj">
+            BuildableName = "GoXlr App.app"
+            BlueprintName = "GoXlr App"
+            ReferencedContainer = "container:GoXlr App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

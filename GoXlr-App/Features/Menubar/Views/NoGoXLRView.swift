@@ -27,7 +27,9 @@ struct NoGoXLRView: View {
                     goxlr.stopObserving()
                     NSApplication.shared.terminate(nil)
                 } label: {
-                    Label("Power", systemImage: "power")}.keyboardShortcut("q")
+                    Label("Power", systemImage: "power")
+                        .foregroundColor(.primary)
+                }.keyboardShortcut("q")
                 Spacer()
                 Menu {
                     Button("Reload Daemon") {
@@ -37,6 +39,9 @@ struct NoGoXLRView: View {
                         GoXlr().copyDebugInfo()
                     }
                     Link("Join support server", destination: URL(string: "https://discord.gg/cyavp8F2WW")!)
+                    Button("load") {
+                        goxlr.utils.registerInitAgents()
+                    }
                 } label: {
                     Image(systemName: "ellipsis")
                 }

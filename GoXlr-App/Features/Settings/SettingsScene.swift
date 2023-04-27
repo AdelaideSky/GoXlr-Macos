@@ -12,12 +12,18 @@ import GoXlrKit
 struct SettingsScene: Scene {
     var body: some Scene {
         Settings {
-            
-            SettingsView()
-                .frame(minWidth: 715, maxWidth: 715)
-            
+            AppropriateSettingsView()
         }.windowStyle(.automatic)
             .windowToolbarStyle(.unified)
             .windowResizability(.contentSize)
+    }
+}
+struct AppropriateSettingsView: View {
+    @ObservedObject var goxlr = GoXlr.shared
+    var body: some View {
+        if goxlr.status != nil {
+            SettingsView()
+                .frame(minWidth: 715, maxWidth: 715, minHeight: 400)
+        }
     }
 }

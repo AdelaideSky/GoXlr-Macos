@@ -1,14 +1,14 @@
 //
-//  MicProfilesElement.swift
+//  ProfilesElement.swift
 //  GoXlr-App
 //
-//  Created by Adélaïde Sky on 20/04/2023.
+//  Created by Adélaïde Sky on 23/04/2023.
 //
 
 import SwiftUI
 import GoXlrKit
 
-struct MicProfilesElement: View {
+struct ProfilesElement: View {
     @ObservedObject var files = GoXlr.shared.status!.data.status.files
     @ObservedObject var mixer = GoXlr.shared.mixer!
     
@@ -17,15 +17,15 @@ struct MicProfilesElement: View {
     var body: some View {
         Section(content: {
             VStack {
-                List(files.micProfiles.prefix(files.micProfiles.count == 6 ? 6 : 5), id:\.self, selection: $mixer.micProfileName) { profile in
-                    MicProfileRowElement(profile)
+                List(files.profiles.prefix(files.profiles.count == 6 ? 6 : 5), id:\.self, selection: $mixer.profileName) { profile in
+                    ProfileRowElement(profile)
                         .tag(profile)
                 }.listStyle(.inset)
-                    .padding(.bottom, files.micProfiles.count > 6 ? -13 : 0)
-                if files.micProfiles.count > 6 {
+                    .padding(.bottom, files.profiles.count > 6 ? -13 : 0)
+                if files.profiles.count > 6 {
                     DisclosureGroup("More...") {
-                        List(files.micProfiles.dropFirst(5), id:\.self, selection: $mixer.micProfileName) { profile in
-                            MicProfileRowElement(profile)
+                        List(files.profiles.dropFirst(5), id:\.self, selection: $mixer.profileName) { profile in
+                            ProfileRowElement(profile)
                                 .tag(profile)
                         }.listStyle(.inset)
                             .padding(.horizontal, -10)
@@ -35,21 +35,21 @@ struct MicProfilesElement: View {
                 
         }, header: {
             HStack {
-                Text("Mic Profiles")
+                Text("Profiles")
                 Spacer()
                 Button(action: {
-                    URL(fileURLWithPath: GoXlr.shared.status!.data.status.paths.micProfileDirectory).showInFinder()
+                    URL(fileURLWithPath: GoXlr.shared.status!.data.status.paths.profileDirectory).showInFinder()
                 }, label: {
                     Image(systemName: "folder.fill")
                 }).buttonStyle(.borderless)
             }
         })
         Section {
-            MicProfileActionsRowElement()
+            ProfileActionsRowElement()
         }
     }
 }
-struct MicProfileRowElement: View {
+struct ProfileRowElement: View {
     
     @State var profile: String
     @State var showDeleteAlert: Bool = false
@@ -66,15 +66,15 @@ struct MicProfileRowElement: View {
             Spacer()
             Menu(content: {
                 Button("Load profile") {
-                    if profile != GoXlr.shared.mixer!.micProfileName {
-                        GoXlr.shared.mixer!.micProfileName = profile
+                    if profile != GoXlr.shared.mixer!.profileName {
+                        GoXlr.shared.mixer!.profileName = profile
                     } else {
                         showLoadActiveAlert = true
                     }
                 }
                 Button("Delete profile") {
                     showDeleteAlert = true
-                }.disabled(GoXlr.shared.status!.data.status.files.micProfiles.count <= 1)
+                }.disabled(GoXlr.shared.status!.data.status.files.profiles.count <= 1)
             }, label: {
                 Image(systemName: "ellipsis")
                     .font(.headline)
@@ -85,24 +85,24 @@ struct MicProfileRowElement: View {
             
             Button("Cancel", role: .cancel) {}
             Button("Delete", role: .destructive) {
-                if GoXlr.shared.mixer!.micProfileName == profile {
-                    GoXlr.shared.mixer!.micProfileName = GoXlr.shared.status!.data.status.files.micProfiles.first!
+                if GoXlr.shared.mixer!.profileName == profile {
+                    GoXlr.shared.mixer!.profileName = GoXlr.shared.status!.data.status.files.profiles.first!
                 }
-                GoXlr.shared.command(.DeleteMicProfile(profile))
+                GoXlr.shared.command(.DeleteProfile(profile))
             }
         }
         .alert("Are you sure you want to reload the profile \(profile)", isPresented: $showLoadActiveAlert, actions: {
             
             Button("Cancel", role: .cancel) {}
             Button("Reload", role: .destructive) {
-                GoXlr.shared.command(.LoadMicProfile(profile))
+                GoXlr.shared.command(.LoadProfile(profile))
             }
         }, message: {
             Text("You will loose all modifications.")
         })
     }
 }
-struct MicProfileActionsRowElement: View {
+struct ProfileActionsRowElement: View {
     @ObservedObject var mixer = GoXlr.shared.mixer!
     
     @State var showSaveAlert: Bool = false
@@ -122,9 +122,9 @@ struct MicProfileActionsRowElement: View {
                         .font(.callout)
                 }.padding(5)
             }).buttonStyle(.gentleFilling)
-                .alert("Are you sure you want to overwrite the profile \(mixer.micProfileName) ?", isPresented: $showSaveAlert) {
+                .alert("Are you sure you want to overwrite the profile \(mixer.profileName) ?", isPresented: $showSaveAlert) {
                     Button("OK") {
-                        GoXlr.shared.command(.SaveMicProfile)
+                        GoXlr.shared.command(.SaveProfile)
                     }
                     Button("Cancel", role: .cancel) {}
                 }
@@ -140,7 +140,7 @@ struct MicProfileActionsRowElement: View {
             }).buttonStyle(.gentleFilling)
                 .sheet(isPresented: $showNewSheet) {
                     TextInputAlertElement("Enter a new profile name", isPresented: $showNewSheet) { profileName in
-                        GoXlr.shared.command(.NewMicProfile(profileName))
+                        GoXlr.shared.command(.NewProfile(profileName))
                     }
                 }
             
@@ -155,75 +155,10 @@ struct MicProfileActionsRowElement: View {
             }).buttonStyle(.gentleFilling)
                 .sheet(isPresented: $showDuplicateSheet) {
                     TextInputAlertElement("Enter a new profile name", isPresented: $showDuplicateSheet) { profileName in
-                        showDuplicateSheet.toggle()
-                        GoXlr.shared.command(.SaveMicProfileAs(profileName))
+                        GoXlr.shared.command(.SaveProfileAs(profileName))
                     }
                 }
             
         }
-    }
-}
-
-struct TextInputAlertElement: View {
-    @State var prompt: String = ""
-    @State var profileName: String = ""
-
-    @Binding var isPresented: Bool
-    
-    var onValidate: (String) -> Void
-    @State var disabled: Bool = false
-    
-    init(_ prompt: String, isPresented: Binding<Bool>, onValidate: @escaping (String) -> Void) {
-        self.prompt = prompt
-        self.profileName = ""
-        self._isPresented = isPresented
-        self.onValidate = onValidate
-    }
-    
-    init(_ prompt: String, initialValue: String, isPresented: Binding<Bool>, onValidate: @escaping (String) -> Void) {
-        self.prompt = prompt
-        self.profileName = initialValue
-        self._isPresented = isPresented
-        self.onValidate = onValidate
-    }
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text(prompt)
-                .font(.title3)
-            TextField("", text: $profileName)
-                .textFieldStyle(.roundedBorder)
-                .padding()
-                .padding(.vertical, 5)
-            HStack {
-                
-                Button(action: {
-                    isPresented.toggle()
-                    onValidate(profileName)
-                    disabled = true
-                }, label: {
-                    HStack {
-                        Spacer()
-                        Text("OK")
-                        Spacer()
-                    }
-                }).disabled(profileName.count < 1)
-                    .keyboardShortcut(.return, modifiers: [])
-                
-                Button(role: .cancel, action: {
-                    isPresented.toggle()
-                }, label: {
-                    HStack {
-                        Spacer()
-                        Text("Cancel")
-                        Spacer()
-                    }
-                })
-                
-            }
-        }.controlSize(.large)
-            .padding(20)
-            .frame(width: 250)
-            .disabled(disabled)
     }
 }

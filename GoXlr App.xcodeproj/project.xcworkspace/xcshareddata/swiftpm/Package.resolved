@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "dominantcolor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Adelenade/DominantColor",
+      "state" : {
+        "branch" : "master",
+        "revision" : "32bc520b394219e3d0c5926793ec1e8f2391af12"
+      }
+    },
+    {
       "identity" : "goxlrkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Adelenade/GoXlrKit",
       "state" : {
         "branch" : "main",
-        "revision" : "348e520d799a2f605559407a4eec893af7b3a879"
+        "revision" : "934d7a140d7f70dee1454c5de23bf15b80e204e8"
       }
     },
     {
@@ -19,6 +28,15 @@
       }
     },
     {
+      "identity" : "macos-wallpaper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sindresorhus/macos-wallpaper",
+      "state" : {
+        "branch" : "main",
+        "revision" : "417a12e606b68215c4aa94586b5c9d910af1c25e"
+      }
+    },
+    {
       "identity" : "simplycoreaudio",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rnine/SimplyCoreAudio",
@@ -28,12 +46,30 @@
       }
     },
     {
+      "identity" : "sqlite.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephencelis/SQLite.swift",
+      "state" : {
+        "revision" : "7a2e3cd27de56f6d396e84f63beefd0267b55ccb",
+        "version" : "0.14.1"
+      }
+    },
+    {
       "identity" : "starscream",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/daltoniam/Starscream",
       "state" : {
         "branch" : "master",
         "revision" : "c68359159dcf0b5de9b536b9a959e9e435e968d3"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser",
+      "state" : {
+        "revision" : "fee6933f37fde9a5e12a1e4aeaa93fe60116ff2a",
+        "version" : "1.2.2"
       }
     },
     {

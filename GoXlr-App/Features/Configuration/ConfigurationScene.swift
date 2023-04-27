@@ -27,6 +27,18 @@ struct ConfigurationScene: Scene {
                     }
                 }
             }.frame(minWidth: 1000, idealWidth: 1100, minHeight: 600, idealHeight: 620)
+        }.commands {
+            if let status = goxlr.status {
+                if status.data.status.mixers.count > 1 {
+                    CommandMenu("Device") {
+                        Picker("Device", selection: $goxlr.device) {
+                            ForEach(goxlr.status!.data.status.mixers.sorted(), id:\.key) { mixer in
+                                Text("\(mixer.0) (\(mixer.1.hardware.deviceType.rawValue))").tag(mixer.0)
+                            }
+                        }.pickerStyle(.inline)
+                    }
+                }
+            }
         }
             
     }

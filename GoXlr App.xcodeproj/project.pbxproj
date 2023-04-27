@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7003C3E729F0988900B20817 /* VolumesSlidersMixerElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7003C3E629F0988900B20817 /* VolumesSlidersMixerElements.swift */; };
 		7003C3E929F098FA00B20817 /* FadersMixerElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7003C3E829F098FA00B20817 /* FadersMixerElements.swift */; };
-		7003C3ED29F0A78300B20817 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 7003C3EC29F0A78200B20817 /* goxlr-daemon */; };
 		700C29FC29EDE55E00BC0AE8 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C29FB29EDE55E00BC0AE8 /* NavigationView.swift */; };
 		700C29FE29EDEA9300BC0AE8 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C29FD29EDEA9200BC0AE8 /* SettingsScene.swift */; };
 		700C2A0029EDEC6100BC0AE8 /* View+HideTitlebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C29FF29EDEC6100BC0AE8 /* View+HideTitlebar.swift */; };
@@ -19,6 +18,11 @@
 		700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFB29EEC37700EE867A /* Tabs.swift */; };
 		700C9DFE29EECD1100EE867A /* Binding+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */; };
 		700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */; };
+		704FF85B29F9A60700031F06 /* ProfilesMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */; };
+		704FF85D29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */; };
+		704FF86029F9B59F00031F06 /* FadersMmodSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85F29F9B59F00031F06 /* FadersMmodSettingsPage.swift */; };
+		704FF86329F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF86229F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift */; };
+		704FF86529F9CB1A00031F06 /* RoutingMmodSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF86429F9CB1A00031F06 /* RoutingMmodSettingsPage.swift */; };
 		705A2A3429F2E8B00096BDA6 /* LabelledEditableVSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3329F2E8B00096BDA6 /* LabelledEditableVSlider.swift */; };
 		705A2A3729F2FA0D0096BDA6 /* RoundedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3629F2FA0D0096BDA6 /* RoundedParser.swift */; };
 		705A2A3929F31CDD0096BDA6 /* EqualizerMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3829F31CDD0096BDA6 /* EqualizerMicModule.swift */; };
@@ -32,32 +36,62 @@
 		7066D05329F1D53900619AC2 /* GateMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05229F1D53900619AC2 /* GateMicModule.swift */; };
 		7066D05629F1EA1D00619AC2 /* VolumePercentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05529F1EA1D00619AC2 /* VolumePercentParser.swift */; };
 		7066D05929F1EA3F00619AC2 /* ThresholdParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05829F1EA3F00619AC2 /* ThresholdParser.swift */; };
+		707D8E4229FAC4870023A2A3 /* RoutingMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707D8E4129FAC4870023A2A3 /* RoutingMenubarModule.swift */; };
 		70922C8D29F471E30084BD3D /* ShowInFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C8C29F471E30084BD3D /* ShowInFinder.swift */; };
 		70922C9029F4751A0084BD3D /* ReverbFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C8F29F4751A0084BD3D /* ReverbFXModule.swift */; };
 		70922C9229F48BC20084BD3D /* EchoFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C9129F48BC20084BD3D /* EchoFXModule.swift */; };
 		70922C9429F48F6E0084BD3D /* GenderFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C9329F48F6E0084BD3D /* GenderFXModule.swift */; };
 		70922C9629F490110084BD3D /* MegaphoneFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C9529F490110084BD3D /* MegaphoneFXModule.swift */; };
-		709EB1B429ED80330095FC64 /* goxlr-defaults in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1B229ED80330095FC64 /* goxlr-defaults */; };
-		709EB1BC29EDAA180095FC64 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 709EB1BB29EDAA180095FC64 /* GoXlrKit */; };
-		709EB1BE29EDAA180095FC64 /* GoXlrKit-Audio in Frameworks */ = {isa = PBXBuildFile; productRef = 709EB1BD29EDAA180095FC64 /* GoXlrKit-Audio */; };
+		70922C9829F493DF0084BD3D /* HardTuneFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C9729F493DF0084BD3D /* HardTuneFXModule.swift */; };
 		709EB1D129EDAD7E0095FC64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1D329EDAD7E0095FC64 /* Localizable.strings */; };
 		709EB1D629EDADE30095FC64 /* MenubarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB1D529EDADE30095FC64 /* MenubarScene.swift */; };
 		709EB1D929EDB2170095FC64 /* NoGoXLRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB1D829EDB2170095FC64 /* NoGoXLRView.swift */; };
 		709EB1DB29EDB2B10095FC64 /* EffectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB1DA29EDB2B10095FC64 /* EffectsView.swift */; };
+		709F81B329F70E4200C9F959 /* MenubarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81B229F70E4200C9F959 /* MenubarConfiguration.swift */; };
+		709F81B729F7141B00C9F959 /* FadersMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */; };
+		70A4A27C29F868E60085D715 /* MenubarSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */; };
+		70C74EA729F5DA7B004471A9 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70C74EA629F5DA7B004471A9 /* GoXlrKit */; };
+		70C74EA929F5DA7B004471A9 /* GoXlrKit-Audio in Frameworks */ = {isa = PBXBuildFile; productRef = 70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */; };
 		70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */; };
 		70CD08D5295B274A003BF9EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70CD08D4295B274A003BF9EB /* Assets.xcassets */; };
 		70CD08D8295B274A003BF9EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70CD08D7295B274A003BF9EB /* Preview Assets.xcassets */; };
 		70DD123929F40F16007CACBD /* GentleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD123829F40F16007CACBD /* GentleButtonStyle.swift */; };
 		70DD123C29F44068007CACBD /* FXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD123B29F44068007CACBD /* FXView.swift */; };
+		70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */ = {isa = PBXBuildFile; productRef = 70E4E5DD29F6CA72003C9158 /* Wallpaper */; };
+		70E4E5E129F6CA9B003C9158 /* MixerLightningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4E5E029F6CA9B003C9158 /* MixerLightningView.swift */; };
+		70E4E5EA29F6D158003C9158 /* DominantColor in Frameworks */ = {isa = PBXBuildFile; productRef = 70E4E5E929F6D158003C9158 /* DominantColor */; };
+		70F5CDEA29F5515C00558722 /* RobotFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDE929F5515C00558722 /* RobotFXModule.swift */; };
+		70F5CDEC29F5683700558722 /* ProfilesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDEB29F5683700558722 /* ProfilesElement.swift */; };
+		70F5CDEF29F5691500558722 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDEE29F5691500558722 /* HomeView.swift */; };
+		70F5CDF229F56E6600558722 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDF129F56E6600558722 /* RouterView.swift */; };
+		70F5CDF529F56FDD00558722 /* SettingsPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDF429F56FDD00558722 /* SettingsPages.swift */; };
+		70F5CDF829F573F500558722 /* GeneralSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDF729F573F500558722 /* GeneralSettingsPage.swift */; };
+		70F5CDFA29F592D900558722 /* MixerSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDF929F592D900558722 /* MixerSettingsPage.swift */; };
+		70F5CDFC29F5A43600558722 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDFB29F5A43500558722 /* AppSettings.swift */; };
+		70F5CE1229F5ABA900558722 /* Library in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70F5CE0F29F5AB0900558722 /* Library */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		70F5CE1629F5BF0400558722 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 70F5CE1529F5BF0300558722 /* goxlr-daemon */; };
+		70F5CE1B29F5CC0D00558722 /* RouterToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CE1A29F5CC0D00558722 /* RouterToggleStyle.swift */; };
 		70FF91A529EDCD5300316D56 /* LoadingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF91A429EDCD5300316D56 /* LoadingElement.swift */; };
 		70FF91A729EDCFD900316D56 /* MenubarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF91A629EDCFD900316D56 /* MenubarView.swift */; };
 		70FF91A929EDD6CC00316D56 /* ConfigurationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF91A829EDD6CC00316D56 /* ConfigurationScene.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		70F5CE1129F5AB9100558722 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents;
+			dstSubfolderSpec = 1;
+			files = (
+				70F5CE1229F5ABA900558722 /* Library in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7003C3E629F0988900B20817 /* VolumesSlidersMixerElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumesSlidersMixerElements.swift; sourceTree = "<group>"; };
 		7003C3E829F098FA00B20817 /* FadersMixerElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadersMixerElements.swift; sourceTree = "<group>"; };
-		7003C3EC29F0A78200B20817 /* goxlr-daemon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-daemon"; path = "Dependices/GoXLR-Utility/target/release/goxlr-daemon"; sourceTree = SOURCE_ROOT; };
 		700C29FB29EDE55E00BC0AE8 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		700C29FD29EDEA9200BC0AE8 /* SettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		700C29FF29EDEC6100BC0AE8 /* View+HideTitlebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideTitlebar.swift"; sourceTree = "<group>"; };
@@ -67,6 +101,11 @@
 		700C9DFB29EEC37700EE867A /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Unwrap.swift"; sourceTree = "<group>"; };
 		700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSliderElement.swift; sourceTree = "<group>"; };
+		704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesMenubarModule.swift; sourceTree = "<group>"; };
+		704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesMenubarModuleConfiguration.swift; sourceTree = "<group>"; };
+		704FF85F29F9B59F00031F06 /* FadersMmodSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadersMmodSettingsPage.swift; sourceTree = "<group>"; };
+		704FF86229F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingMenubarModuleConfig.swift; sourceTree = "<group>"; };
+		704FF86429F9CB1A00031F06 /* RoutingMmodSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingMmodSettingsPage.swift; sourceTree = "<group>"; };
 		705A2A3329F2E8B00096BDA6 /* LabelledEditableVSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledEditableVSlider.swift; sourceTree = "<group>"; };
 		705A2A3629F2FA0D0096BDA6 /* RoundedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedParser.swift; sourceTree = "<group>"; };
 		705A2A3829F31CDD0096BDA6 /* EqualizerMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizerMicModule.swift; sourceTree = "<group>"; };
@@ -80,25 +119,41 @@
 		7066D05229F1D53900619AC2 /* GateMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateMicModule.swift; sourceTree = "<group>"; };
 		7066D05529F1EA1D00619AC2 /* VolumePercentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumePercentParser.swift; sourceTree = "<group>"; };
 		7066D05829F1EA3F00619AC2 /* ThresholdParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdParser.swift; sourceTree = "<group>"; };
+		707D8E4129FAC4870023A2A3 /* RoutingMenubarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingMenubarModule.swift; sourceTree = "<group>"; };
 		70922C8C29F471E30084BD3D /* ShowInFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInFinder.swift; sourceTree = "<group>"; };
 		70922C8F29F4751A0084BD3D /* ReverbFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverbFXModule.swift; sourceTree = "<group>"; };
 		70922C9129F48BC20084BD3D /* EchoFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EchoFXModule.swift; sourceTree = "<group>"; };
 		70922C9329F48F6E0084BD3D /* GenderFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderFXModule.swift; sourceTree = "<group>"; };
 		70922C9529F490110084BD3D /* MegaphoneFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaphoneFXModule.swift; sourceTree = "<group>"; };
-		709EB1B229ED80330095FC64 /* goxlr-defaults */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-defaults"; path = "Dependices/GoXLR-Utility/target/release/goxlr-defaults"; sourceTree = SOURCE_ROOT; };
+		70922C9729F493DF0084BD3D /* HardTuneFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardTuneFXModule.swift; sourceTree = "<group>"; };
 		709EB1D229EDAD7E0095FC64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		709EB1D429EDAD9D0095FC64 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		709EB1D529EDADE30095FC64 /* MenubarScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarScene.swift; sourceTree = "<group>"; };
 		709EB1D829EDB2170095FC64 /* NoGoXLRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoGoXLRView.swift; sourceTree = "<group>"; };
 		709EB1DA29EDB2B10095FC64 /* EffectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsView.swift; sourceTree = "<group>"; };
+		709F81B229F70E4200C9F959 /* MenubarConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarConfiguration.swift; sourceTree = "<group>"; };
+		709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadersMenubarModule.swift; sourceTree = "<group>"; };
+		70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarSettingsPage.swift; sourceTree = "<group>"; };
 		70B67F2E299D3E0F00A4BA17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		70CD08CD295B2745003BF9EB /* GoXlr-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70CD08CD295B2745003BF9EB /* GoXlr App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_AppApp.swift; sourceTree = "<group>"; };
 		70CD08D4295B274A003BF9EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70CD08D7295B274A003BF9EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		70CD08D9295B274A003BF9EB /* GoXlr_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoXlr_App.entitlements; sourceTree = "<group>"; };
 		70DD123829F40F16007CACBD /* GentleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GentleButtonStyle.swift; sourceTree = "<group>"; };
 		70DD123B29F44068007CACBD /* FXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXView.swift; sourceTree = "<group>"; };
+		70E4E5E029F6CA9B003C9158 /* MixerLightningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerLightningView.swift; sourceTree = "<group>"; };
+		70F5CDE929F5515C00558722 /* RobotFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotFXModule.swift; sourceTree = "<group>"; };
+		70F5CDEB29F5683700558722 /* ProfilesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesElement.swift; sourceTree = "<group>"; };
+		70F5CDEE29F5691500558722 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		70F5CDF129F56E6600558722 /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		70F5CDF429F56FDD00558722 /* SettingsPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPages.swift; sourceTree = "<group>"; };
+		70F5CDF729F573F500558722 /* GeneralSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsPage.swift; sourceTree = "<group>"; };
+		70F5CDF929F592D900558722 /* MixerSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerSettingsPage.swift; sourceTree = "<group>"; };
+		70F5CDFB29F5A43500558722 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		70F5CE0F29F5AB0900558722 /* Library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Library; sourceTree = "<group>"; };
+		70F5CE1529F5BF0300558722 /* goxlr-daemon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-daemon"; path = "Dependices/GoXLR-Utility/target/goxlr-daemon"; sourceTree = SOURCE_ROOT; };
+		70F5CE1A29F5CC0D00558722 /* RouterToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterToggleStyle.swift; sourceTree = "<group>"; };
 		70FF91A429EDCD5300316D56 /* LoadingElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingElement.swift; sourceTree = "<group>"; };
 		70FF91A629EDCFD900316D56 /* MenubarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarView.swift; sourceTree = "<group>"; };
 		70FF91A829EDD6CC00316D56 /* ConfigurationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationScene.swift; sourceTree = "<group>"; };
@@ -109,8 +164,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				709EB1BC29EDAA180095FC64 /* GoXlrKit in Frameworks */,
-				709EB1BE29EDAA180095FC64 /* GoXlrKit-Audio in Frameworks */,
+				70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */,
+				70C74EA729F5DA7B004471A9 /* GoXlrKit in Frameworks */,
+				70E4E5EA29F6D158003C9158 /* DominantColor in Frameworks */,
+				70C74EA929F5DA7B004471A9 /* GoXlrKit-Audio in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +177,9 @@
 		700C9DF629EEC07D00EE867A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				70E4E5DF29F6CA82003C9158 /* MixerLightning */,
+				70F5CDF029F56BD900558722 /* Router */,
+				70F5CDED29F5690B00558722 /* Home */,
 				70DD123A29F4404A007CACBD /* Effects */,
 				7066D04429F16B4700619AC2 /* Mic */,
 				700C9DF729EEC09600EE867A /* Mixer */,
@@ -145,6 +205,32 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		704FF85929F9A5ED00031F06 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
+		704FF85E29F9B57D00031F06 /* mmodsSettingsPages */ = {
+			isa = PBXGroup;
+			children = (
+				704FF85F29F9B59F00031F06 /* FadersMmodSettingsPage.swift */,
+				704FF86429F9CB1A00031F06 /* RoutingMmodSettingsPage.swift */,
+			);
+			path = mmodsSettingsPages;
+			sourceTree = "<group>";
+		};
+		704FF86129F9C6B900031F06 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				704FF86229F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift */,
+				707D8E4129FAC4870023A2A3 /* RoutingMenubarModule.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		705A2A3A29F31D3D0096BDA6 /* Equalizer */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +254,7 @@
 			children = (
 				7066D04D29F19CFE00619AC2 /* GentleFillingButtonStyle.swift */,
 				70DD123829F40F16007CACBD /* GentleButtonStyle.swift */,
+				70F5CE1A29F5CC0D00558722 /* RouterToggleStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -201,17 +288,10 @@
 				70922C9129F48BC20084BD3D /* EchoFXModule.swift */,
 				70922C9329F48F6E0084BD3D /* GenderFXModule.swift */,
 				70922C9529F490110084BD3D /* MegaphoneFXModule.swift */,
+				70922C9729F493DF0084BD3D /* HardTuneFXModule.swift */,
+				70F5CDE929F5515C00558722 /* RobotFXModule.swift */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		709EB1AB29ED7FBE0095FC64 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7003C3EC29F0A78200B20817 /* goxlr-daemon */,
-				709EB1B229ED80330095FC64 /* goxlr-defaults */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		709EB1B629ED86980095FC64 /* Features */ = {
@@ -253,6 +333,7 @@
 				700C9DF429EEC00D00EE867A /* ModuleElement.swift */,
 				700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */,
 				7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */,
+				70F5CDEB29F5683700558722 /* ProfilesElement.swift */,
 				705A2A3329F2E8B00096BDA6 /* LabelledEditableVSlider.swift */,
 			);
 			path = Shared;
@@ -268,8 +349,10 @@
 		709EB1BF29EDAB2F0095FC64 /* Menubar */ = {
 			isa = PBXGroup;
 			children = (
+				709F81B129F70DC400C9F959 /* Modules */,
 				709EB1D729EDB2090095FC64 /* Views */,
 				709EB1D529EDADE30095FC64 /* MenubarScene.swift */,
+				709F81B229F70E4200C9F959 /* MenubarConfiguration.swift */,
 			);
 			path = Menubar;
 			sourceTree = "<group>";
@@ -288,6 +371,8 @@
 		709EB1C129EDAB560095FC64 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				70F5CDF629F573DD00558722 /* Pages */,
+				70F5CDF329F56FD200558722 /* Models */,
 				700C29FD29EDEA9200BC0AE8 /* SettingsScene.swift */,
 				700C9DF229EEB23300EE867A /* SettingsView.swift */,
 			);
@@ -318,6 +403,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		709F81B129F70DC400C9F959 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				704FF86129F9C6B900031F06 /* Routing */,
+				704FF85929F9A5ED00031F06 /* Profiles */,
+				709F81B429F713D900C9F959 /* Faders */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		709F81B429F713D900C9F959 /* Faders */ = {
+			isa = PBXGroup;
+			children = (
+				709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */,
+				704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */,
+			);
+			path = Faders;
+			sourceTree = "<group>";
+		};
+		70A4A27A29F868C10085D715 /* MenubarSettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				704FF85E29F9B57D00031F06 /* mmodsSettingsPages */,
+				70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */,
+			);
+			path = MenubarSettingsPage;
+			sourceTree = "<group>";
+		};
 		70CD08C4295B2745003BF9EB = {
 			isa = PBXGroup;
 			children = (
@@ -330,7 +443,7 @@
 		70CD08CE295B2745003BF9EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				70CD08CD295B2745003BF9EB /* GoXlr-App.app */,
+				70CD08CD295B2745003BF9EB /* GoXlr App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -342,7 +455,7 @@
 				709EB1B829ED86A50095FC64 /* Utils */,
 				709EB1B729ED869F0095FC64 /* Localisation */,
 				709EB1B629ED86980095FC64 /* Features */,
-				709EB1AB29ED7FBE0095FC64 /* Resources */,
+				70F5CDFD29F5AA3A00558722 /* Resources */,
 				70B67F2E299D3E0F00A4BA17 /* Info.plist */,
 				70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */,
 				70CD08D4295B274A003BF9EB /* Assets.xcassets */,
@@ -369,28 +482,83 @@
 			path = Effects;
 			sourceTree = "<group>";
 		};
+		70E4E5DF29F6CA82003C9158 /* MixerLightning */ = {
+			isa = PBXGroup;
+			children = (
+				70E4E5E029F6CA9B003C9158 /* MixerLightningView.swift */,
+			);
+			path = MixerLightning;
+			sourceTree = "<group>";
+		};
+		70F5CDED29F5690B00558722 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CDEE29F5691500558722 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		70F5CDF029F56BD900558722 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CDF129F56E6600558722 /* RouterView.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		70F5CDF329F56FD200558722 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CDF429F56FDD00558722 /* SettingsPages.swift */,
+				70F5CDFB29F5A43500558722 /* AppSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		70F5CDF629F573DD00558722 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				70A4A27A29F868C10085D715 /* MenubarSettingsPage */,
+				70F5CDF729F573F500558722 /* GeneralSettingsPage.swift */,
+				70F5CDF929F592D900558722 /* MixerSettingsPage.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		70F5CDFD29F5AA3A00558722 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CE1529F5BF0300558722 /* goxlr-daemon */,
+				70F5CE0F29F5AB0900558722 /* Library */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		70CD08CC295B2745003BF9EB /* GoXlr-App */ = {
+		70CD08CC295B2745003BF9EB /* GoXlr App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 70CD08DC295B274A003BF9EB /* Build configuration list for PBXNativeTarget "GoXlr-App" */;
+			buildConfigurationList = 70CD08DC295B274A003BF9EB /* Build configuration list for PBXNativeTarget "GoXlr App" */;
 			buildPhases = (
 				70CD08C9295B2745003BF9EB /* Sources */,
 				70CD08CA295B2745003BF9EB /* Frameworks */,
 				70CD08CB295B2745003BF9EB /* Resources */,
+				70F5CE1129F5AB9100558722 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "GoXlr-App";
+			name = "GoXlr App";
 			packageProductDependencies = (
-				709EB1BB29EDAA180095FC64 /* GoXlrKit */,
-				709EB1BD29EDAA180095FC64 /* GoXlrKit-Audio */,
+				70C74EA629F5DA7B004471A9 /* GoXlrKit */,
+				70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */,
+				70E4E5DD29F6CA72003C9158 /* Wallpaper */,
+				70E4E5E929F6D158003C9158 /* DominantColor */,
 			);
 			productName = "GoXlr-App";
-			productReference = 70CD08CD295B2745003BF9EB /* GoXlr-App.app */;
+			productReference = 70CD08CD295B2745003BF9EB /* GoXlr App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -408,7 +576,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 70CD08C8295B2745003BF9EB /* Build configuration list for PBXProject "GoXlr-App" */;
+			buildConfigurationList = 70CD08C8295B2745003BF9EB /* Build configuration list for PBXProject "GoXlr App" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -419,13 +587,15 @@
 			);
 			mainGroup = 70CD08C4295B2745003BF9EB;
 			packageReferences = (
-				709EB1A429ED7CD40095FC64 /* XCRemoteSwiftPackageReference "GoXlrKit" */,
+				70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */,
+				70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */,
+				70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */,
 			);
 			productRefGroup = 70CD08CE295B2745003BF9EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				70CD08CC295B2745003BF9EB /* GoXlr-App */,
+				70CD08CC295B2745003BF9EB /* GoXlr App */,
 			);
 		};
 /* End PBXProject section */
@@ -436,10 +606,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				709EB1D129EDAD7E0095FC64 /* Localizable.strings in Resources */,
-				7003C3ED29F0A78300B20817 /* goxlr-daemon in Resources */,
+				70F5CE1629F5BF0400558722 /* goxlr-daemon in Resources */,
 				70CD08D8295B274A003BF9EB /* Preview Assets.xcassets in Resources */,
 				70CD08D5295B274A003BF9EB /* Assets.xcassets in Resources */,
-				709EB1B429ED80330095FC64 /* goxlr-defaults in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,11 +619,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F5CDEC29F5683700558722 /* ProfilesElement.swift in Sources */,
 				70922C9229F48BC20084BD3D /* EchoFXModule.swift in Sources */,
+				704FF86329F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift in Sources */,
 				705A2A3929F31CDD0096BDA6 /* EqualizerMicModule.swift in Sources */,
+				70F5CDFA29F592D900558722 /* MixerSettingsPage.swift in Sources */,
 				705A2A3729F2FA0D0096BDA6 /* RoundedParser.swift in Sources */,
 				70922C9429F48F6E0084BD3D /* GenderFXModule.swift in Sources */,
 				7066D05329F1D53900619AC2 /* GateMicModule.swift in Sources */,
+				704FF86529F9CB1A00031F06 /* RoutingMmodSettingsPage.swift in Sources */,
 				700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */,
 				7003C3E929F098FA00B20817 /* FadersMixerElements.swift in Sources */,
 				70922C8D29F471E30084BD3D /* ShowInFinder.swift in Sources */,
@@ -464,27 +637,43 @@
 				70FF91A929EDD6CC00316D56 /* ConfigurationScene.swift in Sources */,
 				700C29FE29EDEA9300BC0AE8 /* SettingsScene.swift in Sources */,
 				705A2A3F29F333290096BDA6 /* CompressorMicModule.swift in Sources */,
+				70F5CDEF29F5691500558722 /* HomeView.swift in Sources */,
 				70922C9629F490110084BD3D /* MegaphoneFXModule.swift in Sources */,
 				7066D05129F1CCAD00619AC2 /* MicSetupMicModule.swift in Sources */,
 				70FF91A529EDCD5300316D56 /* LoadingElement.swift in Sources */,
+				70A4A27C29F868E60085D715 /* MenubarSettingsPage.swift in Sources */,
 				700C2A0029EDEC6100BC0AE8 /* View+HideTitlebar.swift in Sources */,
+				70E4E5E129F6CA9B003C9158 /* MixerLightningView.swift in Sources */,
 				700C9DF929EEC0A000EE867A /* MixerView.swift in Sources */,
 				7066D04E29F19CFE00619AC2 /* GentleFillingButtonStyle.swift in Sources */,
 				7066D04B29F16CF000619AC2 /* MicProfilesElement.swift in Sources */,
+				704FF86029F9B59F00031F06 /* FadersMmodSettingsPage.swift in Sources */,
+				70922C9829F493DF0084BD3D /* HardTuneFXModule.swift in Sources */,
+				707D8E4229FAC4870023A2A3 /* RoutingMenubarModule.swift in Sources */,
 				705A2A3429F2E8B00096BDA6 /* LabelledEditableVSlider.swift in Sources */,
+				709F81B729F7141B00C9F959 /* FadersMenubarModule.swift in Sources */,
 				709EB1DB29EDB2B10095FC64 /* EffectsView.swift in Sources */,
+				70F5CDEA29F5515C00558722 /* RobotFXModule.swift in Sources */,
 				705A2A4129F333610096BDA6 /* ExtrasMicModule.swift in Sources */,
 				700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */,
 				7066D05929F1EA3F00619AC2 /* ThresholdParser.swift in Sources */,
 				709EB1D629EDADE30095FC64 /* MenubarScene.swift in Sources */,
+				709F81B329F70E4200C9F959 /* MenubarConfiguration.swift in Sources */,
+				70F5CDF229F56E6600558722 /* RouterView.swift in Sources */,
+				704FF85D29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift in Sources */,
 				7066D04629F16B5700619AC2 /* MicView.swift in Sources */,
 				7066D05629F1EA1D00619AC2 /* VolumePercentParser.swift in Sources */,
+				704FF85B29F9A60700031F06 /* ProfilesMenubarModule.swift in Sources */,
+				70F5CDF829F573F500558722 /* GeneralSettingsPage.swift in Sources */,
 				700C9DF329EEB23300EE867A /* SettingsView.swift in Sources */,
 				70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */,
+				70F5CE1B29F5CC0D00558722 /* RouterToggleStyle.swift in Sources */,
 				705A2A3C29F332860096BDA6 /* EqualizerMiniMicModule.swift in Sources */,
 				70922C9029F4751A0084BD3D /* ReverbFXModule.swift in Sources */,
 				7003C3E729F0988900B20817 /* VolumesSlidersMixerElements.swift in Sources */,
+				70F5CDF529F56FDD00558722 /* SettingsPages.swift in Sources */,
 				70FF91A729EDCFD900316D56 /* MenubarView.swift in Sources */,
+				70F5CDFC29F5A43600558722 /* AppSettings.swift in Sources */,
 				70DD123929F40F16007CACBD /* GentleButtonStyle.swift in Sources */,
 				700C9DF529EEC00D00EE867A /* ModuleElement.swift in Sources */,
 				70DD123C29F44068007CACBD /* FXView.swift in Sources */,
@@ -628,9 +817,9 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = dev_1;
 				DEVELOPMENT_ASSET_PATHS = "\"GoXlr-App/Preview Content\"";
-				DEVELOPMENT_TEAM = V2737Q4C7F;
+				DEVELOPMENT_TEAM = TCG39FU5X7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -643,7 +832,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "2.0.0-alpha.2";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -661,9 +850,9 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = dev_1;
 				DEVELOPMENT_ASSET_PATHS = "\"GoXlr-App/Preview Content\"";
-				DEVELOPMENT_TEAM = V2737Q4C7F;
+				DEVELOPMENT_TEAM = TCG39FU5X7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -676,7 +865,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "2.0.0-alpha.2";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -688,7 +877,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		70CD08C8295B2745003BF9EB /* Build configuration list for PBXProject "GoXlr-App" */ = {
+		70CD08C8295B2745003BF9EB /* Build configuration list for PBXProject "GoXlr App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				70CD08DA295B274A003BF9EB /* Debug */,
@@ -697,7 +886,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		70CD08DC295B274A003BF9EB /* Build configuration list for PBXNativeTarget "GoXlr-App" */ = {
+		70CD08DC295B274A003BF9EB /* Build configuration list for PBXNativeTarget "GoXlr App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				70CD08DD295B274A003BF9EB /* Debug */,
@@ -709,7 +898,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		709EB1A429ED7CD40095FC64 /* XCRemoteSwiftPackageReference "GoXlrKit" */ = {
+		70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/macos-wallpaper";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Adelenade/DominantColor";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Adelenade/GoXlrKit";
 			requirement = {
@@ -720,15 +925,25 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		709EB1BB29EDAA180095FC64 /* GoXlrKit */ = {
+		70C74EA629F5DA7B004471A9 /* GoXlrKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 709EB1A429ED7CD40095FC64 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
+			package = 70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
 			productName = GoXlrKit;
 		};
-		709EB1BD29EDAA180095FC64 /* GoXlrKit-Audio */ = {
+		70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 709EB1A429ED7CD40095FC64 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
+			package = 70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
 			productName = "GoXlrKit-Audio";
+		};
+		70E4E5DD29F6CA72003C9158 /* Wallpaper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */;
+			productName = Wallpaper;
+		};
+		70E4E5E929F6D158003C9158 /* DominantColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */;
+			productName = DominantColor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

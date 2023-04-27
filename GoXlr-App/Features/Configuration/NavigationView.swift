@@ -38,12 +38,18 @@ struct NavigationView: View {
                 .navigationDestination(for: Tab.self) { tab in
                     Group {
                         switch tab.id {
+                        case .home:
+                            HomeView()
                         case .mic:
                             MicView()
                         case .mixer:
                             MixerView()
+                        case .routing:
+                            RouterView()
                         case .effects:
                             FXView()
+                        case .lightMixer:
+                            MixerLightningView()
                         default:
                             Text("Not yet implemented !")
                                 .font(.headline)
@@ -70,9 +76,7 @@ struct NavigationView: View {
                         .navigationTitle(tab.name)
                 }
         }, detail: {
-            Group {
-                
-            }.clipped()
+            HomeView().clipped()
         })
     }
 }

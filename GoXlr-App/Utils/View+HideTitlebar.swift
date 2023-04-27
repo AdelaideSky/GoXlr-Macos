@@ -21,17 +21,16 @@ struct RemoveSettingsStyling: ViewModifier {
     func body(content: Content) -> some View {
         content
             .task {
-                
-                let window = NSApp.windows.first { $0.title == "General" }!
+                let window = NSApp.windows.first { $0.identifier?.rawValue == "com_apple_SwiftUI_Settings_window" }!
                 window.titleVisibility = .visible
                 window.toolbarStyle = .automatic
                 window.titlebarAppearsTransparent = true
                 
-                let sidebaritem = "com.apple.SwiftUI.navigationSplitView.toggleSidebar"
-                let index = window.toolbar?.items.firstIndex { $0.itemIdentifier.rawValue == sidebaritem }
-                if let index {
-                    window.toolbar?.removeItem(at: index)
-                }
+//                let sidebaritem = "com.apple.SwiftUI.navigationSplitView.toggleSidebar"
+//                let index = window.toolbar?.items.firstIndex { $0.itemIdentifier.rawValue == sidebaritem }
+//                if let index {
+//                    window.toolbar?.removeItem(at: index)
+//                }
             }
     }
 }

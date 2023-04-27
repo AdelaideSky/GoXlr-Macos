@@ -61,6 +61,8 @@ struct FXPresetRowElement: View {
     var name: String
     var index: Int
     
+    @State var showingRenameAlert: Bool = false
+    
     init(_ preset: EffectBankPresets, index: Int, name: String) {
         self.preset = preset
         self.name = name
@@ -70,7 +72,34 @@ struct FXPresetRowElement: View {
     var body: some View {
         NavigationLink(destination: {
             FXPresetDetailElement(preset)
-                .navigationTitle("\(index): \(name)")
+                .navigationTitle("")
+                .toolbar {
+                    ToolbarItem(placement: .navigation) {
+                        HStack {
+                            Image(systemName: "\(index).square.fill")
+                                .font(.title3)
+                            Text(name)
+                                .font(.title3)
+                                .foregroundColor(.primary)
+                                .bold()
+                            Button(action: {
+                                showingRenameAlert.toggle()
+                                print(showingRenameAlert)
+                            }, label: {
+                                Label("Rename", systemImage: "square.and.pencil")
+                                    .font(.title3)
+                                    .labelStyle(.iconOnly)
+                            }).buttonStyle(.gentle)
+                                .opacity(0.5)
+                                .offset(y: -1)
+                        }
+                    }
+                }
+                .sheet(isPresented: $showingRenameAlert) {
+                    TextInputAlertElement("Rename this preset", initialValue: name, isPresented: $showingRenameAlert) { newPresetName in
+                        GoXlr.shared.command(.RenameActivePreset(newPresetName))
+                    }
+                }
                 .onAppear {
                     GoXlr.shared.command(.SetActiveEffectPreset(preset))
                 }
@@ -93,6 +122,8 @@ struct FXPresetRowElement: View {
 struct FXPresetDetailElement: View {
     var preset: EffectBankPresets
     
+    @State var showSaveAlert: Bool = false
+    
     init(_ preset: EffectBankPresets) {
         self.preset = preset
     }
@@ -103,12 +134,28 @@ struct FXPresetDetailElement: View {
             EchoFXModule()
             GenderFXModule()
             MegaphoneFXModule()
-            Section("Robot") {Text("TODO")}
-            Section("Hard Tune") {Text("TODO")}
+            RobotFXModule()
+            HardTuneFXModule()
         }.formStyle(.grouped)
             .scrollContentBackground(.hidden)
             .frame(width: 700)
             .scrollIndicators(.hidden)
             .clipped()
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button("Save to Library") {
+                        showSaveAlert = true
+                    }
+                }
+//                ToolbarItem(placement: .navigation) {
+//                    Button("Rename") {
+//                        print("UwU")
+//                    }
+//                }
+            }
+            .alert("Are you sure you want to save this configuration to Library ?", isPresented: $showSaveAlert) {
+                Button("Yes") { GoXlr.shared.command(.SaveActivePreset) }
+                Button("Cancel", role: .cancel) {}
+            }
     }
 }

@@ -29,3 +29,21 @@ struct GentleFlippingButtonStyle: ButtonStyle {
 extension ButtonStyle where Self == GentleFlippingButtonStyle {
     static var gentleFlipping: Self { Self() }
 }
+
+struct GentleButtonStyle: ButtonStyle {
+    @Environment(\.colorScheme) private var colorScheme
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(4)
+            .background {
+                Color.gray
+                    .opacity(configuration.isPressed ? 0.2 : 0)
+            }
+            .cornerRadius(5)
+            .symbolVariant(configuration.isPressed ? .fill : .none)
+    }
+}
+
+extension ButtonStyle where Self == GentleButtonStyle {
+    static var gentle: Self { Self() }
+}
