@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>GoXlr App</title>
+        <item>
+            <title>2.0.0</title>
+            <pubDate>Thu, 04 May 2023 20:25:33 +0200</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>2.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://adelenade.github.io/GoXlr-Macos/GoXlr%20MacOS%20Installer.dmg" length="19261290" type="application/octet-stream" sparkle:edSignature="WaMsc332alnU5rFkEW1habS3A2y0vVqUL9YLNOm7PhWEoyB2rTTQxH7hO+6T40Edm8YQGfnaSlgrQjPAQXZQDA=="/>
+        </item>
+    </channel>
+</rss>

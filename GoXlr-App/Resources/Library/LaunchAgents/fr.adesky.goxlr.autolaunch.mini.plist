@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<false/>
+	<key>Label</key>
+	<string>fr.adesky.goxlr.autolaunch.mini</string>
+	<key>StandardErrorPath</key>
+	<string>/tmp/goxlr-stderr.log</string>
+	<key>StandardOutPath</key>
+	<string>tmp/goxlr-stdout.log</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Library/Application Support/fr.adesky.goxlr/xpchandler</string>
+		<string>/usr/bin/open</string>
+		<string>-W</string>
+		<string>/Applications/GoXlr App.app</string>
+	</array>
+	<key>LaunchEvents</key>
+	<dict>
+		<key>com.apple.iokit.matching</key>
+		<dict>
+			<key>com.apple.device-attach</key>
+			<dict>
+				<key>idVendor</key>
+				<integer>4640</integer>
+				<key>idProduct</key>
+				<integer>36836</integer>
+				<key>IOProviderClass</key>
+				<string>IOUSBDevice</string>
+				<key>IOMatchStream</key>
+				<true/>
+				<key>IOMatchLaunchStream</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -39,7 +39,7 @@ struct MenubarView: View {
                         .background {
                             EffectsView(material: NSVisualEffectView.Material.hudWindow, blendingMode: NSVisualEffectView.BlendingMode.behindWindow)
 //                                .blur(radius: 2)
-                                .brightness(-0.1)
+                                .brightness(-0.025)
 //                                .opacity(0.2)
                                 .mask {
                                     RoundedRectangle(cornerRadius: 10).fill(.gray)

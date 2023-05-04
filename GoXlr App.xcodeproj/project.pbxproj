@@ -50,11 +50,13 @@
 		709F81B329F70E4200C9F959 /* MenubarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81B229F70E4200C9F959 /* MenubarConfiguration.swift */; };
 		709F81B729F7141B00C9F959 /* FadersMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */; };
 		70A4A27C29F868E60085D715 /* MenubarSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */; };
+		70BC2F7C29FE835400550A48 /* BehavioursSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC2F7B29FE835400550A48 /* BehavioursSettingsPage.swift */; };
 		70C74EA729F5DA7B004471A9 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70C74EA629F5DA7B004471A9 /* GoXlrKit */; };
 		70C74EA929F5DA7B004471A9 /* GoXlrKit-Audio in Frameworks */ = {isa = PBXBuildFile; productRef = 70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */; };
 		70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */; };
 		70CD08D5295B274A003BF9EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70CD08D4295B274A003BF9EB /* Assets.xcassets */; };
 		70CD08D8295B274A003BF9EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70CD08D7295B274A003BF9EB /* Preview Assets.xcassets */; };
+		70D9E0C12A04171600A0313B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9E0C02A04171600A0313B /* Sparkle */; };
 		70DD123929F40F16007CACBD /* GentleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD123829F40F16007CACBD /* GentleButtonStyle.swift */; };
 		70DD123C29F44068007CACBD /* FXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD123B29F44068007CACBD /* FXView.swift */; };
 		70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */ = {isa = PBXBuildFile; productRef = 70E4E5DD29F6CA72003C9158 /* Wallpaper */; };
@@ -135,6 +137,7 @@
 		709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadersMenubarModule.swift; sourceTree = "<group>"; };
 		70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarSettingsPage.swift; sourceTree = "<group>"; };
 		70B67F2E299D3E0F00A4BA17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70BC2F7B29FE835400550A48 /* BehavioursSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehavioursSettingsPage.swift; sourceTree = "<group>"; };
 		70CD08CD295B2745003BF9EB /* GoXlr App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_AppApp.swift; sourceTree = "<group>"; };
 		70CD08D4295B274A003BF9EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D9E0C12A04171600A0313B /* Sparkle in Frameworks */,
 				70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */,
 				70C74EA729F5DA7B004471A9 /* GoXlrKit in Frameworks */,
 				70E4E5EA29F6D158003C9158 /* DominantColor in Frameworks */,
@@ -431,6 +435,14 @@
 			path = MenubarSettingsPage;
 			sourceTree = "<group>";
 		};
+		70BC2F7A29FE833C00550A48 /* BehavioursSettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				70BC2F7B29FE835400550A48 /* BehavioursSettingsPage.swift */,
+			);
+			path = BehavioursSettingsPage;
+			sourceTree = "<group>";
+		};
 		70CD08C4295B2745003BF9EB = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +530,7 @@
 		70F5CDF629F573DD00558722 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				70BC2F7A29FE833C00550A48 /* BehavioursSettingsPage */,
 				70A4A27A29F868C10085D715 /* MenubarSettingsPage */,
 				70F5CDF729F573F500558722 /* GeneralSettingsPage.swift */,
 				70F5CDF929F592D900558722 /* MixerSettingsPage.swift */,
@@ -556,6 +569,7 @@
 				70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */,
 				70E4E5DD29F6CA72003C9158 /* Wallpaper */,
 				70E4E5E929F6D158003C9158 /* DominantColor */,
+				70D9E0C02A04171600A0313B /* Sparkle */,
 			);
 			productName = "GoXlr-App";
 			productReference = 70CD08CD295B2745003BF9EB /* GoXlr App.app */;
@@ -590,6 +604,7 @@
 				70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */,
 				70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */,
 				70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */,
+				70D9E0BF2A04171600A0313B /* XCRemoteSwiftPackageReference "Sparkle" */,
 			);
 			productRefGroup = 70CD08CE295B2745003BF9EB /* Products */;
 			projectDirPath = "";
@@ -651,6 +666,7 @@
 				70922C9829F493DF0084BD3D /* HardTuneFXModule.swift in Sources */,
 				707D8E4229FAC4870023A2A3 /* RoutingMenubarModule.swift in Sources */,
 				705A2A3429F2E8B00096BDA6 /* LabelledEditableVSlider.swift in Sources */,
+				70BC2F7C29FE835400550A48 /* BehavioursSettingsPage.swift in Sources */,
 				709F81B729F7141B00C9F959 /* FadersMenubarModule.swift in Sources */,
 				709EB1DB29EDB2B10095FC64 /* EffectsView.swift in Sources */,
 				70F5CDEA29F5515C00558722 /* RobotFXModule.swift in Sources */,
@@ -817,7 +833,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = dev_1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GoXlr-App/Preview Content\"";
 				DEVELOPMENT_TEAM = TCG39FU5X7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -832,7 +848,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = "2.0.0-alpha.2";
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -850,7 +866,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = dev_1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GoXlr-App/Preview Content\"";
 				DEVELOPMENT_TEAM = TCG39FU5X7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -865,7 +881,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = "2.0.0-alpha.2";
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -898,6 +914,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		70D9E0BF2A04171600A0313B /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/macos-wallpaper";
@@ -934,6 +958,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
 			productName = "GoXlrKit-Audio";
+		};
+		70D9E0C02A04171600A0313B /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70D9E0BF2A04171600A0313B /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
 		};
 		70E4E5DD29F6CA72003C9158 /* Wallpaper */ = {
 			isa = XCSwiftPackageProductDependency;
