@@ -8,22 +8,39 @@
 import Foundation
 import SwiftUI
 import GoXlrKit
+import SentrySwiftUI
 
 struct MenubarScene: Scene {
+    @ObservedObject var goxlr = GoXlr.shared
+    
     var body: some Scene {
         MenuBarExtra("GoXlr App", image: "devices.goxlr.logo") {
-            AppropriateMenubarView()
+            if goxlr.status != nil {
+                AppropriateMenubarView()
+                    .sentryTrace("Menubar")
+            } else {
+                NoGoXLRView()
+                    .sentryTrace("Menubar_noGoXLR")
+            }
         }.menuBarExtraStyle(.window)
+        
+            
     }
 }
 
 struct AppropriateMenubarView: View {
-    @ObservedObject var goxlr = GoXlr.shared
+    @ObservedObject var status = GoXlr.shared.status!.data.status
+    @ObservedObject var settings = AppSettings.shared
+
     var body: some View {
-        if goxlr.status?.data.status.mixers.count ?? 0 > 0 {
-            MenubarView().frame(width: 305)
+        if settings.firstLaunch {
+            EmptyView()
         } else {
-            NoGoXLRView()
+            if status.mixers.count > 0 {
+                MenubarView().frame(width: 305)
+            } else {
+                NoGoXLRView()
+            }
         }
     }
 }

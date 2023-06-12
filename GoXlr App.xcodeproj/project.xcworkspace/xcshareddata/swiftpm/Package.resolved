@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
+        "version" : "5.7.1"
+      }
+    },
+    {
+      "identity" : "colorful",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Lakr233/Colorful",
+      "state" : {
+        "revision" : "0bcf960c856d9f7cde10a0b464208585736c5e47",
+        "version" : "1.1.0"
+      }
+    },
+    {
       "identity" : "dominantcolor",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Adelenade/DominantColor",
@@ -15,7 +33,7 @@
       "location" : "https://github.com/Adelenade/GoXlrKit",
       "state" : {
         "branch" : "main",
-        "revision" : "6733a36e82d0c7aa1f7f06dc10fcc648f6bfeae7"
+        "revision" : "aab74cac98b4e6335d5a4d43ac6a229ed4ddfbb0"
       }
     },
     {
@@ -28,12 +46,39 @@
       }
     },
     {
+      "identity" : "menubarextraaccess",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/orchetect/MenuBarExtraAccess",
+      "state" : {
+        "revision" : "24c86e4de6664aefb8b29b47fd664cf833c49ad2",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "sentry-cocoa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/getsentry/sentry-cocoa.git",
+      "state" : {
+        "revision" : "607c3e3730ce391bb9a008c264f45a743b945650",
+        "version" : "8.7.1"
+      }
+    },
+    {
       "identity" : "simplycoreaudio",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/rnine/SimplyCoreAudio",
       "state" : {
         "branch" : "develop",
         "revision" : "73014324f2a916b445b4da5a4232aa57033267af"
+      }
+    },
+    {
+      "identity" : "skykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Adelenade/SkyKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "67c87c9798e6624a73c965c3d192c7cfe8a42a2c"
       }
     },
     {

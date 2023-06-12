@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import GoXlrKit
+import SentrySwiftUI
 
 struct SettingsScene: Scene {
     var body: some Scene {
@@ -24,6 +25,7 @@ struct AppropriateSettingsView: View {
         if goxlr.status != nil {
             SettingsView()
                 .frame(minWidth: 715, maxWidth: 715, minHeight: 400)
+                .sentryTrace("Settings")
         }
     }
 }

@@ -73,9 +73,3 @@ struct ProfilesMenubarModule: View {
             .padding(.vertical, 10)
     }
 }
-
-struct ProfilesMenubarModule_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfilesMenubarModule()
-    }
-}

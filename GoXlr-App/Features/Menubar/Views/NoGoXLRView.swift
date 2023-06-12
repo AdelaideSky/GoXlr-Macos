@@ -39,9 +39,6 @@ struct NoGoXLRView: View {
                         GoXlr().copyDebugInfo()
                     }
                     Link("Join support server", destination: URL(string: "https://discord.gg/cyavp8F2WW")!)
-                    Button("load") {
-                        goxlr.utils.registerInitAgents()
-                    }
                 } label: {
                     Image(systemName: "ellipsis")
                 }

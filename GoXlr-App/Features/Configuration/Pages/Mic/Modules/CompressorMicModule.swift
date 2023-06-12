@@ -15,6 +15,7 @@ struct CompressorMicModule: View {
     
     var simplifiedAmount: Binding<Float> = .init(
         get: {
+            //TODO: get
             return 0
         },
         set: { newValue in

@@ -7,7 +7,7 @@
 
 import SwiftUI
 import GoXlrKit
-
+import SkyKit_Design
 struct GeneralSettingsPage: View {
     @ObservedObject var status = GoXlr.shared.status!.data.status
     @ObservedObject var appSettings = AppSettings.shared
@@ -19,6 +19,19 @@ struct GeneralSettingsPage: View {
             }
             Section("Accessibility") {
                 Toggle("TTS on button press", isOn: $status.config.ttsEnabled)
+            }
+            Section("Advanced") {
+                HStack {
+                    Text("Reinstall drivers")
+                    Spacer()
+                    Button(action: {
+                        appSettings.initialiseApp()
+                    }, label: {
+                        Label("Reinstall drivers", systemImage: "chevron.right.circle")
+                            .labelStyle(.iconOnly)
+                    }).buttonStyle(.gentle)
+                        .padding(-5)
+                }
             }
         }.formStyle(.grouped)
             .scrollContentBackground(.hidden)

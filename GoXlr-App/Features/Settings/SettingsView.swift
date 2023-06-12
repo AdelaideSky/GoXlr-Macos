@@ -56,6 +56,10 @@ struct SettingsView: View {
                         GeneralSettingsPage()
                     case .menubar:
                         MenubarSettingsPage()
+                    case .audio:
+                        AudioSettingsPage()
+                    case .behaviors:
+                        BehavioursSettingsPage()
                     default:
                         EmptyView()
                     }

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import GoXlrKit
+import SentrySwiftUI
 
 struct ConfigurationScene: Scene {
     @ObservedObject var goxlr = GoXlr.shared
@@ -27,6 +28,7 @@ struct ConfigurationScene: Scene {
                     }
                 }
             }.frame(minWidth: 1000, idealWidth: 1100, minHeight: 600, idealHeight: 620)
+                .sentryTrace("Configuration")
         }.commands {
             if let status = goxlr.status {
                 if status.data.status.mixers.count > 1 {

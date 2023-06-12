@@ -44,10 +44,14 @@ struct NavigationView: View {
                             MicView()
                         case .mixer:
                             MixerView()
+                        case .sampler:
+                            SamplerView()
                         case .routing:
                             RouterView()
                         case .effects:
                             FXView()
+                        case .lightGlobal:
+                            LightningView()
                         case .lightMixer:
                             MixerLightningView()
                         default:
