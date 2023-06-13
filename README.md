@@ -75,5 +75,5 @@ These are the super-cool sponsors of the project !
 
 <div align=center>
 <a href="https://github.com/blacksails"><img src="https://github.com/blacksails.png" width="60px" alt="Benjamin Nørgaard" /></a>
-<!-- sponsors --><!-- sponsors -->
+<!-- sponsors --><a href="https://github.com/TheJokersThief"><img src="https://github.com/TheJokersThief.png" width="60px" alt="Evan Smith" /></a><!-- sponsors -->
 </div>
