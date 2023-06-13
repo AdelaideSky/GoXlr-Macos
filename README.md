@@ -33,7 +33,7 @@ your device is your responsibility.
 
 ## Set up
 
-- Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases).
+- Download the latest [release](https://github.com/AdelaideSky/GoXlr-Macos/releases/latest).
 - Open the .zip file and put the app file into your Applications folder
 - Open the app and follow the onboarding process displayed !
 
