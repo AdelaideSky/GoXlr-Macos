@@ -95,7 +95,7 @@ try
 do shell script \"sudo cp \\\"\(initialiser.path)\\\" \\\"\(initialiserURL.path)\\\"\" with administrator privileges
 end try
 try
-do shell script \"\(initialiserURL.path)\"
+do shell script \"sudo \(initialiserURL.path)\"
 end try
 """
         NSAppleScript(source: script)!.executeAndReturnError(nil)

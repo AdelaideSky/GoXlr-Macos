@@ -40,6 +40,7 @@ struct FirstOnboardingPage: View {
     }
     
     @State var isInstalling: Bool = false
+    @State var showPermissionNotice: Bool = false
     
     var body: some View {
         VStack {
@@ -65,7 +66,7 @@ struct FirstOnboardingPage: View {
                 DispatchQueue(label: "driversInstaller").async {
                     AppSettings.shared.initialiseApp()
                     DispatchQueue.main.sync {
-                        self.page += 1
+                        self.showPermissionNotice.toggle()
                     }
                 }
                 
@@ -82,6 +83,14 @@ struct FirstOnboardingPage: View {
             })
             .disabled(isInstalling)
             .buttonStyle(.prominent)
+            .alert("Allow drivers to run in background", isPresented: $showPermissionNotice, actions: {
+                Button("Done", role: .cancel) {
+                    page+=1
+                }
+            }, message: {
+                Text("The drivers need to be authorised before being able to run when you connect your device.")
+                Text("Please look for the notification asking if the goxlr app can run in background and click allow.")
+            })
         }
     }
 }

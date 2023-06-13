@@ -4,11 +4,11 @@
         <title>GoXlr App</title>
         <item>
             <title>2.0.0</title>
-            <pubDate>Thu, 04 May 2023 20:25:33 +0200</pubDate>
+            <pubDate>Tue, 13 Jun 2023 15:01:10 +0200</pubDate>
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>2.0.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://adelenade.github.io/GoXlr-Macos/GoXlr%20MacOS%20Installer.dmg" length="19261290" type="application/octet-stream" sparkle:edSignature="WaMsc332alnU5rFkEW1habS3A2y0vVqUL9YLNOm7PhWEoyB2rTTQxH7hO+6T40Edm8YQGfnaSlgrQjPAQXZQDA=="/>
+            <enclosure url="https://adelenade.github.io/GoXlr-Macos/GoXlr%20App%20v2.0.0.zip" length="21428426" type="application/octet-stream" sparkle:edSignature="M9GmyubSHvH8r3nrwLlOO7cVYJ0rfgZkw36szR8zHv8KdCI5k/YM546Fa9SeVocuM8J9/EQj1LHzDkxG9y9fBQ=="/>
         </item>
     </channel>
 </rss>
