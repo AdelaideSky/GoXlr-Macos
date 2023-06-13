@@ -1,0 +1,1091 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7003C3E729F0988900B20817 /* VolumesSlidersMixerElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7003C3E629F0988900B20817 /* VolumesSlidersMixerElements.swift */; };
+		7003C3E929F098FA00B20817 /* FadersMixerElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7003C3E829F098FA00B20817 /* FadersMixerElements.swift */; };
+		7005D8CB2A37C3350046224C /* Dict+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7005D8CA2A37C3350046224C /* Dict+Codable.swift */; };
+		700C29FC29EDE55E00BC0AE8 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C29FB29EDE55E00BC0AE8 /* NavigationView.swift */; };
+		700C29FE29EDEA9300BC0AE8 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C29FD29EDEA9200BC0AE8 /* SettingsScene.swift */; };
+		700C2A0029EDEC6100BC0AE8 /* View+HideTitlebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C29FF29EDEC6100BC0AE8 /* View+HideTitlebar.swift */; };
+		700C9DF329EEB23300EE867A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DF229EEB23300EE867A /* SettingsView.swift */; };
+		700C9DF529EEC00D00EE867A /* ModuleElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DF429EEC00D00EE867A /* ModuleElement.swift */; };
+		700C9DF929EEC0A000EE867A /* MixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DF829EEC0A000EE867A /* MixerView.swift */; };
+		700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFB29EEC37700EE867A /* Tabs.swift */; };
+		700C9DFE29EECD1100EE867A /* Binding+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */; };
+		700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */; };
+		7012DF4E2A3322A900CB215D /* SkyKit_Design in Frameworks */ = {isa = PBXBuildFile; productRef = 7012DF4D2A3322A900CB215D /* SkyKit_Design */; };
+		7012DF512A33260700CB215D /* Colorful in Frameworks */ = {isa = PBXBuildFile; productRef = 7012DF502A33260700CB215D /* Colorful */; };
+		702EB1172A0D7B1A00296A0F /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 702EB1162A0D7B1A00296A0F /* Credits.html */; };
+		704E06A02A23BD1B0002084F /* SamplerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704E069F2A23BD1B0002084F /* SamplerView.swift */; };
+		704FF85B29F9A60700031F06 /* ProfilesMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */; };
+		704FF85D29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */; };
+		704FF86029F9B59F00031F06 /* FadersMmodSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85F29F9B59F00031F06 /* FadersMmodSettingsPage.swift */; };
+		704FF86329F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF86229F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift */; };
+		704FF86529F9CB1A00031F06 /* RoutingMmodSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF86429F9CB1A00031F06 /* RoutingMmodSettingsPage.swift */; };
+		70545E412A13826C0063B096 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 70545E402A13826C0063B096 /* Sentry */; };
+		70545E452A13826C0063B096 /* SentrySwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 70545E442A13826C0063B096 /* SentrySwiftUI */; };
+		70595D702A0576340073073E /* xpchandler in Resources */ = {isa = PBXBuildFile; fileRef = 70595D6F2A0576340073073E /* xpchandler */; };
+		70595D722A0577340073073E /* goxlr-initialiser in Resources */ = {isa = PBXBuildFile; fileRef = 70595D712A0577340073073E /* goxlr-initialiser */; };
+		705A2A3429F2E8B00096BDA6 /* LabelledEditableVSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3329F2E8B00096BDA6 /* LabelledEditableVSlider.swift */; };
+		705A2A3729F2FA0D0096BDA6 /* RoundedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3629F2FA0D0096BDA6 /* RoundedParser.swift */; };
+		705A2A3929F31CDD0096BDA6 /* EqualizerMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3829F31CDD0096BDA6 /* EqualizerMicModule.swift */; };
+		705A2A3C29F332860096BDA6 /* EqualizerMiniMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3B29F332860096BDA6 /* EqualizerMiniMicModule.swift */; };
+		705A2A3F29F333290096BDA6 /* CompressorMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A3E29F333290096BDA6 /* CompressorMicModule.swift */; };
+		705A2A4129F333610096BDA6 /* ExtrasMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705A2A4029F333610096BDA6 /* ExtrasMicModule.swift */; };
+		70640D682A094DF900AC1AFA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70640D672A094DF900AC1AFA /* OnboardingView.swift */; };
+		70640D6B2A0960CB00AC1AFA /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70640D6A2A0960CB00AC1AFA /* Color+Hex.swift */; };
+		70640D6D2A09634F00AC1AFA /* ProminentButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70640D6C2A09634F00AC1AFA /* ProminentButtonStyle.swift */; };
+		7066D04629F16B5700619AC2 /* MicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D04529F16B5700619AC2 /* MicView.swift */; };
+		7066D04B29F16CF000619AC2 /* MicProfilesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */; };
+		7066D05129F1CCAD00619AC2 /* MicSetupMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05029F1CCAD00619AC2 /* MicSetupMicModule.swift */; };
+		7066D05329F1D53900619AC2 /* GateMicModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05229F1D53900619AC2 /* GateMicModule.swift */; };
+		7066D05629F1EA1D00619AC2 /* VolumePercentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05529F1EA1D00619AC2 /* VolumePercentParser.swift */; };
+		7066D05929F1EA3F00619AC2 /* ThresholdParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066D05829F1EA3F00619AC2 /* ThresholdParser.swift */; };
+		706991D62A055338002EA076 /* AudioSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706991D52A055338002EA076 /* AudioSettingsPage.swift */; };
+		707D8E4229FAC4870023A2A3 /* RoutingMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707D8E4129FAC4870023A2A3 /* RoutingMenubarModule.swift */; };
+		70922C8D29F471E30084BD3D /* ShowInFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C8C29F471E30084BD3D /* ShowInFinder.swift */; };
+		70922C9029F4751A0084BD3D /* ReverbFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C8F29F4751A0084BD3D /* ReverbFXModule.swift */; };
+		70922C9229F48BC20084BD3D /* EchoFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C9129F48BC20084BD3D /* EchoFXModule.swift */; };
+		70922C9429F48F6E0084BD3D /* GenderFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C9329F48F6E0084BD3D /* GenderFXModule.swift */; };
+		70922C9629F490110084BD3D /* MegaphoneFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C9529F490110084BD3D /* MegaphoneFXModule.swift */; };
+		70922C9829F493DF0084BD3D /* HardTuneFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70922C9729F493DF0084BD3D /* HardTuneFXModule.swift */; };
+		709EB1D129EDAD7E0095FC64 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 709EB1D329EDAD7E0095FC64 /* Localizable.strings */; };
+		709EB1D629EDADE30095FC64 /* MenubarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB1D529EDADE30095FC64 /* MenubarScene.swift */; };
+		709EB1D929EDB2170095FC64 /* NoGoXLRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB1D829EDB2170095FC64 /* NoGoXLRView.swift */; };
+		709EB1DB29EDB2B10095FC64 /* EffectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB1DA29EDB2B10095FC64 /* EffectsView.swift */; };
+		709F81B329F70E4200C9F959 /* MenubarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81B229F70E4200C9F959 /* MenubarConfiguration.swift */; };
+		709F81B729F7141B00C9F959 /* FadersMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */; };
+		70A4A27C29F868E60085D715 /* MenubarSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */; };
+		70BC2F7C29FE835400550A48 /* BehavioursSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC2F7B29FE835400550A48 /* BehavioursSettingsPage.swift */; };
+		70C74EA729F5DA7B004471A9 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70C74EA629F5DA7B004471A9 /* GoXlrKit */; };
+		70C74EA929F5DA7B004471A9 /* GoXlrKit-Audio in Frameworks */ = {isa = PBXBuildFile; productRef = 70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */; };
+		70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */; };
+		70CD08D5295B274A003BF9EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70CD08D4295B274A003BF9EB /* Assets.xcassets */; };
+		70CD08D8295B274A003BF9EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70CD08D7295B274A003BF9EB /* Preview Assets.xcassets */; };
+		70D9E0C12A04171600A0313B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9E0C02A04171600A0313B /* Sparkle */; };
+		70DD123C29F44068007CACBD /* FXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD123B29F44068007CACBD /* FXView.swift */; };
+		70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */ = {isa = PBXBuildFile; productRef = 70E4E5DD29F6CA72003C9158 /* Wallpaper */; };
+		70E4E5E129F6CA9B003C9158 /* MixerLightningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4E5E029F6CA9B003C9158 /* MixerLightningView.swift */; };
+		70E4E5EA29F6D158003C9158 /* DominantColor in Frameworks */ = {isa = PBXBuildFile; productRef = 70E4E5E929F6D158003C9158 /* DominantColor */; };
+		70F5CDEA29F5515C00558722 /* RobotFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDE929F5515C00558722 /* RobotFXModule.swift */; };
+		70F5CDEC29F5683700558722 /* ProfilesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDEB29F5683700558722 /* ProfilesElement.swift */; };
+		70F5CDEF29F5691500558722 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDEE29F5691500558722 /* HomeView.swift */; };
+		70F5CDF229F56E6600558722 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDF129F56E6600558722 /* RouterView.swift */; };
+		70F5CDF529F56FDD00558722 /* SettingsPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDF429F56FDD00558722 /* SettingsPages.swift */; };
+		70F5CDF829F573F500558722 /* GeneralSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDF729F573F500558722 /* GeneralSettingsPage.swift */; };
+		70F5CDFA29F592D900558722 /* MixerSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDF929F592D900558722 /* MixerSettingsPage.swift */; };
+		70F5CDFC29F5A43600558722 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDFB29F5A43500558722 /* AppSettings.swift */; };
+		70F5CE1229F5ABA900558722 /* Library in CopyFiles */ = {isa = PBXBuildFile; fileRef = 70F5CE0F29F5AB0900558722 /* Library */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		70F5CE1629F5BF0400558722 /* goxlr-daemon in Resources */ = {isa = PBXBuildFile; fileRef = 70F5CE1529F5BF0300558722 /* goxlr-daemon */; };
+		70F5CE1B29F5CC0D00558722 /* RouterToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CE1A29F5CC0D00558722 /* RouterToggleStyle.swift */; };
+		70F8FB082A19138F00647DCE /* ProfilesColourElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8FB072A19138F00647DCE /* ProfilesColourElement.swift */; };
+		70F8FB0B2A19152400647DCE /* LightningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F8FB0A2A19152400647DCE /* LightningView.swift */; };
+		70FF91A529EDCD5300316D56 /* LoadingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF91A429EDCD5300316D56 /* LoadingElement.swift */; };
+		70FF91A729EDCFD900316D56 /* MenubarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF91A629EDCFD900316D56 /* MenubarView.swift */; };
+		70FF91A929EDD6CC00316D56 /* ConfigurationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF91A829EDD6CC00316D56 /* ConfigurationScene.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		70F5CE1129F5AB9100558722 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents;
+			dstSubfolderSpec = 1;
+			files = (
+				70F5CE1229F5ABA900558722 /* Library in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7003C3E629F0988900B20817 /* VolumesSlidersMixerElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumesSlidersMixerElements.swift; sourceTree = "<group>"; };
+		7003C3E829F098FA00B20817 /* FadersMixerElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadersMixerElements.swift; sourceTree = "<group>"; };
+		7005D8CA2A37C3350046224C /* Dict+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dict+Codable.swift"; sourceTree = "<group>"; };
+		700C29FB29EDE55E00BC0AE8 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		700C29FD29EDEA9200BC0AE8 /* SettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
+		700C29FF29EDEC6100BC0AE8 /* View+HideTitlebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideTitlebar.swift"; sourceTree = "<group>"; };
+		700C9DF229EEB23300EE867A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		700C9DF429EEC00D00EE867A /* ModuleElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleElement.swift; sourceTree = "<group>"; };
+		700C9DF829EEC0A000EE867A /* MixerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerView.swift; sourceTree = "<group>"; };
+		700C9DFB29EEC37700EE867A /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Unwrap.swift"; sourceTree = "<group>"; };
+		700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSliderElement.swift; sourceTree = "<group>"; };
+		702EB1162A0D7B1A00296A0F /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		704E069F2A23BD1B0002084F /* SamplerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerView.swift; sourceTree = "<group>"; };
+		704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesMenubarModule.swift; sourceTree = "<group>"; };
+		704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesMenubarModuleConfiguration.swift; sourceTree = "<group>"; };
+		704FF85F29F9B59F00031F06 /* FadersMmodSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadersMmodSettingsPage.swift; sourceTree = "<group>"; };
+		704FF86229F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingMenubarModuleConfig.swift; sourceTree = "<group>"; };
+		704FF86429F9CB1A00031F06 /* RoutingMmodSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingMmodSettingsPage.swift; sourceTree = "<group>"; };
+		70595D6F2A0576340073073E /* xpchandler */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = xpchandler; sourceTree = "<group>"; };
+		70595D712A0577340073073E /* goxlr-initialiser */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "goxlr-initialiser"; sourceTree = "<group>"; };
+		705A2A3329F2E8B00096BDA6 /* LabelledEditableVSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledEditableVSlider.swift; sourceTree = "<group>"; };
+		705A2A3629F2FA0D0096BDA6 /* RoundedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedParser.swift; sourceTree = "<group>"; };
+		705A2A3829F31CDD0096BDA6 /* EqualizerMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizerMicModule.swift; sourceTree = "<group>"; };
+		705A2A3B29F332860096BDA6 /* EqualizerMiniMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizerMiniMicModule.swift; sourceTree = "<group>"; };
+		705A2A3E29F333290096BDA6 /* CompressorMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressorMicModule.swift; sourceTree = "<group>"; };
+		705A2A4029F333610096BDA6 /* ExtrasMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtrasMicModule.swift; sourceTree = "<group>"; };
+		70640D672A094DF900AC1AFA /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		70640D6A2A0960CB00AC1AFA /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		70640D6C2A09634F00AC1AFA /* ProminentButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProminentButtonStyle.swift; sourceTree = "<group>"; };
+		7066D04529F16B5700619AC2 /* MicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicView.swift; sourceTree = "<group>"; };
+		7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicProfilesElement.swift; sourceTree = "<group>"; };
+		7066D05029F1CCAD00619AC2 /* MicSetupMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicSetupMicModule.swift; sourceTree = "<group>"; };
+		7066D05229F1D53900619AC2 /* GateMicModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GateMicModule.swift; sourceTree = "<group>"; };
+		7066D05529F1EA1D00619AC2 /* VolumePercentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumePercentParser.swift; sourceTree = "<group>"; };
+		7066D05829F1EA3F00619AC2 /* ThresholdParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdParser.swift; sourceTree = "<group>"; };
+		706991D52A055338002EA076 /* AudioSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettingsPage.swift; sourceTree = "<group>"; };
+		707D8E4129FAC4870023A2A3 /* RoutingMenubarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingMenubarModule.swift; sourceTree = "<group>"; };
+		70922C8C29F471E30084BD3D /* ShowInFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInFinder.swift; sourceTree = "<group>"; };
+		70922C8F29F4751A0084BD3D /* ReverbFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverbFXModule.swift; sourceTree = "<group>"; };
+		70922C9129F48BC20084BD3D /* EchoFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EchoFXModule.swift; sourceTree = "<group>"; };
+		70922C9329F48F6E0084BD3D /* GenderFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderFXModule.swift; sourceTree = "<group>"; };
+		70922C9529F490110084BD3D /* MegaphoneFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MegaphoneFXModule.swift; sourceTree = "<group>"; };
+		70922C9729F493DF0084BD3D /* HardTuneFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardTuneFXModule.swift; sourceTree = "<group>"; };
+		709EB1D229EDAD7E0095FC64 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		709EB1D429EDAD9D0095FC64 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		709EB1D529EDADE30095FC64 /* MenubarScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarScene.swift; sourceTree = "<group>"; };
+		709EB1D829EDB2170095FC64 /* NoGoXLRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoGoXLRView.swift; sourceTree = "<group>"; };
+		709EB1DA29EDB2B10095FC64 /* EffectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsView.swift; sourceTree = "<group>"; };
+		709F81B229F70E4200C9F959 /* MenubarConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarConfiguration.swift; sourceTree = "<group>"; };
+		709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadersMenubarModule.swift; sourceTree = "<group>"; };
+		70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarSettingsPage.swift; sourceTree = "<group>"; };
+		70B67F2E299D3E0F00A4BA17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		70BC2F7B29FE835400550A48 /* BehavioursSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehavioursSettingsPage.swift; sourceTree = "<group>"; };
+		70CD08CD295B2745003BF9EB /* GoXlr App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoXlr App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoXlr_AppApp.swift; sourceTree = "<group>"; };
+		70CD08D4295B274A003BF9EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70CD08D7295B274A003BF9EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		70CD08D9295B274A003BF9EB /* GoXlr_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoXlr_App.entitlements; sourceTree = "<group>"; };
+		70DD123B29F44068007CACBD /* FXView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXView.swift; sourceTree = "<group>"; };
+		70E4E5E029F6CA9B003C9158 /* MixerLightningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerLightningView.swift; sourceTree = "<group>"; };
+		70F5CDE929F5515C00558722 /* RobotFXModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotFXModule.swift; sourceTree = "<group>"; };
+		70F5CDEB29F5683700558722 /* ProfilesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesElement.swift; sourceTree = "<group>"; };
+		70F5CDEE29F5691500558722 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		70F5CDF129F56E6600558722 /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		70F5CDF429F56FDD00558722 /* SettingsPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPages.swift; sourceTree = "<group>"; };
+		70F5CDF729F573F500558722 /* GeneralSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsPage.swift; sourceTree = "<group>"; };
+		70F5CDF929F592D900558722 /* MixerSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerSettingsPage.swift; sourceTree = "<group>"; };
+		70F5CDFB29F5A43500558722 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		70F5CE0F29F5AB0900558722 /* Library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Library; sourceTree = "<group>"; };
+		70F5CE1529F5BF0300558722 /* goxlr-daemon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "goxlr-daemon"; path = "Dependices/GoXLR-Utility/target/goxlr-daemon"; sourceTree = SOURCE_ROOT; };
+		70F5CE1A29F5CC0D00558722 /* RouterToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterToggleStyle.swift; sourceTree = "<group>"; };
+		70F8FB072A19138F00647DCE /* ProfilesColourElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilesColourElement.swift; sourceTree = "<group>"; };
+		70F8FB0A2A19152400647DCE /* LightningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightningView.swift; sourceTree = "<group>"; };
+		70FF91A429EDCD5300316D56 /* LoadingElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingElement.swift; sourceTree = "<group>"; };
+		70FF91A629EDCFD900316D56 /* MenubarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarView.swift; sourceTree = "<group>"; };
+		70FF91A829EDD6CC00316D56 /* ConfigurationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationScene.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70CD08CA295B2745003BF9EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70D9E0C12A04171600A0313B /* Sparkle in Frameworks */,
+				70545E452A13826C0063B096 /* SentrySwiftUI in Frameworks */,
+				7012DF4E2A3322A900CB215D /* SkyKit_Design in Frameworks */,
+				70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */,
+				70C74EA729F5DA7B004471A9 /* GoXlrKit in Frameworks */,
+				70E4E5EA29F6D158003C9158 /* DominantColor in Frameworks */,
+				70545E412A13826C0063B096 /* Sentry in Frameworks */,
+				7012DF512A33260700CB215D /* Colorful in Frameworks */,
+				70C74EA929F5DA7B004471A9 /* GoXlrKit-Audio in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		700C9DF629EEC07D00EE867A /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				70F8FB092A19151000647DCE /* Lightning */,
+				70E4E5DF29F6CA82003C9158 /* MixerLightning */,
+				70F5CDF029F56BD900558722 /* Router */,
+				70F5CDED29F5690B00558722 /* Home */,
+				70DD123A29F4404A007CACBD /* Effects */,
+				7066D04429F16B4700619AC2 /* Mic */,
+				700C9DF729EEC09600EE867A /* Mixer */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		700C9DF729EEC09600EE867A /* Mixer */ = {
+			isa = PBXGroup;
+			children = (
+				700C9DF829EEC0A000EE867A /* MixerView.swift */,
+				7003C3E629F0988900B20817 /* VolumesSlidersMixerElements.swift */,
+				7003C3E829F098FA00B20817 /* FadersMixerElements.swift */,
+			);
+			path = Mixer;
+			sourceTree = "<group>";
+		};
+		700C9DFA29EEC36D00EE867A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				700C9DFB29EEC37700EE867A /* Tabs.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		704E069E2A23BD0B0002084F /* Sampler */ = {
+			isa = PBXGroup;
+			children = (
+				704E069F2A23BD1B0002084F /* SamplerView.swift */,
+			);
+			path = Sampler;
+			sourceTree = "<group>";
+		};
+		704FF85929F9A5ED00031F06 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
+		704FF85E29F9B57D00031F06 /* mmodsSettingsPages */ = {
+			isa = PBXGroup;
+			children = (
+				704FF85F29F9B59F00031F06 /* FadersMmodSettingsPage.swift */,
+				704FF86429F9CB1A00031F06 /* RoutingMmodSettingsPage.swift */,
+			);
+			path = mmodsSettingsPages;
+			sourceTree = "<group>";
+		};
+		704FF86129F9C6B900031F06 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				704FF86229F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift */,
+				707D8E4129FAC4870023A2A3 /* RoutingMenubarModule.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		705A2A3A29F31D3D0096BDA6 /* Equalizer */ = {
+			isa = PBXGroup;
+			children = (
+				705A2A3829F31CDD0096BDA6 /* EqualizerMicModule.swift */,
+				705A2A3B29F332860096BDA6 /* EqualizerMiniMicModule.swift */,
+			);
+			path = Equalizer;
+			sourceTree = "<group>";
+		};
+		7066D04429F16B4700619AC2 /* Mic */ = {
+			isa = PBXGroup;
+			children = (
+				7066D04F29F1CAC700619AC2 /* Modules */,
+				7066D04529F16B5700619AC2 /* MicView.swift */,
+			);
+			path = Mic;
+			sourceTree = "<group>";
+		};
+		7066D04C29F19CF200619AC2 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CE1A29F5CC0D00558722 /* RouterToggleStyle.swift */,
+				70640D6C2A09634F00AC1AFA /* ProminentButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		7066D04F29F1CAC700619AC2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				705A2A3A29F31D3D0096BDA6 /* Equalizer */,
+				7066D05029F1CCAD00619AC2 /* MicSetupMicModule.swift */,
+				7066D05229F1D53900619AC2 /* GateMicModule.swift */,
+				705A2A3E29F333290096BDA6 /* CompressorMicModule.swift */,
+				705A2A4029F333610096BDA6 /* ExtrasMicModule.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7066D05429F1EA0E00619AC2 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				7066D05529F1EA1D00619AC2 /* VolumePercentParser.swift */,
+				7066D05829F1EA3F00619AC2 /* ThresholdParser.swift */,
+				705A2A3629F2FA0D0096BDA6 /* RoundedParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		70922C8E29F474EB0084BD3D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				70922C8F29F4751A0084BD3D /* ReverbFXModule.swift */,
+				70922C9129F48BC20084BD3D /* EchoFXModule.swift */,
+				70922C9329F48F6E0084BD3D /* GenderFXModule.swift */,
+				70922C9529F490110084BD3D /* MegaphoneFXModule.swift */,
+				70922C9729F493DF0084BD3D /* HardTuneFXModule.swift */,
+				70F5CDE929F5515C00558722 /* RobotFXModule.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		709EB1B629ED86980095FC64 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				709EB1C229EDAB5D0095FC64 /* Onboarding */,
+				709EB1C129EDAB560095FC64 /* Settings */,
+				709EB1C029EDAB370095FC64 /* Configuration */,
+				709EB1BF29EDAB2F0095FC64 /* Menubar */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		709EB1B729ED869F0095FC64 /* Localisation */ = {
+			isa = PBXGroup;
+			children = (
+				709EB1C729EDAC2E0095FC64 /* Languages */,
+			);
+			path = Localisation;
+			sourceTree = "<group>";
+		};
+		709EB1B829ED86A50095FC64 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7066D05429F1EA0E00619AC2 /* Parsers */,
+				700C29FF29EDEC6100BC0AE8 /* View+HideTitlebar.swift */,
+				700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */,
+				70922C8C29F471E30084BD3D /* ShowInFinder.swift */,
+				70640D6A2A0960CB00AC1AFA /* Color+Hex.swift */,
+				7005D8CA2A37C3350046224C /* Dict+Codable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		709EB1B929ED86A90095FC64 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7066D04C29F19CF200619AC2 /* Styles */,
+				709EB1DA29EDB2B10095FC64 /* EffectsView.swift */,
+				70FF91A429EDCD5300316D56 /* LoadingElement.swift */,
+				700C9DF429EEC00D00EE867A /* ModuleElement.swift */,
+				700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */,
+				7066D04A29F16CF000619AC2 /* MicProfilesElement.swift */,
+				70F5CDEB29F5683700558722 /* ProfilesElement.swift */,
+				70F8FB072A19138F00647DCE /* ProfilesColourElement.swift */,
+				705A2A3329F2E8B00096BDA6 /* LabelledEditableVSlider.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		709EB1BA29EDAA180095FC64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		709EB1BF29EDAB2F0095FC64 /* Menubar */ = {
+			isa = PBXGroup;
+			children = (
+				709F81B129F70DC400C9F959 /* Modules */,
+				709EB1D729EDB2090095FC64 /* Views */,
+				709EB1D529EDADE30095FC64 /* MenubarScene.swift */,
+				709F81B229F70E4200C9F959 /* MenubarConfiguration.swift */,
+			);
+			path = Menubar;
+			sourceTree = "<group>";
+		};
+		709EB1C029EDAB370095FC64 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				704E069E2A23BD0B0002084F /* Sampler */,
+				700C9DFA29EEC36D00EE867A /* Models */,
+				700C9DF629EEC07D00EE867A /* Pages */,
+				70FF91A829EDD6CC00316D56 /* ConfigurationScene.swift */,
+				700C29FB29EDE55E00BC0AE8 /* NavigationView.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		709EB1C129EDAB560095FC64 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CDF629F573DD00558722 /* Pages */,
+				70F5CDF329F56FD200558722 /* Models */,
+				700C29FD29EDEA9200BC0AE8 /* SettingsScene.swift */,
+				700C9DF229EEB23300EE867A /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		709EB1C229EDAB5D0095FC64 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				70640D672A094DF900AC1AFA /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		709EB1C729EDAC2E0095FC64 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				709EB1D329EDAD7E0095FC64 /* Localizable.strings */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
+		709EB1D729EDB2090095FC64 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				709EB1D829EDB2170095FC64 /* NoGoXLRView.swift */,
+				70FF91A629EDCFD900316D56 /* MenubarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		709F81B129F70DC400C9F959 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				704FF86129F9C6B900031F06 /* Routing */,
+				704FF85929F9A5ED00031F06 /* Profiles */,
+				709F81B429F713D900C9F959 /* Faders */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		709F81B429F713D900C9F959 /* Faders */ = {
+			isa = PBXGroup;
+			children = (
+				709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */,
+				704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */,
+			);
+			path = Faders;
+			sourceTree = "<group>";
+		};
+		70A4A27A29F868C10085D715 /* MenubarSettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				704FF85E29F9B57D00031F06 /* mmodsSettingsPages */,
+				70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */,
+			);
+			path = MenubarSettingsPage;
+			sourceTree = "<group>";
+		};
+		70BC2F7A29FE833C00550A48 /* BehavioursSettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				70BC2F7B29FE835400550A48 /* BehavioursSettingsPage.swift */,
+			);
+			path = BehavioursSettingsPage;
+			sourceTree = "<group>";
+		};
+		70CD08C4295B2745003BF9EB = {
+			isa = PBXGroup;
+			children = (
+				70CD08CF295B2745003BF9EB /* GoXlr-App */,
+				70CD08CE295B2745003BF9EB /* Products */,
+				709EB1BA29EDAA180095FC64 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		70CD08CE295B2745003BF9EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70CD08CD295B2745003BF9EB /* GoXlr App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70CD08CF295B2745003BF9EB /* GoXlr-App */ = {
+			isa = PBXGroup;
+			children = (
+				709EB1B929ED86A90095FC64 /* Shared */,
+				709EB1B829ED86A50095FC64 /* Utils */,
+				709EB1B729ED869F0095FC64 /* Localisation */,
+				709EB1B629ED86980095FC64 /* Features */,
+				70F5CDFD29F5AA3A00558722 /* Resources */,
+				70B67F2E299D3E0F00A4BA17 /* Info.plist */,
+				70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */,
+				70CD08D4295B274A003BF9EB /* Assets.xcassets */,
+				70CD08D9295B274A003BF9EB /* GoXlr_App.entitlements */,
+				70CD08D6295B274A003BF9EB /* Preview Content */,
+			);
+			path = "GoXlr-App";
+			sourceTree = "<group>";
+		};
+		70CD08D6295B274A003BF9EB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				70CD08D7295B274A003BF9EB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		70DD123A29F4404A007CACBD /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				70922C8E29F474EB0084BD3D /* Modules */,
+				70DD123B29F44068007CACBD /* FXView.swift */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		70E4E5DF29F6CA82003C9158 /* MixerLightning */ = {
+			isa = PBXGroup;
+			children = (
+				70E4E5E029F6CA9B003C9158 /* MixerLightningView.swift */,
+			);
+			path = MixerLightning;
+			sourceTree = "<group>";
+		};
+		70F5CDED29F5690B00558722 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CDEE29F5691500558722 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		70F5CDF029F56BD900558722 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CDF129F56E6600558722 /* RouterView.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		70F5CDF329F56FD200558722 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CDF429F56FDD00558722 /* SettingsPages.swift */,
+				70F5CDFB29F5A43500558722 /* AppSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		70F5CDF629F573DD00558722 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				70BC2F7A29FE833C00550A48 /* BehavioursSettingsPage */,
+				70A4A27A29F868C10085D715 /* MenubarSettingsPage */,
+				70F5CDF729F573F500558722 /* GeneralSettingsPage.swift */,
+				70F5CDF929F592D900558722 /* MixerSettingsPage.swift */,
+				706991D52A055338002EA076 /* AudioSettingsPage.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		70F5CDFD29F5AA3A00558722 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70F5CE1529F5BF0300558722 /* goxlr-daemon */,
+				70595D6F2A0576340073073E /* xpchandler */,
+				70595D712A0577340073073E /* goxlr-initialiser */,
+				70F5CE0F29F5AB0900558722 /* Library */,
+				702EB1162A0D7B1A00296A0F /* Credits.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		70F8FB092A19151000647DCE /* Lightning */ = {
+			isa = PBXGroup;
+			children = (
+				70F8FB0A2A19152400647DCE /* LightningView.swift */,
+			);
+			path = Lightning;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70CD08CC295B2745003BF9EB /* GoXlr App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70CD08DC295B274A003BF9EB /* Build configuration list for PBXNativeTarget "GoXlr App" */;
+			buildPhases = (
+				70CD08C9295B2745003BF9EB /* Sources */,
+				70CD08CA295B2745003BF9EB /* Frameworks */,
+				70CD08CB295B2745003BF9EB /* Resources */,
+				70F5CE1129F5AB9100558722 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GoXlr App";
+			packageProductDependencies = (
+				70C74EA629F5DA7B004471A9 /* GoXlrKit */,
+				70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */,
+				70E4E5DD29F6CA72003C9158 /* Wallpaper */,
+				70E4E5E929F6D158003C9158 /* DominantColor */,
+				70D9E0C02A04171600A0313B /* Sparkle */,
+				70545E402A13826C0063B096 /* Sentry */,
+				70545E442A13826C0063B096 /* SentrySwiftUI */,
+				7012DF4D2A3322A900CB215D /* SkyKit_Design */,
+				7012DF502A33260700CB215D /* Colorful */,
+			);
+			productName = "GoXlr-App";
+			productReference = 70CD08CD295B2745003BF9EB /* GoXlr App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70CD08C5295B2745003BF9EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					70CD08CC295B2745003BF9EB = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 70CD08C8295B2745003BF9EB /* Build configuration list for PBXProject "GoXlr App" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				fr,
+				Base,
+			);
+			mainGroup = 70CD08C4295B2745003BF9EB;
+			packageReferences = (
+				70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */,
+				70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */,
+				70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */,
+				70D9E0BF2A04171600A0313B /* XCRemoteSwiftPackageReference "Sparkle" */,
+				70545E3F2A13826C0063B096 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+				7012DF4C2A3322A900CB215D /* XCRemoteSwiftPackageReference "SkyKit" */,
+				7012DF4F2A33260700CB215D /* XCRemoteSwiftPackageReference "Colorful" */,
+			);
+			productRefGroup = 70CD08CE295B2745003BF9EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70CD08CC295B2745003BF9EB /* GoXlr App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70CD08CB295B2745003BF9EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				709EB1D129EDAD7E0095FC64 /* Localizable.strings in Resources */,
+				70595D722A0577340073073E /* goxlr-initialiser in Resources */,
+				70F5CE1629F5BF0400558722 /* goxlr-daemon in Resources */,
+				702EB1172A0D7B1A00296A0F /* Credits.html in Resources */,
+				70CD08D8295B274A003BF9EB /* Preview Assets.xcassets in Resources */,
+				70595D702A0576340073073E /* xpchandler in Resources */,
+				70CD08D5295B274A003BF9EB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70CD08C9295B2745003BF9EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70F5CDEC29F5683700558722 /* ProfilesElement.swift in Sources */,
+				70922C9229F48BC20084BD3D /* EchoFXModule.swift in Sources */,
+				704FF86329F9C6CF00031F06 /* RoutingMenubarModuleConfig.swift in Sources */,
+				705A2A3929F31CDD0096BDA6 /* EqualizerMicModule.swift in Sources */,
+				70F5CDFA29F592D900558722 /* MixerSettingsPage.swift in Sources */,
+				705A2A3729F2FA0D0096BDA6 /* RoundedParser.swift in Sources */,
+				70922C9429F48F6E0084BD3D /* GenderFXModule.swift in Sources */,
+				7066D05329F1D53900619AC2 /* GateMicModule.swift in Sources */,
+				704FF86529F9CB1A00031F06 /* RoutingMmodSettingsPage.swift in Sources */,
+				700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */,
+				7003C3E929F098FA00B20817 /* FadersMixerElements.swift in Sources */,
+				706991D62A055338002EA076 /* AudioSettingsPage.swift in Sources */,
+				70922C8D29F471E30084BD3D /* ShowInFinder.swift in Sources */,
+				709EB1D929EDB2170095FC64 /* NoGoXLRView.swift in Sources */,
+				700C29FC29EDE55E00BC0AE8 /* NavigationView.swift in Sources */,
+				700C9DFE29EECD1100EE867A /* Binding+Unwrap.swift in Sources */,
+				70FF91A929EDD6CC00316D56 /* ConfigurationScene.swift in Sources */,
+				700C29FE29EDEA9300BC0AE8 /* SettingsScene.swift in Sources */,
+				70640D6D2A09634F00AC1AFA /* ProminentButtonStyle.swift in Sources */,
+				705A2A3F29F333290096BDA6 /* CompressorMicModule.swift in Sources */,
+				7005D8CB2A37C3350046224C /* Dict+Codable.swift in Sources */,
+				70F5CDEF29F5691500558722 /* HomeView.swift in Sources */,
+				70922C9629F490110084BD3D /* MegaphoneFXModule.swift in Sources */,
+				7066D05129F1CCAD00619AC2 /* MicSetupMicModule.swift in Sources */,
+				70FF91A529EDCD5300316D56 /* LoadingElement.swift in Sources */,
+				70A4A27C29F868E60085D715 /* MenubarSettingsPage.swift in Sources */,
+				700C2A0029EDEC6100BC0AE8 /* View+HideTitlebar.swift in Sources */,
+				70E4E5E129F6CA9B003C9158 /* MixerLightningView.swift in Sources */,
+				700C9DF929EEC0A000EE867A /* MixerView.swift in Sources */,
+				7066D04B29F16CF000619AC2 /* MicProfilesElement.swift in Sources */,
+				704FF86029F9B59F00031F06 /* FadersMmodSettingsPage.swift in Sources */,
+				70922C9829F493DF0084BD3D /* HardTuneFXModule.swift in Sources */,
+				707D8E4229FAC4870023A2A3 /* RoutingMenubarModule.swift in Sources */,
+				705A2A3429F2E8B00096BDA6 /* LabelledEditableVSlider.swift in Sources */,
+				70BC2F7C29FE835400550A48 /* BehavioursSettingsPage.swift in Sources */,
+				709F81B729F7141B00C9F959 /* FadersMenubarModule.swift in Sources */,
+				709EB1DB29EDB2B10095FC64 /* EffectsView.swift in Sources */,
+				70F5CDEA29F5515C00558722 /* RobotFXModule.swift in Sources */,
+				705A2A4129F333610096BDA6 /* ExtrasMicModule.swift in Sources */,
+				700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */,
+				7066D05929F1EA3F00619AC2 /* ThresholdParser.swift in Sources */,
+				709EB1D629EDADE30095FC64 /* MenubarScene.swift in Sources */,
+				709F81B329F70E4200C9F959 /* MenubarConfiguration.swift in Sources */,
+				70F5CDF229F56E6600558722 /* RouterView.swift in Sources */,
+				704FF85D29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift in Sources */,
+				704E06A02A23BD1B0002084F /* SamplerView.swift in Sources */,
+				7066D04629F16B5700619AC2 /* MicView.swift in Sources */,
+				7066D05629F1EA1D00619AC2 /* VolumePercentParser.swift in Sources */,
+				704FF85B29F9A60700031F06 /* ProfilesMenubarModule.swift in Sources */,
+				70F5CDF829F573F500558722 /* GeneralSettingsPage.swift in Sources */,
+				700C9DF329EEB23300EE867A /* SettingsView.swift in Sources */,
+				70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */,
+				70640D682A094DF900AC1AFA /* OnboardingView.swift in Sources */,
+				70F5CE1B29F5CC0D00558722 /* RouterToggleStyle.swift in Sources */,
+				705A2A3C29F332860096BDA6 /* EqualizerMiniMicModule.swift in Sources */,
+				70922C9029F4751A0084BD3D /* ReverbFXModule.swift in Sources */,
+				7003C3E729F0988900B20817 /* VolumesSlidersMixerElements.swift in Sources */,
+				70F8FB082A19138F00647DCE /* ProfilesColourElement.swift in Sources */,
+				70F5CDF529F56FDD00558722 /* SettingsPages.swift in Sources */,
+				70FF91A729EDCFD900316D56 /* MenubarView.swift in Sources */,
+				70F8FB0B2A19152400647DCE /* LightningView.swift in Sources */,
+				70F5CDFC29F5A43600558722 /* AppSettings.swift in Sources */,
+				700C9DF529EEC00D00EE867A /* ModuleElement.swift in Sources */,
+				70DD123C29F44068007CACBD /* FXView.swift in Sources */,
+				70640D6B2A0960CB00AC1AFA /* Color+Hex.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		709EB1D329EDAD7E0095FC64 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				709EB1D229EDAD7E0095FC64 /* en */,
+				709EB1D429EDAD9D0095FC64 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70CD08DA295B274A003BF9EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		70CD08DB295B274A003BF9EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		70CD08DD295B274A003BF9EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GoXlr-App/GoXlr_App.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoXlr-App/Preview Content\"";
+				DEVELOPMENT_TEAM = TCG39FU5X7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr-App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		70CD08DE295B274A003BF9EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "GoXlr-App/GoXlr_App.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GoXlr-App/Preview Content\"";
+				DEVELOPMENT_TEAM = TCG39FU5X7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "GoXlr-App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "GoXlr App";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70CD08C8295B2745003BF9EB /* Build configuration list for PBXProject "GoXlr App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70CD08DA295B274A003BF9EB /* Debug */,
+				70CD08DB295B274A003BF9EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70CD08DC295B274A003BF9EB /* Build configuration list for PBXNativeTarget "GoXlr App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70CD08DD295B274A003BF9EB /* Debug */,
+				70CD08DE295B274A003BF9EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7012DF4C2A3322A900CB215D /* XCRemoteSwiftPackageReference "SkyKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Adelenade/SkyKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		7012DF4F2A33260700CB215D /* XCRemoteSwiftPackageReference "Colorful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lakr233/Colorful";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		70545E3F2A13826C0063B096 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		70D9E0BF2A04171600A0313B /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/macos-wallpaper";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Adelenade/DominantColor";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Adelenade/GoXlrKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7012DF4D2A3322A900CB215D /* SkyKit_Design */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7012DF4C2A3322A900CB215D /* XCRemoteSwiftPackageReference "SkyKit" */;
+			productName = SkyKit_Design;
+		};
+		7012DF502A33260700CB215D /* Colorful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7012DF4F2A33260700CB215D /* XCRemoteSwiftPackageReference "Colorful" */;
+			productName = Colorful;
+		};
+		70545E402A13826C0063B096 /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70545E3F2A13826C0063B096 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+		70545E442A13826C0063B096 /* SentrySwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70545E3F2A13826C0063B096 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = SentrySwiftUI;
+		};
+		70C74EA629F5DA7B004471A9 /* GoXlrKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
+			productName = GoXlrKit;
+		};
+		70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
+			productName = "GoXlrKit-Audio";
+		};
+		70D9E0C02A04171600A0313B /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70D9E0BF2A04171600A0313B /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+		70E4E5DD29F6CA72003C9158 /* Wallpaper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */;
+			productName = Wallpaper;
+		};
+		70E4E5E929F6D158003C9158 /* DominantColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */;
+			productName = DominantColor;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 70CD08C5295B2745003BF9EB /* Project object */;
+}
