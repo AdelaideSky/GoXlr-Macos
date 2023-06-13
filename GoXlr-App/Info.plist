@@ -48,7 +48,7 @@
 	<key>SUEnableInstallerLauncherService</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://adelenade.github.io/GoXlr-Macos/appcast.xml</string>
+	<string>https://adelaidesky.github.io/GoXlr-Macos/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>XwHe5LA4BVCU+ApyIRFa53drqUKB5yYd+tfYLUQQCio=</string>
 	<key>UTExportedTypeDeclarations</key>

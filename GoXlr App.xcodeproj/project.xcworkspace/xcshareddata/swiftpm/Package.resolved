@@ -21,7 +21,7 @@
     {
       "identity" : "dominantcolor",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Adelenade/DominantColor",
+      "location" : "https://github.com/AdelaideSky/DominantColor",
       "state" : {
         "branch" : "master",
         "revision" : "32bc520b394219e3d0c5926793ec1e8f2391af12"
@@ -30,7 +30,7 @@
     {
       "identity" : "goxlrkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Adelenade/GoXlrKit",
+      "location" : "https://github.com/AdelaideSky/GoXlrKit",
       "state" : {
         "branch" : "main",
         "revision" : "81c282b965f04120cd2a73f084710a860a40c9f5"
@@ -66,7 +66,7 @@
     {
       "identity" : "skykit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Adelenade/SkyKit",
+      "location" : "https://github.com/AdelaideSky/SkyKit",
       "state" : {
         "branch" : "main",
         "revision" : "67c87c9798e6624a73c965c3d192c7cfe8a42a2c"

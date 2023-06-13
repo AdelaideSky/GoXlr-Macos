@@ -19,7 +19,6 @@
 		700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFB29EEC37700EE867A /* Tabs.swift */; };
 		700C9DFE29EECD1100EE867A /* Binding+Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */; };
 		700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */; };
-		7012DF4E2A3322A900CB215D /* SkyKit_Design in Frameworks */ = {isa = PBXBuildFile; productRef = 7012DF4D2A3322A900CB215D /* SkyKit_Design */; };
 		7012DF512A33260700CB215D /* Colorful in Frameworks */ = {isa = PBXBuildFile; productRef = 7012DF502A33260700CB215D /* Colorful */; };
 		702EB1172A0D7B1A00296A0F /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 702EB1162A0D7B1A00296A0F /* Credits.html */; };
 		704E06A02A23BD1B0002084F /* SamplerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704E069F2A23BD1B0002084F /* SamplerView.swift */; };
@@ -63,16 +62,18 @@
 		709F81B729F7141B00C9F959 /* FadersMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */; };
 		70A4A27C29F868E60085D715 /* MenubarSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */; };
 		70BC2F7C29FE835400550A48 /* BehavioursSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC2F7B29FE835400550A48 /* BehavioursSettingsPage.swift */; };
-		70C74EA729F5DA7B004471A9 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70C74EA629F5DA7B004471A9 /* GoXlrKit */; };
-		70C74EA929F5DA7B004471A9 /* GoXlrKit-Audio in Frameworks */ = {isa = PBXBuildFile; productRef = 70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */; };
 		70CD08D1295B2745003BF9EB /* GoXlr_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CD08D0295B2745003BF9EB /* GoXlr_AppApp.swift */; };
 		70CD08D5295B274A003BF9EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70CD08D4295B274A003BF9EB /* Assets.xcassets */; };
 		70CD08D8295B274A003BF9EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70CD08D7295B274A003BF9EB /* Preview Assets.xcassets */; };
+		70D9C26A2A38B69E0086E975 /* GoXlrKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9C2692A38B69E0086E975 /* GoXlrKit */; };
+		70D9C26C2A38B69E0086E975 /* GoXlrKit-Audio in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9C26B2A38B69E0086E975 /* GoXlrKit-Audio */; };
+		70D9C26F2A38B6D30086E975 /* SkyKit_Design in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9C26E2A38B6D30086E975 /* SkyKit_Design */; };
+		70D9C2722A38B6FB0086E975 /* DominantColor in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9C2712A38B6FB0086E975 /* DominantColor */; };
+		70D9C2742A38B6FB0086E975 /* DominantColor_Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9C2732A38B6FB0086E975 /* DominantColor_Dynamic */; };
 		70D9E0C12A04171600A0313B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9E0C02A04171600A0313B /* Sparkle */; };
 		70DD123C29F44068007CACBD /* FXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD123B29F44068007CACBD /* FXView.swift */; };
 		70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */ = {isa = PBXBuildFile; productRef = 70E4E5DD29F6CA72003C9158 /* Wallpaper */; };
 		70E4E5E129F6CA9B003C9158 /* MixerLightningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4E5E029F6CA9B003C9158 /* MixerLightningView.swift */; };
-		70E4E5EA29F6D158003C9158 /* DominantColor in Frameworks */ = {isa = PBXBuildFile; productRef = 70E4E5E929F6D158003C9158 /* DominantColor */; };
 		70F5CDEA29F5515C00558722 /* RobotFXModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDE929F5515C00558722 /* RobotFXModule.swift */; };
 		70F5CDEC29F5683700558722 /* ProfilesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDEB29F5683700558722 /* ProfilesElement.swift */; };
 		70F5CDEF29F5691500558722 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F5CDEE29F5691500558722 /* HomeView.swift */; };
@@ -191,13 +192,14 @@
 			files = (
 				70D9E0C12A04171600A0313B /* Sparkle in Frameworks */,
 				70545E452A13826C0063B096 /* SentrySwiftUI in Frameworks */,
-				7012DF4E2A3322A900CB215D /* SkyKit_Design in Frameworks */,
+				70D9C26F2A38B6D30086E975 /* SkyKit_Design in Frameworks */,
 				70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */,
-				70C74EA729F5DA7B004471A9 /* GoXlrKit in Frameworks */,
-				70E4E5EA29F6D158003C9158 /* DominantColor in Frameworks */,
+				70D9C2742A38B6FB0086E975 /* DominantColor_Dynamic in Frameworks */,
+				70D9C26A2A38B69E0086E975 /* GoXlrKit in Frameworks */,
+				70D9C26C2A38B69E0086E975 /* GoXlrKit-Audio in Frameworks */,
+				70D9C2722A38B6FB0086E975 /* DominantColor in Frameworks */,
 				70545E412A13826C0063B096 /* Sentry in Frameworks */,
 				7012DF512A33260700CB215D /* Colorful in Frameworks */,
-				70C74EA929F5DA7B004471A9 /* GoXlrKit-Audio in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,15 +618,16 @@
 			);
 			name = "GoXlr App";
 			packageProductDependencies = (
-				70C74EA629F5DA7B004471A9 /* GoXlrKit */,
-				70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */,
 				70E4E5DD29F6CA72003C9158 /* Wallpaper */,
-				70E4E5E929F6D158003C9158 /* DominantColor */,
 				70D9E0C02A04171600A0313B /* Sparkle */,
 				70545E402A13826C0063B096 /* Sentry */,
 				70545E442A13826C0063B096 /* SentrySwiftUI */,
-				7012DF4D2A3322A900CB215D /* SkyKit_Design */,
 				7012DF502A33260700CB215D /* Colorful */,
+				70D9C2692A38B69E0086E975 /* GoXlrKit */,
+				70D9C26B2A38B69E0086E975 /* GoXlrKit-Audio */,
+				70D9C26E2A38B6D30086E975 /* SkyKit_Design */,
+				70D9C2712A38B6FB0086E975 /* DominantColor */,
+				70D9C2732A38B6FB0086E975 /* DominantColor_Dynamic */,
 			);
 			productName = "GoXlr-App";
 			productReference = 70CD08CD295B2745003BF9EB /* GoXlr App.app */;
@@ -656,13 +659,13 @@
 			);
 			mainGroup = 70CD08C4295B2745003BF9EB;
 			packageReferences = (
-				70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */,
 				70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */,
-				70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */,
 				70D9E0BF2A04171600A0313B /* XCRemoteSwiftPackageReference "Sparkle" */,
 				70545E3F2A13826C0063B096 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
-				7012DF4C2A3322A900CB215D /* XCRemoteSwiftPackageReference "SkyKit" */,
 				7012DF4F2A33260700CB215D /* XCRemoteSwiftPackageReference "Colorful" */,
+				70D9C2682A38B69E0086E975 /* XCRemoteSwiftPackageReference "GoXlrKit" */,
+				70D9C26D2A38B6D30086E975 /* XCRemoteSwiftPackageReference "SkyKit" */,
+				70D9C2702A38B6FB0086E975 /* XCRemoteSwiftPackageReference "DominantColor" */,
 			);
 			productRefGroup = 70CD08CE295B2745003BF9EB /* Products */;
 			projectDirPath = "";
@@ -981,14 +984,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7012DF4C2A3322A900CB215D /* XCRemoteSwiftPackageReference "SkyKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Adelenade/SkyKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		7012DF4F2A33260700CB215D /* XCRemoteSwiftPackageReference "Colorful" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Lakr233/Colorful";
@@ -1003,6 +998,30 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.0.0;
+			};
+		};
+		70D9C2682A38B69E0086E975 /* XCRemoteSwiftPackageReference "GoXlrKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AdelaideSky/GoXlrKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		70D9C26D2A38B6D30086E975 /* XCRemoteSwiftPackageReference "SkyKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AdelaideSky/SkyKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		70D9C2702A38B6FB0086E975 /* XCRemoteSwiftPackageReference "DominantColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AdelaideSky/DominantColor";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 		70D9E0BF2A04171600A0313B /* XCRemoteSwiftPackageReference "Sparkle" */ = {
@@ -1021,30 +1040,9 @@
 				kind = branch;
 			};
 		};
-		70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Adelenade/DominantColor";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Adelenade/GoXlrKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7012DF4D2A3322A900CB215D /* SkyKit_Design */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7012DF4C2A3322A900CB215D /* XCRemoteSwiftPackageReference "SkyKit" */;
-			productName = SkyKit_Design;
-		};
 		7012DF502A33260700CB215D /* Colorful */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7012DF4F2A33260700CB215D /* XCRemoteSwiftPackageReference "Colorful" */;
@@ -1060,15 +1058,30 @@
 			package = 70545E3F2A13826C0063B096 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
 			productName = SentrySwiftUI;
 		};
-		70C74EA629F5DA7B004471A9 /* GoXlrKit */ = {
+		70D9C2692A38B69E0086E975 /* GoXlrKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
+			package = 70D9C2682A38B69E0086E975 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
 			productName = GoXlrKit;
 		};
-		70C74EA829F5DA7B004471A9 /* GoXlrKit-Audio */ = {
+		70D9C26B2A38B69E0086E975 /* GoXlrKit-Audio */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 70F5CE1C29F5D0BA00558722 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
+			package = 70D9C2682A38B69E0086E975 /* XCRemoteSwiftPackageReference "GoXlrKit" */;
 			productName = "GoXlrKit-Audio";
+		};
+		70D9C26E2A38B6D30086E975 /* SkyKit_Design */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70D9C26D2A38B6D30086E975 /* XCRemoteSwiftPackageReference "SkyKit" */;
+			productName = SkyKit_Design;
+		};
+		70D9C2712A38B6FB0086E975 /* DominantColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70D9C2702A38B6FB0086E975 /* XCRemoteSwiftPackageReference "DominantColor" */;
+			productName = DominantColor;
+		};
+		70D9C2732A38B6FB0086E975 /* DominantColor_Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70D9C2702A38B6FB0086E975 /* XCRemoteSwiftPackageReference "DominantColor" */;
+			productName = DominantColor_Dynamic;
 		};
 		70D9E0C02A04171600A0313B /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1079,11 +1092,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70E4E5DC29F6CA71003C9158 /* XCRemoteSwiftPackageReference "macos-wallpaper" */;
 			productName = Wallpaper;
-		};
-		70E4E5E929F6D158003C9158 /* DominantColor */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 70E4E5E829F6D158003C9158 /* XCRemoteSwiftPackageReference "DominantColor" */;
-			productName = DominantColor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
