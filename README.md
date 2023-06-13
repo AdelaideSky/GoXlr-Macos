@@ -34,14 +34,8 @@ your device is your responsibility.
 ## Set up
 
 - Download the latest [release](https://github.com/Adelenade/GoXlr-Macos/releases).
-- Open the .pkg file and follow the instructions to install the app on your computer.
-- If your GoXLR is plugged in, unplug it and plug it in again.
-- Wait a few seconds before launching the app. Be sure to check your menubar, as it's a menubar based app !
-- **If the app crashes**:
-  - Run the command `killall goxlr-daemon` in your terminal.
-  - Wait a few seconds before restarting the app.
-- Follow the app's setup flow !
-- Enjoy!
+- Open the .zip file and put the app file into your Applications folder
+- Open the app and follow the onboarding process displayed !
 
 ## Notice
 
@@ -56,10 +50,10 @@ If you have any problem using your app and don't feel confident using github iss
 
 ## To-do list
 
-- Live-UI (like windows behaviour in mixer tab)
 - Full audio support with Audio-server plug-in.
 - Add other features of the GoXLR (colours, sampler...)
-
+- Extensions support
+- Full support of goxlr basic functions (sampler, lightning etc...)
 - Many more...
 
 ## Credits
