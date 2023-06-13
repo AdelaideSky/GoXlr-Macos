@@ -8,7 +8,7 @@
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>2.0.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/AdelaideSky/GoXlr-Macos/releases/download/v2.0.0/GoXlr.App.v2.0.0.zip" length="21428426" type="application/octet-stream" sparkle:edSignature="M9GmyubSHvH8r3nrwLlOO7cVYJ0rfgZkw36szR8zHv8KdCI5k/YM546Fa9SeVocuM8J9/EQj1LHzDkxG9y9fBQ=="/>
+            <enclosure url="https://github.com/AdelaideSky/GoXlr-Macos/releases/download/v2.0.0/GoXlr.App.v2.0.0.zip" length="21428212" type="application/octet-stream" sparkle:edSignature="BlDLTTbVEfIxY38EffhtXRE+onnpIIKVUaWrPYStE3G+UZkZPV9MmtJzansa5L1a20W2tD8UN/2l4kIsNCQfCg=="/>
         </item>
     </channel>
 </rss>

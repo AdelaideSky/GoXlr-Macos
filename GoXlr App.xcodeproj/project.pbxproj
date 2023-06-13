@@ -69,7 +69,6 @@
 		70D9C26C2A38B69E0086E975 /* GoXlrKit-Audio in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9C26B2A38B69E0086E975 /* GoXlrKit-Audio */; };
 		70D9C26F2A38B6D30086E975 /* SkyKit_Design in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9C26E2A38B6D30086E975 /* SkyKit_Design */; };
 		70D9C2722A38B6FB0086E975 /* DominantColor in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9C2712A38B6FB0086E975 /* DominantColor */; };
-		70D9C2742A38B6FB0086E975 /* DominantColor_Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9C2732A38B6FB0086E975 /* DominantColor_Dynamic */; };
 		70D9E0C12A04171600A0313B /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 70D9E0C02A04171600A0313B /* Sparkle */; };
 		70DD123C29F44068007CACBD /* FXView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DD123B29F44068007CACBD /* FXView.swift */; };
 		70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */ = {isa = PBXBuildFile; productRef = 70E4E5DD29F6CA72003C9158 /* Wallpaper */; };
@@ -194,7 +193,6 @@
 				70545E452A13826C0063B096 /* SentrySwiftUI in Frameworks */,
 				70D9C26F2A38B6D30086E975 /* SkyKit_Design in Frameworks */,
 				70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */,
-				70D9C2742A38B6FB0086E975 /* DominantColor_Dynamic in Frameworks */,
 				70D9C26A2A38B69E0086E975 /* GoXlrKit in Frameworks */,
 				70D9C26C2A38B69E0086E975 /* GoXlrKit-Audio in Frameworks */,
 				70D9C2722A38B6FB0086E975 /* DominantColor in Frameworks */,
@@ -627,7 +625,6 @@
 				70D9C26B2A38B69E0086E975 /* GoXlrKit-Audio */,
 				70D9C26E2A38B6D30086E975 /* SkyKit_Design */,
 				70D9C2712A38B6FB0086E975 /* DominantColor */,
-				70D9C2732A38B6FB0086E975 /* DominantColor_Dynamic */,
 			);
 			productName = "GoXlr-App";
 			productReference = 70CD08CD295B2745003BF9EB /* GoXlr App.app */;
@@ -1077,11 +1074,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70D9C2702A38B6FB0086E975 /* XCRemoteSwiftPackageReference "DominantColor" */;
 			productName = DominantColor;
-		};
-		70D9C2732A38B6FB0086E975 /* DominantColor_Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 70D9C2702A38B6FB0086E975 /* XCRemoteSwiftPackageReference "DominantColor" */;
-			productName = DominantColor_Dynamic;
 		};
 		70D9E0C02A04171600A0313B /* Sparkle */ = {
 			isa = XCSwiftPackageProductDependency;
