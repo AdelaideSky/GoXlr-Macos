@@ -10,6 +10,8 @@ import GoXlrKit
 import Sparkle
 import Sentry
 import SentrySwiftUI
+import AppKit
+
 
 // This view model class publishes when new updates can be checked by the user
 final class CheckForUpdatesViewModel: ObservableObject {
@@ -57,6 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.setActivationPolicy(.accessory)
         return false
     }
+    
     func application(_ application: NSApplication, open urls: [URL]) {
         if urls.first!.pathExtension == "goxlr" {
             GoXlr.shared.importProfile(urls.first!, path: .profiles)
@@ -70,6 +73,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             GoXlr.shared.importProfile(urls.first!, path: .presets)
         }
     }
+    
     func applicationDidFinishLaunching(_ notification: Notification) {
         
         
@@ -95,13 +99,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             window.orderFrontRegardless()
             
         }
+        
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(systemWillSleep(_:)), name: NSWorkspace.screensDidSleepNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(systemDidWake(_:)), name: NSWorkspace.didWakeNotification, object: nil)
+        
         GoXlr.shared.observationStore = AppSettings.shared.$observationStore
         GoXlr.shared.startObserving()
     }
-    func applicationWillTerminate(_ notification: Notification) {
-        GoXlr.shared.stopObserving()
+    
+    @objc func systemWillSleep(_ notification: Notification) {
+        for command in AppSettings.shared.sleepCommands {
+            GoXlr.shared.command(command)
+        }
     }
     
+    @objc func systemDidWake(_ notification: Notification) {
+        for command in AppSettings.shared.wakeCommands {
+            GoXlr.shared.command(command)
+        }
+    }
+    func applicationWillTerminate(_ notification: Notification) {
+        for command in AppSettings.shared.shutdownCommands {
+            GoXlr.shared.command(command)
+        }
+        GoXlr.shared.stopObserving()
+    }
 }
 
 @main

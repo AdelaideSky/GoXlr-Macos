@@ -21,6 +21,9 @@
 		700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */; };
 		7012DF512A33260700CB215D /* Colorful in Frameworks */ = {isa = PBXBuildFile; productRef = 7012DF502A33260700CB215D /* Colorful */; };
 		702EB1172A0D7B1A00296A0F /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 702EB1162A0D7B1A00296A0F /* Credits.html */; };
+		703D3B732A3B6EF800D92206 /* ButtonPressBehaviours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D3B722A3B6EF800D92206 /* ButtonPressBehaviours.swift */; };
+		703D3B752A3B7F3700D92206 /* CommandsEditableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D3B742A3B7F3600D92206 /* CommandsEditableListView.swift */; };
+		703D3B772A3B80A000D92206 /* MenubarLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D3B762A3B80A000D92206 /* MenubarLoadingView.swift */; };
 		704E06A02A23BD1B0002084F /* SamplerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704E069F2A23BD1B0002084F /* SamplerView.swift */; };
 		704FF85B29F9A60700031F06 /* ProfilesMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */; };
 		704FF85D29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */; };
@@ -118,6 +121,9 @@
 		700C9DFD29EECD1100EE867A /* Binding+Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Unwrap.swift"; sourceTree = "<group>"; };
 		700C9DFF29EECE5300EE867A /* VolumeSliderElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSliderElement.swift; sourceTree = "<group>"; };
 		702EB1162A0D7B1A00296A0F /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		703D3B722A3B6EF800D92206 /* ButtonPressBehaviours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressBehaviours.swift; sourceTree = "<group>"; };
+		703D3B742A3B7F3600D92206 /* CommandsEditableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsEditableListView.swift; sourceTree = "<group>"; };
+		703D3B762A3B80A000D92206 /* MenubarLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenubarLoadingView.swift; sourceTree = "<group>"; };
 		704E069F2A23BD1B0002084F /* SamplerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerView.swift; sourceTree = "<group>"; };
 		704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesMenubarModule.swift; sourceTree = "<group>"; };
 		704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesMenubarModuleConfiguration.swift; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 		700C9DF629EEC07D00EE867A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				704E069E2A23BD0B0002084F /* Sampler */,
 				70F8FB092A19151000647DCE /* Lightning */,
 				70E4E5DF29F6CA82003C9158 /* MixerLightning */,
 				70F5CDF029F56BD900558722 /* Router */,
@@ -401,7 +408,6 @@
 		709EB1C029EDAB370095FC64 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				704E069E2A23BD0B0002084F /* Sampler */,
 				700C9DFA29EEC36D00EE867A /* Models */,
 				700C9DF629EEC07D00EE867A /* Pages */,
 				70FF91A829EDD6CC00316D56 /* ConfigurationScene.swift */,
@@ -441,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				709EB1D829EDB2170095FC64 /* NoGoXLRView.swift */,
+				703D3B762A3B80A000D92206 /* MenubarLoadingView.swift */,
 				70FF91A629EDCFD900316D56 /* MenubarView.swift */,
 			);
 			path = Views;
@@ -478,6 +485,8 @@
 			isa = PBXGroup;
 			children = (
 				70BC2F7B29FE835400550A48 /* BehavioursSettingsPage.swift */,
+				703D3B722A3B6EF800D92206 /* ButtonPressBehaviours.swift */,
+				703D3B742A3B7F3600D92206 /* CommandsEditableListView.swift */,
 			);
 			path = BehavioursSettingsPage;
 			sourceTree = "<group>";
@@ -718,6 +727,7 @@
 				7005D8CB2A37C3350046224C /* Dict+Codable.swift in Sources */,
 				70F5CDEF29F5691500558722 /* HomeView.swift in Sources */,
 				70922C9629F490110084BD3D /* MegaphoneFXModule.swift in Sources */,
+				703D3B732A3B6EF800D92206 /* ButtonPressBehaviours.swift in Sources */,
 				7066D05129F1CCAD00619AC2 /* MicSetupMicModule.swift in Sources */,
 				70FF91A529EDCD5300316D56 /* LoadingElement.swift in Sources */,
 				70A4A27C29F868E60085D715 /* MenubarSettingsPage.swift in Sources */,
@@ -752,6 +762,8 @@
 				705A2A3C29F332860096BDA6 /* EqualizerMiniMicModule.swift in Sources */,
 				70922C9029F4751A0084BD3D /* ReverbFXModule.swift in Sources */,
 				7003C3E729F0988900B20817 /* VolumesSlidersMixerElements.swift in Sources */,
+				703D3B772A3B80A000D92206 /* MenubarLoadingView.swift in Sources */,
+				703D3B752A3B7F3700D92206 /* CommandsEditableListView.swift in Sources */,
 				70F8FB082A19138F00647DCE /* ProfilesColourElement.swift in Sources */,
 				70F5CDF529F56FDD00558722 /* SettingsPages.swift in Sources */,
 				70FF91A729EDCFD900316D56 /* MenubarView.swift in Sources */,
@@ -911,6 +923,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "In order to provide you a visual representation of your mic real time level, the app needs permission to access your microphone.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -944,6 +957,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "In order to provide you a visual representation of your mic real time level, the app needs permission to access your microphone.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

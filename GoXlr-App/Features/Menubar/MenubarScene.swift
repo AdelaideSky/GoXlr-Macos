@@ -15,13 +15,8 @@ struct MenubarScene: Scene {
     
     var body: some Scene {
         MenuBarExtra("GoXlr App", image: "devices.goxlr.logo") {
-            if goxlr.status != nil {
-                AppropriateMenubarView()
-                    .sentryTrace("Menubar")
-            } else {
-                NoGoXLRView()
-                    .sentryTrace("Menubar_noGoXLR")
-            }
+            AppropriateMenubarView()
+                .sentryTrace("Menubar")
         }.menuBarExtraStyle(.window)
         
             
@@ -29,14 +24,14 @@ struct MenubarScene: Scene {
 }
 
 struct AppropriateMenubarView: View {
-    @ObservedObject var status = GoXlr.shared.status!.data.status
+    @ObservedObject var goxlr = GoXlr.shared
     @ObservedObject var settings = AppSettings.shared
 
     var body: some View {
         if settings.firstLaunch {
             EmptyView()
         } else {
-            if status.mixers.count > 0 {
+            if goxlr.status?.data.status.mixers.count ?? 0 > 0 {
                 MenubarView().frame(width: 305)
             } else {
                 NoGoXLRView()
