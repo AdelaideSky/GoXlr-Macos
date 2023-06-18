@@ -23,7 +23,12 @@
 		702EB1172A0D7B1A00296A0F /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 702EB1162A0D7B1A00296A0F /* Credits.html */; };
 		703D3B732A3B6EF800D92206 /* ButtonPressBehaviours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D3B722A3B6EF800D92206 /* ButtonPressBehaviours.swift */; };
 		703D3B752A3B7F3700D92206 /* CommandsEditableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D3B742A3B7F3600D92206 /* CommandsEditableListView.swift */; };
-		703D3B772A3B80A000D92206 /* MenubarLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703D3B762A3B80A000D92206 /* MenubarLoadingView.swift */; };
+		70493AD72A3F694C00DD45E4 /* SamplerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70493AD62A3F694C00DD45E4 /* SamplerButtonView.swift */; };
+		70493AD92A3F698B00DD45E4 /* AddSamplePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70493AD82A3F698B00DD45E4 /* AddSamplePopupView.swift */; };
+		70493ADB2A3F69D200DD45E4 /* SampleCropSliderElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70493ADA2A3F69D200DD45E4 /* SampleCropSliderElement.swift */; };
+		70493ADD2A3F6A0600DD45E4 /* SamplesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70493ADC2A3F6A0600DD45E4 /* SamplesListView.swift */; };
+		70493ADF2A3F6A3F00DD45E4 /* SampleEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70493ADE2A3F6A3F00DD45E4 /* SampleEditView.swift */; };
+		70493AE12A3F6A6E00DD45E4 /* View+ToggleOnGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70493AE02A3F6A6E00DD45E4 /* View+ToggleOnGesture.swift */; };
 		704E06A02A23BD1B0002084F /* SamplerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704E069F2A23BD1B0002084F /* SamplerView.swift */; };
 		704FF85B29F9A60700031F06 /* ProfilesMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */; };
 		704FF85D29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */; };
@@ -61,6 +66,8 @@
 		709EB1D629EDADE30095FC64 /* MenubarScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB1D529EDADE30095FC64 /* MenubarScene.swift */; };
 		709EB1D929EDB2170095FC64 /* NoGoXLRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB1D829EDB2170095FC64 /* NoGoXLRView.swift */; };
 		709EB1DB29EDB2B10095FC64 /* EffectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709EB1DA29EDB2B10095FC64 /* EffectsView.swift */; };
+		709EB4C22A3D1D9F0030AF15 /* DSWaveformImage in Frameworks */ = {isa = PBXBuildFile; productRef = 709EB4C12A3D1D9F0030AF15 /* DSWaveformImage */; };
+		709EB4C42A3D1D9F0030AF15 /* DSWaveformImageViews in Frameworks */ = {isa = PBXBuildFile; productRef = 709EB4C32A3D1D9F0030AF15 /* DSWaveformImageViews */; };
 		709F81B329F70E4200C9F959 /* MenubarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81B229F70E4200C9F959 /* MenubarConfiguration.swift */; };
 		709F81B729F7141B00C9F959 /* FadersMenubarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F81B629F7141B00C9F959 /* FadersMenubarModule.swift */; };
 		70A4A27C29F868E60085D715 /* MenubarSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4A27B29F868E60085D715 /* MenubarSettingsPage.swift */; };
@@ -123,7 +130,12 @@
 		702EB1162A0D7B1A00296A0F /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		703D3B722A3B6EF800D92206 /* ButtonPressBehaviours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPressBehaviours.swift; sourceTree = "<group>"; };
 		703D3B742A3B7F3600D92206 /* CommandsEditableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsEditableListView.swift; sourceTree = "<group>"; };
-		703D3B762A3B80A000D92206 /* MenubarLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenubarLoadingView.swift; sourceTree = "<group>"; };
+		70493AD62A3F694C00DD45E4 /* SamplerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerButtonView.swift; sourceTree = "<group>"; };
+		70493AD82A3F698B00DD45E4 /* AddSamplePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSamplePopupView.swift; sourceTree = "<group>"; };
+		70493ADA2A3F69D200DD45E4 /* SampleCropSliderElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCropSliderElement.swift; sourceTree = "<group>"; };
+		70493ADC2A3F6A0600DD45E4 /* SamplesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesListView.swift; sourceTree = "<group>"; };
+		70493ADE2A3F6A3F00DD45E4 /* SampleEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleEditView.swift; sourceTree = "<group>"; };
+		70493AE02A3F6A6E00DD45E4 /* View+ToggleOnGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ToggleOnGesture.swift"; sourceTree = "<group>"; };
 		704E069F2A23BD1B0002084F /* SamplerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerView.swift; sourceTree = "<group>"; };
 		704FF85A29F9A60700031F06 /* ProfilesMenubarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesMenubarModule.swift; sourceTree = "<group>"; };
 		704FF85C29F9B2D700031F06 /* ProfilesMenubarModuleConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilesMenubarModuleConfiguration.swift; sourceTree = "<group>"; };
@@ -195,10 +207,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709EB4C42A3D1D9F0030AF15 /* DSWaveformImageViews in Frameworks */,
 				70D9E0C12A04171600A0313B /* Sparkle in Frameworks */,
 				70545E452A13826C0063B096 /* SentrySwiftUI in Frameworks */,
 				70D9C26F2A38B6D30086E975 /* SkyKit_Design in Frameworks */,
 				70E4E5DE29F6CA72003C9158 /* Wallpaper in Frameworks */,
+				709EB4C22A3D1D9F0030AF15 /* DSWaveformImage in Frameworks */,
 				70D9C26A2A38B69E0086E975 /* GoXlrKit in Frameworks */,
 				70D9C26C2A38B69E0086E975 /* GoXlrKit-Audio in Frameworks */,
 				70D9C2722A38B6FB0086E975 /* DominantColor in Frameworks */,
@@ -247,6 +261,11 @@
 			isa = PBXGroup;
 			children = (
 				704E069F2A23BD1B0002084F /* SamplerView.swift */,
+				70493AD62A3F694C00DD45E4 /* SamplerButtonView.swift */,
+				70493AD82A3F698B00DD45E4 /* AddSamplePopupView.swift */,
+				70493ADA2A3F69D200DD45E4 /* SampleCropSliderElement.swift */,
+				70493ADC2A3F6A0600DD45E4 /* SamplesListView.swift */,
+				70493ADE2A3F6A3F00DD45E4 /* SampleEditView.swift */,
 			);
 			path = Sampler;
 			sourceTree = "<group>";
@@ -367,6 +386,7 @@
 				70922C8C29F471E30084BD3D /* ShowInFinder.swift */,
 				70640D6A2A0960CB00AC1AFA /* Color+Hex.swift */,
 				7005D8CA2A37C3350046224C /* Dict+Codable.swift */,
+				70493AE02A3F6A6E00DD45E4 /* View+ToggleOnGesture.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -447,7 +467,6 @@
 			isa = PBXGroup;
 			children = (
 				709EB1D829EDB2170095FC64 /* NoGoXLRView.swift */,
-				703D3B762A3B80A000D92206 /* MenubarLoadingView.swift */,
 				70FF91A629EDCFD900316D56 /* MenubarView.swift */,
 			);
 			path = Views;
@@ -634,6 +653,8 @@
 				70D9C26B2A38B69E0086E975 /* GoXlrKit-Audio */,
 				70D9C26E2A38B6D30086E975 /* SkyKit_Design */,
 				70D9C2712A38B6FB0086E975 /* DominantColor */,
+				709EB4C12A3D1D9F0030AF15 /* DSWaveformImage */,
+				709EB4C32A3D1D9F0030AF15 /* DSWaveformImageViews */,
 			);
 			productName = "GoXlr-App";
 			productReference = 70CD08CD295B2745003BF9EB /* GoXlr App.app */;
@@ -672,6 +693,7 @@
 				70D9C2682A38B69E0086E975 /* XCRemoteSwiftPackageReference "GoXlrKit" */,
 				70D9C26D2A38B6D30086E975 /* XCRemoteSwiftPackageReference "SkyKit" */,
 				70D9C2702A38B6FB0086E975 /* XCRemoteSwiftPackageReference "DominantColor" */,
+				709EB4C02A3D1D9F0030AF15 /* XCRemoteSwiftPackageReference "DSWaveformImage" */,
 			);
 			productRefGroup = 70CD08CE295B2745003BF9EB /* Products */;
 			projectDirPath = "";
@@ -713,6 +735,7 @@
 				70922C9429F48F6E0084BD3D /* GenderFXModule.swift in Sources */,
 				7066D05329F1D53900619AC2 /* GateMicModule.swift in Sources */,
 				704FF86529F9CB1A00031F06 /* RoutingMmodSettingsPage.swift in Sources */,
+				70493AD72A3F694C00DD45E4 /* SamplerButtonView.swift in Sources */,
 				700C9E0029EECE5300EE867A /* VolumeSliderElement.swift in Sources */,
 				7003C3E929F098FA00B20817 /* FadersMixerElements.swift in Sources */,
 				706991D62A055338002EA076 /* AudioSettingsPage.swift in Sources */,
@@ -736,6 +759,7 @@
 				700C9DF929EEC0A000EE867A /* MixerView.swift in Sources */,
 				7066D04B29F16CF000619AC2 /* MicProfilesElement.swift in Sources */,
 				704FF86029F9B59F00031F06 /* FadersMmodSettingsPage.swift in Sources */,
+				70493AE12A3F6A6E00DD45E4 /* View+ToggleOnGesture.swift in Sources */,
 				70922C9829F493DF0084BD3D /* HardTuneFXModule.swift in Sources */,
 				707D8E4229FAC4870023A2A3 /* RoutingMenubarModule.swift in Sources */,
 				705A2A3429F2E8B00096BDA6 /* LabelledEditableVSlider.swift in Sources */,
@@ -745,6 +769,7 @@
 				70F5CDEA29F5515C00558722 /* RobotFXModule.swift in Sources */,
 				705A2A4129F333610096BDA6 /* ExtrasMicModule.swift in Sources */,
 				700C9DFC29EEC37700EE867A /* Tabs.swift in Sources */,
+				70493ADF2A3F6A3F00DD45E4 /* SampleEditView.swift in Sources */,
 				7066D05929F1EA3F00619AC2 /* ThresholdParser.swift in Sources */,
 				709EB1D629EDADE30095FC64 /* MenubarScene.swift in Sources */,
 				709F81B329F70E4200C9F959 /* MenubarConfiguration.swift in Sources */,
@@ -762,16 +787,18 @@
 				705A2A3C29F332860096BDA6 /* EqualizerMiniMicModule.swift in Sources */,
 				70922C9029F4751A0084BD3D /* ReverbFXModule.swift in Sources */,
 				7003C3E729F0988900B20817 /* VolumesSlidersMixerElements.swift in Sources */,
-				703D3B772A3B80A000D92206 /* MenubarLoadingView.swift in Sources */,
 				703D3B752A3B7F3700D92206 /* CommandsEditableListView.swift in Sources */,
 				70F8FB082A19138F00647DCE /* ProfilesColourElement.swift in Sources */,
 				70F5CDF529F56FDD00558722 /* SettingsPages.swift in Sources */,
+				70493AD92A3F698B00DD45E4 /* AddSamplePopupView.swift in Sources */,
 				70FF91A729EDCFD900316D56 /* MenubarView.swift in Sources */,
 				70F8FB0B2A19152400647DCE /* LightningView.swift in Sources */,
 				70F5CDFC29F5A43600558722 /* AppSettings.swift in Sources */,
+				70493ADD2A3F6A0600DD45E4 /* SamplesListView.swift in Sources */,
 				700C9DF529EEC00D00EE867A /* ModuleElement.swift in Sources */,
 				70DD123C29F44068007CACBD /* FXView.swift in Sources */,
 				70640D6B2A0960CB00AC1AFA /* Color+Hex.swift in Sources */,
+				70493ADB2A3F69D200DD45E4 /* SampleCropSliderElement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,7 +955,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -962,7 +989,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adesky.GoXlr-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1009,6 +1036,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.0.0;
+			};
+		};
+		709EB4C02A3D1D9F0030AF15 /* XCRemoteSwiftPackageReference "DSWaveformImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AdelaideSky/DSWaveformImage";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 		70D9C2682A38B69E0086E975 /* XCRemoteSwiftPackageReference "GoXlrKit" */ = {
@@ -1068,6 +1103,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 70545E3F2A13826C0063B096 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
 			productName = SentrySwiftUI;
+		};
+		709EB4C12A3D1D9F0030AF15 /* DSWaveformImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 709EB4C02A3D1D9F0030AF15 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImage;
+		};
+		709EB4C32A3D1D9F0030AF15 /* DSWaveformImageViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 709EB4C02A3D1D9F0030AF15 /* XCRemoteSwiftPackageReference "DSWaveformImage" */;
+			productName = DSWaveformImageViews;
 		};
 		70D9C2692A38B69E0086E975 /* GoXlrKit */ = {
 			isa = XCSwiftPackageProductDependency;

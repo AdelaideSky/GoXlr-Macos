@@ -95,7 +95,7 @@ struct ProfileRowElement: View {
             
             Button("Cancel", role: .cancel) {}
             Button("Reload", role: .destructive) {
-                GoXlr.shared.command(.LoadProfile(profile))
+                GoXlr.shared.command(.LoadProfile(profile, true))
             }
         }, message: {
             Text("You will loose all modifications.")

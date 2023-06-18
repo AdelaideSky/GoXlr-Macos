@@ -95,7 +95,7 @@ struct MicProfileRowElement: View {
             
             Button("Cancel", role: .cancel) {}
             Button("Reload", role: .destructive) {
-                GoXlr.shared.command(.LoadMicProfile(profile))
+                GoXlr.shared.command(.LoadMicProfile(profile, true))
             }
         }, message: {
             Text("You will loose all modifications.")

@@ -78,7 +78,7 @@ struct MicSetupView: View {
                 Group {
                     switch mic.micType {
                     case .Dynamic:
-                        LabelledVSliderElement(label: "Gain", value: $mic.micGains.micGainsDynamic, range: 0...72, sliderWidth: 20, sliderHeight: 230, unity: "dB")
+                        LabelledVSliderElement(label: "Gain", value: $mic.micGains.dynamic, range: 0...72, sliderWidth: 20, sliderHeight: 230, unity: "dB")
                     case .Condenser:
                         LabelledVSliderElement(label: "Gain", value: $mic.micGains.condenser, range: 0...72, sliderWidth: 20, sliderHeight: 230, unity: "dB")
                     case .Jack:

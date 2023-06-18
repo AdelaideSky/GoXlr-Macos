@@ -48,10 +48,10 @@ struct CommandsEditableListView: View {
                                     }
                                 }.fixedSize()
                                 
-                            case .LoadProfile(let profile):
+                            case .LoadProfile(let profile, let bool):
                                 Text("Load Profile")
                                 Spacer()
-                                Picker("", selection: Binding(get: { profile }, set: { list[id] = .LoadProfile($0) })) {
+                                Picker("", selection: Binding(get: { profile }, set: { list[id] = .LoadProfile($0, bool) })) {
                                     ForEach(GoXlr.shared.status!.data.status.files.profiles, id:\.self) { profile in
                                         Text(profile).tag(profile)
                                     }
@@ -83,6 +83,9 @@ struct CommandsEditableListView: View {
                     }.onMove { from, to in
                         list.move(fromOffsets: from, toOffset: to)
                     }
+                    .onDelete() { index in
+                        list.remove(atOffsets: index)
+                    }
                 }
             }.padding(.bottom, 24)
                 .overlay(alignment: .bottom, content: {
@@ -95,7 +98,7 @@ struct CommandsEditableListView: View {
                                     list.append(.LoadProfileColours(GoXlr.shared.status?.data.status.files.profiles.first ?? ""))
                                 }
                                 Button("Load Profile") {
-                                    list.append(.LoadProfile(GoXlr.shared.status?.data.status.files.profiles.first ?? ""))
+                                    list.append(.LoadProfile(GoXlr.shared.status?.data.status.files.profiles.first ?? "", true))
                                 }
                                 Button("Save Profile") {
                                     if prioritiseSaves {

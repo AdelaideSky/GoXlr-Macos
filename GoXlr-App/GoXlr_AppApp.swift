@@ -62,15 +62,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func application(_ application: NSApplication, open urls: [URL]) {
         if urls.first!.pathExtension == "goxlr" {
-            GoXlr.shared.importProfile(urls.first!, path: .profiles)
-            GoXlr.shared.command(.LoadProfile(String(urls.first!.lastPathComponent.dropLast(6))))
+            GoXlr.shared.importFile(urls.first!, path: .profiles)
+            GoXlr.shared.command(.LoadProfile(String(urls.first!.lastPathComponent.dropLast(6)), true))
         }
         if urls.first!.pathExtension == "goxlrMicProfile" {
-            GoXlr.shared.importProfile(urls.first!, path: .micprofiles)
-            GoXlr.shared.command(.LoadMicProfile(String(urls.first!.lastPathComponent.dropLast(16))))
+            GoXlr.shared.importFile(urls.first!, path: .micprofiles)
+            GoXlr.shared.command(.LoadMicProfile(String(urls.first!.lastPathComponent.dropLast(16)), true))
         }
         if urls.first!.pathExtension == "preset" {
-            GoXlr.shared.importProfile(urls.first!, path: .presets)
+            GoXlr.shared.importFile(urls.first!, path: .presets)
         }
     }
     

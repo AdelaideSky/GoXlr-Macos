@@ -18,7 +18,7 @@ struct ProfilesMenubarModule: View {
                 Menu(mixer.micProfileName) {
                     ForEach(status.files.micProfiles, id: \.self) { profile in
                         Button(profile) {
-                            GoXlr.shared.command(.LoadMicProfile(profile))
+                            GoXlr.shared.command(.LoadMicProfile(profile, true))
                         }
                     }
                 }
@@ -58,7 +58,7 @@ struct ProfilesMenubarModule: View {
                 Menu(mixer.profileName) {
                     ForEach(status.files.profiles, id: \.self) { profile in
                         Button(profile) {
-                            GoXlr.shared.command(.LoadProfile(profile))
+                            GoXlr.shared.command(.LoadProfile(profile, true))
                         }
                     }
                 }

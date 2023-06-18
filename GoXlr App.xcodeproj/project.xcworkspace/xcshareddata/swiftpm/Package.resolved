@@ -28,12 +28,21 @@
       }
     },
     {
+      "identity" : "dswaveformimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AdelaideSky/DSWaveformImage",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0615002f2ac6b451e3a5f607615e64e94cc9bc7a"
+      }
+    },
+    {
       "identity" : "goxlrkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AdelaideSky/GoXlrKit",
       "state" : {
         "branch" : "main",
-        "revision" : "cb16fca20c94c309d8fce33ce706eb534d4c0e2e"
+        "revision" : "a9e051c7935bfdce0004743d67ef5d07488e595f"
       }
     },
     {

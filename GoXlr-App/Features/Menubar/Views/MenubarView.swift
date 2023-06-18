@@ -86,15 +86,23 @@ struct MenubarView: View {
                 //ShareLink(items: ["SharingContent"])
                 
                 Menu {
-                    Button("Reload Daemon") {
-                        goxlr.daemon.restart(args:[.noMenubarIcon])
-                    }
-                    Button("Copy debug info") {
-                        goxlr.copyDebugInfo()
-                    }
                     Link("Open GoXLR-Utility's WebUI", destination: URL(string: "http://localhost:14564/")!)
                     Link("Join support server", destination: URL(string: "https://discord.gg/cyavp8F2WW")!)
-
+                    
+                    Menu("Debug") {
+                        Button("Reload Daemon") {
+                            goxlr.daemon.restart(args:[.noMenubarIcon])
+                        }
+                        Button("Copy debug info") {
+                            goxlr.copyDebugInfo()
+                        }
+                        Picker("Log level", selection: $goxlr.logLevel) {
+                            Text("None").tag(GoXlr.GoXlrLogLevel.none)
+                            Text("Info").tag(GoXlr.GoXlrLogLevel.info)
+                            Text("Debug").tag(GoXlr.GoXlrLogLevel.debug)
+                        }
+                    }
+                    
                 } label: {
                     Image(systemName: "ellipsis")
                 }
