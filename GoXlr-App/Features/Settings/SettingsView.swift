@@ -25,6 +25,7 @@ struct SettingsView: View {
         .init(.menubar, baseColor: .indigo, icon: .system("menubar.rectangle")),
         .init(.audio, baseColor: .pink, icon: .system("speaker.wave.3.fill")),
         .init(.behaviors, baseColor: .red, icon: .system("flowchart")),
+        .init(.daemon, baseColor: .teal, icon: .system("memorychip")),
         .init(.extensions, baseColor: .blue, icon: .system("puzzlepiece.fill"))
     ]
     
@@ -60,7 +61,11 @@ struct SettingsView: View {
                         AudioSettingsPage()
                     case .behaviors:
                         BehavioursSettingsPage()
+                    case .daemon:
+                        DaemonSettingsPage()
                     default:
+//                        TODO: For macos 14, replace emptyview by notimplementedview
+//                        NotImplementedView()
                         EmptyView()
                     }
                 } else if let deviceUID = selection.deviceUID, let deviceModel = selection.deviceModel {

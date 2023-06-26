@@ -13,20 +13,42 @@ struct VolumeSlidersRowMixerElement: View {
     
     var body: some View {
         HStack {
+            if levels.submix != nil {
+                Form {
+                    Section("Mix Assignement") {
+                        Text("WIP")
+                    }
+                }.formStyle(.grouped)
+                    .scrollDisabled(true)
+            }
             Form {
-                Section("Inputs") {
+                Section(content: {
                     HStack {
-                        VolumeSliderMixerElement(value: $levels.volumes.mic, channel: .Mic)
-                        VolumeSliderMixerElement(value: $levels.volumes.chat, channel: .Chat)
-                        VolumeSliderMixerElement(value: $levels.volumes.music, channel: .Music)
-                        VolumeSliderMixerElement(value: $levels.volumes.game, channel: .Game)
-                        VolumeSliderMixerElement(value: $levels.volumes.console, channel: .Console)
+                        if levels.submix == nil {
+                            VolumeSliderMixerElement(value: $levels.volumes.mic, channel: .Mic)
+                            VolumeSliderMixerElement(value: $levels.volumes.chat, channel: .Chat)
+                            VolumeSliderMixerElement(value: $levels.volumes.music, channel: .Music)
+                            VolumeSliderMixerElement(value: $levels.volumes.game, channel: .Game)
+                            VolumeSliderMixerElement(value: $levels.volumes.console, channel: .Console)
 
-                        VolumeSliderMixerElement(value: $levels.volumes.lineIn, channel: .LineIn)
-                        VolumeSliderMixerElement(value: $levels.volumes.system, channel: .System)
-                        VolumeSliderMixerElement(value: $levels.volumes.sample, channel: .Sample)
+                            VolumeSliderMixerElement(value: $levels.volumes.lineIn, channel: .LineIn)
+                            VolumeSliderMixerElement(value: $levels.volumes.system, channel: .System)
+                            VolumeSliderMixerElement(value: $levels.volumes.sample, channel: .Sample)
+                        } else {
+                            SubmixesView()
+                        }
                     }.padding(.vertical)
-                }
+                }, header: {
+                    HStack {
+                        Text("Library")
+                        Spacer()
+                        if levels.submixSupported {
+                            Toggle("Submixes", isOn: Binding(get: { levels.submix != nil }, set: { GoXlr.shared.command(.SetSubMixEnabled($0)) }))
+                                .toggleStyle(.switch)
+                                .controlSize(.mini)
+                        }
+                    }
+                })
             }.formStyle(.grouped)
                 .scrollDisabled(true)
 //            Divider()

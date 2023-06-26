@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import GoXlrKit
+import SkyKit_Design
 
 struct NoGoXLRView: View {
     @ObservedObject var goxlr = GoXlr.shared
@@ -62,6 +63,8 @@ struct NoGoXLRView: View {
             .frame(width: 200)
             .background {
                 EffectsView(material: .hudWindow, blendingMode: .behindWindow)
+                SKNoiseTexture()
+                    .opacity(0.05)
             }
     }
 }

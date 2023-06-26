@@ -62,6 +62,6 @@ struct SettingsPage: Hashable, Identifiable {
         case audio = "Audio"
         case behaviors = "Behaviors"
         case extensions = "Extensions"
+        case daemon = "Daemon"
     }
-
 }

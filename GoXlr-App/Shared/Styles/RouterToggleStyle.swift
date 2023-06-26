@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CheckboxStyle: ToggleStyle {
- 
+    @Environment(\.isEnabled) var isEnabled
+    
     func makeBody(configuration: Self.Configuration) -> some View {
  
         return HStack {
@@ -21,6 +22,8 @@ struct CheckboxStyle: ToggleStyle {
                 .onTapGesture {
                     configuration.isOn.toggle()
                 }
+                .opacity(isEnabled ? 1 : 0.2)
+                .symbolVariant(isEnabled ? .none : .fill)
         }
  
     }

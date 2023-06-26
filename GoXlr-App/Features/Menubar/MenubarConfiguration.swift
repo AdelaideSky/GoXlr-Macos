@@ -18,6 +18,7 @@ class MenubarConfiguration: ObservableObject {
         .profiles: .init(.profiles, description: "Load and save your profiles and mic profiles.", icon: .system("rectangle.on.rectangle.angled"), baseColor: .gray, configurable: false),
         .faders : .init(.faders, description: "Add up to 3 faders that you can modify on the go !", icon: .system("slider.horizontal.3"), baseColor: .indigo, configurable: true),
         .routing : .init(.routing, description: "Choose up to 3 routes that you can toggle at glance !", icon: .system("checklist"), baseColor: .blue, configurable: true),
+        .sampler : .init(.sampler, description: "Quickly edit a sampler button's samples list !", icon: .system("waveform"), baseColor: .pink, configurable: false)
     ]
     
     @AppStorage(AppSettingsKeys.menubarModules.rawValue) var enabledModules: [MenubarModuleName] = [.profiles, .faders]
@@ -53,4 +54,5 @@ enum MenubarModuleName: String, Codable {
     case faders = "Quick Mixing"
     case routing = "Quick Routing"
     case defaultControls = "Default controls"
+    case sampler = "Sampler"
 }

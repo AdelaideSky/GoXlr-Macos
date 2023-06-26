@@ -79,6 +79,8 @@ struct SamplerButtonView: View {
                 HStack(alignment: .top) {
                     
                     SamplesListView($button.samples, selection: $sampleSelection, button: buttonType, bank: bankType)
+                        .frame(width: 200)
+                            .frame(minHeight: 150)
 
                     SampleEditView($button.samples, isPlaying: $button.isPlaying, selection: $sampleSelection, buttonType: buttonType, bank: bankType)
                 }

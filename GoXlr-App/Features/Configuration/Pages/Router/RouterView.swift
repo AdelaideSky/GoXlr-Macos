@@ -71,6 +71,7 @@ struct RouterView: View {
                             ForEach((0...7), id: \.self) { index in
                                 Toggle("", isOn: router.everyChatMic[index])
                                     .toggleStyle(CheckboxStyle())
+                                    .disabled(index == 1)
                             }.frame(maxWidth: .infinity)
                         }
                     }
@@ -79,6 +80,7 @@ struct RouterView: View {
                             ForEach((0...7), id: \.self) { index in
                                 Toggle("", isOn: router.everySampler[index])
                                     .toggleStyle(CheckboxStyle())
+                                    .disabled(index == 7)
                             }.frame(maxWidth: .infinity)
                         }
                     }

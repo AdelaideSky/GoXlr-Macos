@@ -50,11 +50,13 @@ struct NavigationView: View {
                             RouterView()
                         case .effects:
                             FXView()
-                        case .lightGlobal:
-                            LightningView()
-                        case .lightMixer:
-                            MixerLightningView()
+//                        case .lightGlobal:
+//                            LightningView()
+//                        case .lightMixer:
+//                            MixerLightningView()
                         default:
+//                        TODO: For macos 14, replace the custom view by notimplementedview
+
                             Text("Not yet implemented !")
                                 .font(.headline)
                                 .padding()
@@ -75,6 +77,7 @@ struct NavigationView: View {
                                             .opacity(0.6)
                                     }
                             }).frame(width: 250)
+//                            NotImplementedView(webUIAvailable: true)
                         }
                     }.clipped()
                         .navigationTitle(tab.name)

@@ -17,6 +17,7 @@ struct GeneralSettingsPage: View {
                 Toggle("Launch at startup", isOn: $appSettings.launchAtStartup)
                 Toggle("Launch on device connect", isOn: $appSettings.launchOnConnect)
             }
+            UpdaterSettingsView()
             Section("Accessibility") {
                 Toggle("TTS on button press", isOn: $status.config.ttsEnabled)
             }
