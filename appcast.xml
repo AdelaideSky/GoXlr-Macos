@@ -3,6 +3,14 @@
     <channel>
         <title>GoXlr App</title>
         <item>
+            <title>2.1.0</title>
+            <pubDate>Fri, 30 Jun 2023 19:28:42 +0200</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>2.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/AdelaideSky/GoXlr-Macos/releases/download/v2.1.0/GoXlr.App.zip" length="23810819" type="application/octet-stream" sparkle:edSignature="+p/t8iXvpQWhuL6iqxkK5lqAHrf7tXzZbasEOhL2jw9fnYJv6sshgP9qY56HIb/k3GSB0ysNFAt+jOqbXCAYCA=="/>
+        </item>
+        <item>
             <title>2.0.0</title>
             <pubDate>Tue, 13 Jun 2023 15:01:10 +0200</pubDate>
             <sparkle:version>1</sparkle:version>
