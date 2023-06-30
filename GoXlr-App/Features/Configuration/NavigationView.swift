@@ -8,9 +8,12 @@
 import Foundation
 import SwiftUI
 import GoXlrKit
+import WhatsNewKit
 
 struct NavigationView: View {
     @ObservedObject var goxlr = GoXlr.shared
+    @ObservedObject var settings = AppSettings.shared
+    
     var body: some View {
         NavigationSplitView(sidebar: {
             List {
@@ -84,6 +87,6 @@ struct NavigationView: View {
                 }
         }, detail: {
             HomeView().clipped()
-        })
+        }).if(!settings.firstLaunch) { $0.whatsNewSheet() }
     }
 }

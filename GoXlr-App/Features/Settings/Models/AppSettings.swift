@@ -90,10 +90,10 @@ extension AppSettings {
         
         
         //  Create document
-        let xpchandler = Bundle.main.url(forResource: "xpchandler", withExtension: "")!
+        let xpchandler = Bundle.main.bundleURL.appendingPathComponent("Contents/MacOS/Helpers/xpchandler")
         let xpcHandlerURL = directoryURL.appendingPathComponent("xpchandler")
         
-        let initialiser = Bundle.main.url(forResource: "goxlr-initialiser", withExtension: "")!
+        let initialiser = Bundle.main.bundleURL.appendingPathComponent("Contents/MacOS/Helpers/goxlr-initialiser")
         let initialiserURL = directoryURL.appendingPathComponent("goxlr-initialiser")
         
         //10000% its possible to simplify this but for now i leave it like this

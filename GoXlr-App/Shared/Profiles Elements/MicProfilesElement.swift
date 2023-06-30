@@ -17,19 +17,30 @@ struct MicProfilesElement: View {
     var body: some View {
         Section(content: {
             VStack {
-                List(files.micProfiles.prefix(files.micProfiles.count == 6 ? 6 : 5), id:\.self, selection: $mixer.micProfileName) { profile in
-                    MicProfileRowElement(profile)
-                        .tag(profile)
-                }.listStyle(.inset)
-                    .padding(.bottom, files.micProfiles.count > 6 ? -13 : 0)
-                if files.micProfiles.count > 6 {
-                    DisclosureGroup("More...") {
-                        List(files.micProfiles.dropFirst(5), id:\.self, selection: $mixer.micProfileName) { profile in
-                            MicProfileRowElement(profile)
-                                .tag(profile)
-                        }.listStyle(.inset)
-                            .padding(.horizontal, -10)
-                    }.padding(.horizontal, 10)
+                if files.micProfiles.isEmpty {
+//                    ContentUnavailableView("No mic profile yet !", systemImage: "tray", description: Text("Try adding a profile by clicking the \"New\" button below, or go to settings to recover the default ones !"))
+                    HStack {
+                        Spacer()
+                        Text("No mic profile yet !")
+                        Text("Try adding a profile by clicking the \"New\" button below, or go to settings to recover the default ones !")
+                        Spacer()
+                    }.foregroundStyle(.secondary)
+                        .font(.caption)
+                } else {
+                    List(files.micProfiles.prefix(files.micProfiles.count == 6 ? 6 : 5), id:\.self, selection: $mixer.micProfileName) { profile in
+                        MicProfileRowElement(profile)
+                            .tag(profile)
+                    }.listStyle(.inset)
+                        .padding(.bottom, files.micProfiles.count > 6 ? -13 : 0)
+                    if files.micProfiles.count > 6 {
+                        DisclosureGroup("More...") {
+                            List(files.micProfiles.dropFirst(5), id:\.self, selection: $mixer.micProfileName) { profile in
+                                MicProfileRowElement(profile)
+                                    .tag(profile)
+                            }.listStyle(.inset)
+                                .padding(.horizontal, -10)
+                        }.padding(.horizontal, 10)
+                    }
                 }
             }
                 

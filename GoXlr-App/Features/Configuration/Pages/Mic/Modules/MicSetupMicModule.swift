@@ -116,9 +116,8 @@ struct MicSetupView: View {
                 captureSession = GoXlrAudio.shared.createSession()
                 captureSession!.startRunning()
                 timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { _ in
-                    //22
                     Task { @MainActor in
-                        let tmplevel = (captureSession!.outputs.first?.connections.first?.audioChannels[1].averagePowerLevel)! + 5
+                        let tmplevel = (captureSession!.outputs.first?.connections.first?.audioChannels.last!.averagePowerLevel)! + 5
                         level = max(-40, tmplevel)
                     }
                 })

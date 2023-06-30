@@ -9,6 +9,8 @@ import SwiftUI
 
 struct EqualizerMiniMicModule: View {
     var body: some View {
-        Text("Needs Implementation")
+        Section("Equalizer") {
+            Text("Needs Implementation !")
+        }
     }
 }

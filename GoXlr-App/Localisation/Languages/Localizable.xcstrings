@@ -1160,6 +1160,9 @@
     "HTTP Settings" : {
 
     },
+    "Icons" : {
+
+    },
     "Implementation needed" : {
       "localizations" : {
         "fr" : {
@@ -1320,6 +1323,12 @@
           }
         }
       }
+    },
+    "Load a specified goxlr profile on your device" : {
+
+    },
+    "Load GoXlr Profile" : {
+
     },
     "Load profile" : {
       "localizations" : {
@@ -1483,6 +1492,9 @@
           }
         }
       }
+    },
+    "Mic profiles" : {
+
     },
     "Mic Profiles" : {
       "localizations" : {
@@ -1678,6 +1690,7 @@
       }
     },
     "Needs Implementation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "fr" : {
           "stringUnit" : {
@@ -1686,6 +1699,9 @@
           }
         }
       }
+    },
+    "Needs Implementation !" : {
+
     },
     "New" : {
       "localizations" : {
@@ -1726,6 +1742,12 @@
           }
         }
       }
+    },
+    "No mic profile yet !" : {
+
+    },
+    "No profile yet !" : {
+
     },
     "None" : {
       "localizations" : {
@@ -1943,6 +1965,9 @@
         }
       }
     },
+    "Profile" : {
+
+    },
     "Profiles" : {
       "localizations" : {
         "fr" : {
@@ -2012,6 +2037,9 @@
           }
         }
       }
+    },
+    "Recover defaults for..." : {
+
     },
     "Reinstall drivers" : {
       "localizations" : {
@@ -2557,6 +2585,9 @@
           }
         }
       }
+    },
+    "Try adding a profile by clicking the \"New\" button below, or go to settings to recover the default ones !" : {
+
     },
     "TTS on button press" : {
       "localizations" : {

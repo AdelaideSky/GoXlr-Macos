@@ -8,29 +8,48 @@
 import SwiftUI
 import GoXlrKit
 
-struct ProfilesElement: View {
+struct ProfilesColourElement: View {
     @ObservedObject var files = GoXlr.shared.status!.data.status.files
     @ObservedObject var mixer = GoXlr.shared.mixer!
     
     @State var showDeleteAlert: Bool = false
     
+    @State var profileColours: String
+    
+    init() {
+        _profileColours = .init(initialValue: GoXlr.shared.mixer!.profileName)
+    }
+    
     var body: some View {
         Section(content: {
             VStack {
-                List(files.profiles.prefix(files.profiles.count == 6 ? 6 : 5), id:\.self, selection: $mixer.profileName) { profile in
-                    ProfileRowElement(profile)
-                        .tag(profile)
-                }.listStyle(.inset)
-                    .padding(.bottom, files.profiles.count > 6 ? -13 : 0)
-                if files.profiles.count > 6 {
-                    DisclosureGroup("More...") {
-                        List(files.profiles.dropFirst(5), id:\.self, selection: $mixer.profileName) { profile in
-                            ProfileRowElement(profile)
-                                .tag(profile)
-                        }.listStyle(.inset)
-                            .padding(.horizontal, -10)
-                    }.padding(.horizontal, 10)
+                if files.profiles.isEmpty {
+    //                    ContentUnavailableView("No mic profile yet !", systemImage: "tray", description: Text("Try adding a profile by clicking the \"New\" button below, or go to settings to recover the default ones !"))
+                    HStack {
+                        Spacer()
+                        Text("No profile yet !")
+                        Text("Try adding a profile by clicking the \"New\" button below, or go to settings to recover the default ones !")
+                        Spacer()
+                    }.foregroundStyle(.secondary)
+                        .font(.caption)
+                } else {
+                    List(files.profiles.prefix(files.profiles.count == 6 ? 6 : 5), id:\.self, selection: $profileColours) { profile in
+                        ProfileColoursRowElement(profile)
+                            .tag(profile)
+                    }.listStyle(.inset)
+                        .padding(.bottom, files.profiles.count > 6 ? -13 : 0)
+                    if files.profiles.count > 6 {
+                        DisclosureGroup("More...") {
+                            List(files.profiles.dropFirst(5), id:\.self, selection: $profileColours) { profile in
+                                ProfileColoursRowElement(profile)
+                                    .tag(profile)
+                            }.listStyle(.inset)
+                                .padding(.horizontal, -10)
+                        }.padding(.horizontal, 10)
+                    }
                 }
+            }.onChange(of: profileColours) { newValue in
+                GoXlr.shared.command(.LoadProfileColours(newValue))
             }
                 
         }, header: {
@@ -45,11 +64,11 @@ struct ProfilesElement: View {
             }
         })
         Section {
-            ProfileActionsRowElement()
+            ProfileColoursActionsRowElement()
         }
     }
 }
-struct ProfileRowElement: View {
+struct ProfileColoursRowElement: View {
     
     @State var profile: String
     @State var showDeleteAlert: Bool = false
@@ -65,9 +84,9 @@ struct ProfileRowElement: View {
             Text(profile)
             Spacer()
             Menu(content: {
-                Button("Load profile") {
+                Button("Load profile colours") {
                     if profile != GoXlr.shared.mixer!.profileName {
-                        GoXlr.shared.mixer!.profileName = profile
+                        GoXlr.shared.command(.LoadProfileColours(profile))
                     } else {
                         showLoadActiveAlert = true
                     }
@@ -91,18 +110,18 @@ struct ProfileRowElement: View {
                 GoXlr.shared.command(.DeleteProfile(profile))
             }
         }
-        .alert("Are you sure you want to reload the profile \(profile)", isPresented: $showLoadActiveAlert, actions: {
+        .alert("Are you sure you want to reload the colours of \(profile)", isPresented: $showLoadActiveAlert, actions: {
             
             Button("Cancel", role: .cancel) {}
             Button("Reload", role: .destructive) {
-                GoXlr.shared.command(.LoadProfile(profile, true))
+                GoXlr.shared.command(.LoadProfileColours(profile))
             }
         }, message: {
             Text("You will loose all modifications.")
         })
     }
 }
-struct ProfileActionsRowElement: View {
+struct ProfileColoursActionsRowElement: View {
     @ObservedObject var mixer = GoXlr.shared.mixer!
     
     @State var showSaveAlert: Bool = false
