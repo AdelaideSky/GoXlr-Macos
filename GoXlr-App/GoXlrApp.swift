@@ -1,5 +1,5 @@
 //
-//  GoXlr_AppApp.swift
+//  GoXlrApp.swift
 //  GoXlr-App
 //
 //  Created by Adélaïde Sky on 27/12/2022.
@@ -10,6 +10,8 @@ import GoXlrKit
 import Sparkle
 import Sentry
 import SentrySwiftUI
+import AppKit
+
 
 // This view model class publishes when new updates can be checked by the user
 final class CheckForUpdatesViewModel: ObservableObject {
@@ -52,24 +54,27 @@ struct CheckForUpdatesView: View {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     @Environment(\.openWindow) private var openWindow
+    private var aboutBoxWindowController: NSWindowController?
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         NSApp.setActivationPolicy(.accessory)
         return false
     }
+    
     func application(_ application: NSApplication, open urls: [URL]) {
         if urls.first!.pathExtension == "goxlr" {
-            GoXlr.shared.importProfile(urls.first!, path: .profiles)
-            GoXlr.shared.command(.LoadProfile(String(urls.first!.lastPathComponent.dropLast(6))))
+            GoXlr.shared.importFile(urls.first!, path: .profiles)
+            GoXlr.shared.command(.LoadProfile(String(urls.first!.lastPathComponent.dropLast(6)), true))
         }
         if urls.first!.pathExtension == "goxlrMicProfile" {
-            GoXlr.shared.importProfile(urls.first!, path: .micprofiles)
-            GoXlr.shared.command(.LoadMicProfile(String(urls.first!.lastPathComponent.dropLast(16))))
+            GoXlr.shared.importFile(urls.first!, path: .micprofiles)
+            GoXlr.shared.command(.LoadMicProfile(String(urls.first!.lastPathComponent.dropLast(16)), true))
         }
         if urls.first!.pathExtension == "preset" {
-            GoXlr.shared.importProfile(urls.first!, path: .presets)
+            GoXlr.shared.importFile(urls.first!, path: .presets)
         }
     }
+    
     func applicationDidFinishLaunching(_ notification: Notification) {
         
         
@@ -87,7 +92,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 defer: false)
             window.identifier = .init("onboarding")
             window.animationBehavior = .utilityWindow
-//            window.animat
+            //            window.animat
             window.center()
             window.titlebarAppearsTransparent = true
             window.isReleasedWhenClosed = false
@@ -95,29 +100,71 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             window.orderFrontRegardless()
             
         }
+        
+//        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(systemWillSleep(_:)), name: NSWorkspace.screensDidSleepNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(systemWillSleep(_:)), name: NSWorkspace.willSleepNotification, object: nil)
+//        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(systemDidWake(_:)), name: NSWorkspace.didWakeNotification, object: nil)
+        NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(systemDidWake(_:)), name: NSWorkspace.screensDidWakeNotification, object: nil)
+        
         GoXlr.shared.observationStore = AppSettings.shared.$observationStore
         GoXlr.shared.startObserving()
     }
+    
+    @objc func systemWillSleep(_ notification: Notification) {
+        for command in AppSettings.shared.sleepCommands {
+            GoXlr.shared.command(command)
+        }
+    }
+    
+    @objc func systemDidWake(_ notification: Notification) {
+        for command in AppSettings.shared.wakeCommands {
+            GoXlr.shared.command(command)
+        }
+    }
     func applicationWillTerminate(_ notification: Notification) {
+        for command in AppSettings.shared.shutdownCommands {
+            GoXlr.shared.command(command)
+        }
         GoXlr.shared.stopObserving()
     }
     
+    
+    func showAboutPanel(_ type: AboutPanelType) {
+        let styleMask: NSWindow.StyleMask = [.closable, .titled]
+        let window = NSWindow()
+        window.styleMask = styleMask
+        window.title = ""
+        window.backgroundColor = .clear
+        window.titlebarAppearsTransparent = true
+        switch type {
+        case .app:
+            window.contentView = NSHostingView(rootView: AboutView().ignoresSafeArea())
+        case .utility:
+            window.contentView = NSHostingView(rootView: AboutUtilityView().ignoresSafeArea())
+        }
+        aboutBoxWindowController = NSWindowController(window: window)
+        
+        aboutBoxWindowController?.showWindow(aboutBoxWindowController?.window)
+    }
+    enum AboutPanelType: String {
+        case app
+        case utility
+    }
 }
 
 @main
-struct GoXlr_AppApp: App {
-    private let updaterController: SPUStandardUpdaterController
+struct GoXlrApp: App {
+    static let updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var settings = AppSettings.shared
     
     init() {
         // If you want to start the updater manually, pass false to startingUpdater and call .startUpdater() later
         // This is where you can also pass an updater delegate if you need one
-        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
         SentrySDK.start { options in
             options.dsn = "https://c3679fb415ce46298b304d33b27238cb@o4505192929820672.ingest.sentry.io/4505192931131392"
             options.initialScope = { scope in
-                    scope.setTag(value: "my value", key: "my-tag")
+                    scope.setTag(value: "initialScope", key: "initial-scope")
                     return scope
                 }
             // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
@@ -131,10 +178,6 @@ struct GoXlr_AppApp: App {
             Group {
                 ConfigurationScene()
                 SettingsScene()
-            }.commands {
-                CommandGroup(after: .appInfo) {
-                    CheckForUpdatesView(updater: updaterController.updater)
-                }
             }
             
             MenubarScene()
@@ -144,6 +187,16 @@ struct GoXlr_AppApp: App {
                     Button("Settings...") {}
                         .disabled(true)
                 })
+            }
+            CommandGroup(replacing: CommandGroupPlacement.appInfo) {
+                Button(action: {
+                    appDelegate.showAboutPanel(.app)
+                }) {
+                    Text("About GoXlr App")
+                }
+            }
+            CommandGroup(after: CommandGroupPlacement.appInfo) {
+                CheckForUpdatesView(updater: GoXlrApp.updaterController.updater)
             }
         }
             

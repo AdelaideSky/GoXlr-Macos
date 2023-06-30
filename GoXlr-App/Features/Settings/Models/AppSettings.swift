@@ -42,7 +42,16 @@ class AppSettings: ObservableObject {
     }
     
     @AppStorage(AppSettingsKeys.observationStore.rawValue)
-    var observationStore: [String:String] = ["Bleep":"testingDeepLinking"]
+    var observationStore: [String:String] = [:]
+    
+    @AppStorage(AppSettingsKeys.shutdownCommands.rawValue)
+    var shutdownCommands: [GoXLRCommand] = [.LoadProfileColours("Sleep")]
+    
+    @AppStorage(AppSettingsKeys.sleepCommands.rawValue)
+    var sleepCommands: [GoXLRCommand] = [.LoadProfileColours("Sleep")]
+    
+    @AppStorage(AppSettingsKeys.wakeCommands.rawValue)
+    var wakeCommands: [GoXLRCommand] = [.LoadProfileColours("Sleep")]
 }
 
 class MenubarModulesSettings: ObservableObject {
@@ -64,6 +73,10 @@ enum AppSettingsKeys: String {
     case mmodRouter_Route1 = "fr.adesky.goxlr.menubarRouter.1"
     case mmodRouter_Route2 = "fr.adesky.goxlr.menubarRouter.2"
     case mmodRouter_Route3 = "fr.adesky.goxlr.menubarRouter.3"
+    
+    case shutdownCommands = "fr.adesky.goxlr.shutdownCommands"
+    case sleepCommands = "fr.adesky.goxlr.sleepCommands"
+    case wakeCommands = "fr.adesky.goxlr.wakeCommands"
 }
 
 extension AppSettings {
@@ -77,10 +90,10 @@ extension AppSettings {
         
         
         //  Create document
-        let xpchandler = Bundle.main.url(forResource: "xpchandler", withExtension: "")!
+        let xpchandler = Bundle.main.bundleURL.appendingPathComponent("Contents/MacOS/Helpers/xpchandler")
         let xpcHandlerURL = directoryURL.appendingPathComponent("xpchandler")
         
-        let initialiser = Bundle.main.url(forResource: "goxlr-initialiser", withExtension: "")!
+        let initialiser = Bundle.main.bundleURL.appendingPathComponent("Contents/MacOS/Helpers/goxlr-initialiser")
         let initialiserURL = directoryURL.appendingPathComponent("goxlr-initialiser")
         
         //10000% its possible to simplify this but for now i leave it like this

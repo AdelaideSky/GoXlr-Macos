@@ -45,10 +45,12 @@ struct FadersMixerElement: View {
                     Picker("Mute", selection: $muteFunction) {
                         Text("All").tag(MuteFunction.All)
                         Text("To stream").tag(MuteFunction.ToStream)
-                        Text("To voice chat").tag(MuteFunction.ToVoiceChat)
+                        if channelAssignation == .Chat {
+                            Text("To voice chat").tag(MuteFunction.ToVoiceChat)
+                        }
                         Text("To phones").tag(MuteFunction.ToPhones)
                         Text("To line-out").tag(MuteFunction.ToLineOut)
-                    }
+                    }.disabled(channelAssignation == .LineOut || channelAssignation == .Headphones || channelAssignation == .MicMonitor)
                 }
             }.formStyle(.grouped)
                 .padding(-10)

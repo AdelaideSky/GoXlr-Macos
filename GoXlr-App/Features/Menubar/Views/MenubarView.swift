@@ -9,15 +9,19 @@ import SwiftUI
 import GoXlrKit
 import SkyKit_Design
 import Colorful
+import AppKit
 
 struct MenubarView: View {
     
     @ObservedObject var goxlr = GoXlr.shared
     @Environment(\.openWindow) var openWindow
+//    @Environment(\.dismissWindow) var dismissWindow
     @ObservedObject var configuration = AppSettings.shared.menubar
     @ObservedObject var lighting = GoXlr.shared.mixer!.lighting
     
     @State var profileColors: [Color] = []
+    
+    @State var optionKeyPressed: Bool = false
     
     func refreshPColors() {
         var answer = [lighting.simple.accent.colourOne, lighting.faders.a.colours.colourOne, lighting.faders.a.colours.colourTwo]
@@ -46,6 +50,8 @@ struct MenubarView: View {
                             FadersMenubarModule()
                         case .routing:
                             RoutingMenubarModule()
+                        case .sampler:
+                            SamplerMenubarModule()
                         default:
                             Text(module.rawValue)
                         }
@@ -72,11 +78,16 @@ struct MenubarView: View {
                 }.keyboardShortcut("q")
                 
                 Button(action: {
+                    //TODO: for macos 14, update this function with commented lines and remove the macos 14- alternatives.
+//                    dismissWindow()
+                    NSApp.deactivate()
                     openWindow(id: "configure")
                     NSApp.setActivationPolicy(.regular)
                     NSApp.activate(ignoringOtherApps: true)
                     let window = NSApp.windows.first { $0.identifier?.rawValue == "configure" }!
                     window.orderFrontRegardless()
+                    window.makeKey()
+//                    NSApp.activate()
                 }, label: {
                     Text("Configure GoXlr")
                         .frame(maxWidth: .infinity)
@@ -86,15 +97,37 @@ struct MenubarView: View {
                 //ShareLink(items: ["SharingContent"])
                 
                 Menu {
-                    Button("Reload Daemon") {
-                        goxlr.daemon.restart(args:[.noMenubarIcon])
-                    }
-                    Button("Copy debug info") {
-                        goxlr.copyDebugInfo()
-                    }
+                    
+//                        TODO: For macos 14, replace custom button by SettingsLink (showSettingsWindow: doesn't work on 14+ )
+
+//                    SettingsLink {
+//                        Label("Settings", systemImage: "gear")
+//                            .labelStyle(.titleOnly)
+//                    }
+                    
+                    Button(action: {
+                        NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                    }, label: {
+                        Label("Settings", systemImage: "gear")
+                            .labelStyle(.titleOnly)
+                    })
+                    
                     Link("Open GoXLR-Utility's WebUI", destination: URL(string: "http://localhost:14564/")!)
                     Link("Join support server", destination: URL(string: "https://discord.gg/cyavp8F2WW")!)
-
+                    Menu("Debug") {
+                        Button("Reload Daemon") {
+                            goxlr.daemon.restart(args:[.noMenubarIcon])
+                        }
+                        Button("Copy debug info") {
+                            goxlr.copyDebugInfo()
+                        }
+                        Picker("Log level", selection: $goxlr.logLevel) {
+                            Text("None").tag(GoXlr.GoXlrLogLevel.none)
+                            Text("Info").tag(GoXlr.GoXlrLogLevel.info)
+                            Text("Debug").tag(GoXlr.GoXlrLogLevel.debug)
+                        }
+                    }
+                    
                 } label: {
                     Image(systemName: "ellipsis")
                 }
@@ -124,7 +157,7 @@ struct MenubarView: View {
                     }
                     
                     SKNoiseTexture()
-                        .opacity(0.03)
+                        .opacity(0.05)
                 }
             }
             .foregroundColor(.primary)

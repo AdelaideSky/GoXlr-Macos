@@ -8,9 +8,12 @@
 import Foundation
 import SwiftUI
 import GoXlrKit
+import WhatsNewKit
 
 struct NavigationView: View {
     @ObservedObject var goxlr = GoXlr.shared
+    @ObservedObject var settings = AppSettings.shared
+    
     var body: some View {
         NavigationSplitView(sidebar: {
             List {
@@ -50,11 +53,13 @@ struct NavigationView: View {
                             RouterView()
                         case .effects:
                             FXView()
-                        case .lightGlobal:
-                            LightningView()
-                        case .lightMixer:
-                            MixerLightningView()
+//                        case .lightGlobal:
+//                            LightningView()
+//                        case .lightMixer:
+//                            MixerLightningView()
                         default:
+//                        TODO: For macos 14, replace the custom view by notimplementedview
+
                             Text("Not yet implemented !")
                                 .font(.headline)
                                 .padding()
@@ -75,12 +80,13 @@ struct NavigationView: View {
                                             .opacity(0.6)
                                     }
                             }).frame(width: 250)
+//                            NotImplementedView(webUIAvailable: true)
                         }
                     }.clipped()
                         .navigationTitle(tab.name)
                 }
         }, detail: {
             HomeView().clipped()
-        })
+        }).if(!settings.firstLaunch) { $0.whatsNewSheet() }
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import GoXlrKit
+import SkyKit_Design
 
 struct NoGoXLRView: View {
     @ObservedObject var goxlr = GoXlr.shared
@@ -32,13 +33,23 @@ struct NoGoXLRView: View {
                 }.keyboardShortcut("q")
                 Spacer()
                 Menu {
-                    Button("Reload Daemon") {
-                        GoXlr.shared.daemon.restart(args: [.noMenubarIcon])
-                    }
-                    Button("Copy debug info") {
-                        GoXlr().copyDebugInfo()
-                    }
+                    Link("Open GoXLR-Utility's WebUI", destination: URL(string: "http://localhost:14564/")!)
                     Link("Join support server", destination: URL(string: "https://discord.gg/cyavp8F2WW")!)
+                    
+                    Menu("Debug") {
+                        Button("Reload Daemon") {
+                            goxlr.daemon.restart(args:[.noMenubarIcon])
+                        }
+                        Button("Copy debug info") {
+                            goxlr.copyDebugInfo()
+                        }
+                        Picker("Log level", selection: $goxlr.logLevel) {
+                            Text("None").tag(GoXlr.GoXlrLogLevel.none)
+                            Text("Info").tag(GoXlr.GoXlrLogLevel.info)
+                            Text("Debug").tag(GoXlr.GoXlrLogLevel.debug)
+                        }
+                    }
+                    
                 } label: {
                     Image(systemName: "ellipsis")
                 }
@@ -52,6 +63,8 @@ struct NoGoXLRView: View {
             .frame(width: 200)
             .background {
                 EffectsView(material: .hudWindow, blendingMode: .behindWindow)
+                SKNoiseTexture()
+                    .opacity(0.05)
             }
     }
 }

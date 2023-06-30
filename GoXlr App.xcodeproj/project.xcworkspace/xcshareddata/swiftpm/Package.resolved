@@ -28,12 +28,21 @@
       }
     },
     {
+      "identity" : "dswaveformimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AdelaideSky/DSWaveformImage",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0615002f2ac6b451e3a5f607615e64e94cc9bc7a"
+      }
+    },
+    {
       "identity" : "goxlrkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AdelaideSky/GoXlrKit",
       "state" : {
         "branch" : "main",
-        "revision" : "81c282b965f04120cd2a73f084710a860a40c9f5"
+        "revision" : "f20d036fe28659be67cc9d6321f051a83d56bdb1"
       }
     },
     {
@@ -69,7 +78,7 @@
       "location" : "https://github.com/AdelaideSky/SkyKit",
       "state" : {
         "branch" : "main",
-        "revision" : "67c87c9798e6624a73c965c3d192c7cfe8a42a2c"
+        "revision" : "2ef83d52b102dabeda9bbb38f4f259e4b3857690"
       }
     },
     {
@@ -124,6 +133,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "af1f7a2007d607fbe735c445f19080df4260fe8e"
+      }
+    },
+    {
+      "identity" : "whatsnewkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SvenTiigi/WhatsNewKit",
+      "state" : {
+        "revision" : "238dadc14dd58885f51037e63d08baf4275c480e",
+        "version" : "2.1.0"
       }
     }
   ],

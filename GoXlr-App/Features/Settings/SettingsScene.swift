@@ -26,6 +26,8 @@ struct AppropriateSettingsView: View {
             SettingsView()
                 .frame(minWidth: 715, maxWidth: 715, minHeight: 400)
                 .sentryTrace("Settings")
+        } else {
+            Text("Please connect your GoXlr !")
         }
     }
 }
