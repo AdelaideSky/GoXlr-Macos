@@ -5,7 +5,7 @@
         <item>
             <title>2.1.0</title>
             <pubDate>Fri, 30 Jun 2023 19:28:42 +0200</pubDate>
-            <sparkle:criticalUpdate sparkle:version="2.1.1"/>
+            <sparkle:criticalUpdate sparkle:version="2.1.0"/>
             <sparkle:version>2</sparkle:version>
             <sparkle:shortVersionString>2.1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
