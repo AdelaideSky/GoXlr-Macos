@@ -1,18 +1,27 @@
+
 <?xml version="1.0" standalone="yes"?>
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>GoXlr App</title>
         <item>
-            <title>2.1.0</title>
+            <title>2.1.1</title>
             <pubDate>Fri, 30 Jun 2023 19:28:42 +0200</pubDate>
-            <sparkle:criticalUpdate sparkle:version="2.1.0"/>
-            <sparkle:version>2</sparkle:version>
+            <sparkle:criticalUpdate sparkle:version="2.1.1"/>
+            <sparkle:version>3</sparkle:version>
             <sparkle:shortVersionString>2.1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/AdelaideSky/GoXlr-Macos/releases/download/v2.1.1/GoXlr.App.2.1.1.zip" length="24015096" type="application/octet-stream" sparkle:edSignature="/3TPxwwua4eed1ezx+68BXBGdM6chNkvroztR+faldlOY2/hgMMstM8IKmxKidvEFXyIdq9HTiz2oGJ6HvfcAA=="/>
             <sparkle:deltas>
                 <enclosure url="https://github.com/AdelaideSky/GoXlr-Macos/releases/download/v2.1.1/GoXlr.App2-1.delta" sparkle:deltaFrom="1" length="10754270" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="864752" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="1rtvs3tIphU3itLyl0D+wCBAYf2x+8JsHarEBiFDT29cuA1jXt8pcs2gg/mfpFSnKUSk/uOcD+OBc8X3dx5vBA=="/>
             </sparkle:deltas>
+        </item>
+        <item>
+            <title>2.1.0</title>
+            <pubDate>Fri, 30 Jun 2023 19:28:42 +0200</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>2.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/AdelaideSky/GoXlr-Macos/releases/download/v2.1.0/GoXlr.App.zip" length="23810819" type="application/octet-stream" sparkle:edSignature="+p/t8iXvpQWhuL6iqxkK5lqAHrf7tXzZbasEOhL2jw9fnYJv6sshgP9qY56HIb/k3GSB0ysNFAt+jOqbXCAYCA=="/>
         </item>
         <item>
             <title>2.0.0</title>
