@@ -5,10 +5,11 @@
         <item>
             <title>2.1.0</title>
             <pubDate>Fri, 30 Jun 2023 19:28:42 +0200</pubDate>
+            <sparkle:criticalUpdate sparkle:version="2.1.1"/>
             <sparkle:version>2</sparkle:version>
-            <sparkle:shortVersionString>2.1.0</sparkle:shortVersionString>
+            <sparkle:shortVersionString>2.1.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/AdelaideSky/GoXlr-Macos/releases/download/v2.1.0/GoXlr.App.zip" length="23810819" type="application/octet-stream" sparkle:edSignature="+p/t8iXvpQWhuL6iqxkK5lqAHrf7tXzZbasEOhL2jw9fnYJv6sshgP9qY56HIb/k3GSB0ysNFAt+jOqbXCAYCA=="/>
+            <enclosure url="https://github.com/AdelaideSky/GoXlr-Macos/releases/download/v2.1.1/GoXlr.App.2.1.1.zip" length="24015096" type="application/octet-stream" sparkle:edSignature="/3TPxwwua4eed1ezx+68BXBGdM6chNkvroztR+faldlOY2/hgMMstM8IKmxKidvEFXyIdq9HTiz2oGJ6HvfcAA=="/>
         </item>
         <item>
             <title>2.0.0</title>
